@@ -1,0 +1,42 @@
+:where(html) {
+
+  --cnvs-base-palette-amber-25: oklch(0.9779 0.0214 95.33);
+  --cnvs-base-palette-amber-50: oklch(0.969 0.062 101.58);
+  --cnvs-base-palette-amber-100: oklch(0.9567 0.0948 100.22);
+  --cnvs-base-palette-amber-200: oklch(0.9191 0.1547 99.7);
+  --cnvs-base-palette-amber-300: oklch(0.8432 0.1713 85.24);
+  --cnvs-base-palette-amber-400: oklch(0.7909 0.1711 70.15);
+  --cnvs-base-palette-amber-500: oklch(0.6607 0.1536 60.87);
+  --cnvs-base-palette-amber-600: oklch(0.5505 0.1439 50.78);
+  --cnvs-base-palette-amber-700: oklch(0.4824 0.1353 46.11);
+  --cnvs-base-palette-amber-800: oklch(0.4143 0.1245 42.21);
+  --cnvs-base-palette-amber-900: oklch(0.3212 0.0982 41.31);
+  --cnvs-base-palette-amber-950: oklch(0.2489 0.0771 40.64);
+  --cnvs-base-palette-amber-975: oklch(0.2165 0.0674 40.35);
+
+  --cnvs-base-palette-dark-amber-25: oklch(0.2051 0.0211 66.04);
+  --cnvs-base-palette-dark-amber-50: oklch(0.238 0.0266 66.98);
+  --cnvs-base-palette-dark-amber-100: oklch(0.2741 0.0357 66.77);
+  --cnvs-base-palette-dark-amber-200: oklch(0.3545 0.0569 66.69);
+  --cnvs-base-palette-dark-amber-300: oklch(0.4821 0.0893 64.53);
+  --cnvs-base-palette-dark-amber-400: oklch(0.5496 0.1111 62.26);
+  --cnvs-base-palette-dark-amber-500: oklch(0.6541 0.1369 60.87);
+  --cnvs-base-palette-dark-amber-600: oklch(0.7414 0.1341 59.36);
+  --cnvs-base-palette-dark-amber-700: oklch(0.8135 0.0993 58.66);
+  --cnvs-base-palette-dark-amber-800: oklch(0.8706 0.0528 58.07);
+  --cnvs-base-palette-dark-amber-900: oklch(0.9319 0.0177 57.94);
+  --cnvs-base-palette-dark-amber-950: oklch(0.9535 0.0083 57.84);
+  --cnvs-base-palette-dark-amber-975: oklch(0.9659 0.0046 57.79);
+
+  --cnvs-base-palette-amber-A25: oklch(0.7786 0.1591 90.66 / 0.0901);
+  --cnvs-base-palette-amber-A50: oklch(0.8852 0.1841 100.2 / 0.2193);
+  --cnvs-base-palette-amber-A100: oklch(0.8964 0.185 97.4 / 0.3408);
+  --cnvs-base-palette-amber-A200: oklch(0.8846 0.1822 96.68 / 0.6312);
+  --cnvs-base-palette-amber-A300: oklch(0.8373 0.1719 84 / 0.9542);
+
+  --cnvs-base-palette-dark-amber-A25: oklch(0.2794 0.0652 60.44 / 0.2701);
+  --cnvs-base-palette-dark-amber-A50: oklch(0.7426 0.1805 55.58 / 0.0921);
+  --cnvs-base-palette-dark-amber-A100: oklch(0.7623 0.171 59.41 / 0.1423);
+  --cnvs-base-palette-dark-amber-A200: oklch(0.776 0.1646 62.15 / 0.2616);
+  --cnvs-base-palette-dark-amber-A300: oklch(0.7787 0.1624 62.18 / 0.468);
+}

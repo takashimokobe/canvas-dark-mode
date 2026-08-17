@@ -1,0 +1,4 @@
+:where([role='group']) > :where(button[aria-pressed='true']) {
+  --cnvs-sys-color-surface-default: var(--cnvs-sys-color-surface-thumb);
+  --cnvs-sys-color-fg-strong: var(--cnvs-sys-color-fg-thumb);
+}

@@ -1,0 +1,15 @@
+:where(html) {
+  --cnvs-sys-space-zero: var(--cnvs-sys-padding-none);
+  --cnvs-sys-space-half: var(--cnvs-base-size-25);
+  --cnvs-sys-space-x1: var(--cnvs-base-size-50);
+  --cnvs-sys-space-x2: var(--cnvs-base-size-100);
+  --cnvs-sys-space-x3: var(--cnvs-base-size-150);
+  --cnvs-sys-space-x4: var(--cnvs-base-size-200);
+  --cnvs-sys-space-x5: var(--cnvs-base-size-250);
+  --cnvs-sys-space-x6: var(--cnvs-base-size-300);
+  --cnvs-sys-space-x8: var(--cnvs-base-size-400);
+  --cnvs-sys-space-x10: var(--cnvs-base-size-500);
+  --cnvs-sys-space-x14: var(--cnvs-base-size-700);
+  --cnvs-sys-space-x16: var(--cnvs-base-size-800);
+  --cnvs-sys-space-x20: var(--cnvs-base-size-1000);
+}

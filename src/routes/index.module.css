@@ -1,0 +1,161 @@
+@layer layouts {
+  .Page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-base-size-600);
+    overflow: visible;
+  }
+
+  .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--cnvs-base-size-400);
+    flex-wrap: wrap;
+  }
+
+  .Title {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-lg);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  .Controls {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-base-size-300);
+    flex-wrap: wrap;
+  }
+
+  .BrandControl {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-base-size-200);
+  }
+
+  .BrandedToggle {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-base-size-150);
+    cursor: pointer;
+  }
+
+  .BrandedLabel {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .Sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-base-size-700);
+  }
+
+  .Category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-base-size-300);
+  }
+
+  .CategoryTitle {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: var(--cnvs-base-size-300);
+  }
+
+  /* Cards sit on bg-default, so they carry a border (see docs/dark-mode.md). */
+  .Card {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    /* shape-xxxl = size-350 = 28px */
+    border-radius: var(--cnvs-sys-shape-xxxl);
+    background-color: var(--cnvs-sys-color-surface-default);
+    box-shadow: var(--cnvs-sys-depth-1);
+  }
+
+  .CardWide {
+    grid-column: 1 / -1;
+  }
+
+  .CardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--cnvs-base-size-200);
+    padding: var(--cnvs-base-size-300) var(--cnvs-base-size-300) 0;
+  }
+
+  .CardName {
+    margin: 0;
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  .CardStage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    gap: var(--cnvs-base-size-200);
+    padding: var(--cnvs-base-size-400) var(--cnvs-base-size-300);
+    /* Popups and menus anchored inside a card must not clip. */
+    overflow: visible;
+  }
+
+  .CardStage > * {
+    max-inline-size: 100%;
+  }
+
+  .TnumPanel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-base-size-50);
+  }
+
+  .TnumLabel {
+    margin: 0 0 var(--cnvs-base-size-100);
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .TnumRow {
+    display: flex;
+    inline-size: max-content;
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+    font-weight: var(--cnvs-sys-font-weight-normal);
+  }
+
+  /* Deliberately stronger than the surface washes so the per-digit stripe
+       boundaries stay legible at body-sm. */
+  .TnumRow > span:nth-child(odd) {
+    background-color: light-dark(
+      var(--cnvs-base-palette-red-A200),
+      var(--cnvs-base-palette-dark-red-A200)
+    );
+  }
+
+  .TnumRow > span:nth-child(even) {
+    background-color: light-dark(
+      var(--cnvs-base-palette-blue-A200),
+      var(--cnvs-base-palette-dark-blue-A200)
+    );
+  }
+}

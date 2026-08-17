@@ -1,0 +1,66 @@
+:where(html) {
+
+  --cnvs-base-palette-slate-25: oklch(0.985 0.003 255);
+  --cnvs-base-palette-slate-50: oklch(0.97 0.005 255);
+  --cnvs-base-palette-slate-100: oklch(0.944 0.007 255);
+  --cnvs-base-palette-slate-150: oklch(0.908 0.011 255);
+  --cnvs-base-palette-slate-200: oklch(0.871 0.016 255);
+  --cnvs-base-palette-slate-300: oklch(0.804 0.021 255);
+  --cnvs-base-palette-slate-400: oklch(0.721 0.024 255);
+  --cnvs-base-palette-slate-500: oklch(0.623 0.025 255);
+  --cnvs-base-palette-slate-600: oklch(0.51 0.024 255);
+  --cnvs-base-palette-slate-700: oklch(0.44 0.023 255);
+  --cnvs-base-palette-slate-800: oklch(0.316 0.013 255);
+  --cnvs-base-palette-slate-850: oklch(0.266 0.012 255);
+  --cnvs-base-palette-slate-900: oklch(0.246 0.012 255);
+  --cnvs-base-palette-slate-950: oklch(0.218 0.011 255);
+  --cnvs-base-palette-slate-975: oklch(0.193 0.01 255);
+
+  --cnvs-base-palette-dark-slate-25: oklch(0.15 0.01 255);
+  --cnvs-base-palette-dark-slate-50: oklch(0.18 0.011 255);
+  --cnvs-base-palette-dark-slate-100: oklch(0.22 0.012 255);
+  --cnvs-base-palette-dark-slate-150: oklch(0.26 0.012 255);
+  --cnvs-base-palette-dark-slate-200: oklch(0.3 0.013 255);
+  --cnvs-base-palette-dark-slate-300: oklch(0.439 0.023 255);
+  --cnvs-base-palette-dark-slate-400: oklch(0.5125 0.024 255);
+  --cnvs-base-palette-dark-slate-500: oklch(0.6263 0.025 255);
+  --cnvs-base-palette-dark-slate-600: oklch(0.7214 0.024 255);
+  --cnvs-base-palette-dark-slate-700: oklch(0.7999 0.021 255);
+  --cnvs-base-palette-dark-slate-800: oklch(0.8621 0.016 255);
+  --cnvs-base-palette-dark-slate-850: oklch(0.896 0.011 255);
+  --cnvs-base-palette-dark-slate-900: oklch(0.9288 0.007 255);
+  --cnvs-base-palette-dark-slate-950: oklch(0.9524 0.005 255);
+  --cnvs-base-palette-dark-slate-975: oklch(0.9659 0.003 255);
+
+  --cnvs-base-palette-slate-A25: oklch(0.3742 0.1409 258.47 / 0.0248);
+  --cnvs-base-palette-slate-A50: oklch(0.3381 0.1252 258.09 / 0.0478);
+  --cnvs-base-palette-slate-A100: oklch(0.288 0.103 257.3 / 0.085);
+  --cnvs-base-palette-slate-A150: oklch(0.2796 0.0996 257.11 / 0.138);
+  --cnvs-base-palette-slate-A200: oklch(0.2846 0.1016 257.2 / 0.1935);
+  --cnvs-base-palette-slate-A300: oklch(0.2609 0.0911 256.62 / 0.2856);
+  --cnvs-base-palette-slate-A400: oklch(0.2301 0.0773 255.57 / 0.3918);
+  --cnvs-base-palette-slate-A500: oklch(0.1993 0.0633 253.95 / 0.5091);
+  --cnvs-base-palette-slate-A600: oklch(0.1703 0.0499 251.34 / 0.6352);
+  --cnvs-base-palette-slate-A700: oklch(0.1563 0.0434 249.35 / 0.7093);
+  --cnvs-base-palette-slate-A800: oklch(0.1156 0.0265 240.24 / 0.8218);
+  --cnvs-base-palette-slate-A850: oklch(0.1087 0.0246 239.41 / 0.8683);
+  --cnvs-base-palette-slate-A900: oklch(0.1072 0.0242 239.31 / 0.8868);
+  --cnvs-base-palette-slate-A950: oklch(0.1021 0.0231 239.23 / 0.9108);
+  --cnvs-base-palette-slate-A975: oklch(0.0973 0.0219 239.25 / 0.9315);
+
+  --cnvs-base-palette-dark-slate-A25: oklch(0.0838 0.0195 240.91 / 0.4141);
+  --cnvs-base-palette-dark-slate-A50: oklch(0.18 0.011 255 / 0.02);
+  --cnvs-base-palette-dark-slate-A100: oklch(0.9318 0.0329 255.04 / 0.0419);
+  --cnvs-base-palette-dark-slate-A150: oklch(0.9494 0.0243 255.09 / 0.0835);
+  --cnvs-base-palette-dark-slate-A200: oklch(0.9446 0.0266 255.06 / 0.1288);
+  --cnvs-base-palette-dark-slate-A300: oklch(0.9077 0.0453 255 / 0.3123);
+  --cnvs-base-palette-dark-slate-A400: oklch(0.9173 0.0404 255 / 0.4054);
+  --cnvs-base-palette-dark-slate-A500: oklch(0.9281 0.035 255 / 0.5543);
+  --cnvs-base-palette-dark-slate-A600: oklch(0.9389 0.0297 255 / 0.6787);
+  --cnvs-base-palette-dark-slate-A700: oklch(0.9508 0.0238 255.01 / 0.7781);
+  --cnvs-base-palette-dark-slate-A800: oklch(0.9645 0.017 255.01 / 0.8508);
+  --cnvs-base-palette-dark-slate-A850: oklch(0.9765 0.0112 255.01 / 0.8842);
+  --cnvs-base-palette-dark-slate-A900: oklch(0.9856 0.0069 255.02 / 0.9189);
+  --cnvs-base-palette-dark-slate-A950: oklch(0.9898 0.0048 255.02 / 0.9466);
+  --cnvs-base-palette-dark-slate-A975: oklch(0.994 0.0028 255.02 / 0.96);
+}

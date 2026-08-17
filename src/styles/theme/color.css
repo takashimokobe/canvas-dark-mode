@@ -1,0 +1,851 @@
+:where(html) {
+  color-scheme: light dark;
+  --cnvs-sys-color-bg-default: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-brand-dark-neutral-50)
+  );
+  --cnvs-sys-color-bg-alt-default: light-dark(
+    var(--cnvs-brand-neutral-50),
+    var(--cnvs-brand-dark-neutral-25)
+  );
+
+  --cnvs-sys-color-surface-default: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-brand-dark-neutral-100)
+  );
+  --cnvs-sys-color-surface-raised: var(--cnvs-sys-color-surface-default);
+  --cnvs-sys-color-surface-navigation: var(--cnvs-sys-color-bg-alt-default);
+  --cnvs-sys-color-surface-popover: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-brand-dark-neutral-150)
+  );
+  --cnvs-sys-color-surface-sheet: var(--cnvs-sys-color-surface-popover);
+  --cnvs-sys-color-surface-modal: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-brand-dark-neutral-200)
+  );
+  --cnvs-sys-color-surface-alt-default: light-dark(
+    var(--cnvs-brand-neutral-A50),
+    var(--cnvs-base-palette-white-A50)
+  );
+  --cnvs-sys-color-surface-alt-strong: light-dark(
+    var(--cnvs-brand-neutral-A100),
+    var(--cnvs-base-palette-white-A100)
+  );
+  --cnvs-sys-color-surface-loading: light-dark(
+    var(--cnvs-brand-neutral-A100),
+    var(--cnvs-base-palette-white-A100)
+  );
+  --cnvs-sys-color-surface-info-default: light-dark(
+    var(--cnvs-base-palette-blue-A25),
+    var(--cnvs-base-palette-dark-blue-A50)
+  );
+  --cnvs-sys-color-surface-info-strong: light-dark(
+    var(--cnvs-base-palette-blue-A50),
+    var(--cnvs-base-palette-dark-blue-A100)
+  );
+  --cnvs-sys-color-surface-danger-default: light-dark(
+    var(--cnvs-base-palette-red-A25),
+    var(--cnvs-base-palette-dark-red-A50)
+  );
+  --cnvs-sys-color-surface-danger-strong: light-dark(
+    var(--cnvs-base-palette-red-A50),
+    var(--cnvs-base-palette-dark-red-A100)
+  );
+  --cnvs-sys-color-surface-warning-default: light-dark(
+    var(--cnvs-base-palette-amber-A25),
+    var(--cnvs-base-palette-dark-amber-A50)
+  );
+  --cnvs-sys-color-surface-warning-strong: light-dark(
+    var(--cnvs-base-palette-amber-A50),
+    var(--cnvs-base-palette-dark-amber-A100)
+  );
+  --cnvs-sys-color-surface-success-default: light-dark(
+    var(--cnvs-base-palette-green-A25),
+    var(--cnvs-base-palette-dark-green-A50)
+  );
+  --cnvs-sys-color-surface-success-strong: light-dark(
+    var(--cnvs-base-palette-green-A50),
+    var(--cnvs-base-palette-dark-green-A100)
+  );
+  --cnvs-sys-color-surface-ai-default: light-dark(
+    var(--cnvs-base-palette-blue-A100),
+    var(--cnvs-base-palette-dark-blue-A100)
+  );
+  --cnvs-sys-color-surface-ai-hover: light-dark(
+    var(--cnvs-base-palette-blue-A200),
+    var(--cnvs-base-palette-dark-blue-A200)
+  );
+  --cnvs-sys-color-surface-ai-pressed: light-dark(
+    var(--cnvs-base-palette-blue-400),
+    var(--cnvs-base-palette-dark-blue-400)
+  );
+  --cnvs-sys-color-surface-transparent: light-dark(transparent, transparent);
+  --cnvs-sys-color-surface-inverse: var(--cnvs-sys-color-bg-default);
+  --cnvs-sys-color-surface-contrast-default: light-dark(
+    var(--cnvs-base-palette-neutral-A900),
+    var(--cnvs-base-palette-dark-neutral-A900)
+  );
+  --cnvs-sys-color-surface-contrast-strong: light-dark(
+    var(--cnvs-base-palette-neutral-950),
+    var(--cnvs-base-palette-dark-neutral-950)
+  );
+  --cnvs-sys-color-surface-overlay-hover-default: light-dark(
+    var(--cnvs-brand-neutral-A50),
+    var(--cnvs-base-palette-white-A50)
+  );
+  --cnvs-sys-color-surface-overlay-hover-inverse: light-dark(
+    var(--cnvs-base-palette-white-A150),
+    var(--cnvs-base-palette-white-A200)
+  );
+  --cnvs-sys-color-surface-overlay-mixin: var(
+    --cnvs-sys-color-surface-overlay-hover-default
+  );
+  --cnvs-sys-color-surface-overlay-pressed-default: light-dark(
+    var(--cnvs-brand-neutral-A100),
+    var(--cnvs-base-palette-white-A100)
+  );
+  --cnvs-sys-color-surface-overlay-pressed-inverse: light-dark(
+    var(--cnvs-base-palette-white-A200),
+    var(--cnvs-base-palette-white-A300)
+  );
+  --cnvs-sys-color-surface-overlay-raised: light-dark(
+    var(--cnvs-base-palette-white-A300),
+    var(--cnvs-base-palette-white-A200)
+  );
+  /* Dim the page behind modals. Black-alpha in both schemes — white-A and
+     dark-neutral-A are on-surface washes and look milky as a scrim. */
+  --cnvs-sys-color-surface-overlay-scrim: light-dark(
+    var(--cnvs-base-palette-neutral-A400),
+    var(--cnvs-base-palette-neutral-A500)
+  );
+  /* Light: stacked washes on white land on #FBFBFB. Depth is the shadow.
+     Dark: washes go transparent; the base is surface-default.
+
+     Dark surface stack (palette frozen at 25 / 100 / 150 / 200):
+       page      bg-alt        dark-neutral-25   L 0.15
+       elevated  default       dark-neutral-100  L 0.22
+       1 card    default       dark-neutral-100  L 0.22
+       2 raised  default       (same)
+       3 popover               dark-neutral-150  L 0.26
+       4 sheet   popover       (same)
+       5 dialog  modal         dark-neutral-200  L 0.30
+       6 modal   same 200 + overlay-scrim
+
+     light-dark() only accepts <color>, so the token cannot switch between a
+     gradient stack and a color at the top level. Instead each layer's stop
+     adapts: in light the two washes composite over surface-default; in dark
+     the washes go transparent and the base layer is surface-default. */
+  --cnvs-sys-color-surface-elevated:
+    linear-gradient(
+      0deg,
+      light-dark(
+        var(--cnvs-sys-color-surface-overlay-raised),
+        var(--cnvs-base-palette-white-transparent)
+      ),
+      light-dark(
+        var(--cnvs-sys-color-surface-overlay-raised),
+        var(--cnvs-base-palette-white-transparent)
+      )
+    ),
+    linear-gradient(
+      0deg,
+      light-dark(
+        var(--cnvs-brand-neutral-A25),
+        var(--cnvs-base-palette-white-transparent)
+      ),
+      light-dark(
+        var(--cnvs-brand-neutral-A25),
+        var(--cnvs-base-palette-white-transparent)
+      )
+    ),
+    linear-gradient(
+      0deg,
+      var(--cnvs-sys-color-surface-default),
+      var(--cnvs-sys-color-surface-default)
+    );
+  --cnvs-sys-color-surface-text-highlight: light-dark(
+    var(--cnvs-base-palette-indigo-A200),
+    var(--cnvs-base-palette-dark-indigo-A200)
+  );
+  --cnvs-sys-color-brand-surface-primary-default: light-dark(
+    var(--cnvs-brand-primary-A25),
+    var(--cnvs-base-palette-white-A25)
+  );
+  --cnvs-sys-color-brand-surface-primary-strong: light-dark(
+    var(--cnvs-brand-primary-A50),
+    var(--cnvs-base-palette-white-A50)
+  );
+  --cnvs-sys-color-brand-surface-critical-default: light-dark(
+    var(--cnvs-brand-critical-A25),
+    var(--cnvs-brand-dark-critical-A50)
+  );
+  --cnvs-sys-color-brand-surface-critical-strong: light-dark(
+    var(--cnvs-brand-critical-A50),
+    var(--cnvs-brand-dark-critical-A100)
+  );
+  --cnvs-sys-color-brand-surface-caution-default: light-dark(
+    var(--cnvs-brand-caution-A25),
+    var(--cnvs-brand-dark-caution-A50)
+  );
+  --cnvs-sys-color-brand-surface-caution-strong: light-dark(
+    var(--cnvs-brand-caution-A50),
+    var(--cnvs-brand-dark-caution-A100)
+  );
+  --cnvs-sys-color-brand-surface-positive-default: light-dark(
+    var(--cnvs-brand-positive-A25),
+    var(--cnvs-brand-dark-positive-A50)
+  );
+  --cnvs-sys-color-brand-surface-positive-strong: light-dark(
+    var(--cnvs-brand-positive-A50),
+    var(--cnvs-brand-dark-positive-A100)
+  );
+  /* Selected tokens are neutral by default; the branded block below remaps
+     them to the tenant primary (same pattern as brand-fg-primary). */
+  --cnvs-sys-color-brand-surface-selected: light-dark(
+    var(--cnvs-brand-neutral-A50),
+    var(--cnvs-base-palette-white-A50)
+  );
+  /* Dark AI tokens step off 950: dark-blue-950 is L 0.95 with near-zero
+     chroma — a whisper, not an accent. 500/600/700 match the info family. */
+  --cnvs-sys-color-accent-ai: light-dark(
+    var(--cnvs-base-palette-blue-950),
+    var(--cnvs-base-palette-dark-blue-600)
+  );
+  --cnvs-sys-color-accent-info: light-dark(
+    var(--cnvs-base-palette-blue-600),
+    var(--cnvs-base-palette-dark-blue-600)
+  );
+  --cnvs-sys-color-accent-danger: light-dark(
+    var(--cnvs-base-palette-red-600),
+    var(--cnvs-base-palette-dark-red-600)
+  );
+  --cnvs-sys-color-accent-warning: light-dark(
+    var(--cnvs-base-palette-amber-400),
+    var(--cnvs-base-palette-dark-amber-400)
+  );
+  --cnvs-sys-color-accent-success: light-dark(
+    var(--cnvs-base-palette-green-600),
+    var(--cnvs-base-palette-dark-green-600)
+  );
+  --cnvs-sys-color-accent-contrast: light-dark(
+    var(--cnvs-base-palette-neutral-900),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-accent-muted-default: light-dark(
+    var(--cnvs-brand-neutral-600),
+    var(--cnvs-brand-dark-neutral-600)
+  );
+  --cnvs-sys-color-accent-muted-soft: light-dark(
+    var(--cnvs-brand-neutral-400),
+    var(--cnvs-brand-dark-neutral-400)
+  );
+  /* There is no black-A ramp; neutral-A is the black-alpha ramp. */
+  --cnvs-sys-color-accent-overlay-hover: light-dark(
+    var(--cnvs-base-palette-white-A200),
+    var(--cnvs-base-palette-neutral-A200)
+  );
+  --cnvs-sys-color-accent-overlay-pressed: light-dark(
+    var(--cnvs-base-palette-white-A300),
+    var(--cnvs-base-palette-neutral-A300)
+  );
+  --cnvs-sys-color-accent-overlay-mixin: light-dark(
+    var(--cnvs-base-palette-neutral-0),
+    var(--cnvs-base-palette-neutral-1000)
+  );
+  --cnvs-sys-color-brand-accent-primary: var(--cnvs-brand-action-base);
+  --cnvs-sys-color-brand-accent-critical: light-dark(
+    var(--cnvs-brand-critical-600),
+    var(--cnvs-brand-dark-critical-600)
+  );
+  --cnvs-sys-color-brand-accent-caution: light-dark(
+    var(--cnvs-brand-caution-400),
+    var(--cnvs-brand-dark-caution-400)
+  );
+  --cnvs-sys-color-brand-accent-positive: light-dark(
+    var(--cnvs-brand-positive-600),
+    var(--cnvs-brand-dark-positive-600)
+  );
+  --cnvs-sys-color-brand-accent-action: var(--cnvs-brand-action-base);
+  /* Dark fg steps down one alpha: near-pure white (A900+) body text over the
+     L 0.15 page (bg-alt, dark-neutral-25) exceeds the comfortable 12:1-16:1
+     band and causes halation. A700 body / A800 strong / A900 headings keeps
+     the hierarchy off-white. */
+  --cnvs-sys-color-fg-default: light-dark(
+    var(--cnvs-base-palette-neutral-A800),
+    var(--cnvs-base-palette-white-A800)
+  );
+  --cnvs-sys-color-fg-strong: light-dark(
+    var(--cnvs-base-palette-neutral-A900),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-fg-stronger: light-dark(
+    var(--cnvs-base-palette-neutral-A950),
+    var(--cnvs-base-palette-white-A950)
+  );
+  --cnvs-sys-color-fg-disabled: light-dark(
+    var(--cnvs-brand-neutral-A400),
+    var(--cnvs-base-palette-white-A400)
+  );
+  --cnvs-sys-color-fg-muted-default: light-dark(
+    var(--cnvs-brand-neutral-A600),
+    var(--cnvs-base-palette-white-A600)
+  );
+  --cnvs-sys-color-fg-muted-strong: light-dark(
+    var(--cnvs-brand-neutral-A700),
+    var(--cnvs-base-palette-white-A700)
+  );
+  --cnvs-sys-color-fg-inverse: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-base-palette-black)
+  );
+  --cnvs-sys-color-fg-info-default: light-dark(
+    var(--cnvs-base-palette-blue-600),
+    var(--cnvs-base-palette-dark-blue-600)
+  );
+  --cnvs-sys-color-fg-info-strong: light-dark(
+    var(--cnvs-base-palette-blue-700),
+    var(--cnvs-base-palette-dark-blue-700)
+  );
+  --cnvs-sys-color-fg-danger-default: light-dark(
+    var(--cnvs-base-palette-red-600),
+    var(--cnvs-base-palette-dark-red-600)
+  );
+  --cnvs-sys-color-fg-danger-strong: light-dark(
+    var(--cnvs-base-palette-red-700),
+    var(--cnvs-base-palette-dark-red-700)
+  );
+  --cnvs-sys-color-fg-warning-default: light-dark(
+    var(--cnvs-base-palette-amber-600),
+    var(--cnvs-base-palette-dark-amber-600)
+  );
+  --cnvs-sys-color-fg-warning-strong: light-dark(
+    var(--cnvs-base-palette-amber-700),
+    var(--cnvs-base-palette-dark-amber-700)
+  );
+  --cnvs-sys-color-fg-success-default: light-dark(
+    var(--cnvs-base-palette-green-600),
+    var(--cnvs-base-palette-dark-green-600)
+  );
+  --cnvs-sys-color-fg-success-strong: light-dark(
+    var(--cnvs-base-palette-green-700),
+    var(--cnvs-base-palette-dark-green-700)
+  );
+  /* Dark fg-ai joins accent-ai at 600: dark-blue-950 is L 0.95 with
+     near-zero chroma — a whisper, not a readable AI foreground. */
+  --cnvs-sys-color-fg-ai: light-dark(
+    var(--cnvs-base-palette-blue-950),
+    var(--cnvs-base-palette-dark-blue-600)
+  );
+  --cnvs-sys-color-fg-link-default: light-dark(
+    var(--cnvs-base-palette-blue-600),
+    var(--cnvs-base-palette-dark-blue-600)
+  );
+  --cnvs-sys-color-fg-link-hover: light-dark(
+    var(--cnvs-base-palette-blue-700),
+    var(--cnvs-base-palette-dark-blue-700)
+  );
+  --cnvs-sys-color-fg-contrast-default: light-dark(
+    var(--cnvs-base-palette-neutral-A900),
+    var(--cnvs-base-palette-dark-neutral-A900)
+  );
+  --cnvs-sys-color-fg-contrast-strong: light-dark(
+    var(--cnvs-base-palette-neutral-A950),
+    var(--cnvs-base-palette-dark-neutral-A950)
+  );
+  --cnvs-sys-color-brand-fg-primary-default: light-dark(
+    var(--cnvs-brand-neutral-A900),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-brand-fg-primary-strong: light-dark(
+    var(--cnvs-brand-neutral-A950),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-brand-fg-critical-default: light-dark(
+    var(--cnvs-brand-critical-600),
+    var(--cnvs-brand-dark-critical-600)
+  );
+  --cnvs-sys-color-brand-fg-critical-strong: light-dark(
+    var(--cnvs-brand-critical-700),
+    var(--cnvs-brand-dark-critical-700)
+  );
+  --cnvs-sys-color-brand-fg-caution-default: light-dark(
+    var(--cnvs-brand-caution-600),
+    var(--cnvs-brand-dark-caution-600)
+  );
+  --cnvs-sys-color-brand-fg-caution-strong: light-dark(
+    var(--cnvs-brand-caution-700),
+    var(--cnvs-brand-dark-caution-700)
+  );
+  --cnvs-sys-color-brand-fg-positive-default: light-dark(
+    var(--cnvs-brand-positive-600),
+    var(--cnvs-brand-dark-positive-600)
+  );
+  --cnvs-sys-color-brand-fg-positive-strong: light-dark(
+    var(--cnvs-brand-positive-700),
+    var(--cnvs-brand-dark-positive-700)
+  );
+  --cnvs-sys-color-brand-fg-selected: light-dark(
+    var(--cnvs-brand-neutral-A900),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-border-default: light-dark(
+    var(--cnvs-brand-neutral-A100),
+    var(--cnvs-brand-dark-neutral-A150)
+  );
+  --cnvs-sys-color-border-strong: light-dark(
+    var(--cnvs-brand-neutral-A200),
+    var(--cnvs-brand-dark-neutral-A200)
+  );
+  /* One step above surface-default (dark-neutral-100) so elevated card
+     edges do not vanish against their own fill. */
+  --cnvs-sys-color-border-elevated: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-brand-dark-neutral-150)
+  );
+  --cnvs-sys-color-border-input-default: light-dark(
+    var(--cnvs-brand-neutral-A500),
+    var(--cnvs-brand-dark-neutral-A400)
+  );
+  --cnvs-sys-color-border-input-hover: light-dark(
+    var(--cnvs-base-palette-neutral-A700),
+    var(--cnvs-brand-dark-neutral-A600)
+  );
+  --cnvs-sys-color-border-info: light-dark(
+    var(--cnvs-base-palette-blue-500),
+    var(--cnvs-base-palette-dark-blue-500)
+  );
+  --cnvs-sys-color-border-danger: light-dark(
+    var(--cnvs-base-palette-red-500),
+    var(--cnvs-base-palette-dark-red-500)
+  );
+  --cnvs-sys-color-border-warning: light-dark(
+    var(--cnvs-base-palette-amber-500),
+    var(--cnvs-base-palette-dark-amber-500)
+  );
+  --cnvs-sys-color-border-ai: light-dark(
+    var(--cnvs-base-palette-blue-950),
+    var(--cnvs-base-palette-dark-blue-500)
+  );
+  --cnvs-sys-color-border-inverse-default: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-base-palette-black)
+  );
+  --cnvs-sys-color-border-inverse-strong: light-dark(
+    var(--cnvs-base-palette-white-A700),
+    var(--cnvs-base-palette-white-A700)
+  );
+  --cnvs-sys-color-border-contrast-default: light-dark(
+    var(--cnvs-base-palette-neutral-A900),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-border-transparent: light-dark(transparent, transparent);
+  /* Focus rings and the primary border stay blue-500 across every brand
+     (unlike selected, which follows the tenant primary). */
+  --cnvs-sys-color-brand-border-primary: light-dark(
+    var(--cnvs-base-palette-blue-500),
+    var(--cnvs-base-palette-dark-blue-500)
+  );
+  --cnvs-sys-color-brand-border-critical: light-dark(
+    var(--cnvs-brand-critical-500),
+    var(--cnvs-brand-dark-critical-500)
+  );
+  --cnvs-sys-color-brand-border-caution: light-dark(
+    var(--cnvs-brand-caution-500),
+    var(--cnvs-brand-dark-caution-500)
+  );
+  --cnvs-sys-color-focus-inverse: var(--cnvs-sys-color-bg-default);
+  --cnvs-sys-color-focus-contrast: light-dark(
+    var(--cnvs-base-palette-neutral-A950),
+    var(--cnvs-base-palette-white-A900)
+  );
+  --cnvs-sys-color-brand-focus-primary: light-dark(
+    var(--cnvs-base-palette-blue-500),
+    var(--cnvs-base-palette-dark-blue-500)
+  );
+  --cnvs-sys-color-brand-focus-critical: light-dark(
+    var(--cnvs-brand-critical-500),
+    var(--cnvs-brand-dark-critical-500)
+  );
+  --cnvs-sys-color-brand-focus-caution-outer: light-dark(
+    var(--cnvs-brand-caution-500),
+    var(--cnvs-brand-dark-caution-500)
+  );
+  --cnvs-sys-color-brand-focus-caution-inner: light-dark(
+    var(--cnvs-brand-caution-400),
+    var(--cnvs-brand-dark-caution-400)
+  );
+  /* Thumb: the raised indicator riding on a washed track — the switch thumb
+     and the selected segment of a segmented control. Solid white in light
+     (depth does the separation); in dark, shadows and surface-default both
+     vanish against the track, so the thumb lifts tonally with a raised wash.
+     A200 is a deliberate trade: the thumb-to-track boundary measures ~2.3:1
+     (A300 reaches 3:1 but glows), while label text on the thumb stays well
+     past AA. fg-thumb is the paired foreground: one alpha step above
+     fg-strong in dark (6.90:1 on the A200 thumb). */
+  --cnvs-sys-color-surface-thumb: light-dark(
+    var(--cnvs-base-palette-white),
+    var(--cnvs-base-palette-white-A200)
+  );
+  --cnvs-sys-color-fg-thumb: light-dark(
+    var(--cnvs-base-palette-neutral-A900),
+    var(--cnvs-base-palette-white-A950)
+  );
+  /* Hairline ring on the thumb. Invisible in light, where depth draws the
+     boundary; in dark it carries the 3:1 non-text boundary the A200 fill
+     alone cannot (ring vs track ~7:1, ring vs fill ~3.1:1). */
+  --cnvs-sys-color-border-thumb: light-dark(
+    var(--cnvs-base-palette-white-transparent),
+    var(--cnvs-base-palette-white-A400)
+  );
+  --cnvs-sys-color-switch-track-default: var(
+    --cnvs-sys-color-surface-overlay-raised
+  );
+  --cnvs-sys-color-switch-thumb-default: var(--cnvs-sys-color-surface-thumb);
+  --cnvs-sys-color-switch-thumb-checked: var(--cnvs-sys-color-fg-inverse);
+  /* One muted step above fg-muted-default in dark keeps the theme icon
+     comfortably past 3:1 on the translucent thumb; light stays at A600. */
+  --cnvs-sys-color-switch-icon-default: light-dark(
+    var(--cnvs-brand-neutral-A600),
+    var(--cnvs-base-palette-white-A700)
+  );
+  --cnvs-sys-color-switch-icon-checked: var(--cnvs-sys-color-fg-default);
+  --cnvs-sys-color-shadow-base: light-dark(
+    var(--cnvs-base-palette-neutral-A200),
+    var(--cnvs-base-palette-white-A150)
+  );
+  --cnvs-sys-color-shadow-ambient: light-dark(
+    var(--cnvs-base-palette-neutral-A100),
+    var(--cnvs-base-palette-white-A150)
+  );
+
+  --cnvs-sys-shadow-strength-light: 1%;
+  --cnvs-sys-shadow-strength-dark: 10%;
+  --cnvs-sys-shadow-step-unit-light: 2%;
+  --cnvs-sys-shadow-step-unit-dark: 6%;
+  --cnvs-sys-shadow-ambient-ratio: 0.667;
+
+  --cnvs-sys-color-shadow-base-light: var(--cnvs-base-palette-black);
+  --cnvs-sys-color-shadow-base-dark: var(--cnvs-brand-dark-neutral-25);
+
+  --cnvs-sys-color-shadow-1-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 1
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 1
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-1-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 1
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 1
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+
+  --cnvs-sys-color-shadow-2-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 2
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 2
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-2-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 2
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 2
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+
+  --cnvs-sys-color-shadow-3-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 3
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 3
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-3-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 3
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 3
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+
+  --cnvs-sys-color-shadow-4-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 4
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 4
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-4-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 4
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 4
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+
+  --cnvs-sys-color-shadow-5-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 5
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 5
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-5-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 5
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 5
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+
+  --cnvs-sys-color-shadow-6-key: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-light) +
+            var(--cnvs-sys-shadow-step-unit-light) * 6
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          var(--cnvs-sys-shadow-strength-dark) +
+            var(--cnvs-sys-shadow-step-unit-dark) * 6
+        )
+    )
+  );
+  --cnvs-sys-color-shadow-6-ambient: light-dark(
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-light) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-light) +
+                var(--cnvs-sys-shadow-step-unit-light) * 6
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    ),
+    oklch(
+      from var(--cnvs-sys-color-shadow-base-dark) l c h /
+        calc(
+          (
+              var(--cnvs-sys-shadow-strength-dark) +
+                var(--cnvs-sys-shadow-step-unit-dark) * 6
+            ) *
+            var(--cnvs-sys-shadow-ambient-ratio)
+        )
+    )
+  );
+}
+
+:where(html:not([data-brand])),
+[data-brand] {
+  --cnvs-brand-action-base: light-dark(
+    var(--cnvs-brand-light-action-base),
+    var(--cnvs-brand-dark-action-base)
+  );
+  --cnvs-brand-action-dark: light-dark(
+    var(--cnvs-brand-light-action-dark),
+    var(--cnvs-brand-dark-action-dark)
+  );
+  --cnvs-brand-action-darker: light-dark(
+    var(--cnvs-brand-light-action-darker),
+    var(--cnvs-brand-dark-action-darker)
+  );
+  --cnvs-brand-action-darkest: light-dark(
+    var(--cnvs-brand-light-action-darkest),
+    var(--cnvs-brand-dark-action-darkest)
+  );
+  --cnvs-brand-action-light: light-dark(
+    var(--cnvs-brand-light-action-light),
+    var(--cnvs-brand-dark-action-light)
+  );
+  --cnvs-brand-action-lighter: light-dark(
+    var(--cnvs-brand-light-action-lighter),
+    var(--cnvs-brand-dark-action-lighter)
+  );
+  --cnvs-brand-action-lightest: light-dark(
+    var(--cnvs-brand-light-action-lightest),
+    var(--cnvs-brand-dark-action-lightest)
+  );
+  --cnvs-brand-action-accent: light-dark(
+    var(--cnvs-brand-light-action-accent),
+    var(--cnvs-brand-dark-action-accent)
+  );
+}
+
+[data-brand]:not([data-brand='default']) {
+  --cnvs-sys-color-surface-loading: light-dark(
+    var(--cnvs-brand-neutral-A200),
+    var(--cnvs-base-palette-white-A200)
+  );
+  --cnvs-sys-color-surface-overlay-hover-inverse: light-dark(
+    var(--cnvs-base-palette-white-A200),
+    var(--cnvs-base-palette-white-A200)
+  );
+  --cnvs-sys-color-surface-overlay-pressed-inverse: light-dark(
+    var(--cnvs-base-palette-white-A300),
+    var(--cnvs-base-palette-white-A300)
+  );
+  --cnvs-sys-color-surface-overlay-mixin: light-dark(
+    var(--cnvs-brand-neutral-500),
+    var(--cnvs-brand-dark-neutral-500)
+  );
+  --cnvs-sys-color-accent-overlay-hover: light-dark(
+    var(--cnvs-brand-neutral-A200),
+    var(--cnvs-base-palette-white-A200)
+  );
+  --cnvs-sys-color-accent-overlay-pressed: light-dark(
+    var(--cnvs-brand-neutral-A400),
+    var(--cnvs-base-palette-white-A400)
+  );
+  --cnvs-sys-color-accent-overlay-mixin: light-dark(
+    var(--cnvs-base-palette-black),
+    var(--cnvs-base-palette-white)
+  );
+  --cnvs-sys-color-brand-fg-primary-default: light-dark(
+    var(--cnvs-brand-primary-600),
+    var(--cnvs-brand-dark-primary-600)
+  );
+  --cnvs-sys-color-brand-fg-primary-strong: light-dark(
+    var(--cnvs-brand-primary-700),
+    var(--cnvs-brand-dark-primary-700)
+  );
+  --cnvs-sys-color-brand-surface-selected: light-dark(
+    var(--cnvs-brand-primary-A50),
+    var(--cnvs-brand-dark-primary-A50)
+  );
+  --cnvs-sys-color-brand-fg-selected: light-dark(
+    var(--cnvs-brand-primary-700),
+    var(--cnvs-brand-dark-primary-700)
+  );
+  --cnvs-sys-color-border-strong: light-dark(
+    var(--cnvs-brand-neutral-A300),
+    var(--cnvs-brand-dark-neutral-A100)
+  );
+}

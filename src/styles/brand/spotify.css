@@ -1,0 +1,41 @@
+[data-brand='spotify'] {
+  --cnvs-brand-primary-25: var(--spotify-25);
+  --cnvs-brand-primary-50: var(--spotify-50);
+  --cnvs-brand-primary-100: var(--spotify-100);
+  --cnvs-brand-primary-200: var(--spotify-200);
+  --cnvs-brand-primary-300: var(--spotify-300);
+  --cnvs-brand-primary-400: var(--spotify-400);
+  --cnvs-brand-primary-500: var(--spotify-500);
+  --cnvs-brand-primary-600: var(--spotify-600);
+  --cnvs-brand-primary-700: var(--spotify-700);
+  --cnvs-brand-primary-800: var(--spotify-800);
+  --cnvs-brand-primary-900: var(--spotify-900);
+  --cnvs-brand-primary-950: var(--spotify-950);
+  --cnvs-brand-primary-975: var(--spotify-975);
+
+  --cnvs-brand-primary-A25: var(--spotify-A25);
+  --cnvs-brand-primary-A50: var(--spotify-A50);
+  --cnvs-brand-primary-A100: var(--spotify-A100);
+  --cnvs-brand-primary-A200: var(--spotify-A200);
+  --cnvs-brand-primary-A300: var(--spotify-A300);
+
+  --cnvs-brand-dark-primary-25: var(--dark-spotify-25);
+  --cnvs-brand-dark-primary-50: var(--dark-spotify-50);
+  --cnvs-brand-dark-primary-100: var(--dark-spotify-100);
+  --cnvs-brand-dark-primary-200: var(--dark-spotify-200);
+  --cnvs-brand-dark-primary-300: var(--dark-spotify-300);
+  --cnvs-brand-dark-primary-400: var(--dark-spotify-400);
+  --cnvs-brand-dark-primary-500: var(--dark-spotify-500);
+  --cnvs-brand-dark-primary-600: var(--dark-spotify-600);
+  --cnvs-brand-dark-primary-700: var(--dark-spotify-700);
+  --cnvs-brand-dark-primary-800: var(--dark-spotify-800);
+  --cnvs-brand-dark-primary-900: var(--dark-spotify-900);
+  --cnvs-brand-dark-primary-950: var(--dark-spotify-950);
+  --cnvs-brand-dark-primary-975: var(--dark-spotify-975);
+
+  --cnvs-brand-dark-primary-A25: var(--dark-spotify-A25);
+  --cnvs-brand-dark-primary-A50: var(--dark-spotify-A50);
+  --cnvs-brand-dark-primary-A100: var(--dark-spotify-A100);
+  --cnvs-brand-dark-primary-A200: var(--dark-spotify-A200);
+  --cnvs-brand-dark-primary-A300: var(--dark-spotify-A300);
+}

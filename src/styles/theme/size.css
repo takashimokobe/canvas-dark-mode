@@ -1,0 +1,10 @@
+:where(html) {
+  --cnvs-sys-size-xxxs: var(--cnvs-base-size-200);
+  --cnvs-sys-size-xxs: var(--cnvs-base-size-250);
+  --cnvs-sys-size-xs: var(--cnvs-base-size-300);
+  --cnvs-sys-size-sm: var(--cnvs-base-size-400);
+  --cnvs-sys-size-md: var(--cnvs-base-size-500);
+  --cnvs-sys-size-lg: var(--cnvs-base-size-600);
+  --cnvs-sys-size-xl: var(--cnvs-base-size-700);
+  --cnvs-sys-size-xxl: var(--cnvs-base-size-800);
+}

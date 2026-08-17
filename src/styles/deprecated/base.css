@@ -1,0 +1,4 @@
+:where(html) {
+  --cnvs-base-palette-neutral-0: var(--cnvs-base-palette-white);
+  --cnvs-base-palette-neutral-1000: var(--cnvs-base-palette-black);
+}

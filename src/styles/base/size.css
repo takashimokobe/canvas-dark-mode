@@ -1,0 +1,39 @@
+:where(html) {
+  --fontSize: 16px;
+  --scale: 1;
+
+  --baseline: calc(var(--fontSize) * 0.5);
+
+  --cnvs-base-size-px: 1px;
+
+  --cnvs-base-size-25: calc(var(--baseline) * 0.25 * var(--scale));
+  --cnvs-base-size-50: calc(var(--baseline) * 0.5 * var(--scale));
+  --cnvs-base-size-75: calc(var(--baseline) * 0.75 * var(--scale));
+  --cnvs-base-size-100: calc(var(--baseline) * 1 * var(--scale));
+  --cnvs-base-size-125: calc(var(--baseline) * 1.25 * var(--scale));
+  --cnvs-base-size-150: calc(var(--baseline) * 1.5 * var(--scale));
+  --cnvs-base-size-175: calc(var(--baseline) * 1.75 * var(--scale));
+  --cnvs-base-size-200: calc(var(--baseline) * 2 * var(--scale));
+  --cnvs-base-size-225: calc(var(--baseline) * 2.25 * var(--scale));
+  --cnvs-base-size-250: calc(var(--baseline) * 2.5 * var(--scale));
+  --cnvs-base-size-275: calc(var(--baseline) * 2.75 * var(--scale));
+  --cnvs-base-size-300: calc(var(--baseline) * 3 * var(--scale));
+  --cnvs-base-size-325: calc(var(--baseline) * 3.25 * var(--scale));
+  --cnvs-base-size-350: calc(var(--baseline) * 3.5 * var(--scale));
+  --cnvs-base-size-400: calc(var(--baseline) * 4 * var(--scale));
+  --cnvs-base-size-450: calc(var(--baseline) * 4.5 * var(--scale));
+  --cnvs-base-size-500: calc(var(--baseline) * 5 * var(--scale));
+  --cnvs-base-size-600: calc(var(--baseline) * 6 * var(--scale));
+  --cnvs-base-size-700: calc(var(--baseline) * 7 * var(--scale));
+  --cnvs-base-size-800: calc(var(--baseline) * 8 * var(--scale));
+  --cnvs-base-size-900: calc(var(--baseline) * 9 * var(--scale));
+  --cnvs-base-size-1000: calc(var(--baseline) * 10 * var(--scale));
+  --cnvs-base-size-1100: calc(var(--baseline) * 11 * var(--scale));
+  --cnvs-base-size-1200: calc(var(--baseline) * 12 * var(--scale));
+  --cnvs-base-size-1300: calc(var(--baseline) * 13 * var(--scale));
+  --cnvs-base-size-1600: calc(var(--baseline) * 16 * var(--scale));
+  --cnvs-base-size-2000: calc(var(--baseline) * 20 * var(--scale));
+  --cnvs-base-size-2400: calc(var(--baseline) * 24 * var(--scale));
+  --cnvs-base-size-2800: calc(var(--baseline) * 28 * var(--scale));
+  --cnvs-base-size-3200: calc(var(--baseline) * 32 * var(--scale));
+}

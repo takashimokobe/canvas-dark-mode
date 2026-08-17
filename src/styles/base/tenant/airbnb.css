@@ -1,0 +1,42 @@
+:where(html) {
+
+  --airbnb-25: oklch(0.97 0.01 12);
+  --airbnb-50: oklch(0.95 0.02 17.6);
+  --airbnb-100: oklch(0.91 0.05 16.4);
+  --airbnb-200: oklch(0.82 0.1 16.3);
+  --airbnb-300: oklch(0.74 0.16 16.6);
+  --airbnb-400: oklch(0.66 0.23 17.1);
+  --airbnb-500: oklch(0.59 0.23 17.5);
+  --airbnb-600: oklch(0.49 0.19 17.7);
+  --airbnb-700: oklch(0.42 0.17 18.1);
+  --airbnb-800: oklch(0.34 0.14 18.2);
+  --airbnb-900: oklch(0.26 0.11 18.7);
+  --airbnb-950: oklch(0.22 0.09 19.2);
+  --airbnb-975: oklch(0.2 0.08 18.7);
+
+  --dark-airbnb-25: oklch(0.2051 0.0369 16.68);
+  --dark-airbnb-50: oklch(0.238 0.047 17.51);
+  --dark-airbnb-100: oklch(0.2741 0.0629 17.33);
+  --dark-airbnb-200: oklch(0.3545 0.1002 17.32);
+  --dark-airbnb-300: oklch(0.4821 0.1545 17.37);
+  --dark-airbnb-400: oklch(0.5496 0.1886 17.44);
+  --dark-airbnb-500: oklch(0.6541 0.2052 17.5);
+  --dark-airbnb-600: oklch(0.7414 0.1341 17.53);
+  --dark-airbnb-700: oklch(0.8135 0.0803 17.59);
+  --dark-airbnb-800: oklch(0.8706 0.0426 17.61);
+  --dark-airbnb-900: oklch(0.9319 0.0142 17.68);
+  --dark-airbnb-950: oklch(0.9535 0.0066 17.75);
+  --dark-airbnb-975: oklch(0.9659 0.0037 17.68);
+
+  --airbnb-A25: oklch(0.5015 0.2047 27.64 / 0.0491);
+  --airbnb-A50: oklch(0.5562 0.2281 29.24 / 0.0846);
+  --airbnb-A100: oklch(0.6281 0.2574 28.86 / 0.1663);
+  --airbnb-A200: oklch(0.6236 0.2553 28.54 / 0.3351);
+  --airbnb-A300: oklch(0.6286 0.2568 27.84 / 0.5148);
+
+  --dark-airbnb-A25: oklch(0.545 0.2228 28.03 / 0.1039);
+  --dark-airbnb-A50: oklch(0.6428 0.2424 25.29 / 0.1354);
+  --dark-airbnb-A100: oklch(0.6522 0.2338 23.15 / 0.2002);
+  --dark-airbnb-A200: oklch(0.6575 0.2294 20.83 / 0.3552);
+  --dark-airbnb-A300: oklch(0.6604 0.2276 18.86 / 0.6128);
+}

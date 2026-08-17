@@ -1,0 +1,17 @@
+:where(html) {
+  --cnvs-base-palette-white-A25: oklch(1 0 0 / 0.0226);
+  --cnvs-base-palette-white-A50: oklch(1 0 0 / 0.0452);
+  --cnvs-base-palette-white-A100: oklch(1 0 0 / 0.1178);
+  --cnvs-base-palette-white-A150: oklch(1 0 0 / 0.1841);
+  --cnvs-base-palette-white-A200: oklch(1 0 0 / 0.2503);
+  --cnvs-base-palette-white-A300: oklch(1 0 0 / 0.3741);
+  --cnvs-base-palette-white-A400: oklch(1 0 0 / 0.4886);
+  --cnvs-base-palette-white-A500: oklch(1 0 0 / 0.5909);
+  --cnvs-base-palette-white-A600: oklch(1 0 0 / 0.6981);
+  --cnvs-base-palette-white-A700: oklch(1 0 0 / 0.7881);
+  --cnvs-base-palette-white-A800: oklch(1 0 0 / 0.8611);
+  --cnvs-base-palette-white-A850: oklch(1 0 0 / 0.8909);
+  --cnvs-base-palette-white-A900: oklch(1 0 0 / 0.9206);
+  --cnvs-base-palette-white-A950: oklch(1 0 0 / 0.9472);
+  --cnvs-base-palette-white-A975: oklch(1 0 0 / 0.9736);
+}

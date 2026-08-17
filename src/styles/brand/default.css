@@ -1,0 +1,63 @@
+:where(html:not([data-brand])),
+[data-brand='default'] {
+  --cnvs-brand-primary-25: var(--cnvs-base-palette-blue-25);
+  --cnvs-brand-primary-50: var(--cnvs-base-palette-blue-50);
+  --cnvs-brand-primary-100: var(--cnvs-base-palette-blue-100);
+  --cnvs-brand-primary-200: var(--cnvs-base-palette-blue-200);
+  --cnvs-brand-primary-300: var(--cnvs-base-palette-blue-300);
+  --cnvs-brand-primary-400: var(--cnvs-base-palette-blue-400);
+  --cnvs-brand-primary-500: var(--cnvs-base-palette-blue-500);
+  --cnvs-brand-primary-600: var(--cnvs-base-palette-blue-600);
+  --cnvs-brand-primary-700: var(--cnvs-base-palette-blue-700);
+  --cnvs-brand-primary-800: var(--cnvs-base-palette-blue-800);
+  --cnvs-brand-primary-900: var(--cnvs-base-palette-blue-900);
+  --cnvs-brand-primary-950: var(--cnvs-base-palette-blue-950);
+  --cnvs-brand-primary-975: var(--cnvs-base-palette-blue-975);
+
+  --cnvs-brand-primary-A25: var(--cnvs-base-palette-blue-A25);
+  --cnvs-brand-primary-A50: var(--cnvs-base-palette-blue-A50);
+  --cnvs-brand-primary-A100: var(--cnvs-base-palette-blue-A100);
+  --cnvs-brand-primary-A200: var(--cnvs-base-palette-blue-A200);
+  --cnvs-brand-primary-A300: var(--cnvs-base-palette-blue-A300);
+
+  --cnvs-brand-dark-primary-25: var(--cnvs-base-palette-dark-blue-25);
+  --cnvs-brand-dark-primary-50: var(--cnvs-base-palette-dark-blue-50);
+  --cnvs-brand-dark-primary-100: var(--cnvs-base-palette-dark-blue-100);
+  --cnvs-brand-dark-primary-200: var(--cnvs-base-palette-dark-blue-200);
+  --cnvs-brand-dark-primary-300: var(--cnvs-base-palette-dark-blue-300);
+  --cnvs-brand-dark-primary-400: var(--cnvs-base-palette-dark-blue-400);
+  --cnvs-brand-dark-primary-500: var(--cnvs-base-palette-dark-blue-500);
+  --cnvs-brand-dark-primary-600: var(--cnvs-base-palette-dark-blue-600);
+  --cnvs-brand-dark-primary-700: var(--cnvs-base-palette-dark-blue-700);
+  --cnvs-brand-dark-primary-800: var(--cnvs-base-palette-dark-blue-800);
+  --cnvs-brand-dark-primary-900: var(--cnvs-base-palette-dark-blue-900);
+  --cnvs-brand-dark-primary-950: var(--cnvs-base-palette-dark-blue-950);
+  --cnvs-brand-dark-primary-975: var(--cnvs-base-palette-dark-blue-975);
+
+  --cnvs-brand-dark-primary-A25: var(--cnvs-base-palette-dark-blue-A25);
+  --cnvs-brand-dark-primary-A50: var(--cnvs-base-palette-dark-blue-A50);
+  --cnvs-brand-dark-primary-A100: var(--cnvs-base-palette-dark-blue-A100);
+  --cnvs-brand-dark-primary-A200: var(--cnvs-base-palette-dark-blue-A200);
+  --cnvs-brand-dark-primary-A300: var(--cnvs-base-palette-dark-blue-A300);
+
+  --cnvs-brand-light-action-base: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-dark: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-darker: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-darkest: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-light: var(--cnvs-brand-neutral-200);
+  --cnvs-brand-light-action-lighter: var(--cnvs-brand-neutral-50);
+  --cnvs-brand-light-action-lightest: var(--cnvs-brand-neutral-25);
+  --cnvs-brand-light-action-accent: var(--cnvs-base-palette-white);
+
+  /* Hover/press must move the fill: the dark action ramp steps down from
+     the near-white base so PrimaryButton states are distinguishable
+     (base -> hover 950 -> darker 900 -> pressed 850). */
+  --cnvs-brand-dark-action-base: var(--cnvs-brand-dark-neutral-975);
+  --cnvs-brand-dark-action-dark: var(--cnvs-brand-dark-neutral-950);
+  --cnvs-brand-dark-action-darker: var(--cnvs-brand-dark-neutral-900);
+  --cnvs-brand-dark-action-darkest: var(--cnvs-brand-dark-neutral-850);
+  --cnvs-brand-dark-action-light: var(--cnvs-brand-dark-neutral-200);
+  --cnvs-brand-dark-action-lighter: var(--cnvs-brand-dark-neutral-50);
+  --cnvs-brand-dark-action-lightest: var(--cnvs-brand-dark-neutral-25);
+  --cnvs-brand-dark-action-accent: var(--cnvs-base-palette-black);
+}

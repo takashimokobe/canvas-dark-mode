@@ -1,0 +1,41 @@
+[data-brand='discord'] {
+  --cnvs-brand-primary-25: var(--discord-25);
+  --cnvs-brand-primary-50: var(--discord-50);
+  --cnvs-brand-primary-100: var(--discord-100);
+  --cnvs-brand-primary-200: var(--discord-200);
+  --cnvs-brand-primary-300: var(--discord-300);
+  --cnvs-brand-primary-400: var(--discord-400);
+  --cnvs-brand-primary-500: var(--discord-500);
+  --cnvs-brand-primary-600: var(--discord-600);
+  --cnvs-brand-primary-700: var(--discord-700);
+  --cnvs-brand-primary-800: var(--discord-800);
+  --cnvs-brand-primary-900: var(--discord-900);
+  --cnvs-brand-primary-950: var(--discord-950);
+  --cnvs-brand-primary-975: var(--discord-975);
+
+  --cnvs-brand-primary-A25: var(--discord-A25);
+  --cnvs-brand-primary-A50: var(--discord-A50);
+  --cnvs-brand-primary-A100: var(--discord-A100);
+  --cnvs-brand-primary-A200: var(--discord-A200);
+  --cnvs-brand-primary-A300: var(--discord-A300);
+
+  --cnvs-brand-dark-primary-25: var(--dark-discord-25);
+  --cnvs-brand-dark-primary-50: var(--dark-discord-50);
+  --cnvs-brand-dark-primary-100: var(--dark-discord-100);
+  --cnvs-brand-dark-primary-200: var(--dark-discord-200);
+  --cnvs-brand-dark-primary-300: var(--dark-discord-300);
+  --cnvs-brand-dark-primary-400: var(--dark-discord-400);
+  --cnvs-brand-dark-primary-500: var(--dark-discord-500);
+  --cnvs-brand-dark-primary-600: var(--dark-discord-600);
+  --cnvs-brand-dark-primary-700: var(--dark-discord-700);
+  --cnvs-brand-dark-primary-800: var(--dark-discord-800);
+  --cnvs-brand-dark-primary-900: var(--dark-discord-900);
+  --cnvs-brand-dark-primary-950: var(--dark-discord-950);
+  --cnvs-brand-dark-primary-975: var(--dark-discord-975);
+
+  --cnvs-brand-dark-primary-A25: var(--dark-discord-A25);
+  --cnvs-brand-dark-primary-A50: var(--dark-discord-A50);
+  --cnvs-brand-dark-primary-A100: var(--dark-discord-A100);
+  --cnvs-brand-dark-primary-A200: var(--dark-discord-A200);
+  --cnvs-brand-dark-primary-A300: var(--dark-discord-A300);
+}

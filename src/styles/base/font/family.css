@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Sana Sans LCG 05 VF';
+  src: url('../../../assets/fonts/SanaSansLCG05-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:where(html) {
+  --cnvs-base-font-family-0:
+    -apple-system, BlinkMacSystemFont, 'Sans Serif', Roboto, Inter, system-ui,
+    sans-serif, Avenir, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --cnvs-base-font-family-inter: 'Inter', sans-serif;
+  --cnvs-base-font-family-50: 'Sana Sans LCG 05 VF', sans-serif;
+  --cnvs-base-font-family-100: 'IBM Plex Mono', monospace;
+  --cnvs-base-font-family-200: 'Noto Sans', sans-serif;
+}
+
+:where(code, kbd, pre, samp, .font-mono) {
+  letter-spacing: 0;
+}

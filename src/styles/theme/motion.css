@@ -1,0 +1,12 @@
+:where(html) {
+  --cnvs-sys-motion-easing-quick-standard: var(--cnvs-base-easing-a-100);
+  --cnvs-sys-motion-easing-quick-acceleration: var(--cnvs-base-easing-a-200);
+  --cnvs-sys-motion-easing-quick-deceleration: var(--cnvs-base-easing-a-300);
+  --cnvs-sys-motion-easing-purposeful-standard: var(--cnvs-base-easing-b-100);
+  --cnvs-sys-motion-easing-purposeful-acceleration: var(
+    --cnvs-base-easing-b-200
+  );
+  --cnvs-sys-motion-easing-purposeful-deceleration: var(
+    --cnvs-base-easing-b-300
+  );
+}

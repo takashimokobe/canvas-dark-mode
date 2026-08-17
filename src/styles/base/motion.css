@@ -1,0 +1,29 @@
+:where(html) {
+  --cnvs-base-duration-50: 50ms;
+  --cnvs-base-duration-100: 100ms;
+  --cnvs-base-duration-150: 150ms;
+  --cnvs-base-duration-200: 200ms;
+  --cnvs-base-duration-250: 250ms;
+  --cnvs-base-duration-300: 300ms;
+  --cnvs-base-duration-350: 350ms;
+  --cnvs-base-duration-400: 400ms;
+  --cnvs-base-duration-450: 450ms;
+  --cnvs-base-duration-500: 500ms;
+  --cnvs-base-duration-550: 550ms;
+  --cnvs-base-duration-600: 600ms;
+  --cnvs-base-duration-650: 650ms;
+  --cnvs-base-duration-700: 700ms;
+  --cnvs-base-duration-750: 750ms;
+  --cnvs-base-duration-800: 800ms;
+  --cnvs-base-duration-850: 850ms;
+  --cnvs-base-duration-900: 900ms;
+  --cnvs-base-duration-950: 950ms;
+  --cnvs-base-duration-1000: 1000ms;
+
+  --cnvs-base-easing-a-100: cubic-bezier(0.2, 0, 0.2, 1);
+  --cnvs-base-easing-a-200: cubic-bezier(0.4, 0, 0.95, 0.8);
+  --cnvs-base-easing-a-300: cubic-bezier(0.05, 0.4, 0.3, 1);
+  --cnvs-base-easing-b-100: cubic-bezier(0.35, 0, 0.05, 1);
+  --cnvs-base-easing-b-200: cubic-bezier(0.4, 0, 0.8, 0.3);
+  --cnvs-base-easing-b-300: cubic-bezier(0, 0.4, 0.2, 1);
+}

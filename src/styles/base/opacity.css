@@ -1,0 +1,12 @@
+:where(html) {
+  --cnvs-base-opacity-0: 0;
+  --cnvs-base-opacity-80: 0.08;
+  --cnvs-base-opacity-100: 0.1;
+  --cnvs-base-opacity-120: 0.12;
+  --cnvs-base-opacity-180: 0.18;
+  --cnvs-base-opacity-200: 0.2;
+  --cnvs-base-opacity-360: 0.36;
+  --cnvs-base-opacity-400: 0.4;
+  --cnvs-base-opacity-640: 0.64;
+  --cnvs-base-opacity-840: 0.84;
+}

@@ -1,0 +1,295 @@
+:where(html) {
+  --cnvs-sys-color-bg-primary-default: var(
+    --cnvs-sys-color-brand-accent-primary
+  );
+  --cnvs-sys-color-bg-primary-strong: var(
+    --cnvs-sys-color-brand-accent-primary
+  );
+  --cnvs-sys-color-bg-primary-stronger: var(
+    --cnvs-sys-color-brand-accent-primary
+  );
+  --cnvs-sys-color-bg-primary-soft: var(
+    --cnvs-sys-color-brand-surface-primary-default
+  );
+  --cnvs-sys-color-bg-primary-softer: var(
+    --cnvs-sys-color-brand-surface-primary-strong
+  );
+  --cnvs-sys-color-bg-primary-softest: var(
+    --cnvs-sys-color-brand-surface-primary-default
+  );
+
+  --cnvs-sys-color-bg-alt-soft: var(--cnvs-sys-color-surface-alt-default);
+  --cnvs-sys-color-bg-alt-softer: light-dark(
+    var(--cnvs-brand-neutral-A25),
+    var(--cnvs-base-palette-white-A25)
+  );
+  --cnvs-sys-color-bg-alt-strong: var(--cnvs-sys-color-surface-alt-default);
+  --cnvs-sys-color-bg-alt-stronger: var(--cnvs-sys-color-surface-alt-default);
+
+  --cnvs-sys-color-bg-transparent-default: var(
+    --cnvs-sys-color-surface-transparent
+  );
+  --cnvs-sys-color-bg-transparent-strong: var(
+    --cnvs-sys-color-surface-overlay-hover-default
+  );
+  --cnvs-sys-color-bg-transparent-stronger: var(
+    --cnvs-sys-color-surface-overlay-pressed-default
+  );
+  --cnvs-sys-color-bg-overlay: var(--cnvs-sys-color-surface-overlay-scrim);
+  --cnvs-sys-color-bg-translucent: var(
+    --cnvs-sys-color-surface-contrast-default
+  );
+
+  --cnvs-sys-color-bg-muted-default: var(--cnvs-sys-color-accent-muted-default);
+  --cnvs-sys-color-bg-muted-soft: var(--cnvs-sys-color-accent-muted-soft);
+  --cnvs-sys-color-bg-muted-softer: var(--cnvs-sys-color-accent-muted-soft);
+  --cnvs-sys-color-bg-muted-strong: var(--cnvs-sys-color-accent-muted-default);
+
+  --cnvs-sys-color-bg-contrast-default: var(
+    --cnvs-sys-color-surface-contrast-default
+  );
+  --cnvs-sys-color-bg-contrast-strong: var(
+    --cnvs-sys-color-surface-contrast-strong
+  );
+
+  --cnvs-sys-color-bg-critical-default: var(
+    --cnvs-sys-color-brand-accent-critical
+  );
+  --cnvs-sys-color-bg-critical-soft: var(
+    --cnvs-sys-color-surface-danger-default
+  );
+  --cnvs-sys-color-bg-critical-softer: var(
+    --cnvs-sys-color-brand-surface-critical-strong
+  );
+  --cnvs-sys-color-bg-critical-softest: var(
+    --cnvs-sys-color-brand-surface-critical-default
+  );
+  --cnvs-sys-color-bg-critical-strong: var(
+    --cnvs-sys-color-brand-accent-critical
+  );
+  --cnvs-sys-color-bg-critical-stronger: var(
+    --cnvs-sys-color-brand-accent-critical
+  );
+
+  --cnvs-sys-color-bg-caution-default: var(
+    --cnvs-sys-color-brand-accent-caution
+  );
+  --cnvs-sys-color-bg-caution-soft: var(
+    --cnvs-sys-color-surface-warning-default
+  );
+  --cnvs-sys-color-bg-caution-softer: var(
+    --cnvs-sys-color-brand-surface-caution-strong
+  );
+  --cnvs-sys-color-bg-caution-softest: var(
+    --cnvs-sys-color-brand-surface-caution-default
+  );
+  --cnvs-sys-color-bg-caution-strong: var(--cnvs-sys-color-brand-accent-caution);
+  --cnvs-sys-color-bg-caution-stronger: var(
+    --cnvs-sys-color-brand-accent-caution
+  );
+
+  --cnvs-sys-color-bg-positive-default: var(
+    --cnvs-sys-color-brand-accent-positive
+  );
+  --cnvs-sys-color-bg-positive-strong: var(
+    --cnvs-sys-color-brand-accent-positive
+  );
+  --cnvs-sys-color-bg-positive-stronger: var(
+    --cnvs-sys-color-brand-accent-positive
+  );
+  --cnvs-sys-color-bg-positive-soft: var(
+    --cnvs-sys-color-brand-surface-positive-default
+  );
+  --cnvs-sys-color-bg-positive-softer: var(
+    --cnvs-sys-color-brand-surface-positive-strong
+  );
+  --cnvs-sys-color-bg-positive-softest: var(
+    --cnvs-sys-color-surface-success-default
+  );
+
+  --cnvs-sys-color-bg-info-default: var(--cnvs-sys-color-accent-info);
+  --cnvs-sys-color-bg-info-strong: var(--cnvs-sys-color-accent-info);
+  --cnvs-sys-color-bg-info-stronger: var(--cnvs-sys-color-accent-info);
+  --cnvs-sys-color-bg-info-soft: var(--cnvs-sys-color-surface-info-default);
+  --cnvs-sys-color-bg-info-softer: var(--cnvs-sys-color-surface-info-strong);
+  --cnvs-sys-color-bg-info-softest: var(--cnvs-sys-color-surface-info-default);
+
+  --cnvs-sys-color-bg-ai-default: var(--cnvs-sys-color-surface-ai-default);
+  --cnvs-sys-color-bg-ai-strong: var(--cnvs-sys-color-surface-ai-hover);
+  --cnvs-sys-color-bg-ai-stronger: var(--cnvs-sys-color-surface-ai-pressed);
+  --cnvs-sys-color-bg-ai-strongest: var(--cnvs-sys-color-accent-ai);
+
+  --cnvs-sys-color-text-default: var(--cnvs-sys-color-fg-default);
+  --cnvs-sys-color-text-strong: var(--cnvs-sys-color-fg-strong);
+  --cnvs-sys-color-text-stronger: var(--cnvs-sys-color-fg-strong);
+  --cnvs-sys-color-text-disabled: var(--cnvs-sys-color-fg-disabled);
+  --cnvs-sys-color-text-hint: var(--cnvs-sys-color-fg-muted-default);
+  --cnvs-sys-color-text-inverse: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-sys-color-text-critical-default: var(
+    --cnvs-sys-color-brand-fg-critical-default
+  );
+  --cnvs-sys-color-text-critical-strong: var(
+    --cnvs-sys-color-brand-fg-critical-strong
+  );
+  --cnvs-sys-color-text-critical-stronger: var(
+    --cnvs-sys-color-brand-fg-critical-strong
+  );
+  --cnvs-sys-color-text-critical-soft: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-text-critical-softer: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-text-primary-default: var(
+    --cnvs-sys-color-brand-fg-primary-default
+  );
+  --cnvs-sys-color-text-primary-strong: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-text-primary-stronger: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-text-primary-soft: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-text-primary-softer: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-text-caution-default: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-text-caution-strong: var(--cnvs-sys-color-fg-contrast-strong);
+  --cnvs-sys-color-text-caution-soft: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-text-caution-stronger: var(
+    --cnvs-sys-color-fg-contrast-strong
+  );
+  --cnvs-sys-color-text-caution-softer: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-text-ai: var(--cnvs-sys-color-fg-ai);
+  --cnvs-sys-color-text-positive-default: var(
+    --cnvs-sys-color-brand-fg-positive-default
+  );
+  --cnvs-sys-color-text-positive-strong: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+  --cnvs-sys-color-text-positive-stronger: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+  --cnvs-sys-color-text-positive-soft: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-text-positive-softer: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-text-info-default: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-text-info-strong: var(--cnvs-sys-color-fg-info-strong);
+  --cnvs-sys-color-text-info-stronger: var(--cnvs-sys-color-fg-info-strong);
+  --cnvs-sys-color-text-info-soft: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-text-info-softer: var(--cnvs-sys-color-fg-info-default);
+
+  --cnvs-sys-color-icon-default: var(--cnvs-sys-color-fg-default);
+  --cnvs-sys-color-icon-soft: var(--cnvs-sys-color-fg-muted-default);
+  --cnvs-sys-color-icon-strong: var(--cnvs-sys-color-fg-muted-strong);
+  --cnvs-sys-color-icon-inverse: var(--cnvs-sys-color-fg-inverse);
+  --cnvs-sys-color-icon-primary-default: var(
+    --cnvs-sys-color-brand-fg-primary-default
+  );
+  --cnvs-sys-color-icon-primary-strong: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-icon-primary-stronger: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-icon-primary-soft: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-icon-primary-softer: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-icon-positive-default: var(
+    --cnvs-sys-color-brand-fg-positive-default
+  );
+  --cnvs-sys-color-icon-positive-strong: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+  --cnvs-sys-color-icon-positive-stronger: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+  --cnvs-sys-color-icon-positive-soft: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-icon-positive-softer: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-icon-critical-default: var(
+    --cnvs-sys-color-brand-fg-critical-default
+  );
+  --cnvs-sys-color-icon-critical-strong: var(--cnvs-sys-color-fg-danger-strong);
+  --cnvs-sys-color-icon-critical-stronger: var(--cnvs-sys-color-fg-danger-strong);
+  --cnvs-sys-color-icon-critical-soft: var(--cnvs-sys-color-fg-danger-strong);
+  --cnvs-sys-color-icon-critical-softer: var(--cnvs-sys-color-fg-danger-strong);
+  --cnvs-sys-color-icon-caution-default: var(
+    --cnvs-sys-color-fg-contrast-default
+  );
+  --cnvs-sys-color-icon-caution-strong: var(
+    --cnvs-sys-color-brand-fg-caution-default
+  );
+  --cnvs-sys-color-icon-caution-stronger: var(
+    --cnvs-sys-color-brand-fg-caution-strong
+  );
+  --cnvs-sys-color-icon-caution-soft: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-icon-caution-softer: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-icon-disabled: var(--cnvs-sys-color-fg-disabled);
+  --cnvs-sys-color-icon-info-default: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-icon-info-strong: var(--cnvs-sys-color-fg-info-strong);
+  --cnvs-sys-color-icon-info-stronger: var(--cnvs-sys-color-fg-info-strong);
+
+  --cnvs-sys-color-fg-critical-default: var(
+    --cnvs-sys-color-brand-fg-critical-default
+  );
+  --cnvs-sys-color-fg-critical-strong: var(
+    --cnvs-sys-color-brand-fg-critical-strong
+  );
+  --cnvs-sys-color-fg-critical-stronger: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-fg-critical-soft: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-fg-critical-softer: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-fg-muted-stronger: var(--cnvs-sys-color-fg-muted-strong);
+  --cnvs-sys-color-fg-muted-soft: var(--cnvs-sys-color-fg-muted-default);
+  --cnvs-sys-color-fg-primary-default: var(
+    --cnvs-sys-color-brand-fg-primary-default
+  );
+  --cnvs-sys-color-fg-primary-soft: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-fg-primary-softer: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-fg-primary-stronger: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-fg-primary-strong: var(
+    --cnvs-sys-color-brand-fg-primary-strong
+  );
+  --cnvs-sys-color-fg-caution-default: var(
+    --cnvs-sys-color-brand-fg-caution-default
+  );
+  --cnvs-sys-color-fg-caution-strong: var(
+    --cnvs-sys-color-brand-fg-caution-strong
+  );
+  --cnvs-sys-color-fg-caution-soft: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-fg-caution-stronger: var(--cnvs-sys-color-fg-warning-strong);
+  --cnvs-sys-color-fg-caution-softer: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-fg-info-softer: var(--cnvs-sys-color-fg-ai);
+  --cnvs-sys-color-fg-info-soft: var(--cnvs-sys-color-fg-info-default);
+  --cnvs-sys-color-fg-info-stronger: var(--cnvs-sys-color-fg-info-strong);
+  --cnvs-sys-color-fg-positive-default: var(
+    --cnvs-sys-color-brand-fg-positive-default
+  );
+  --cnvs-sys-color-fg-positive-softer: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-fg-positive-soft: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-fg-positive-strong: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+  --cnvs-sys-color-fg-positive-stronger: var(
+    --cnvs-sys-color-brand-fg-positive-strong
+  );
+
+  --cnvs-sys-color-border-input-disabled: var(--cnvs-sys-color-fg-disabled);
+  --cnvs-sys-color-border-input-strong: var(
+    --cnvs-sys-color-border-input-hover
+  );
+  --cnvs-sys-color-border-input-inverse: var(
+    --cnvs-sys-color-border-inverse-default
+  );
+  --cnvs-sys-color-border-inverse: var(--cnvs-sys-color-border-inverse-default);
+  --cnvs-sys-color-border-contrast-strong: var(
+    --cnvs-sys-color-border-contrast-default
+  );
+  --cnvs-sys-color-border-primary-default: var(
+    --cnvs-sys-color-brand-border-primary
+  );
+  --cnvs-sys-color-border-critical-default: var(
+    --cnvs-sys-color-brand-border-critical
+  );
+  --cnvs-sys-color-border-caution-default: var(
+    --cnvs-sys-color-brand-focus-caution-inner
+  );
+  --cnvs-sys-color-border-caution-strong: var(
+    --cnvs-sys-color-brand-focus-caution-outer
+  );
+  --cnvs-sys-color-border-divider: var(--cnvs-sys-color-border-default);
+  --cnvs-sys-color-border-container: var(--cnvs-sys-color-border-strong);
+}

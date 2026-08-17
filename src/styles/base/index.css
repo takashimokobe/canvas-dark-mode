@@ -1,0 +1,43 @@
+@import './palette/neutral.css';
+@import './palette/slate.css';
+@import './palette/amber.css';
+@import './palette/azure.css';
+@import './palette/blue.css';
+@import './palette/coral.css';
+@import './palette/green.css';
+@import './palette/indigo.css';
+@import './palette/magenta.css';
+@import './palette/orange.css';
+@import './palette/purple.css';
+@import './palette/red.css';
+@import './palette/teal.css';
+@import './palette/white.css';
+
+@import './tenant/airbnb.css';
+@import './tenant/spotify.css';
+@import './tenant/discord.css';
+
+@import './size.css';
+@import './shadow.css';
+@import './opacity.css';
+@import './motion.css';
+@import './font/index.css';
+
+:where(html) {
+  --chroma-factor: 0.9;
+  --dark-anchor-l: 0.193;
+  --dark-max-l: 0.97;
+  --l-light-min: 0.19;
+  --l-light-max: 0.99;
+  --dark-l-exponent: 0.85;
+  --dark-chroma-taper: 0.75;
+  --dark-bg-alt-gap: 0.03;
+  --dark-bg-target-l: 0.18;
+  --dark-surface-step-delta: 0.04;
+  --dark-accent-hue-preserve: 0.15;
+
+  --cnvs-base-palette-white: oklch(1 0 0);
+  --cnvs-base-palette-black: oklch(0 0 0);
+  --cnvs-base-palette-white-transparent: oklch(1 0 0 / 0);
+  --cnvs-base-palette-black-transparent: oklch(0 0 0 / 0);
+}

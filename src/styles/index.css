@@ -1,0 +1,31 @@
+/* Work in progress — token names and file layout are subject to change. */
+
+@import './core/reset.css' layer(reset);
+
+@import './base/index.css' layer(base);
+@import './brand/index.css' layer(brand);
+@import './theme/index.css' layer(theme);
+
+@import './deprecated/index.css' layer(deprecated);
+
+@import './components/segmented-control.css' layer(components);
+
+@import './core/utils.css' layer(utils);
+
+@layer reset, base, brand, theme, deprecated, components, utils;
+
+body {
+  overflow: visible;
+  color: var(--cnvs-sys-color-fg-default);
+  background-color: var(--cnvs-sys-color-bg-alt-default);
+  padding: var(--cnvs-sys-padding-xxl);
+  font: var(--cnvs-sys-type-body-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The `font` shorthand (used by every type token rule) resets
+   font-variant-numeric to normal. Re-assert tabular figures per element,
+   unlayered so it wins over every layered `font:` declaration. */
+* {
+  font-variant-numeric: tabular-nums;
+}

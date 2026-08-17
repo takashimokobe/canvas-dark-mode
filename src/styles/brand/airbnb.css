@@ -1,0 +1,41 @@
+[data-brand='airbnb'] {
+  --cnvs-brand-primary-25: var(--airbnb-25);
+  --cnvs-brand-primary-50: var(--airbnb-50);
+  --cnvs-brand-primary-100: var(--airbnb-100);
+  --cnvs-brand-primary-200: var(--airbnb-200);
+  --cnvs-brand-primary-300: var(--airbnb-300);
+  --cnvs-brand-primary-400: var(--airbnb-400);
+  --cnvs-brand-primary-500: var(--airbnb-500);
+  --cnvs-brand-primary-600: var(--airbnb-600);
+  --cnvs-brand-primary-700: var(--airbnb-700);
+  --cnvs-brand-primary-800: var(--airbnb-800);
+  --cnvs-brand-primary-900: var(--airbnb-900);
+  --cnvs-brand-primary-950: var(--airbnb-950);
+  --cnvs-brand-primary-975: var(--airbnb-975);
+
+  --cnvs-brand-primary-A25: var(--airbnb-A25);
+  --cnvs-brand-primary-A50: var(--airbnb-A50);
+  --cnvs-brand-primary-A100: var(--airbnb-A100);
+  --cnvs-brand-primary-A200: var(--airbnb-A200);
+  --cnvs-brand-primary-A300: var(--airbnb-A300);
+
+  --cnvs-brand-dark-primary-25: var(--dark-airbnb-25);
+  --cnvs-brand-dark-primary-50: var(--dark-airbnb-50);
+  --cnvs-brand-dark-primary-100: var(--dark-airbnb-100);
+  --cnvs-brand-dark-primary-200: var(--dark-airbnb-200);
+  --cnvs-brand-dark-primary-300: var(--dark-airbnb-300);
+  --cnvs-brand-dark-primary-400: var(--dark-airbnb-400);
+  --cnvs-brand-dark-primary-500: var(--dark-airbnb-500);
+  --cnvs-brand-dark-primary-600: var(--dark-airbnb-600);
+  --cnvs-brand-dark-primary-700: var(--dark-airbnb-700);
+  --cnvs-brand-dark-primary-800: var(--dark-airbnb-800);
+  --cnvs-brand-dark-primary-900: var(--dark-airbnb-900);
+  --cnvs-brand-dark-primary-950: var(--dark-airbnb-950);
+  --cnvs-brand-dark-primary-975: var(--dark-airbnb-975);
+
+  --cnvs-brand-dark-primary-A25: var(--dark-airbnb-A25);
+  --cnvs-brand-dark-primary-A50: var(--dark-airbnb-A50);
+  --cnvs-brand-dark-primary-A100: var(--dark-airbnb-A100);
+  --cnvs-brand-dark-primary-A200: var(--dark-airbnb-A200);
+  --cnvs-brand-dark-primary-A300: var(--dark-airbnb-A300);
+}

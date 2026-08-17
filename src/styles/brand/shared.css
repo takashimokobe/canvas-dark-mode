@@ -1,0 +1,279 @@
+:where(html:not([data-brand])),
+[data-brand] {
+  --cnvs-brand-critical-25: var(--cnvs-base-palette-red-25);
+  --cnvs-brand-critical-50: var(--cnvs-base-palette-red-50);
+  --cnvs-brand-critical-100: var(--cnvs-base-palette-red-100);
+  --cnvs-brand-critical-200: var(--cnvs-base-palette-red-200);
+  --cnvs-brand-critical-300: var(--cnvs-base-palette-red-300);
+  --cnvs-brand-critical-400: var(--cnvs-base-palette-red-400);
+  --cnvs-brand-critical-500: var(--cnvs-base-palette-red-500);
+  --cnvs-brand-critical-600: var(--cnvs-base-palette-red-600);
+  --cnvs-brand-critical-700: var(--cnvs-base-palette-red-700);
+  --cnvs-brand-critical-800: var(--cnvs-base-palette-red-800);
+  --cnvs-brand-critical-900: var(--cnvs-base-palette-red-900);
+  --cnvs-brand-critical-950: var(--cnvs-base-palette-red-950);
+  --cnvs-brand-critical-975: var(--cnvs-base-palette-red-975);
+
+  --cnvs-brand-critical-A25: var(--cnvs-base-palette-red-A25);
+  --cnvs-brand-critical-A50: var(--cnvs-base-palette-red-A50);
+  --cnvs-brand-critical-A100: var(--cnvs-base-palette-red-A100);
+  --cnvs-brand-critical-A200: var(--cnvs-base-palette-red-A200);
+  --cnvs-brand-critical-A300: var(--cnvs-base-palette-red-A300);
+
+  --cnvs-brand-dark-critical-25: var(--cnvs-base-palette-dark-red-25);
+  --cnvs-brand-dark-critical-50: var(--cnvs-base-palette-dark-red-50);
+  --cnvs-brand-dark-critical-100: var(--cnvs-base-palette-dark-red-100);
+  --cnvs-brand-dark-critical-200: var(--cnvs-base-palette-dark-red-200);
+  --cnvs-brand-dark-critical-300: var(--cnvs-base-palette-dark-red-300);
+  --cnvs-brand-dark-critical-400: var(--cnvs-base-palette-dark-red-400);
+  --cnvs-brand-dark-critical-500: var(--cnvs-base-palette-dark-red-500);
+  --cnvs-brand-dark-critical-600: var(--cnvs-base-palette-dark-red-600);
+  --cnvs-brand-dark-critical-700: var(--cnvs-base-palette-dark-red-700);
+  --cnvs-brand-dark-critical-800: var(--cnvs-base-palette-dark-red-800);
+  --cnvs-brand-dark-critical-900: var(--cnvs-base-palette-dark-red-900);
+  --cnvs-brand-dark-critical-950: var(--cnvs-base-palette-dark-red-950);
+  --cnvs-brand-dark-critical-975: var(--cnvs-base-palette-dark-red-975);
+
+  --cnvs-brand-dark-critical-A25: var(--cnvs-base-palette-dark-red-A25);
+  --cnvs-brand-dark-critical-A50: var(--cnvs-base-palette-dark-red-A50);
+  --cnvs-brand-dark-critical-A100: var(--cnvs-base-palette-dark-red-A100);
+  --cnvs-brand-dark-critical-A200: var(--cnvs-base-palette-dark-red-A200);
+  --cnvs-brand-dark-critical-A300: var(--cnvs-base-palette-dark-red-A300);
+
+  --cnvs-brand-caution-25: var(--cnvs-base-palette-amber-25);
+  --cnvs-brand-caution-50: var(--cnvs-base-palette-amber-50);
+  --cnvs-brand-caution-100: var(--cnvs-base-palette-amber-100);
+  --cnvs-brand-caution-200: var(--cnvs-base-palette-amber-200);
+  --cnvs-brand-caution-300: var(--cnvs-base-palette-amber-300);
+  --cnvs-brand-caution-400: var(--cnvs-base-palette-amber-400);
+  --cnvs-brand-caution-500: var(--cnvs-base-palette-amber-500);
+  --cnvs-brand-caution-600: var(--cnvs-base-palette-amber-600);
+  --cnvs-brand-caution-700: var(--cnvs-base-palette-amber-700);
+  --cnvs-brand-caution-800: var(--cnvs-base-palette-amber-800);
+  --cnvs-brand-caution-900: var(--cnvs-base-palette-amber-900);
+  --cnvs-brand-caution-950: var(--cnvs-base-palette-amber-950);
+  --cnvs-brand-caution-975: var(--cnvs-base-palette-amber-975);
+
+  --cnvs-brand-caution-A25: var(--cnvs-base-palette-amber-A25);
+  --cnvs-brand-caution-A50: var(--cnvs-base-palette-amber-A50);
+  --cnvs-brand-caution-A100: var(--cnvs-base-palette-amber-A100);
+  --cnvs-brand-caution-A200: var(--cnvs-base-palette-amber-A200);
+  --cnvs-brand-caution-A300: var(--cnvs-base-palette-amber-A300);
+
+  --cnvs-brand-dark-caution-25: var(--cnvs-base-palette-dark-amber-25);
+  --cnvs-brand-dark-caution-50: var(--cnvs-base-palette-dark-amber-50);
+  --cnvs-brand-dark-caution-100: var(--cnvs-base-palette-dark-amber-100);
+  --cnvs-brand-dark-caution-200: var(--cnvs-base-palette-dark-amber-200);
+  --cnvs-brand-dark-caution-300: var(--cnvs-base-palette-dark-amber-300);
+  --cnvs-brand-dark-caution-400: var(--cnvs-base-palette-dark-amber-400);
+  --cnvs-brand-dark-caution-500: var(--cnvs-base-palette-dark-amber-500);
+  --cnvs-brand-dark-caution-600: var(--cnvs-base-palette-dark-amber-600);
+  --cnvs-brand-dark-caution-700: var(--cnvs-base-palette-dark-amber-700);
+  --cnvs-brand-dark-caution-800: var(--cnvs-base-palette-dark-amber-800);
+  --cnvs-brand-dark-caution-900: var(--cnvs-base-palette-dark-amber-900);
+  --cnvs-brand-dark-caution-950: var(--cnvs-base-palette-dark-amber-950);
+  --cnvs-brand-dark-caution-975: var(--cnvs-base-palette-dark-amber-975);
+
+  --cnvs-brand-dark-caution-A25: var(--cnvs-base-palette-dark-amber-A25);
+  --cnvs-brand-dark-caution-A50: var(--cnvs-base-palette-dark-amber-A50);
+  --cnvs-brand-dark-caution-A100: var(--cnvs-base-palette-dark-amber-A100);
+  --cnvs-brand-dark-caution-A200: var(--cnvs-base-palette-dark-amber-A200);
+  --cnvs-brand-dark-caution-A300: var(--cnvs-base-palette-dark-amber-A300);
+
+  --cnvs-brand-positive-25: var(--cnvs-base-palette-green-25);
+  --cnvs-brand-positive-50: var(--cnvs-base-palette-green-50);
+  --cnvs-brand-positive-100: var(--cnvs-base-palette-green-100);
+  --cnvs-brand-positive-200: var(--cnvs-base-palette-green-200);
+  --cnvs-brand-positive-300: var(--cnvs-base-palette-green-300);
+  --cnvs-brand-positive-400: var(--cnvs-base-palette-green-400);
+  --cnvs-brand-positive-500: var(--cnvs-base-palette-green-500);
+  --cnvs-brand-positive-600: var(--cnvs-base-palette-green-600);
+  --cnvs-brand-positive-700: var(--cnvs-base-palette-green-700);
+  --cnvs-brand-positive-800: var(--cnvs-base-palette-green-800);
+  --cnvs-brand-positive-900: var(--cnvs-base-palette-green-900);
+  --cnvs-brand-positive-950: var(--cnvs-base-palette-green-950);
+  --cnvs-brand-positive-975: var(--cnvs-base-palette-green-975);
+
+  --cnvs-brand-positive-A25: var(--cnvs-base-palette-green-A25);
+  --cnvs-brand-positive-A50: var(--cnvs-base-palette-green-A50);
+  --cnvs-brand-positive-A100: var(--cnvs-base-palette-green-A100);
+  --cnvs-brand-positive-A200: var(--cnvs-base-palette-green-A200);
+  --cnvs-brand-positive-A300: var(--cnvs-base-palette-green-A300);
+
+  --cnvs-brand-dark-positive-25: var(--cnvs-base-palette-dark-green-25);
+  --cnvs-brand-dark-positive-50: var(--cnvs-base-palette-dark-green-50);
+  --cnvs-brand-dark-positive-100: var(--cnvs-base-palette-dark-green-100);
+  --cnvs-brand-dark-positive-200: var(--cnvs-base-palette-dark-green-200);
+  --cnvs-brand-dark-positive-300: var(--cnvs-base-palette-dark-green-300);
+  --cnvs-brand-dark-positive-400: var(--cnvs-base-palette-dark-green-400);
+  --cnvs-brand-dark-positive-500: var(--cnvs-base-palette-dark-green-500);
+  --cnvs-brand-dark-positive-600: var(--cnvs-base-palette-dark-green-600);
+  --cnvs-brand-dark-positive-700: var(--cnvs-base-palette-dark-green-700);
+  --cnvs-brand-dark-positive-800: var(--cnvs-base-palette-dark-green-800);
+  --cnvs-brand-dark-positive-900: var(--cnvs-base-palette-dark-green-900);
+  --cnvs-brand-dark-positive-950: var(--cnvs-base-palette-dark-green-950);
+  --cnvs-brand-dark-positive-975: var(--cnvs-base-palette-dark-green-975);
+
+  --cnvs-brand-dark-positive-A25: var(--cnvs-base-palette-dark-green-A25);
+  --cnvs-brand-dark-positive-A50: var(--cnvs-base-palette-dark-green-A50);
+  --cnvs-brand-dark-positive-A100: var(--cnvs-base-palette-dark-green-A100);
+  --cnvs-brand-dark-positive-A200: var(--cnvs-base-palette-dark-green-A200);
+  --cnvs-brand-dark-positive-A300: var(--cnvs-base-palette-dark-green-A300);
+
+  --cnvs-brand-neutral-25: var(--cnvs-base-palette-neutral-25);
+  --cnvs-brand-neutral-50: var(--cnvs-base-palette-neutral-50);
+  --cnvs-brand-neutral-100: var(--cnvs-base-palette-neutral-100);
+  --cnvs-brand-neutral-150: var(--cnvs-base-palette-neutral-150);
+  --cnvs-brand-neutral-200: var(--cnvs-base-palette-neutral-200);
+  --cnvs-brand-neutral-300: var(--cnvs-base-palette-neutral-300);
+  --cnvs-brand-neutral-400: var(--cnvs-base-palette-neutral-400);
+  --cnvs-brand-neutral-500: var(--cnvs-base-palette-neutral-500);
+  --cnvs-brand-neutral-600: var(--cnvs-base-palette-neutral-600);
+  --cnvs-brand-neutral-700: var(--cnvs-base-palette-neutral-700);
+  --cnvs-brand-neutral-800: var(--cnvs-base-palette-neutral-800);
+  --cnvs-brand-neutral-850: var(--cnvs-base-palette-neutral-850);
+  --cnvs-brand-neutral-900: var(--cnvs-base-palette-neutral-900);
+  --cnvs-brand-neutral-950: var(--cnvs-base-palette-neutral-950);
+  --cnvs-brand-neutral-975: var(--cnvs-base-palette-neutral-975);
+
+  --cnvs-brand-neutral-A25: var(--cnvs-base-palette-neutral-A25);
+  --cnvs-brand-neutral-A50: var(--cnvs-base-palette-neutral-A50);
+  --cnvs-brand-neutral-A100: var(--cnvs-base-palette-neutral-A100);
+  --cnvs-brand-neutral-A150: var(--cnvs-base-palette-neutral-A150);
+  --cnvs-brand-neutral-A200: var(--cnvs-base-palette-neutral-A200);
+  --cnvs-brand-neutral-A300: var(--cnvs-base-palette-neutral-A300);
+  --cnvs-brand-neutral-A400: var(--cnvs-base-palette-neutral-A400);
+  --cnvs-brand-neutral-A500: var(--cnvs-base-palette-neutral-A500);
+  --cnvs-brand-neutral-A600: var(--cnvs-base-palette-neutral-A600);
+  --cnvs-brand-neutral-A700: var(--cnvs-base-palette-neutral-A700);
+  --cnvs-brand-neutral-A800: var(--cnvs-base-palette-neutral-A800);
+  --cnvs-brand-neutral-A850: var(--cnvs-base-palette-neutral-A850);
+  --cnvs-brand-neutral-A900: var(--cnvs-base-palette-neutral-A900);
+  --cnvs-brand-neutral-A950: var(--cnvs-base-palette-neutral-A950);
+  --cnvs-brand-neutral-A975: var(--cnvs-base-palette-neutral-A975);
+
+  --cnvs-brand-dark-neutral-25: var(--cnvs-base-palette-dark-neutral-25);
+  --cnvs-brand-dark-neutral-50: var(--cnvs-base-palette-dark-neutral-50);
+  --cnvs-brand-dark-neutral-100: var(--cnvs-base-palette-dark-neutral-100);
+  --cnvs-brand-dark-neutral-150: var(--cnvs-base-palette-dark-neutral-150);
+  --cnvs-brand-dark-neutral-200: var(--cnvs-base-palette-dark-neutral-200);
+  --cnvs-brand-dark-neutral-300: var(--cnvs-base-palette-dark-neutral-300);
+  --cnvs-brand-dark-neutral-400: var(--cnvs-base-palette-dark-neutral-400);
+  --cnvs-brand-dark-neutral-500: var(--cnvs-base-palette-dark-neutral-500);
+  --cnvs-brand-dark-neutral-600: var(--cnvs-base-palette-dark-neutral-600);
+  --cnvs-brand-dark-neutral-700: var(--cnvs-base-palette-dark-neutral-700);
+  --cnvs-brand-dark-neutral-800: var(--cnvs-base-palette-dark-neutral-800);
+  --cnvs-brand-dark-neutral-850: var(--cnvs-base-palette-dark-neutral-850);
+  --cnvs-brand-dark-neutral-900: var(--cnvs-base-palette-dark-neutral-900);
+  --cnvs-brand-dark-neutral-950: var(--cnvs-base-palette-dark-neutral-950);
+  --cnvs-brand-dark-neutral-975: var(--cnvs-base-palette-dark-neutral-975);
+
+  --cnvs-brand-dark-neutral-A25: var(--cnvs-base-palette-dark-neutral-A25);
+  --cnvs-brand-dark-neutral-A50: var(--cnvs-base-palette-dark-neutral-A50);
+  --cnvs-brand-dark-neutral-A100: var(--cnvs-base-palette-dark-neutral-A100);
+  --cnvs-brand-dark-neutral-A150: var(--cnvs-base-palette-dark-neutral-A150);
+  --cnvs-brand-dark-neutral-A200: var(--cnvs-base-palette-dark-neutral-A200);
+  --cnvs-brand-dark-neutral-A300: var(--cnvs-base-palette-dark-neutral-A300);
+  --cnvs-brand-dark-neutral-A400: var(--cnvs-base-palette-dark-neutral-A400);
+  --cnvs-brand-dark-neutral-A500: var(--cnvs-base-palette-dark-neutral-A500);
+  --cnvs-brand-dark-neutral-A600: var(--cnvs-base-palette-dark-neutral-A600);
+  --cnvs-brand-dark-neutral-A700: var(--cnvs-base-palette-dark-neutral-A700);
+  --cnvs-brand-dark-neutral-A800: var(--cnvs-base-palette-dark-neutral-A800);
+  --cnvs-brand-dark-neutral-A850: var(--cnvs-base-palette-dark-neutral-A850);
+  --cnvs-brand-dark-neutral-A900: var(--cnvs-base-palette-dark-neutral-A900);
+  --cnvs-brand-dark-neutral-A950: var(--cnvs-base-palette-dark-neutral-A950);
+  --cnvs-brand-dark-neutral-A975: var(--cnvs-base-palette-dark-neutral-A975);
+
+  --cnvs-brand-common-focus: var(--cnvs-sys-color-brand-focus-primary);
+  --cnvs-brand-common-critical: var(--cnvs-sys-color-brand-focus-critical);
+  --cnvs-brand-common-caution-inner: var(
+    --cnvs-sys-color-brand-focus-caution-inner
+  );
+  --cnvs-brand-common-caution-outer: var(
+    --cnvs-sys-color-brand-focus-caution-outer
+  );
+}
+
+[data-brand]:not([data-brand='default']) {
+  --cnvs-brand-neutral-25: var(--cnvs-base-palette-slate-25);
+  --cnvs-brand-neutral-50: var(--cnvs-base-palette-slate-50);
+  --cnvs-brand-neutral-100: var(--cnvs-base-palette-slate-100);
+  --cnvs-brand-neutral-150: var(--cnvs-base-palette-slate-150);
+  --cnvs-brand-neutral-200: var(--cnvs-base-palette-slate-200);
+  --cnvs-brand-neutral-300: var(--cnvs-base-palette-slate-300);
+  --cnvs-brand-neutral-400: var(--cnvs-base-palette-slate-400);
+  --cnvs-brand-neutral-500: var(--cnvs-base-palette-slate-500);
+  --cnvs-brand-neutral-600: var(--cnvs-base-palette-slate-600);
+  --cnvs-brand-neutral-700: var(--cnvs-base-palette-slate-700);
+  --cnvs-brand-neutral-800: var(--cnvs-base-palette-slate-800);
+  --cnvs-brand-neutral-850: var(--cnvs-base-palette-slate-850);
+  --cnvs-brand-neutral-900: var(--cnvs-base-palette-slate-900);
+  --cnvs-brand-neutral-950: var(--cnvs-base-palette-slate-950);
+  --cnvs-brand-neutral-975: var(--cnvs-base-palette-slate-975);
+
+  --cnvs-brand-neutral-A25: var(--cnvs-base-palette-slate-A25);
+  --cnvs-brand-neutral-A50: var(--cnvs-base-palette-slate-A50);
+  --cnvs-brand-neutral-A100: var(--cnvs-base-palette-slate-A100);
+  --cnvs-brand-neutral-A150: var(--cnvs-base-palette-slate-A150);
+  --cnvs-brand-neutral-A200: var(--cnvs-base-palette-slate-A200);
+  --cnvs-brand-neutral-A300: var(--cnvs-base-palette-slate-A300);
+  --cnvs-brand-neutral-A400: var(--cnvs-base-palette-slate-A400);
+  --cnvs-brand-neutral-A500: var(--cnvs-base-palette-slate-A500);
+  --cnvs-brand-neutral-A600: var(--cnvs-base-palette-slate-A600);
+  --cnvs-brand-neutral-A700: var(--cnvs-base-palette-slate-A700);
+  --cnvs-brand-neutral-A800: var(--cnvs-base-palette-slate-A800);
+  --cnvs-brand-neutral-A850: var(--cnvs-base-palette-slate-A850);
+  --cnvs-brand-neutral-A900: var(--cnvs-base-palette-slate-A900);
+  --cnvs-brand-neutral-A950: var(--cnvs-base-palette-slate-A950);
+  --cnvs-brand-neutral-A975: var(--cnvs-base-palette-slate-A975);
+
+  --cnvs-brand-dark-neutral-25: var(--cnvs-base-palette-dark-slate-25);
+  --cnvs-brand-dark-neutral-50: var(--cnvs-base-palette-dark-slate-50);
+  --cnvs-brand-dark-neutral-100: var(--cnvs-base-palette-dark-slate-100);
+  --cnvs-brand-dark-neutral-150: var(--cnvs-base-palette-dark-slate-150);
+  --cnvs-brand-dark-neutral-200: var(--cnvs-base-palette-dark-slate-200);
+  --cnvs-brand-dark-neutral-300: var(--cnvs-base-palette-dark-slate-300);
+  --cnvs-brand-dark-neutral-400: var(--cnvs-base-palette-dark-slate-400);
+  --cnvs-brand-dark-neutral-500: var(--cnvs-base-palette-dark-slate-500);
+  --cnvs-brand-dark-neutral-600: var(--cnvs-base-palette-dark-slate-600);
+  --cnvs-brand-dark-neutral-700: var(--cnvs-base-palette-dark-slate-700);
+  --cnvs-brand-dark-neutral-800: var(--cnvs-base-palette-dark-slate-800);
+  --cnvs-brand-dark-neutral-850: var(--cnvs-base-palette-dark-slate-850);
+  --cnvs-brand-dark-neutral-900: var(--cnvs-base-palette-dark-slate-900);
+  --cnvs-brand-dark-neutral-950: var(--cnvs-base-palette-dark-slate-950);
+  --cnvs-brand-dark-neutral-975: var(--cnvs-base-palette-dark-slate-975);
+
+  --cnvs-brand-dark-neutral-A25: var(--cnvs-base-palette-dark-slate-A25);
+  --cnvs-brand-dark-neutral-A50: var(--cnvs-base-palette-dark-slate-A50);
+  --cnvs-brand-dark-neutral-A100: var(--cnvs-base-palette-dark-slate-A100);
+  --cnvs-brand-dark-neutral-A150: var(--cnvs-base-palette-dark-slate-A150);
+  --cnvs-brand-dark-neutral-A200: var(--cnvs-base-palette-dark-slate-A200);
+  --cnvs-brand-dark-neutral-A300: var(--cnvs-base-palette-dark-slate-A300);
+  --cnvs-brand-dark-neutral-A400: var(--cnvs-base-palette-dark-slate-A400);
+  --cnvs-brand-dark-neutral-A500: var(--cnvs-base-palette-dark-slate-A500);
+  --cnvs-brand-dark-neutral-A600: var(--cnvs-base-palette-dark-slate-A600);
+  --cnvs-brand-dark-neutral-A700: var(--cnvs-base-palette-dark-slate-A700);
+  --cnvs-brand-dark-neutral-A800: var(--cnvs-base-palette-dark-slate-A800);
+  --cnvs-brand-dark-neutral-A850: var(--cnvs-base-palette-dark-slate-A850);
+  --cnvs-brand-dark-neutral-A900: var(--cnvs-base-palette-dark-slate-A900);
+  --cnvs-brand-dark-neutral-A950: var(--cnvs-base-palette-dark-slate-A950);
+  --cnvs-brand-dark-neutral-A975: var(--cnvs-base-palette-dark-slate-A975);
+
+  --cnvs-brand-light-action-base: var(--cnvs-brand-primary-600);
+  --cnvs-brand-light-action-dark: var(--cnvs-brand-primary-700);
+  --cnvs-brand-light-action-darker: var(--cnvs-brand-primary-800);
+  --cnvs-brand-light-action-darkest: var(--cnvs-brand-primary-950);
+  --cnvs-brand-light-action-light: var(--cnvs-brand-primary-200);
+  --cnvs-brand-light-action-lighter: var(--cnvs-brand-primary-50);
+  --cnvs-brand-light-action-lightest: var(--cnvs-brand-primary-25);
+  --cnvs-brand-light-action-accent: var(--cnvs-base-palette-white);
+
+  --cnvs-brand-dark-action-base: var(--cnvs-brand-dark-primary-600);
+  --cnvs-brand-dark-action-dark: var(--cnvs-brand-dark-primary-700);
+  --cnvs-brand-dark-action-darker: var(--cnvs-brand-dark-primary-800);
+  --cnvs-brand-dark-action-darkest: var(--cnvs-brand-dark-primary-950);
+  --cnvs-brand-dark-action-light: var(--cnvs-brand-dark-primary-200);
+  --cnvs-brand-dark-action-lighter: var(--cnvs-brand-dark-primary-50);
+  --cnvs-brand-dark-action-lightest: var(--cnvs-brand-dark-primary-25);
+  --cnvs-brand-dark-action-accent: var(--cnvs-base-palette-black);
+}
