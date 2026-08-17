@@ -21,6 +21,8 @@ pnpm dev
 
 The gallery is at [http://localhost:3000](http://localhost:3000). Theme follows `prefers-color-scheme` until you override it with the Mode control. Brand is stored in `localStorage`.
 
+Pushes to `main` publish a static build to [GitHub Pages](https://takashimokobe.github.io/canvas-dark-mode/).
+
 ## Other scripts
 
 ```bash

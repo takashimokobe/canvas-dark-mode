@@ -7,8 +7,16 @@ import viteReact from '@vitejs/plugin-react'
 import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
+  base: '/canvas-dark-mode/',
   resolve: { tsconfigPaths: true },
-  plugins: [devtools(), nitro(), tanstackStart(), viteReact()],
+  plugins: [
+    devtools(),
+    nitro(),
+    tanstackStart({
+      prerender: { enabled: true },
+    }),
+    viteReact(),
+  ],
 })
 
 export default config
