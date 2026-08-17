@@ -42,11 +42,12 @@
     gap: var(--cnvs-sys-gap-lg);
     flex-wrap: wrap;
 
-    @media (--md-n-below) {
-      inline-size: 100%;
+    & > * {
+      inline-size: max-content;
+      max-inline-size: 100%;
     }
 
-    @media (--sm-only) {
+    @media (--md-n-below) {
       flex-direction: column;
       align-items: start;
     }
@@ -67,6 +68,7 @@
   }
 
   .Category {
+    container: --category / inline-size;
     display: flex;
     flex-direction: column;
     gap: var(--cnvs-sys-gap-lg);
@@ -83,12 +85,11 @@
   .Grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
-    grid-auto-rows: auto 1fr;
+    align-items: start;
     gap: var(--cnvs-sys-gap-lg);
 
-    @media (--md-n-below) {
+    @container --category (width < 42rem) {
       grid-template-columns: 1fr;
-      grid-auto-rows: auto;
     }
 
     @media (--lg-n-above) {
@@ -98,20 +99,13 @@
 
   .Card {
     container: --card / inline-size;
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
     min-inline-size: 0;
     border: 1px solid var(--cnvs-sys-color-border-default);
     border-radius: var(--cnvs-sys-shape-xxxl);
     background-color: var(--cnvs-sys-color-surface-default);
     box-shadow: var(--cnvs-sys-depth-1);
-
-    @media (--md-n-below) {
-      display: flex;
-      flex-direction: column;
-      grid-row: auto;
-    }
 
     @media (--highContrast) {
       border-width: 2px;
@@ -126,21 +120,22 @@
   .CardWide {
     grid-column: 1 / -1;
 
-    @media (--md-n-below) {
+    @container --category (width < 42rem) {
       grid-column: auto;
     }
   }
 
   .CardHeader {
     display: flex;
-    align-items: center;
+    align-items: start;
+    align-content: start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--cnvs-sys-gap-md);
     padding-block-start: var(--cnvs-sys-padding-xl);
     padding-inline: var(--cnvs-sys-padding-xl);
 
-    @media (--md-n-below) {
+    @container --card (width < 36ch) {
       padding-inline: var(--cnvs-sys-padding-md);
     }
   }
@@ -158,7 +153,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     gap: var(--cnvs-sys-gap-md);
     padding-block: var(--cnvs-sys-padding-xxl);
     padding-inline: var(--cnvs-sys-padding-xl);
@@ -166,11 +161,6 @@
     overflow: visible;
 
     @container --card (width < 36ch) {
-      padding-block: var(--cnvs-sys-padding-xl);
-      padding-inline: var(--cnvs-sys-padding-md);
-    }
-
-    @media (--md-n-below) {
       padding-block: var(--cnvs-sys-padding-xl);
       padding-inline: var(--cnvs-sys-padding-md);
     }
@@ -183,11 +173,10 @@
   .TnumPanel {
     display: flex;
     flex-direction: column;
-    gap: var(--cnvs-sys-gap-xs);
+    gap: var(--cnvs-sys-gap-sm);
   }
 
   .TnumLabel {
-    margin-block-end: var(--cnvs-sys-gap-sm);
     font: var(--cnvs-sys-type-subtext-md);
     letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
     font-weight: var(--cnvs-sys-font-weight-medium);
