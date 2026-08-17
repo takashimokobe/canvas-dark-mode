@@ -1,5 +1,12 @@
+:where(html.light) {
+  color-scheme: light;
+}
+
+:where(html.dark) {
+  color-scheme: dark;
+}
+
 :where(html) {
-  color-scheme: light dark;
   --cnvs-sys-color-bg-default: light-dark(
     var(--cnvs-base-palette-white),
     var(--cnvs-brand-dark-neutral-50)

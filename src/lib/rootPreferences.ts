@@ -40,6 +40,14 @@ function getPreferredBrand(): Brand {
   return stored !== null && isBrand(stored) ? stored : 'default'
 }
 
+export function applyRootMode(mode: Mode) {
+  const root = document.documentElement
+  root.classList.toggle('light', mode === 'light')
+  root.classList.toggle('dark', mode === 'dark')
+  root.classList.remove('ui-light', 'ui-dark')
+  root.style.colorScheme = mode
+}
+
 /** Disable transitions while new colors commit so the theme switch does not smear. */
 function suppressTransitionsDuringThemeSwap() {
   const style = document.createElement('style')
@@ -60,6 +68,7 @@ function ensureSystemThemeListener() {
   onSystemThemeChange = () => {
     sessionModeOverride = null
     suppressTransitionsDuringThemeSwap()
+    applyRootMode(getPreferredMode())
     notifyRootPreferenceListeners()
   }
   mediaQuery.addEventListener('change', onSystemThemeChange)
@@ -100,6 +109,7 @@ export function useMode() {
     sessionModeOverride = next
     localStorage.removeItem(LEGACY_MODE_STORAGE_KEY)
     suppressTransitionsDuringThemeSwap()
+    applyRootMode(next)
     notifyRootPreferenceListeners()
   }, [])
 
@@ -176,5 +186,5 @@ export function formatBrandLabel(brand: Brand) {
 }
 
 export function buildRootInitScript() {
-  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');document.documentElement.classList.remove('ui-dark','ui-light');document.documentElement.style.colorScheme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';document.documentElement.setAttribute('data-brand',brand);}catch(e){}})();`
+  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');var r=document.documentElement;var mode=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.classList.remove('ui-dark','ui-light','light','dark');r.classList.add(mode);r.style.colorScheme=mode;var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';r.setAttribute('data-brand',brand);}catch(e){}})();`
 }

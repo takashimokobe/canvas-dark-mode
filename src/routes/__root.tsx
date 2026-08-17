@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-router'
 import { useLayoutEffect } from 'react'
 import {
+  applyRootMode,
   buildRootInitScript,
   useBrand,
   useMode,
@@ -62,9 +63,8 @@ function RootThemeSync() {
   useModeKeyboardShortcut()
 
   useLayoutEffect(() => {
-    const root = document.documentElement
-    root.setAttribute('data-brand', brand)
-    root.style.colorScheme = mode
+    document.documentElement.setAttribute('data-brand', brand)
+    applyRootMode(mode)
   }, [brand, mode])
 
   return null
@@ -74,7 +74,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   const { mode } = useMode()
 
   return (
-    <html lang="en" style={{ colorScheme: mode }} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={mode}
+      style={{ colorScheme: mode }}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: buildRootInitScript() }} />
         <HeadContent />
