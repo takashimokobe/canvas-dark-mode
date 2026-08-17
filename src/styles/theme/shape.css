@@ -1,0 +1,19 @@
+:where(html) {
+  --cnvs-sys-shape-none: 0;
+
+  --cnvs-sys-shape-xs: var(--cnvs-base-size-50);
+
+  --cnvs-sys-shape-sm: var(--cnvs-base-size-75);
+
+  --cnvs-sys-shape-md: var(--cnvs-base-size-100);
+
+  --cnvs-sys-shape-lg: var(--cnvs-base-size-150);
+
+  --cnvs-sys-shape-xl: var(--cnvs-base-size-200);
+
+  --cnvs-sys-shape-xxl: var(--cnvs-base-size-250);
+
+  --cnvs-sys-shape-xxxl: var(--cnvs-base-size-350);
+
+  --cnvs-sys-shape-full: calc(var(--cnvs-base-size-75) * 100);
+}

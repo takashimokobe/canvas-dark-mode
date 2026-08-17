@@ -1,0 +1,47 @@
+:where(html) {
+  --cnvs-sys-depth-1:
+    0 var(--cnvs-base-shadow-1-key-y) var(--cnvs-base-shadow-1-key-blur)
+      var(--cnvs-base-shadow-1-key-spread) var(--cnvs-sys-color-shadow-1-key),
+    0 var(--cnvs-base-shadow-1-ambient-y) var(--cnvs-base-shadow-1-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-1-ambient);
+
+  --cnvs-sys-depth-2:
+    0 var(--cnvs-base-shadow-2-key-y) var(--cnvs-base-shadow-2-key-blur)
+      var(--cnvs-base-shadow-2-key-spread) var(--cnvs-sys-color-shadow-2-key),
+    0 var(--cnvs-base-shadow-2-ambient-y) var(--cnvs-base-shadow-2-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-2-ambient);
+
+  --cnvs-sys-depth-3:
+    0 var(--cnvs-base-shadow-3-key-y) var(--cnvs-base-shadow-3-key-blur)
+      var(--cnvs-base-shadow-3-key-spread) var(--cnvs-sys-color-shadow-3-key),
+    0 var(--cnvs-base-shadow-3-ambient-y) var(--cnvs-base-shadow-3-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-3-ambient);
+
+  --cnvs-sys-depth-4:
+    0 var(--cnvs-base-shadow-4-key-y) var(--cnvs-base-shadow-4-key-blur)
+      var(--cnvs-base-shadow-4-key-spread) var(--cnvs-sys-color-shadow-4-key),
+    0 var(--cnvs-base-shadow-4-ambient-y) var(--cnvs-base-shadow-4-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-4-ambient);
+
+  --cnvs-sys-depth-5:
+    0 var(--cnvs-base-shadow-5-key-y) var(--cnvs-base-shadow-5-key-blur)
+      var(--cnvs-base-shadow-5-key-spread) var(--cnvs-sys-color-shadow-5-key),
+    0 var(--cnvs-base-shadow-5-ambient-y) var(--cnvs-base-shadow-5-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-5-ambient);
+
+  --cnvs-sys-depth-6:
+    0 var(--cnvs-base-shadow-6-key-y) var(--cnvs-base-shadow-6-key-blur)
+      var(--cnvs-base-shadow-6-key-spread) var(--cnvs-sys-color-shadow-6-key),
+    0 var(--cnvs-base-shadow-6-ambient-y) var(--cnvs-base-shadow-6-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-6-ambient);
+
+  /* Depth 2 with a hairline ring for the switch thumb. The ring is
+     transparent in light and carries the thumb's boundary in dark, where the
+     shadow cannot. */
+  --cnvs-sys-depth-thumb:
+    inset 0 0 0 1px var(--cnvs-sys-color-border-thumb),
+    0 var(--cnvs-base-shadow-2-key-y) var(--cnvs-base-shadow-2-key-blur)
+      var(--cnvs-base-shadow-2-key-spread) var(--cnvs-sys-color-shadow-2-key),
+    0 var(--cnvs-base-shadow-2-ambient-y) var(--cnvs-base-shadow-2-ambient-blur)
+      0 var(--cnvs-sys-color-shadow-2-ambient);
+}

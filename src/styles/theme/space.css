@@ -1,0 +1,37 @@
+:where(html) {
+  --px-btn-lg: var(--cnvs-base-size-250);
+  --px-btn-md: var(--cnvs-base-size-200);
+  --px-btn-sm: var(--cnvs-base-size-150);
+  --px-btn-xs: var(--cnvs-base-size-100);
+  --px-input-inline-start: var(--cnvs-base-size-150);
+  --px-input-inline-end: var(--cnvs-base-size-100);
+
+  --cnvs-sys-padding-none: 0;
+  --cnvs-sys-padding-xxs: var(--cnvs-base-size-50);
+
+  --cnvs-sys-padding-xs: var(--cnvs-base-size-100);
+
+  --cnvs-sys-padding-sm: var(--cnvs-base-size-150);
+
+  --cnvs-sys-padding-md: var(--cnvs-base-size-200);
+
+  --cnvs-sys-padding-lg: var(--cnvs-base-size-250);
+
+  --cnvs-sys-padding-xl: var(--cnvs-base-size-300);
+
+  --cnvs-sys-padding-xxl: var(--cnvs-base-size-400);
+
+  --cnvs-sys-gap-none: 0;
+
+  --cnvs-sys-gap-xs: var(--cnvs-base-size-50);
+
+  --cnvs-sys-gap-sm: var(--cnvs-base-size-100);
+
+  --cnvs-sys-gap-md: var(--cnvs-base-size-200);
+
+  --cnvs-sys-gap-lg: var(--cnvs-base-size-300);
+
+  --cnvs-sys-gap-xl: var(--cnvs-base-size-400);
+
+  --cnvs-sys-gap-xxl: var(--cnvs-base-size-800);
+}

@@ -1,0 +1,10 @@
+:where(html) {
+  --cnvs-sys-shape-zero: var(--cnvs-sys-shape-none);
+  --cnvs-sys-shape-half: var(--cnvs-sys-shape-sm);
+  --cnvs-sys-shape-x1: var(--cnvs-sys-shape-sm);
+  --cnvs-sys-shape-x1-half: var(--cnvs-sys-shape-md);
+  --cnvs-sys-shape-x2: var(--cnvs-sys-shape-md);
+  --cnvs-sys-shape-x4: var(--cnvs-sys-shape-xl);
+  --cnvs-sys-shape-x6: var(--cnvs-sys-shape-xxl);
+  --cnvs-sys-shape-round: var(--cnvs-sys-shape-full);
+}

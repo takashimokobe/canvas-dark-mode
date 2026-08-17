@@ -1,0 +1,40 @@
+:where(html) {
+  --cnvs-sys-type-subtext-small: var(--cnvs-sys-type-subtext-sm);
+  --cnvs-sys-type-subtext-medium: var(--cnvs-sys-type-subtext-md);
+  --cnvs-sys-type-subtext-large: var(--cnvs-sys-type-subtext-lg);
+  --cnvs-sys-type-body-small: var(--cnvs-sys-type-body-sm);
+  --cnvs-sys-type-body-medium: var(--cnvs-sys-type-body-md);
+  --cnvs-sys-type-body-large: var(--cnvs-sys-type-body-lg);
+  --cnvs-sys-type-heading-small: var(--cnvs-sys-type-heading-sm);
+  --cnvs-sys-type-heading-medium: var(--cnvs-sys-type-heading-md);
+  --cnvs-sys-type-heading-large: var(--cnvs-sys-type-heading-lg);
+  --cnvs-sys-type-title-small: var(--cnvs-sys-type-title-sm);
+  --cnvs-sys-type-title-medium: var(--cnvs-sys-type-title-md);
+  --cnvs-sys-type-title-large: var(--cnvs-sys-type-title-lg);
+
+  --cnvs-sys-font-size-subtext-small: var(--cnvs-sys-font-size-subtext-sm);
+  --cnvs-sys-font-size-subtext-medium: var(--cnvs-sys-font-size-subtext-md);
+  --cnvs-sys-font-size-subtext-large: var(--cnvs-sys-font-size-subtext-lg);
+  --cnvs-sys-font-size-body-small: var(--cnvs-sys-font-size-body-sm);
+  --cnvs-sys-font-size-body-medium: var(--cnvs-sys-font-size-body-md);
+  --cnvs-sys-font-size-body-large: var(--cnvs-sys-font-size-body-lg);
+  --cnvs-sys-font-size-heading-small: var(--cnvs-sys-font-size-heading-sm);
+  --cnvs-sys-font-size-heading-medium: var(--cnvs-sys-font-size-heading-md);
+  --cnvs-sys-font-size-heading-large: var(--cnvs-sys-font-size-heading-lg);
+  --cnvs-sys-font-size-title-small: var(--cnvs-sys-font-size-title-sm);
+  --cnvs-sys-font-size-title-medium: var(--cnvs-sys-font-size-title-md);
+  --cnvs-sys-font-size-title-large: var(--cnvs-sys-font-size-title-lg);
+
+  --cnvs-sys-line-height-subtext-small: var(--cnvs-sys-line-height-subtext-sm);
+  --cnvs-sys-line-height-subtext-medium: var(--cnvs-sys-line-height-subtext-md);
+  --cnvs-sys-line-height-subtext-large: var(--cnvs-sys-line-height-subtext-lg);
+  --cnvs-sys-line-height-body-small: var(--cnvs-sys-line-height-body-sm);
+  --cnvs-sys-line-height-body-medium: var(--cnvs-sys-line-height-body-md);
+  --cnvs-sys-line-height-body-large: var(--cnvs-sys-line-height-body-lg);
+  --cnvs-sys-line-height-heading-small: var(--cnvs-sys-line-height-heading-sm);
+  --cnvs-sys-line-height-heading-medium: var(--cnvs-sys-line-height-heading-md);
+  --cnvs-sys-line-height-heading-large: var(--cnvs-sys-line-height-heading-lg);
+  --cnvs-sys-line-height-title-small: var(--cnvs-sys-line-height-title-sm);
+  --cnvs-sys-line-height-title-medium: var(--cnvs-sys-line-height-title-md);
+  --cnvs-sys-line-height-title-large: var(--cnvs-sys-line-height-title-lg);
+}

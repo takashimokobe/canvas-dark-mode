@@ -1,0 +1,10 @@
+:where(html) {
+  --cnvs-sys-opacity-zero: var(--cnvs-base-opacity-0);
+
+  --cnvs-sys-opacity-full: 1;
+  --cnvs-sys-opacity-disabled: var(--cnvs-base-opacity-400);
+  --cnvs-sys-opacity-surface-hover: var(--cnvs-base-opacity-80);
+  --cnvs-sys-opacity-surface-pressed: var(--cnvs-base-opacity-180);
+  --cnvs-sys-opacity-accent-hover: var(--cnvs-base-opacity-180);
+  --cnvs-sys-opacity-accent-pressed: var(--cnvs-base-opacity-360);
+}

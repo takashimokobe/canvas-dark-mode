@@ -1,0 +1,41 @@
+:where(html) {
+  --cnvs-base-palette-teal-25: oklch(0.9827 0.021 200.66);
+  --cnvs-base-palette-teal-50: oklch(0.9575 0.0424 203.84);
+  --cnvs-base-palette-teal-100: oklch(0.9349 0.0457 204.99);
+  --cnvs-base-palette-teal-200: oklch(0.8766 0.0677 204.24);
+  --cnvs-base-palette-teal-300: oklch(0.7836 0.0874 204.93);
+  --cnvs-base-palette-teal-400: oklch(0.7154 0.1006 206.05);
+  --cnvs-base-palette-teal-500: oklch(0.6385 0.1093 205.92);
+  --cnvs-base-palette-teal-600: oklch(0.5141 0.0882 207.28);
+  --cnvs-base-palette-teal-700: oklch(0.4634 0.0796 207.82);
+  --cnvs-base-palette-teal-800: oklch(0.3982 0.0687 209.08);
+  --cnvs-base-palette-teal-900: oklch(0.3052 0.0529 210.69);
+  --cnvs-base-palette-teal-950: oklch(0.2425 0.042 210.69);
+  --cnvs-base-palette-teal-975: oklch(0.2037 0.0354 211.24);
+
+  --cnvs-base-palette-dark-teal-25: oklch(0.2051 0.0162 205.13);
+  --cnvs-base-palette-dark-teal-50: oklch(0.238 0.0206 205.61);
+  --cnvs-base-palette-dark-teal-100: oklch(0.2741 0.0276 205.78);
+  --cnvs-base-palette-dark-teal-200: oklch(0.3545 0.0439 205.67);
+  --cnvs-base-palette-dark-teal-300: oklch(0.4821 0.0678 205.77);
+  --cnvs-base-palette-dark-teal-400: oklch(0.5496 0.0828 205.94);
+  --cnvs-base-palette-dark-teal-500: oklch(0.6541 0.1007 205.92);
+  --cnvs-base-palette-dark-teal-600: oklch(0.7414 0.0987 206.12);
+  --cnvs-base-palette-dark-teal-700: oklch(0.8135 0.0967 206.2);
+  --cnvs-base-palette-dark-teal-800: oklch(0.8706 0.0825 206.39);
+  --cnvs-base-palette-dark-teal-900: oklch(0.9319 0.0282 206.64);
+  --cnvs-base-palette-dark-teal-950: oklch(0.9535 0.0134 206.64);
+  --cnvs-base-palette-dark-teal-975: oklch(0.9659 0.0074 206.72);
+
+  --cnvs-base-palette-teal-A25: oklch(0.877 0.1491 201.22 / 0.0826);
+  --cnvs-base-palette-teal-A50: oklch(0.8379 0.1438 207.47 / 0.1805);
+  --cnvs-base-palette-teal-A100: oklch(0.7637 0.1318 209.33 / 0.2198);
+  --cnvs-base-palette-teal-A200: oklch(0.7094 0.122 208.07 / 0.3687);
+  --cnvs-base-palette-teal-A300: oklch(0.6441 0.1109 208.7 / 0.5649);
+
+  --cnvs-base-palette-dark-teal-A25: oklch(0.325 0.0558 207.65 / 0.1863);
+  --cnvs-base-palette-dark-teal-A50: oklch(0.8503 0.1423 208.57 / 0.0757);
+  --cnvs-base-palette-dark-teal-A100: oklch(0.8583 0.1376 207.74 / 0.12);
+  --cnvs-base-palette-dark-teal-A200: oklch(0.8639 0.1354 206.93 / 0.2245);
+  --cnvs-base-palette-dark-teal-A300: oklch(0.8663 0.1348 206.49 / 0.4014);
+}

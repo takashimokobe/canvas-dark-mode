@@ -1,0 +1,5 @@
+@layer components.root {
+  .Pending {
+    min-block-size: var(--cnvs-sys-size-md);
+  }
+}

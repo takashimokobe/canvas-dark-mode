@@ -1,0 +1,33 @@
+:where(html) {
+  --cnvs-base-shadow-1-key-y: 1px;
+  --cnvs-base-shadow-1-key-blur: 4px;
+  --cnvs-base-shadow-1-key-spread: -1px;
+  --cnvs-base-shadow-2-key-y: 2px;
+  --cnvs-base-shadow-2-key-blur: 8px;
+  --cnvs-base-shadow-2-key-spread: -1px;
+  --cnvs-base-shadow-3-key-y: 3px;
+  --cnvs-base-shadow-3-key-blur: 12px;
+  --cnvs-base-shadow-3-key-spread: -1px;
+  --cnvs-base-shadow-4-key-y: 4px;
+  --cnvs-base-shadow-4-key-blur: 16px;
+  --cnvs-base-shadow-4-key-spread: -2px;
+  --cnvs-base-shadow-5-key-y: 8px;
+  --cnvs-base-shadow-5-key-blur: 24px;
+  --cnvs-base-shadow-5-key-spread: -2px;
+  --cnvs-base-shadow-6-key-y: 16px;
+  --cnvs-base-shadow-6-key-blur: 48px;
+  --cnvs-base-shadow-6-key-spread: -3px;
+
+  --cnvs-base-shadow-1-ambient-y: 2px;
+  --cnvs-base-shadow-1-ambient-blur: 8px;
+  --cnvs-base-shadow-2-ambient-y: 4px;
+  --cnvs-base-shadow-2-ambient-blur: 16px;
+  --cnvs-base-shadow-3-ambient-y: 6px;
+  --cnvs-base-shadow-3-ambient-blur: 24px;
+  --cnvs-base-shadow-4-ambient-y: 8px;
+  --cnvs-base-shadow-4-ambient-blur: 32px;
+  --cnvs-base-shadow-5-ambient-y: 16px;
+  --cnvs-base-shadow-5-ambient-blur: 48px;
+  --cnvs-base-shadow-6-ambient-y: 32px;
+  --cnvs-base-shadow-6-ambient-blur: 96px;
+}

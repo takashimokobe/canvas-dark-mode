@@ -1,0 +1,11 @@
+:where(html) {
+  --cnvs-base-font-weight-1: 100;
+  --cnvs-base-font-weight-2: 200;
+  --cnvs-base-font-weight-3: 300;
+  --cnvs-base-font-weight-4: 400;
+  --cnvs-base-font-weight-5: 500;
+  --cnvs-base-font-weight-6: 600;
+  --cnvs-base-font-weight-7: 700;
+  --cnvs-base-font-weight-8: 800;
+  --cnvs-base-font-weight-9: 900;
+}

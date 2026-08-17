@@ -1,0 +1,41 @@
+:where(html) {
+  --spotify-25: oklch(0.99 0.02 148);
+  --spotify-50: oklch(0.97 0.05 148);
+  --spotify-100: oklch(0.93 0.12 148);
+  --spotify-200: oklch(0.85 0.19 148);
+  --spotify-300: oklch(0.77 0.21 149);
+  --spotify-400: oklch(0.69 0.19 149);
+  --spotify-500: oklch(0.61 0.17 149);
+  --spotify-600: oklch(0.51 0.14 150);
+  --spotify-700: oklch(0.43 0.12 150);
+  --spotify-800: oklch(0.34 0.09 150);
+  --spotify-900: oklch(0.26 0.07 151);
+  --spotify-950: oklch(0.22 0.06 151);
+  --spotify-975: oklch(0.2 0.06 150);
+
+  --dark-spotify-25: oklch(0.2051 0.0265 148.85);
+  --dark-spotify-50: oklch(0.238 0.0337 148.85);
+  --dark-spotify-100: oklch(0.2741 0.0452 148.85);
+  --dark-spotify-200: oklch(0.3545 0.0719 148.85);
+  --dark-spotify-300: oklch(0.4821 0.1105 149);
+  --dark-spotify-400: oklch(0.5496 0.1349 149);
+  --dark-spotify-500: oklch(0.6541 0.1641 149);
+  --dark-spotify-600: oklch(0.7414 0.1608 149.15);
+  --dark-spotify-700: oklch(0.8135 0.1576 149.15);
+  --dark-spotify-800: oklch(0.8706 0.1525 149.15);
+  --dark-spotify-900: oklch(0.9319 0.049 149.3);
+  --dark-spotify-950: oklch(0.9535 0.0226 149.3);
+  --dark-spotify-975: oklch(0.9659 0.0124 149.15);
+
+  --spotify-A25: oklch(0.8668 0.2917 142.83 / 0.0461);
+  --spotify-A50: oklch(0.8669 0.2914 142.86 / 0.1238);
+  --spotify-A100: oklch(0.8622 0.2876 143.11 / 0.3109);
+  --spotify-A200: oklch(0.7964 0.259 143.9 / 0.6001);
+  --spotify-A300: oklch(0.7501 0.2239 146.84 / 0.875);
+
+  --dark-spotify-A25: oklch(0.3395 0.1078 144.69 / 0.1759);
+  --dark-spotify-A50: oklch(0.8708 0.2688 144.58 / 0.0747);
+  --dark-spotify-A100: oklch(0.876 0.2512 145.64 / 0.118);
+  --dark-spotify-A200: oklch(0.8792 0.2395 146.69 / 0.2203);
+  --dark-spotify-A300: oklch(0.8809 0.2313 147.75 / 0.393);
+}
