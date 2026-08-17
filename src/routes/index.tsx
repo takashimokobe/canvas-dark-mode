@@ -227,9 +227,9 @@ function RouteComponent() {
       <header className={styles.Header}>
         <h1 className={styles.Title}>Canvas Kit</h1>
         <div className={styles.Controls}>
-          <BrandControl />
-          <BackgroundControl />
           <ModeControl />
+          <BackgroundControl />
+          <BrandControl />
         </div>
       </header>
 

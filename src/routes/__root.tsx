@@ -5,7 +5,12 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 import { useLayoutEffect } from 'react'
-import { buildRootInitScript, useBrand, useMode } from '@/lib/rootPreferences'
+import {
+  buildRootInitScript,
+  useBrand,
+  useMode,
+  useModeKeyboardShortcut,
+} from '@/lib/rootPreferences'
 
 import appCss from '@/styles/index.css?url'
 import styles from './__root.module.css'
@@ -54,6 +59,7 @@ function NotFound() {
 function RootThemeSync() {
   const { brand } = useBrand()
   const { mode } = useMode()
+  useModeKeyboardShortcut()
 
   useLayoutEffect(() => {
     const root = document.documentElement
@@ -65,8 +71,10 @@ function RootThemeSync() {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const { mode } = useMode()
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" style={{ colorScheme: mode }} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: buildRootInitScript() }} />
         <HeadContent />

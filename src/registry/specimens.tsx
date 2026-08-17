@@ -26,11 +26,9 @@ import {
 import { Card } from '@workday/canvas-kit-react/card'
 import { Checkbox } from '@workday/canvas-kit-react/checkbox'
 import { Combobox } from '@workday/canvas-kit-react/combobox'
-import { AccessibleHide } from '@workday/canvas-kit-react/common'
 import { Dialog } from '@workday/canvas-kit-react/dialog'
 import { Expandable } from '@workday/canvas-kit-react/expandable'
 import { FormField } from '@workday/canvas-kit-react/form-field'
-import { SystemIcon } from '@workday/canvas-kit-react/icon'
 import { InformationHighlight } from '@workday/canvas-kit-react/information-highlight'
 import { Box, Flex, Grid } from '@workday/canvas-kit-react/layout'
 import { LoadingDots } from '@workday/canvas-kit-react/loading-dots'
@@ -58,7 +56,6 @@ import {
   exclamationCircleIcon,
   infoIcon,
 } from '@workday/canvas-system-icons-web'
-import { BRAND_ICONS } from '@/registry/brandIcon'
 import type {
   CanvasKitEntry,
   CanvasKitSlug,
@@ -133,14 +130,16 @@ function ActionBarSpecimen() {
   return (
     <ActionBar>
       <ActionBar.List
+        as="section"
+        aria-label="Action Bar"
         cs={{
           position: 'relative',
           inset: 'unset',
           alignSelf: 'stretch',
         }}
       >
-        <ActionBar.Item as={SecondaryButton}>Save draft</ActionBar.Item>
         <ActionBar.Item as={PrimaryButton}>Publish</ActionBar.Item>
+        <ActionBar.Item as={SecondaryButton}>Save draft</ActionBar.Item>
       </ActionBar.List>
     </ActionBar>
   )
@@ -677,14 +676,11 @@ function SelectSpecimen() {
 
 function SidePanelSpecimen() {
   const model = useSidePanelModel()
-  const expanded =
-    model.state.transitionState === 'expanded' ||
-    model.state.transitionState === 'expanding'
 
   return (
     <Flex
       cs={{
-        minBlockSize: '14rem',
+        blockSize: '14rem',
         inlineSize: '100%',
         border: '1px solid var(--cnvs-sys-color-border-default)',
         borderRadius: 'var(--cnvs-sys-shape-card)',
@@ -698,26 +694,8 @@ function SidePanelSpecimen() {
         expandedWidth={200}
         collapsedWidth={64}
       >
-        <AccessibleHide id={model.state.labelId}>Navigation</AccessibleHide>
-        {expanded && (
-          <Flex
-            cs={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              inlineSize: '2.625rem',
-              blockSize: '2.625rem',
-              margin: 'var(--cnvs-base-size-100)',
-              border: '1px solid var(--cnvs-sys-color-border-default)',
-              borderRadius: 'var(--cnvs-sys-shape-md)',
-            }}
-          >
-            <SystemIcon icon={BRAND_ICONS.workday} size={24} />
-          </Flex>
-        )}
-        <SidePanel.ToggleButton
-          tooltipText="Toggle navigation"
-          style={{ insetBlockStart: '0.5625rem' }}
-        />
+        <SidePanel.ToggleButton aria-label="Collapse view" />
+        <SidePanel.Heading size="small">Navigation</SidePanel.Heading>
       </SidePanel>
       <Box cs={{ padding: 'var(--cnvs-base-size-300)', flex: 1 }}>
         <Text as="p" typeLevel="body.small">

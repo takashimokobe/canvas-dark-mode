@@ -17,7 +17,10 @@ body {
   overflow: visible;
   color: var(--cnvs-sys-color-fg-default);
   background-color: var(--cnvs-sys-color-bg-alt-default);
-  padding: var(--cnvs-sys-padding-xxl);
+  padding-block: max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-top))
+    max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-bottom));
+  padding-inline: max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-left))
+    max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-right));
   font: var(--cnvs-sys-type-body-sm);
   font-variant-numeric: tabular-nums;
 }

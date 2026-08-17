@@ -1,4 +1,4 @@
-import { useCallback, useSyncExternalStore } from 'react'
+import { useCallback, useEffect, useSyncExternalStore } from 'react'
 
 export type Mode = 'light' | 'dark'
 
@@ -103,7 +103,41 @@ export function useMode() {
     notifyRootPreferenceListeners()
   }, [])
 
-  return { mode, setMode }
+  const toggleMode = useCallback(() => {
+    setMode(mode === 'dark' ? 'light' : 'dark')
+  }, [setMode, mode])
+
+  return { mode, setMode, toggleMode }
+}
+
+function isTypingTarget(target: EventTarget | null) {
+  if (!(target instanceof HTMLElement)) return false
+  if (target.isContentEditable) return true
+  switch (target.tagName) {
+    case 'INPUT':
+    case 'TEXTAREA':
+    case 'SELECT':
+      return true
+    default:
+      return false
+  }
+}
+
+export function useModeKeyboardShortcut() {
+  const { toggleMode } = useMode()
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.metaKey || event.ctrlKey || event.altKey) return
+      if (event.code !== 'KeyD') return
+      if (isTypingTarget(event.target)) return
+      event.preventDefault()
+      toggleMode()
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [toggleMode])
 }
 
 export function useBrand() {
