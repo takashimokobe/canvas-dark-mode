@@ -3,15 +3,24 @@
     display: flex;
     flex-direction: column;
     gap: var(--cnvs-base-size-600);
-    overflow: visible;
+
+    @media (--md-n-below) {
+      gap: var(--cnvs-sys-gap-xl);
+    }
   }
 
   .Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--cnvs-base-size-400);
+    gap: var(--cnvs-sys-gap-xl);
     flex-wrap: wrap;
+
+    @media (--md-n-below) {
+      flex-direction: column;
+      align-items: start;
+      gap: var(--cnvs-sys-gap-lg);
+    }
   }
 
   .Title {
@@ -19,45 +28,48 @@
     font: var(--cnvs-sys-type-heading-lg);
     letter-spacing: var(--cnvs-sys-letter-spacing-heading-lg);
     color: var(--cnvs-sys-color-fg-strong);
+    text-box: trim-both cap alphabetic;
+
+    @media (--md-n-below) {
+      font: var(--cnvs-sys-type-heading-md);
+      letter-spacing: var(--cnvs-sys-letter-spacing-heading-md);
+    }
   }
 
   .Controls {
     display: flex;
     align-items: center;
-    gap: var(--cnvs-base-size-300);
+    gap: var(--cnvs-sys-gap-lg);
     flex-wrap: wrap;
-  }
 
-  .BrandControl {
-    display: flex;
-    align-items: center;
-    gap: var(--cnvs-base-size-200);
-  }
+    @media (--md-n-below) {
+      inline-size: 100%;
+    }
 
-  .BrandedToggle {
-    display: flex;
-    align-items: center;
-    gap: var(--cnvs-base-size-150);
-    cursor: pointer;
-  }
+    @media (--sm-only) {
+      flex-direction: column;
+      align-items: start;
+    }
 
-  .BrandedLabel {
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-    color: var(--cnvs-sys-color-fg-muted-default);
+    @media (--touch) {
+      gap: var(--cnvs-sys-gap-xl);
+    }
   }
 
   .Sections {
     display: flex;
     flex-direction: column;
     gap: var(--cnvs-base-size-700);
+
+    @media (--md-n-below) {
+      gap: var(--cnvs-base-size-600);
+    }
   }
 
   .Category {
     display: flex;
     flex-direction: column;
-    gap: var(--cnvs-base-size-300);
+    gap: var(--cnvs-sys-gap-lg);
   }
 
   .CategoryTitle {
@@ -65,36 +77,72 @@
     font: var(--cnvs-sys-type-heading-sm);
     letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
     color: var(--cnvs-sys-color-fg-strong);
+    text-box: trim-both cap alphabetic;
   }
 
   .Grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: var(--cnvs-base-size-300);
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+    grid-auto-rows: auto 1fr;
+    gap: var(--cnvs-sys-gap-lg);
+
+    @media (--md-n-below) {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+
+    @media (--lg-n-above) {
+      grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
+    }
   }
 
-  /* Cards sit on bg-default, so they carry a border (see docs/dark-mode.md). */
   .Card {
-    display: flex;
-    flex-direction: column;
+    container: --card / inline-size;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
     min-inline-size: 0;
     border: 1px solid var(--cnvs-sys-color-border-default);
-    /* shape-xxxl = size-350 = 28px */
     border-radius: var(--cnvs-sys-shape-xxxl);
     background-color: var(--cnvs-sys-color-surface-default);
     box-shadow: var(--cnvs-sys-depth-1);
+
+    @media (--md-n-below) {
+      display: flex;
+      flex-direction: column;
+      grid-row: auto;
+    }
+
+    @media (--highContrast) {
+      border-width: 2px;
+    }
+
+    @media (--forcedColors) {
+      border-color: CanvasText;
+      box-shadow: none;
+    }
   }
 
   .CardWide {
     grid-column: 1 / -1;
+
+    @media (--md-n-below) {
+      grid-column: auto;
+    }
   }
 
   .CardHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--cnvs-base-size-200);
-    padding: var(--cnvs-base-size-300) var(--cnvs-base-size-300) 0;
+    flex-wrap: wrap;
+    gap: var(--cnvs-sys-gap-md);
+    padding-block-start: var(--cnvs-sys-padding-xl);
+    padding-inline: var(--cnvs-sys-padding-xl);
+
+    @media (--md-n-below) {
+      padding-inline: var(--cnvs-sys-padding-md);
+    }
   }
 
   .CardName {
@@ -103,32 +151,43 @@
     letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
     font-weight: var(--cnvs-sys-font-weight-medium);
     color: var(--cnvs-sys-color-fg-strong);
+    text-box: trim-both cap alphabetic;
   }
 
   .CardStage {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     justify-content: center;
-    flex: 1;
-    gap: var(--cnvs-base-size-200);
-    padding: var(--cnvs-base-size-400) var(--cnvs-base-size-300);
+    gap: var(--cnvs-sys-gap-md);
+    padding-block: var(--cnvs-sys-padding-xxl);
+    padding-inline: var(--cnvs-sys-padding-xl);
     /* Popups and menus anchored inside a card must not clip. */
     overflow: visible;
-  }
 
-  .CardStage > * {
-    max-inline-size: 100%;
+    @container --card (width < 36ch) {
+      padding-block: var(--cnvs-sys-padding-xl);
+      padding-inline: var(--cnvs-sys-padding-md);
+    }
+
+    @media (--md-n-below) {
+      padding-block: var(--cnvs-sys-padding-xl);
+      padding-inline: var(--cnvs-sys-padding-md);
+    }
+
+    & > * {
+      max-inline-size: 100%;
+    }
   }
 
   .TnumPanel {
     display: flex;
     flex-direction: column;
-    gap: var(--cnvs-base-size-50);
+    gap: var(--cnvs-sys-gap-xs);
   }
 
   .TnumLabel {
-    margin: 0 0 var(--cnvs-base-size-100);
+    margin-block-end: var(--cnvs-sys-gap-sm);
     font: var(--cnvs-sys-type-subtext-md);
     letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
     font-weight: var(--cnvs-sys-font-weight-medium);
@@ -141,21 +200,21 @@
     font: var(--cnvs-sys-type-body-sm);
     letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
     font-weight: var(--cnvs-sys-font-weight-normal);
-  }
 
-  /* Deliberately stronger than the surface washes so the per-digit stripe
+    /* Deliberately stronger than the surface washes so the per-digit stripe
        boundaries stay legible at body-sm. */
-  .TnumRow > span:nth-child(odd) {
-    background-color: light-dark(
-      var(--cnvs-base-palette-red-A200),
-      var(--cnvs-base-palette-dark-red-A200)
-    );
-  }
+    & > span:nth-child(odd) {
+      background-color: light-dark(
+        var(--cnvs-base-palette-red-A200),
+        var(--cnvs-base-palette-dark-red-A200)
+      );
+    }
 
-  .TnumRow > span:nth-child(even) {
-    background-color: light-dark(
-      var(--cnvs-base-palette-blue-A200),
-      var(--cnvs-base-palette-dark-blue-A200)
-    );
+    & > span:nth-child(even) {
+      background-color: light-dark(
+        var(--cnvs-base-palette-blue-A200),
+        var(--cnvs-base-palette-dark-blue-A200)
+      );
+    }
   }
 }

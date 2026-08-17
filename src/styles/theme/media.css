@@ -1,0 +1,54 @@
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --motionNotOK (prefers-reduced-motion: reduce);
+@custom-media --opacityOK (prefers-reduced-transparency: no-preference);
+@custom-media --opacityNotOK (prefers-reduced-transparency: reduce);
+@custom-media --useDataOK (prefers-reduced-data: no-preference);
+@custom-media --useDataNotOK (prefers-reduced-data: reduce);
+
+@custom-media --OSdark (prefers-color-scheme: dark);
+@custom-media --OSlight (prefers-color-scheme: light);
+
+@custom-media --highContrast (prefers-contrast: more);
+@custom-media --lowContrast (prefers-contrast: less);
+
+@custom-media --invertedColors (inverted-colors: inverted);
+@custom-media --forcedColors (forced-colors: active);
+
+@custom-media --portrait (orientation: portrait);
+@custom-media --landscape (orientation: landscape);
+
+@custom-media --HDcolor (dynamic-range: high) or (color-gamut: p3);
+
+@custom-media --touch (hover: none) and (pointer: coarse);
+@custom-media --stylus (hover: none) and (pointer: fine);
+@custom-media --pointer (hover) and (pointer: coarse);
+@custom-media --mouse (hover) and (pointer: fine);
+
+/* Width queries follow the Canvas breakpoint scale
+   (--cnvs-breakpoint-sm/md/lg/xl). Values are repeated literally because
+   custom properties cannot be referenced inside media queries. */
+
+/* zero: 0 <= width < 320px (below --cnvs-breakpoint-sm) */
+@custom-media --zero-only (width < 320px);
+@custom-media --zero-phone (--zero-only) and (--portrait);
+
+/* sm: 320px <= width <= 767px (--cnvs-breakpoint-sm to --cnvs-breakpoint-md) */
+@custom-media --sm-only (320px <= width < 768px);
+@custom-media --sm-n-above (width >= 320px);
+@custom-media --sm-n-below (width < 320px);
+@custom-media --sm-phone (--sm-only) and (--portrait);
+
+/* md: 768px <= width <= 1023px (above --cnvs-breakpoint-md to --cnvs-breakpoint-lg) */
+@custom-media --md-only (768px <= width < 1024px);
+@custom-media --md-n-above (width >= 768px);
+@custom-media --md-n-below (width < 768px);
+@custom-media --md-phone (--md-only) and (--portrait);
+
+/* lg: 1024px <= width < 1440px (above --cnvs-breakpoint-lg to --cnvs-breakpoint-xl) */
+@custom-media --lg-only (1024px <= width < 1440px);
+@custom-media --lg-n-above (width >= 1024px);
+@custom-media --lg-n-below (width < 1024px);
+
+/* xl: width >= 1440px (--cnvs-breakpoint-xl and above) */
+@custom-media --xl-n-above (width >= 1440px);
+@custom-media --xl-n-below (width < 1440px);

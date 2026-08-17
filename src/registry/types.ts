@@ -81,7 +81,3 @@ export type CanvasKitSpecimenProps = {
 }
 
 export type CanvasKitSpecimen = ComponentType<CanvasKitSpecimenProps>
-
-export function isCanvasKitSlug(value: string): value is CanvasKitSlug {
-  return (CANVAS_KIT_SLUGS as readonly string[]).includes(value)
-}

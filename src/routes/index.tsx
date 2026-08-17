@@ -5,7 +5,6 @@ import {
   SegmentedControl,
   useSegmentedControlModel,
 } from '@workday/canvas-kit-react/segmented-control'
-import { Switch } from '@workday/canvas-kit-preview-react/switch'
 import { moonIcon, sunIcon } from '@workday/canvas-system-icons-web'
 import { BRAND_ICONS } from '@/registry/brandIcon'
 import { CanvasKitSpecimenView } from '@/registry/specimens'
@@ -13,9 +12,10 @@ import { CATEGORY_LABELS, getCanvasKitByCategory } from '@/registry/index'
 import { CANVAS_KIT_CATEGORIES } from '@/registry/types'
 import type { CanvasKitEntry, CanvasKitSlug } from '@/registry/types'
 import {
-  BRANDED_BRANDS,
+  BRANDS,
   formatBrandLabel,
-  useEffectiveBrand,
+  isBrand,
+  useBrand,
   useMode,
 } from '@/lib/rootPreferences'
 
@@ -28,7 +28,6 @@ export const Route = createFileRoute('/')({
   component: RouteComponent,
 })
 
-/** Specimens that need the full row to breathe (bars, tables, panels). */
 const WIDE_SLUGS = new Set<CanvasKitSlug>([
   'action-bar',
   'banner',
@@ -57,7 +56,7 @@ function ModeControl() {
     },
   })
 
-  // Keep the control in sync when the mode changes elsewhere (OS preference).
+  // Sync when OS preference changes.
   const { selectedIds } = model.state
   const { select } = model.events
   useEffect(() => {
@@ -86,9 +85,47 @@ function ModeControl() {
 
 type PageBackground = 'default' | 'alt'
 
+function BrandControl() {
+  const { brand, setBrand } = useBrand()
+  const brandRef = useRef(brand)
+  brandRef.current = brand
+
+  const model = useSegmentedControlModel({
+    initialValue: brand,
+    size: 'small',
+    onSelect({ id }: { id: string }) {
+      if (isBrand(id) && id !== brandRef.current) {
+        setBrand(id)
+      }
+    },
+  })
+
+  const { selectedIds } = model.state
+  const { select } = model.events
+  useEffect(() => {
+    if (selectedIds !== 'all' && selectedIds[0] !== brand) {
+      select({ id: brand })
+    }
+  }, [brand, selectedIds, select])
+
+  return (
+    <SegmentedControl model={model}>
+      <SegmentedControl.List aria-label="Brand">
+        {BRANDS.map((item) => (
+          <SegmentedControl.Item
+            key={item}
+            data-id={item}
+            icon={BRAND_ICONS[item]}
+            tooltipProps={{ title: formatBrandLabel(item) }}
+          />
+        ))}
+      </SegmentedControl.List>
+    </SegmentedControl>
+  )
+}
+
 function BackgroundControl() {
-  // The body ships with bg-alt (see styles/index.css); "default" applies an
-  // inline override that is cleared again when leaving the page.
+  // Body default is bg-alt; "default" is an inline override.
   const [background, setBackground] = useState<PageBackground>('alt')
 
   const model = useSegmentedControlModel({
@@ -119,81 +156,13 @@ function BackgroundControl() {
   )
 }
 
-type BrandedBrand = (typeof BRANDED_BRANDS)[number]
-
-function isBrandedBrand(id: string): id is BrandedBrand {
-  return (BRANDED_BRANDS as readonly string[]).includes(id)
-}
-
-function BrandControl() {
-  const { branded, effectiveBrand, setBrand, setBrandedTheme } =
-    useEffectiveBrand()
-  const brandRef = useRef(effectiveBrand)
-  brandRef.current = effectiveBrand
-
-  const model = useSegmentedControlModel({
-    initialValue:
-      effectiveBrand === 'default' ? BRANDED_BRANDS[0] : effectiveBrand,
-    size: 'small',
-    onSelect({ id }: { id: string }) {
-      if (isBrandedBrand(id) && id !== brandRef.current) {
-        setBrand(id)
-      }
-    },
-  })
-
-  // Keep the control in sync when the brand changes elsewhere (playground).
-  const { selectedIds } = model.state
-  const { select } = model.events
-  useEffect(() => {
-    if (
-      effectiveBrand !== 'default' &&
-      selectedIds !== 'all' &&
-      selectedIds[0] !== effectiveBrand
-    ) {
-      select({ id: effectiveBrand })
-    }
-  }, [effectiveBrand, selectedIds, select])
-
-  return (
-    <div className={styles.BrandControl}>
-      <label className={styles.BrandedToggle}>
-        <span className={styles.BrandedLabel}>Branded</span>
-        <Switch
-          checked={branded}
-          onChange={(event) => setBrandedTheme(event.currentTarget.checked)}
-        />
-      </label>
-      <SegmentedControl model={model}>
-        <SegmentedControl.List aria-label="Tenant brand">
-          {BRANDED_BRANDS.map((brand) => (
-            <SegmentedControl.Item
-              key={brand}
-              data-id={brand}
-              icon={BRAND_ICONS[brand]}
-              disabled={!branded}
-              tooltipProps={{ title: formatBrandLabel(brand) }}
-            />
-          ))}
-        </SegmentedControl.List>
-      </SegmentedControl>
-    </div>
-  )
-}
-
 const TNUM_ROWS = ['111111', '808080', '999111']
 const TNUM_VARIANTS = [
   { label: 'tabular-nums off', value: 'normal' },
   { label: 'tabular-nums on', value: 'tabular-nums' },
 ] as const
 
-/**
- * Sana Sans ships proportional figures by default and swaps to fixed-width
- * figures under `tnum`. Each digit is striped so the difference reads as
- * zigzag columns (off) versus straight columns (on). The variant is set
- * inline per digit because the site-wide `* { font-variant-numeric }` rule
- * would otherwise force tabular figures onto the "off" panel.
- */
+/** Inline `fontVariantNumeric` so the off panel can escape the global `tnum` rule. */
 function TabularNumsCard() {
   return (
     <article className={styles.Card}>

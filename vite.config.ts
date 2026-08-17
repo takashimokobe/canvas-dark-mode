@@ -8,12 +8,7 @@ import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
-  plugins: [
-    devtools(),
-    nitro({ rollupConfig: { external: [/^@sentry\//] } }),
-    tanstackStart(),
-    viteReact(),
-  ],
+  plugins: [devtools(), nitro(), tanstackStart(), viteReact()],
 })
 
 export default config

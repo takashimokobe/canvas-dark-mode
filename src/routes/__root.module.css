@@ -1,0 +1,34 @@
+@layer layouts {
+  .NotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--cnvs-sys-gap-md);
+    max-inline-size: 40rem;
+  }
+
+  .Title {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-lg);
+    color: var(--cnvs-sys-color-fg-strong);
+    text-box: trim-both cap alphabetic;
+  }
+
+  .Body {
+    margin: 0;
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .HomeLink {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    color: var(--cnvs-sys-color-fg-link-default);
+    transition: color var(--cnvs-base-duration-100)
+      var(--cnvs-sys-motion-easing-quick-standard);
+
+    &:hover {
+      color: var(--cnvs-sys-color-fg-link-hover);
+    }
+  }
+}

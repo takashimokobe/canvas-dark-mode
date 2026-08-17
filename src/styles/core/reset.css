@@ -30,6 +30,12 @@ html {
   scrollbar-gutter: stable;
 }
 
+@media (--motionNotOK) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 h1,
 h2,
 h3,

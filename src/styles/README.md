@@ -2,15 +2,15 @@
 
 > Work in progress — token names and file layout may change.
 
-Layers load in order via `index.css`: **reset** → **base** → **brand** → **theme** → **deprecated** → **components** → **utils**.
+Layers load in order via `index.css`: **reset** → **base** → **brand** → **theme** → **deprecated** → **components** → **layouts**.
 
-| Folder        | Contents                                                                       |
-| ------------- | ------------------------------------------------------------------------------ |
-| `core/`       | Reset and utility classes.                                                     |
-| `base/`       | Primitives: palettes, size, motion, opacity, fonts.                            |
-| `brand/`      | Per-brand `--cnvs-brand-*` ramps, keyed by `[data-brand]`.                     |
-| `theme/`      | Semantic `--cnvs-sys-*` tokens. The only place `light-dark()` is used.         |
-| `deprecated/` | Old Canvas Kit names aliased to current tokens, in their own layer.            |
+| Folder        | Contents                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| `core/`       | Reset.                                                                                            |
+| `base/`       | Primitives: palettes, size, motion, opacity, fonts.                                               |
+| `brand/`      | Per-brand `--cnvs-brand-*` ramps, keyed by `[data-brand]`.                                        |
+| `theme/`      | Semantic `--cnvs-sys-*` tokens, breakpoints, and `@custom-media`. `light-dark()` lives only here. |
+| `deprecated/` | Old Canvas Kit names aliased to current tokens, in their own layer.                               |
 
 ## Brands
 
@@ -28,3 +28,16 @@ Set both on `<html>` (see `src/routes/__root.tsx`):
 
 - `data-brand` — one of `default`, `workday`, `airbnb`, `spotify`, `discord`. Use `default` (the Sana theme) unless a tenant brand is required.
 - `color-scheme` — `light` or `dark`; omit to follow `prefers-color-scheme`.
+
+## Custom media
+
+`theme/media.css` defines `@custom-media` names (motion, contrast, breakpoints, pointer). PostCSS expands them in every CSS file, including CSS modules, via `@csstools/postcss-global-data`.
+
+```css
+@media (--md-n-above) {
+}
+@media (--highContrast) {
+}
+@media (--motionNotOK) {
+}
+```

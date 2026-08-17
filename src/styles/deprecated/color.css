@@ -83,7 +83,9 @@
   --cnvs-sys-color-bg-caution-softest: var(
     --cnvs-sys-color-brand-surface-caution-default
   );
-  --cnvs-sys-color-bg-caution-strong: var(--cnvs-sys-color-brand-accent-caution);
+  --cnvs-sys-color-bg-caution-strong: var(
+    --cnvs-sys-color-brand-accent-caution
+  );
   --cnvs-sys-color-bg-caution-stronger: var(
     --cnvs-sys-color-brand-accent-caution
   );
@@ -135,7 +137,9 @@
     --cnvs-sys-color-brand-fg-critical-strong
   );
   --cnvs-sys-color-text-critical-soft: var(--cnvs-sys-color-fg-danger-default);
-  --cnvs-sys-color-text-critical-softer: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-text-critical-softer: var(
+    --cnvs-sys-color-fg-danger-default
+  );
   --cnvs-sys-color-text-primary-default: var(
     --cnvs-sys-color-brand-fg-primary-default
   );
@@ -147,13 +151,19 @@
   );
   --cnvs-sys-color-text-primary-soft: var(--cnvs-sys-color-fg-info-default);
   --cnvs-sys-color-text-primary-softer: var(--cnvs-sys-color-fg-info-default);
-  --cnvs-sys-color-text-caution-default: var(--cnvs-sys-color-fg-warning-default);
-  --cnvs-sys-color-text-caution-strong: var(--cnvs-sys-color-fg-contrast-strong);
+  --cnvs-sys-color-text-caution-default: var(
+    --cnvs-sys-color-fg-warning-default
+  );
+  --cnvs-sys-color-text-caution-strong: var(
+    --cnvs-sys-color-fg-contrast-strong
+  );
   --cnvs-sys-color-text-caution-soft: var(--cnvs-sys-color-fg-warning-default);
   --cnvs-sys-color-text-caution-stronger: var(
     --cnvs-sys-color-fg-contrast-strong
   );
-  --cnvs-sys-color-text-caution-softer: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-text-caution-softer: var(
+    --cnvs-sys-color-fg-warning-default
+  );
   --cnvs-sys-color-text-ai: var(--cnvs-sys-color-fg-ai);
   --cnvs-sys-color-text-positive-default: var(
     --cnvs-sys-color-brand-fg-positive-default
@@ -165,7 +175,9 @@
     --cnvs-sys-color-brand-fg-positive-strong
   );
   --cnvs-sys-color-text-positive-soft: var(--cnvs-sys-color-fg-success-default);
-  --cnvs-sys-color-text-positive-softer: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-text-positive-softer: var(
+    --cnvs-sys-color-fg-success-default
+  );
   --cnvs-sys-color-text-info-default: var(--cnvs-sys-color-fg-info-default);
   --cnvs-sys-color-text-info-strong: var(--cnvs-sys-color-fg-info-strong);
   --cnvs-sys-color-text-info-stronger: var(--cnvs-sys-color-fg-info-strong);
@@ -197,12 +209,16 @@
     --cnvs-sys-color-brand-fg-positive-strong
   );
   --cnvs-sys-color-icon-positive-soft: var(--cnvs-sys-color-fg-success-default);
-  --cnvs-sys-color-icon-positive-softer: var(--cnvs-sys-color-fg-success-default);
+  --cnvs-sys-color-icon-positive-softer: var(
+    --cnvs-sys-color-fg-success-default
+  );
   --cnvs-sys-color-icon-critical-default: var(
     --cnvs-sys-color-brand-fg-critical-default
   );
   --cnvs-sys-color-icon-critical-strong: var(--cnvs-sys-color-fg-danger-strong);
-  --cnvs-sys-color-icon-critical-stronger: var(--cnvs-sys-color-fg-danger-strong);
+  --cnvs-sys-color-icon-critical-stronger: var(
+    --cnvs-sys-color-fg-danger-strong
+  );
   --cnvs-sys-color-icon-critical-soft: var(--cnvs-sys-color-fg-danger-strong);
   --cnvs-sys-color-icon-critical-softer: var(--cnvs-sys-color-fg-danger-strong);
   --cnvs-sys-color-icon-caution-default: var(
@@ -215,7 +231,9 @@
     --cnvs-sys-color-brand-fg-caution-strong
   );
   --cnvs-sys-color-icon-caution-soft: var(--cnvs-sys-color-fg-warning-default);
-  --cnvs-sys-color-icon-caution-softer: var(--cnvs-sys-color-fg-warning-default);
+  --cnvs-sys-color-icon-caution-softer: var(
+    --cnvs-sys-color-fg-warning-default
+  );
   --cnvs-sys-color-icon-disabled: var(--cnvs-sys-color-fg-disabled);
   --cnvs-sys-color-icon-info-default: var(--cnvs-sys-color-fg-info-default);
   --cnvs-sys-color-icon-info-strong: var(--cnvs-sys-color-fg-info-strong);
@@ -227,7 +245,9 @@
   --cnvs-sys-color-fg-critical-strong: var(
     --cnvs-sys-color-brand-fg-critical-strong
   );
-  --cnvs-sys-color-fg-critical-stronger: var(--cnvs-sys-color-fg-danger-default);
+  --cnvs-sys-color-fg-critical-stronger: var(
+    --cnvs-sys-color-fg-danger-default
+  );
   --cnvs-sys-color-fg-critical-soft: var(--cnvs-sys-color-fg-danger-default);
   --cnvs-sys-color-fg-critical-softer: var(--cnvs-sys-color-fg-danger-default);
   --cnvs-sys-color-fg-muted-stronger: var(--cnvs-sys-color-fg-muted-strong);

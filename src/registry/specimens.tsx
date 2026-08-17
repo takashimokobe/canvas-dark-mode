@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react'
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { AIIngressButton } from '@workday/canvas-kit-labs-react/ai-ingress-button'
 import { KBD } from '@workday/canvas-kit-labs-react/kbd'
 import { ColorPicker } from '@workday/canvas-kit-preview-react/color-picker'
@@ -67,6 +67,19 @@ import type {
 
 import styles from './specimens.module.css'
 
+function subscribeHydration() {
+  return () => {}
+}
+
+/** Canvas Kit `useModalityType` is `mouse` on the server and `touch` below 768px. */
+function useHydrated() {
+  return useSyncExternalStore(
+    subscribeHydration,
+    () => true,
+    () => false,
+  )
+}
+
 const TEAMS = ['Design systems', 'Platform', 'Accessibility']
 const REVIEWERS = ['Taka Shimokobe', 'Nor Savangovay', 'Rick Schaffer']
 const ACCENT_SWATCHES = [
@@ -101,7 +114,6 @@ function Stage({ children }: { children: React.ReactNode }) {
   )
 }
 
-/** Vertical list of variant rows inside one specimen card. */
 function Stack({ children }: { children: React.ReactNode }) {
   return (
     <Flex
@@ -114,25 +126,6 @@ function Stack({ children }: { children: React.ReactNode }) {
     >
       {children}
     </Flex>
-  )
-}
-
-function FallbackSpecimen({ entry }: { entry: CanvasKitEntry }) {
-  return (
-    <div className={styles.Fallback}>
-      <Text as="p" typeLevel="body.small">
-        Interactive specimen coming soon. Import from:
-      </Text>
-      <code className={styles.Code}>{entry.importPath}</code>
-      <a
-        className={styles.StorybookLink}
-        href={entry.storybookUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        View in Canvas Kit Storybook
-      </a>
-    </div>
   )
 }
 
@@ -721,7 +714,6 @@ function SidePanelSpecimen() {
             <SystemIcon icon={BRAND_ICONS.workday} size={24} />
           </Flex>
         )}
-        {/* Defaults to sidebarLeftIcon for start-origin panels. */}
         <SidePanel.ToggleButton
           tooltipText="Toggle navigation"
           style={{ insetBlockStart: '0.5625rem' }}
@@ -852,6 +844,11 @@ function TableSpecimen() {
 }
 
 function TabsSpecimen() {
+  const hydrated = useHydrated()
+  if (!hydrated) {
+    return <div className={styles.Pending} aria-hidden />
+  }
+
   return (
     <Tabs>
       <Tabs.List>
@@ -1033,10 +1030,5 @@ const specimenBySlug: Record<CanvasKitSlug, CanvasKitSpecimen> = {
 
 export function CanvasKitSpecimenView({ entry }: { entry: CanvasKitEntry }) {
   const Specimen = specimenBySlug[entry.slug]
-
-  if (Specimen) {
-    return <Specimen entry={entry} />
-  }
-
-  return <FallbackSpecimen entry={entry} />
+  return <Specimen entry={entry} />
 }

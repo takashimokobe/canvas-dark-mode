@@ -1,10 +1,11 @@
 import {
-  CANVAS_KIT_SLUGS,
-  type CanvasKitCategory,
-  type CanvasKitEntry,
-  type CanvasKitPackage,
-  type CanvasKitSlug,
+  CANVAS_KIT_SLUGS
+  
+  
+  
+  
 } from './types'
+import type {CanvasKitCategory, CanvasKitEntry, CanvasKitPackage, CanvasKitSlug} from './types';
 
 const STORYBOOK_BASE = 'https://workday.github.io/canvas-kit/?path=/docs'
 
@@ -379,24 +380,10 @@ const registrySeeds: RegistrySeed[] = [
   },
 ]
 
-export const DEFAULT_CANVAS_KIT_SLUG: CanvasKitSlug = 'button'
-
 export const canvasKitRegistry: CanvasKitEntry[] = registrySeeds.map(entry)
 
 if (canvasKitRegistry.length !== CANVAS_KIT_SLUGS.length) {
   throw new Error('Canvas Kit registry is out of sync with CANVAS_KIT_SLUGS')
-}
-
-const registryBySlug = new Map(
-  canvasKitRegistry.map((item) => [item.slug, item] as const),
-)
-
-export function getCanvasKitEntry(slug: CanvasKitSlug): CanvasKitEntry {
-  const entry = registryBySlug.get(slug)
-  if (!entry) {
-    throw new Error(`Unknown Canvas Kit slug: ${slug}`)
-  }
-  return entry
 }
 
 export function getCanvasKitByCategory(category: CanvasKitCategory) {
@@ -414,10 +401,4 @@ export const CATEGORY_LABELS: Record<CanvasKitCategory, string> = {
   feedback: 'Feedback',
   data: 'Data',
   ai: 'AI',
-}
-
-export const PACKAGE_LABELS: Record<CanvasKitPackage, string> = {
-  react: 'Main',
-  preview: 'Preview',
-  labs: 'Labs',
 }

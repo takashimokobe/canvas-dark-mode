@@ -1,5 +1,4 @@
 :where(html) {
-
   --cnvs-base-palette-slate-25: oklch(0.985 0.003 255);
   --cnvs-base-palette-slate-50: oklch(0.97 0.005 255);
   --cnvs-base-palette-slate-100: oklch(0.944 0.007 255);

@@ -1,18 +1,17 @@
 /* Work in progress — token names and file layout are subject to change. */
 
+@layer reset, base, brand, theme, deprecated, components, layouts;
+
 @import './core/reset.css' layer(reset);
 
 @import './base/index.css' layer(base);
 @import './brand/index.css' layer(brand);
+@import './theme/media.css';
 @import './theme/index.css' layer(theme);
 
 @import './deprecated/index.css' layer(deprecated);
 
 @import './components/segmented-control.css' layer(components);
-
-@import './core/utils.css' layer(utils);
-
-@layer reset, base, brand, theme, deprecated, components, utils;
 
 body {
   overflow: visible;
