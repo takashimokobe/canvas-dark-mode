@@ -23,11 +23,11 @@ Layers load in order via `index.css`: **reset** → **base** → **brand** → *
 Set both on `<html>` (see `src/routes/__root.tsx`):
 
 ```html
-<html data-brand="spotify" style="color-scheme: dark"></html>
+<html class="dark" data-brand="spotify"></html>
 ```
 
+- `class` — `light` or `dark`. Sets `color-scheme` so `light-dark()` tokens follow the Mode control, not only the OS.
 - `data-brand` — one of `default`, `workday`, `airbnb`, `spotify`, `discord`. Use `default` (the Sana theme) unless a tenant brand is required.
-- `color-scheme` — `light` or `dark`; omit to follow `prefers-color-scheme`.
 
 ## Custom media
 
