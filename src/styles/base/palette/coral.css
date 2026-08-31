@@ -13,19 +13,19 @@
   --cnvs-base-palette-coral-950: oklch(0.2359 0.0901 31.71);
   --cnvs-base-palette-coral-975: oklch(0.2114 0.07 29.72);
 
-  --cnvs-base-palette-dark-coral-25: oklch(0.2051 0.0289 40.99);
-  --cnvs-base-palette-dark-coral-50: oklch(0.238 0.0379 39.58);
-  --cnvs-base-palette-dark-coral-100: oklch(0.2741 0.0506 39.68);
-  --cnvs-base-palette-dark-coral-200: oklch(0.3545 0.0802 39.94);
-  --cnvs-base-palette-dark-coral-300: oklch(0.4821 0.1233 40.06);
-  --cnvs-base-palette-dark-coral-400: oklch(0.5496 0.1504 40.09);
-  --cnvs-base-palette-dark-coral-500: oklch(0.6541 0.182 40.36);
-  --cnvs-base-palette-dark-coral-600: oklch(0.7414 0.1404 39.77);
-  --cnvs-base-palette-dark-coral-700: oklch(0.8135 0.0845 39.52);
-  --cnvs-base-palette-dark-coral-800: oklch(0.8706 0.0449 39.33);
-  --cnvs-base-palette-dark-coral-900: oklch(0.9319 0.015 39.18);
-  --cnvs-base-palette-dark-coral-950: oklch(0.9535 0.007 39.06);
-  --cnvs-base-palette-dark-coral-975: oklch(0.9659 0.0039 38.76);
+  --cnvs-base-palette-dark-coral-25: oklch(0.15 0.0212 40.99);
+  --cnvs-base-palette-dark-coral-50: oklch(0.18 0.0287 39.58);
+  --cnvs-base-palette-dark-coral-100: oklch(0.22 0.0407 39.68);
+  --cnvs-base-palette-dark-coral-200: oklch(0.3 0.0678 39.94);
+  --cnvs-base-palette-dark-coral-300: oklch(0.4135 0.1058 40.06);
+  --cnvs-base-palette-dark-coral-400: oklch(0.4804 0.1315 40.09);
+  --cnvs-base-palette-dark-coral-500: oklch(0.5915 0.1646 40.36);
+  --cnvs-base-palette-dark-coral-600: oklch(0.6902 0.1613 39.77);
+  --cnvs-base-palette-dark-coral-700: oklch(0.7753 0.0799 39.52);
+  --cnvs-base-palette-dark-coral-800: oklch(0.8448 0.0552 39.33);
+  --cnvs-base-palette-dark-coral-900: oklch(0.9213 0.0224 39.18);
+  --cnvs-base-palette-dark-coral-950: oklch(0.9488 0.0142 39.06);
+  --cnvs-base-palette-dark-coral-975: oklch(0.9647 0.0097 38.76);
 
   --cnvs-base-palette-coral-A25: oklch(0.6665 0.2244 36.73 / 0.0391);
   --cnvs-base-palette-coral-A50: oklch(0.6476 0.2393 32.92 / 0.0743);
@@ -33,9 +33,9 @@
   --cnvs-base-palette-coral-A200: oklch(0.6523 0.2357 33.8 / 0.3528);
   --cnvs-base-palette-coral-A300: oklch(0.6539 0.2344 34.12 / 0.5684);
 
-  --cnvs-base-palette-dark-coral-A25: oklch(0.292 0.0926 39.51 / 0.273);
-  --cnvs-base-palette-dark-coral-A50: oklch(0.6644 0.2252 35.66 / 0.1201);
-  --cnvs-base-palette-dark-coral-A100: oklch(0.6792 0.2131 37.2 / 0.1796);
-  --cnvs-base-palette-dark-coral-A200: oklch(0.6901 0.2042 38.29 / 0.3213);
-  --cnvs-base-palette-dark-coral-A300: oklch(0.6977 0.1984 39.2 / 0.5577);
+  --cnvs-base-palette-dark-coral-A25: oklch(0.1362 0.0356 50.87 / 0.7118);
+  --cnvs-base-palette-dark-coral-A50: oklch(0.1867 0.0529 45.51 / 0.5508);
+  --cnvs-base-palette-dark-coral-A100: oklch(0.3158 0.1032 38.06 / 0.3402);
+  --cnvs-base-palette-dark-coral-A200: oklch(0.6705 0.2206 36.58 / 0.2358);
+  --cnvs-base-palette-dark-coral-A300: oklch(0.6872 0.2071 38.48 / 0.4372);
 }

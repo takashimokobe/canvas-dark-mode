@@ -6,7 +6,9 @@
   color-scheme: dark;
 }
 
-:where(html) {
+/* [data-scheme] rematches light-dark() against a pane's color-scheme.
+   Tokens declared only on html inherit as already-resolved colors. */
+:where(html, [data-scheme]) {
   --cnvs-sys-color-bg-default: light-dark(
     var(--cnvs-base-palette-white),
     var(--cnvs-brand-dark-neutral-50)
@@ -31,61 +33,65 @@
     var(--cnvs-base-palette-white),
     var(--cnvs-brand-dark-neutral-200)
   );
+  /* Page-relative wash. Light: ~4% black. Dark: ~5% white — enough to
+     read on bg.alt, still darker than surface.default. */
   --cnvs-sys-color-surface-alt-default: light-dark(
     var(--cnvs-brand-neutral-A50),
-    var(--cnvs-base-palette-white-A50)
+    var(--cnvs-brand-dark-neutral-A100)
   );
   --cnvs-sys-color-surface-alt-strong: light-dark(
     var(--cnvs-brand-neutral-A100),
-    var(--cnvs-base-palette-white-A100)
+    var(--cnvs-brand-dark-neutral-A200)
   );
   --cnvs-sys-color-surface-loading: light-dark(
     var(--cnvs-brand-neutral-A100),
-    var(--cnvs-base-palette-white-A100)
+    var(--cnvs-base-palette-white-A200)
   );
+  /* Status washes. One step above A25/A50 so the hue reads as a callout,
+     still behind matching fg-* (not inverse). Strong is the louder wash. */
   --cnvs-sys-color-surface-info-default: light-dark(
     var(--cnvs-base-palette-blue-A25),
-    var(--cnvs-base-palette-dark-blue-A50)
+    var(--cnvs-base-palette-dark-blue-A100)
   );
   --cnvs-sys-color-surface-info-strong: light-dark(
     var(--cnvs-base-palette-blue-A50),
-    var(--cnvs-base-palette-dark-blue-A100)
+    var(--cnvs-base-palette-dark-blue-A200)
   );
   --cnvs-sys-color-surface-danger-default: light-dark(
     var(--cnvs-base-palette-red-A25),
-    var(--cnvs-base-palette-dark-red-A50)
+    var(--cnvs-base-palette-dark-red-A100)
   );
   --cnvs-sys-color-surface-danger-strong: light-dark(
     var(--cnvs-base-palette-red-A50),
-    var(--cnvs-base-palette-dark-red-A100)
+    var(--cnvs-base-palette-dark-red-A200)
   );
   --cnvs-sys-color-surface-warning-default: light-dark(
     var(--cnvs-base-palette-amber-A25),
-    var(--cnvs-base-palette-dark-amber-A50)
+    var(--cnvs-base-palette-dark-amber-A100)
   );
   --cnvs-sys-color-surface-warning-strong: light-dark(
     var(--cnvs-base-palette-amber-A50),
-    var(--cnvs-base-palette-dark-amber-A100)
+    var(--cnvs-base-palette-dark-amber-A200)
   );
   --cnvs-sys-color-surface-success-default: light-dark(
-    var(--cnvs-base-palette-green-A25),
-    var(--cnvs-base-palette-dark-green-A50)
-  );
-  --cnvs-sys-color-surface-success-strong: light-dark(
     var(--cnvs-base-palette-green-A50),
     var(--cnvs-base-palette-dark-green-A100)
   );
+  --cnvs-sys-color-surface-success-strong: light-dark(
+    var(--cnvs-base-palette-green-A100),
+    var(--cnvs-base-palette-dark-green-A200)
+  );
   --cnvs-sys-color-surface-ai-default: light-dark(
     var(--cnvs-base-palette-blue-A100),
-    var(--cnvs-base-palette-dark-blue-A100)
+    var(--cnvs-base-palette-dark-blue-A200)
   );
   --cnvs-sys-color-surface-ai-hover: light-dark(
     var(--cnvs-base-palette-blue-A200),
-    var(--cnvs-base-palette-dark-blue-A200)
+    var(--cnvs-base-palette-dark-blue-A300)
   );
   --cnvs-sys-color-surface-ai-pressed: light-dark(
     var(--cnvs-base-palette-blue-400),
-    var(--cnvs-base-palette-dark-blue-400)
+    var(--cnvs-base-palette-dark-blue-500)
   );
   --cnvs-sys-color-surface-transparent: light-dark(transparent, transparent);
   --cnvs-sys-color-surface-inverse: var(--cnvs-sys-color-bg-default);
@@ -98,19 +104,19 @@
     var(--cnvs-base-palette-dark-neutral-950)
   );
   --cnvs-sys-color-surface-overlay-hover-default: light-dark(
-    var(--cnvs-brand-neutral-A50),
-    var(--cnvs-base-palette-white-A50)
+    var(--cnvs-brand-neutral-A100),
+    var(--cnvs-base-palette-white-A100)
   );
   --cnvs-sys-color-surface-overlay-hover-inverse: light-dark(
     var(--cnvs-base-palette-white-A150),
-    var(--cnvs-base-palette-white-A200)
+    var(--cnvs-base-palette-white-A100)
   );
   --cnvs-sys-color-surface-overlay-mixin: var(
     --cnvs-sys-color-surface-overlay-hover-default
   );
   --cnvs-sys-color-surface-overlay-pressed-default: light-dark(
-    var(--cnvs-brand-neutral-A100),
-    var(--cnvs-base-palette-white-A100)
+    var(--cnvs-brand-neutral-A200),
+    var(--cnvs-base-palette-white-A150)
   );
   --cnvs-sys-color-surface-overlay-pressed-inverse: light-dark(
     var(--cnvs-base-palette-white-A200),
@@ -126,86 +132,58 @@
     var(--cnvs-base-palette-neutral-A400),
     var(--cnvs-base-palette-neutral-A500)
   );
-  /* Light: stacked washes on white land on #FBFBFB. Depth is the shadow.
-     Dark: washes go transparent; the base is surface-default.
-
-     Dark surface stack (palette frozen at 25 / 100 / 150 / 200):
-       page      bg-alt        dark-neutral-25   L 0.15
-       elevated  default       dark-neutral-100  L 0.22
-       1 card    default       dark-neutral-100  L 0.22
-       2 raised  default       (same)
-       3 popover               dark-neutral-150  L 0.26
-       4 sheet   popover       (same)
-       5 dialog  modal         dark-neutral-200  L 0.30
-       6 modal   same 200 + overlay-scrim
-
-     light-dark() only accepts <color>, so the token cannot switch between a
-     gradient stack and a color at the top level. Instead each layer's stop
-     adapts: in light the two washes composite over surface-default; in dark
-     the washes go transparent and the base layer is surface-default. */
+  /* Three fills, top to bottom — same stack as Figma surface.elevated:
+     overlay.raised (white-A300 / white-A200), surface.raised, surface.default.
+     light-dark() only accepts <color>, so each stop is a token and the
+     layers composite in both schemes. */
   --cnvs-sys-color-surface-elevated:
     linear-gradient(
       0deg,
-      light-dark(
-        var(--cnvs-sys-color-surface-overlay-raised),
-        var(--cnvs-base-palette-white-transparent)
-      ),
-      light-dark(
-        var(--cnvs-sys-color-surface-overlay-raised),
-        var(--cnvs-base-palette-white-transparent)
-      )
+      var(--cnvs-sys-color-surface-raised) 0%,
+      var(--cnvs-sys-color-surface-raised) 100%
     ),
     linear-gradient(
       0deg,
-      light-dark(
-        var(--cnvs-brand-neutral-A25),
-        var(--cnvs-base-palette-white-transparent)
-      ),
-      light-dark(
-        var(--cnvs-brand-neutral-A25),
-        var(--cnvs-base-palette-white-transparent)
-      )
+      var(--cnvs-sys-color-surface-overlay-raised) 0%,
+      var(--cnvs-sys-color-surface-overlay-raised) 100%
     ),
-    linear-gradient(
-      0deg,
-      var(--cnvs-sys-color-surface-default),
-      var(--cnvs-sys-color-surface-default)
-    );
+    var(--cnvs-sys-color-surface-default);
+
   --cnvs-sys-color-surface-text-highlight: light-dark(
     var(--cnvs-base-palette-indigo-A200),
     var(--cnvs-base-palette-dark-indigo-A200)
   );
   --cnvs-sys-color-brand-surface-primary-default: light-dark(
-    var(--cnvs-brand-primary-A25),
-    var(--cnvs-base-palette-white-A25)
+    var(--cnvs-brand-primary-A50),
+    var(--cnvs-brand-dark-primary-A100)
   );
   --cnvs-sys-color-brand-surface-primary-strong: light-dark(
-    var(--cnvs-brand-primary-A50),
-    var(--cnvs-base-palette-white-A50)
+    var(--cnvs-brand-primary-A100),
+    var(--cnvs-brand-dark-primary-A200)
   );
   --cnvs-sys-color-brand-surface-critical-default: light-dark(
-    var(--cnvs-brand-critical-A25),
-    var(--cnvs-brand-dark-critical-A50)
-  );
-  --cnvs-sys-color-brand-surface-critical-strong: light-dark(
     var(--cnvs-brand-critical-A50),
     var(--cnvs-brand-dark-critical-A100)
   );
-  --cnvs-sys-color-brand-surface-caution-default: light-dark(
-    var(--cnvs-brand-caution-A25),
-    var(--cnvs-brand-dark-caution-A50)
+  --cnvs-sys-color-brand-surface-critical-strong: light-dark(
+    var(--cnvs-brand-critical-A100),
+    var(--cnvs-brand-dark-critical-A200)
   );
-  --cnvs-sys-color-brand-surface-caution-strong: light-dark(
+  --cnvs-sys-color-brand-surface-caution-default: light-dark(
     var(--cnvs-brand-caution-A50),
     var(--cnvs-brand-dark-caution-A100)
   );
-  --cnvs-sys-color-brand-surface-positive-default: light-dark(
-    var(--cnvs-brand-positive-A25),
-    var(--cnvs-brand-dark-positive-A50)
+  --cnvs-sys-color-brand-surface-caution-strong: light-dark(
+    var(--cnvs-brand-caution-A100),
+    var(--cnvs-brand-dark-caution-A200)
   );
-  --cnvs-sys-color-brand-surface-positive-strong: light-dark(
+  --cnvs-sys-color-brand-surface-positive-default: light-dark(
     var(--cnvs-brand-positive-A50),
     var(--cnvs-brand-dark-positive-A100)
+  );
+  --cnvs-sys-color-brand-surface-positive-strong: light-dark(
+    var(--cnvs-brand-positive-A100),
+    var(--cnvs-brand-dark-positive-A200)
   );
   /* Selected tokens are neutral by default; the branded block below remaps
      them to the tenant primary (same pattern as brand-fg-primary). */
@@ -213,8 +191,8 @@
     var(--cnvs-brand-neutral-A50),
     var(--cnvs-base-palette-white-A50)
   );
-  /* Dark AI tokens step off 950: dark-blue-950 is L 0.95 with near-zero
-     chroma — a whisper, not an accent. 500/600/700 match the info family. */
+  /* Dark AI tokens step off 950: dark-blue-950 is L 0.95 — a pale tint on
+     dark-neutral-50, too light for an accent fill. 500/600/700 match info. */
   --cnvs-sys-color-accent-ai: light-dark(
     var(--cnvs-base-palette-blue-950),
     var(--cnvs-base-palette-dark-blue-600)
@@ -237,7 +215,7 @@
   );
   --cnvs-sys-color-accent-contrast: light-dark(
     var(--cnvs-base-palette-neutral-900),
-    var(--cnvs-base-palette-white-A900)
+    var(--cnvs-base-palette-dark-neutral-A900)
   );
   --cnvs-sys-color-accent-muted-default: light-dark(
     var(--cnvs-brand-neutral-600),
@@ -274,10 +252,78 @@
     var(--cnvs-brand-dark-positive-600)
   );
   --cnvs-sys-color-brand-accent-action: var(--cnvs-brand-action-base);
-  /* Dark fg steps down one alpha: near-pure white (A900+) body text over the
-     L 0.15 page (bg-alt, dark-neutral-25) exceeds the comfortable 12:1-16:1
-     band and causes halation. A700 body / A800 strong / A900 headings keeps
-     the hierarchy off-white. */
+  /* Categorical series for charts. Light steps match Canvas Sana; dark
+     uses the authored dark ramps at the same step. */
+  --cnvs-sys-color-chart-categorical-1: light-dark(
+    var(--cnvs-base-palette-teal-500),
+    var(--cnvs-base-palette-dark-teal-500)
+  );
+  --cnvs-sys-color-chart-categorical-2: light-dark(
+    var(--cnvs-base-palette-blue-800),
+    var(--cnvs-base-palette-dark-blue-800)
+  );
+  --cnvs-sys-color-chart-categorical-3: light-dark(
+    var(--cnvs-base-palette-orange-500),
+    var(--cnvs-base-palette-dark-orange-500)
+  );
+  --cnvs-sys-color-chart-categorical-4: light-dark(
+    var(--cnvs-base-palette-azure-500),
+    var(--cnvs-base-palette-dark-azure-500)
+  );
+  --cnvs-sys-color-chart-categorical-5: light-dark(
+    var(--cnvs-base-palette-magenta-600),
+    var(--cnvs-base-palette-dark-magenta-600)
+  );
+  --cnvs-sys-color-chart-categorical-6: light-dark(
+    var(--cnvs-brand-positive-600),
+    var(--cnvs-brand-dark-positive-600)
+  );
+  --cnvs-sys-color-chart-categorical-7: light-dark(
+    var(--cnvs-base-palette-purple-500),
+    var(--cnvs-base-palette-dark-purple-500)
+  );
+  --cnvs-sys-color-chart-categorical-8: light-dark(
+    var(--cnvs-brand-caution-500),
+    var(--cnvs-brand-dark-caution-500)
+  );
+  --cnvs-sys-color-chart-categorical-9: light-dark(
+    var(--cnvs-base-palette-teal-700),
+    var(--cnvs-base-palette-dark-teal-700)
+  );
+  --cnvs-sys-color-chart-categorical-10: light-dark(
+    var(--cnvs-base-palette-indigo-600),
+    var(--cnvs-base-palette-dark-indigo-600)
+  );
+  --cnvs-sys-color-chart-categorical-11: light-dark(
+    var(--cnvs-base-palette-orange-700),
+    var(--cnvs-base-palette-dark-orange-700)
+  );
+  --cnvs-sys-color-chart-categorical-12: light-dark(
+    var(--cnvs-base-palette-azure-700),
+    var(--cnvs-base-palette-dark-azure-700)
+  );
+  --cnvs-sys-color-chart-categorical-13: light-dark(
+    var(--cnvs-base-palette-purple-700),
+    var(--cnvs-base-palette-dark-purple-700)
+  );
+  --cnvs-sys-color-chart-categorical-14: light-dark(
+    var(--cnvs-base-palette-coral-600),
+    var(--cnvs-base-palette-dark-coral-600)
+  );
+  --cnvs-sys-color-chart-categorical-15: light-dark(
+    var(--cnvs-brand-positive-800),
+    var(--cnvs-brand-dark-positive-800)
+  );
+  --cnvs-sys-color-chart-categorical-16: light-dark(
+    var(--cnvs-brand-caution-700),
+    var(--cnvs-brand-dark-caution-700)
+  );
+  /* Dark fg mirrors the light alpha steps in white ink: A800 body / A900
+     strong / A950 stronger. The ramp tops out at A950 rather than solid
+     white because pure-white text over the L 0.15 page (bg-alt,
+     dark-neutral-25) exceeds the comfortable 12:1-16:1 band and causes
+     halation. Muted and disabled fg step down one alpha (A600->A500,
+     A700->A600, A400->A300) to stay quiet on the dark page. */
   --cnvs-sys-color-fg-default: light-dark(
     var(--cnvs-base-palette-neutral-A800),
     var(--cnvs-base-palette-white-A800)
@@ -292,15 +338,15 @@
   );
   --cnvs-sys-color-fg-disabled: light-dark(
     var(--cnvs-brand-neutral-A400),
-    var(--cnvs-base-palette-white-A400)
+    var(--cnvs-base-palette-white-A300)
   );
   --cnvs-sys-color-fg-muted-default: light-dark(
     var(--cnvs-brand-neutral-A600),
-    var(--cnvs-base-palette-white-A600)
+    var(--cnvs-base-palette-white-A500)
   );
   --cnvs-sys-color-fg-muted-strong: light-dark(
     var(--cnvs-brand-neutral-A700),
-    var(--cnvs-base-palette-white-A700)
+    var(--cnvs-base-palette-white-A600)
   );
   --cnvs-sys-color-fg-inverse: light-dark(
     var(--cnvs-base-palette-white),
@@ -338,11 +384,11 @@
     var(--cnvs-base-palette-green-700),
     var(--cnvs-base-palette-dark-green-700)
   );
-  /* Dark fg-ai joins accent-ai at 600: dark-blue-950 is L 0.95 with
-     near-zero chroma — a whisper, not a readable AI foreground. */
+  /* Dark fg-ai joins accent-ai at 600: dark-blue-950 is L 0.95 — a pale
+     tint on dark-neutral-50, not a readable AI foreground. */
   --cnvs-sys-color-fg-ai: light-dark(
     var(--cnvs-base-palette-blue-950),
-    var(--cnvs-base-palette-dark-blue-600)
+    var(--cnvs-base-palette-dark-blue-950)
   );
   --cnvs-sys-color-fg-link-default: light-dark(
     var(--cnvs-base-palette-blue-600),
@@ -408,11 +454,13 @@
      edges do not vanish against their own fill. */
   --cnvs-sys-color-border-elevated: light-dark(
     var(--cnvs-base-palette-white),
-    var(--cnvs-brand-dark-neutral-150)
+    var(--cnvs-brand-dark-neutral-200)
   );
+  /* Dark A400 vs the page is 2.9:1 — under the 3:1 empty-field contract.
+     A500 matches light and clears 3:1 on bg, surface, and modal. */
   --cnvs-sys-color-border-input-default: light-dark(
     var(--cnvs-brand-neutral-A500),
-    var(--cnvs-brand-dark-neutral-A400)
+    var(--cnvs-base-palette-white-A300)
   );
   --cnvs-sys-color-border-input-hover: light-dark(
     var(--cnvs-base-palette-neutral-A700),
@@ -440,7 +488,7 @@
   );
   --cnvs-sys-color-border-inverse-strong: light-dark(
     var(--cnvs-base-palette-white-A700),
-    var(--cnvs-base-palette-white-A700)
+    var(--cnvs-base-palette-neutral-A300)
   );
   --cnvs-sys-color-border-contrast-default: light-dark(
     var(--cnvs-base-palette-neutral-A900),
@@ -771,7 +819,8 @@
 }
 
 :where(html:not([data-brand])),
-[data-brand] {
+[data-brand],
+:where([data-scheme]) {
   --cnvs-brand-action-base: light-dark(
     var(--cnvs-brand-light-action-base),
     var(--cnvs-brand-dark-action-base)
@@ -806,14 +855,15 @@
   );
 }
 
-[data-brand]:not([data-brand='default']) {
+[data-brand]:not([data-brand='default']),
+[data-brand]:not([data-brand='default']) [data-scheme] {
   --cnvs-sys-color-surface-loading: light-dark(
     var(--cnvs-brand-neutral-A200),
     var(--cnvs-base-palette-white-A200)
   );
   --cnvs-sys-color-surface-overlay-hover-inverse: light-dark(
     var(--cnvs-base-palette-white-A200),
-    var(--cnvs-base-palette-white-A200)
+    var(--cnvs-base-palette-neutral-A200)
   );
   --cnvs-sys-color-surface-overlay-pressed-inverse: light-dark(
     var(--cnvs-base-palette-white-A300),

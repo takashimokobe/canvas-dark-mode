@@ -1,6 +1,8 @@
 # Canvas Dark Mode
 
-A live gallery of [Canvas Kit](https://workday.github.io/canvas-kit/) components on a tokenized light/dark theme. Use it to review specimens across brands (`None`, Workday, Discord, Spotify, Airbnb) and color schemes.
+Paired light and dark [Canvas Kit](https://workday.github.io/canvas-kit/) specimens, essays on this theme, and a chat that answers from those docs.
+
+Theme (mode, brand, page background) is in the command menu: `⌘K` / `Ctrl+K`. `D` toggles light and dark when you are not typing.
 
 ## Requirements
 
@@ -19,7 +21,7 @@ pnpm install
 pnpm dev
 ```
 
-The gallery is at [http://localhost:3000](http://localhost:3000). Theme follows `prefers-color-scheme` until you override it with the Mode control. Brand is stored in `localStorage`.
+The app is at [http://127.0.0.1:3000/canvas-dark-mode/](http://127.0.0.1:3000/canvas-dark-mode/). Theme follows `prefers-color-scheme` until you override it. Brand is stored in `localStorage`.
 
 Pushes to `main` publish a static build to [GitHub Pages](https://takashimokobe.github.io/canvas-dark-mode/).
 

@@ -1,0 +1,87 @@
+@layer components {
+  .Root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cnvs-sys-gap-md);
+    inline-size: 100%;
+    min-block-size: 8rem;
+    overflow: clip;
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xxl);
+    color: var(--cnvs-sys-color-fg-default);
+    isolation: isolate;
+    position: relative;
+    margin-block-start: var(--cnvs-sys-gap-md);
+    margin-block-end: var(--cnvs-sys-gap-xl);
+    padding: var(--cnvs-sys-padding-xl);
+
+    @media (--highContrast) {
+      border-width: 2px;
+    }
+
+    @media (--forcedColors) {
+      border-color: CanvasText;
+    }
+
+    @media (--md-n-above) {
+      inline-size: calc(100% + 2 * var(--cnvs-sys-gap-xl));
+      margin-inline: calc(-1 * var(--cnvs-sys-gap-xl));
+    }
+  }
+
+  .Root:has([data-fill-container]) {
+    padding: 0;
+  }
+
+  .Root:has([data-fill-container]) > * {
+    align-self: stretch;
+    block-size: auto;
+  }
+
+  .Root[data-size='compact'] {
+    min-block-size: 0;
+  }
+
+  .Root > * {
+    flex: 0 0 auto;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+    block-size: fit-content;
+  }
+
+  .Root[data-align='wide'] > * {
+    inline-size: 100%;
+  }
+
+  .SchemeLight {
+    color-scheme: light;
+  }
+
+  .SchemeDark {
+    color-scheme: dark;
+  }
+
+  .SurfaceTheme {
+    background: var(--cnvs-sys-color-bg-default);
+  }
+
+  .SurfaceDefault {
+    background: var(--cnvs-sys-color-bg-default);
+  }
+
+  :global(html:not([data-page-bg='default'])) .SurfaceTheme,
+  .SurfaceTheme[data-scheme] {
+    background: var(--cnvs-sys-color-surface-elevated);
+  }
+
+  .SurfaceAlt {
+    background: var(--cnvs-sys-color-bg-alt-default);
+  }
+
+  .SurfaceContrast {
+    color: light-dark(oklch(0 0 0), oklch(1 0 0));
+    background-color: light-dark(oklch(1 0 0), oklch(0 0 0));
+  }
+}

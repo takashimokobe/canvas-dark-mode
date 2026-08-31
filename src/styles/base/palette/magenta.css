@@ -13,19 +13,19 @@
   --cnvs-base-palette-magenta-950: oklch(0.2332 0.0908 343.78);
   --cnvs-base-palette-magenta-975: oklch(0.2016 0.0706 345.97);
 
-  --cnvs-base-palette-dark-magenta-25: oklch(0.2051 0.0294 343.45);
-  --cnvs-base-palette-dark-magenta-50: oklch(0.238 0.0374 343.48);
-  --cnvs-base-palette-dark-magenta-100: oklch(0.2741 0.0499 344.03);
-  --cnvs-base-palette-dark-magenta-200: oklch(0.3545 0.0796 343.74);
-  --cnvs-base-palette-dark-magenta-300: oklch(0.4821 0.1223 344.7);
-  --cnvs-base-palette-dark-magenta-400: oklch(0.5496 0.1486 345.86);
-  --cnvs-base-palette-dark-magenta-500: oklch(0.6541 0.1802 346.62);
-  --cnvs-base-palette-dark-magenta-600: oklch(0.7414 0.1243 346.26);
-  --cnvs-base-palette-dark-magenta-700: oklch(0.8135 0.0741 346.29);
-  --cnvs-base-palette-dark-magenta-800: oklch(0.8706 0.0392 346.29);
-  --cnvs-base-palette-dark-magenta-900: oklch(0.9319 0.013 346.11);
-  --cnvs-base-palette-dark-magenta-950: oklch(0.9535 0.0061 346.19);
-  --cnvs-base-palette-dark-magenta-975: oklch(0.9659 0.0034 346.52);
+  --cnvs-base-palette-dark-magenta-25: oklch(0.15 0.0215 343.45);
+  --cnvs-base-palette-dark-magenta-50: oklch(0.18 0.0283 343.48);
+  --cnvs-base-palette-dark-magenta-100: oklch(0.22 0.0401 344.03);
+  --cnvs-base-palette-dark-magenta-200: oklch(0.3 0.0674 343.74);
+  --cnvs-base-palette-dark-magenta-300: oklch(0.4135 0.1049 344.7);
+  --cnvs-base-palette-dark-magenta-400: oklch(0.4804 0.1299 345.86);
+  --cnvs-base-palette-dark-magenta-500: oklch(0.5915 0.1629 346.62);
+  --cnvs-base-palette-dark-magenta-600: oklch(0.6902 0.1585 346.26);
+  --cnvs-base-palette-dark-magenta-700: oklch(0.7753 0.0799 346.29);
+  --cnvs-base-palette-dark-magenta-800: oklch(0.8448 0.0482 346.29);
+  --cnvs-base-palette-dark-magenta-900: oklch(0.9213 0.0195 346.11);
+  --cnvs-base-palette-dark-magenta-950: oklch(0.9488 0.0123 346.19);
+  --cnvs-base-palette-dark-magenta-975: oklch(0.9647 0.0084 346.52);
 
   --cnvs-base-palette-magenta-A25: oklch(0.7003 0.3221 328.17 / 0.0432);
   --cnvs-base-palette-magenta-A50: oklch(0.7012 0.3223 328.29 / 0.0745);
@@ -33,9 +33,9 @@
   --cnvs-base-palette-magenta-A200: oklch(0.697 0.3175 330.12 / 0.2393);
   --cnvs-base-palette-magenta-A300: oklch(0.6773 0.2958 338.87 / 0.4197);
 
-  --cnvs-base-palette-dark-magenta-A25: oklch(0.6592 0.2662 352.92 / 0.0637);
-  --cnvs-base-palette-dark-magenta-A50: oklch(0.6955 0.2394 348.27 / 0.1079);
-  --cnvs-base-palette-dark-magenta-A100: oklch(0.7114 0.225 347.32 / 0.1636);
-  --cnvs-base-palette-dark-magenta-A200: oklch(0.7242 0.2166 345.5 / 0.2953);
-  --cnvs-base-palette-dark-magenta-A300: oklch(0.7316 0.2092 345.49 / 0.5171);
+  --cnvs-base-palette-dark-magenta-A25: oklch(0.1206 0.0517 343.15 / 0.5665);
+  --cnvs-base-palette-dark-magenta-A50: oklch(0.2025 0.0848 349.06 / 0.2944);
+  --cnvs-base-palette-dark-magenta-A100: oklch(0.6639 0.2647 351.73 / 0.0924);
+  --cnvs-base-palette-dark-magenta-A200: oklch(0.7033 0.2358 346.59 / 0.2147);
+  --cnvs-base-palette-dark-magenta-A300: oklch(0.7207 0.2191 345.98 / 0.4037);
 }

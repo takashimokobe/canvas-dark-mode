@@ -1,0 +1,145 @@
+@layer components {
+  :global(html[data-command-open]) {
+    overflow: hidden;
+  }
+
+  .Positioner {
+    z-index: 8;
+    background-color: var(--cnvs-sys-color-surface-overlay-scrim);
+  }
+
+  .Animator {
+    --command-gutter: var(--cnvs-sys-padding-xs);
+    --command-row-inset: var(--cnvs-sys-padding-sm);
+    --command-icon: var(--cnvs-sys-size-xxxs);
+    --command-inset: calc(var(--command-gutter) + var(--command-row-inset));
+
+    overflow: hidden;
+    inline-size: min(20rem, 100%);
+    max-block-size: calc(100dvh - var(--cnvs-sys-padding-xl));
+    border: 1px solid var(--cnvs-sys-color-border-elevated);
+    border-radius: var(--cnvs-sys-shape-xxl);
+    background-color: var(--cnvs-sys-color-surface-popover);
+    color: var(--cnvs-sys-color-fg-default);
+    box-shadow: var(--cnvs-sys-depth-3);
+
+    @media (--forcedColors) {
+      border-color: CanvasText;
+      box-shadow: none;
+    }
+  }
+
+  .Search {
+    display: block;
+    box-sizing: border-box;
+    inline-size: 100%;
+    margin: 0;
+    padding-block: var(--cnvs-sys-padding-md) var(--cnvs-sys-padding-xs);
+    padding-inline: var(--command-inset);
+    border: 0;
+    background: transparent;
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+
+    &::placeholder {
+      color: var(--cnvs-sys-color-fg-muted-default);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .Results {
+    padding-block-end: var(--cnvs-sys-padding-sm);
+
+    & > div {
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .Group {
+    padding-block-start: var(--cnvs-sys-padding-lg);
+    padding-block-end: var(--cnvs-sys-padding-xxs);
+    padding-inline: var(--command-inset);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    cursor: default;
+    pointer-events: none;
+
+    &[data-first] {
+      padding-block-start: var(--cnvs-sys-padding-xs);
+    }
+  }
+
+  .Item {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    min-block-size: var(--cnvs-sys-size-sm);
+    margin-inline: var(--command-gutter);
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--command-row-inset);
+    border-radius: var(--cnvs-sys-shape-lg);
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    cursor: pointer;
+
+    @media (--motionOK) {
+      transition-property: background-color, color;
+      transition-duration: var(--cnvs-base-duration-100);
+      transition-timing-function: var(--cnvs-sys-motion-easing-quick-standard);
+    }
+
+    &[data-active] {
+      background-color: var(--cnvs-sys-color-surface-overlay-hover-default);
+    }
+
+    @media (--forcedColors) {
+      &[data-active] {
+        outline: 2px solid CanvasText;
+        outline-offset: -2px;
+      }
+    }
+  }
+
+  .Icon,
+  .Check {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--command-icon);
+    block-size: var(--command-icon);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    pointer-events: none;
+  }
+
+  .Item[data-active] .Icon,
+  .Check {
+    color: var(--cnvs-sys-color-fg-default);
+  }
+
+  .Name {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Meta {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+  }
+}

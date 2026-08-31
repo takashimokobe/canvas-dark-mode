@@ -1,0 +1,80 @@
+@layer layouts {
+  .Skip {
+    position: absolute;
+    inset-block-start: var(--cnvs-sys-padding-md);
+    inset-inline-start: var(--cnvs-sys-padding-md);
+    z-index: 6;
+    padding: var(--cnvs-sys-padding-xs) var(--cnvs-sys-padding-sm);
+    border-radius: var(--cnvs-sys-shape-sm);
+    background: var(--cnvs-sys-color-surface-default);
+    color: var(--cnvs-sys-color-fg-link-default);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    text-decoration-line: underline;
+    text-underline-offset: 0.2em;
+    transform: translateY(-200%);
+
+    &:focus,
+    &:focus-visible {
+      transform: none;
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .Bar {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--cnvs-sys-gap-md);
+    inset-block-end: max(
+      var(--cnvs-sys-padding-xxl),
+      env(safe-area-inset-bottom)
+    );
+    inset-inline-end: max(
+      var(--cnvs-sys-padding-xxl),
+      env(safe-area-inset-right)
+    );
+    pointer-events: none;
+
+    & > * {
+      pointer-events: auto;
+    }
+  }
+
+  .Command {
+    display: inline-flex;
+    border-radius: var(--cnvs-sys-shape-full);
+    box-shadow: var(--cnvs-sys-depth-5);
+
+    @media (--motionOK) {
+      transition-property: scale;
+      transition-duration: var(--cnvs-base-duration-150);
+      transition-timing-function: var(--cnvs-sys-motion-easing-quick-standard);
+
+      &:active {
+        scale: 0.98;
+      }
+    }
+
+    @media (--forcedColors) {
+      box-shadow: none;
+    }
+  }
+
+  .SkipTarget:focus {
+    outline: none;
+  }
+
+  .Doc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 100%;
+    min-inline-size: 0;
+    padding-block-start: var(--cnvs-sys-gap-xl);
+  }
+}

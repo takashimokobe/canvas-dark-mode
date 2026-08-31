@@ -1,0 +1,13 @@
+:where(html.dark, [data-scheme='dark'])
+  :where([data-uxi-canvas-kit-component-type^='avatar']):not(
+    :is([data-scheme='light'] *)
+  ) {
+  --cnvs-base-palette-blue-600: var(--cnvs-base-palette-dark-blue-600);
+  --cnvs-base-palette-amber-300: var(--cnvs-base-palette-dark-amber-600);
+  --cnvs-base-palette-amber-800: var(--cnvs-base-palette-dark-amber-100);
+  --cnvs-base-palette-teal-300: var(--cnvs-base-palette-dark-teal-300);
+  --cnvs-base-palette-teal-800: var(--cnvs-base-palette-dark-teal-800);
+  --cnvs-base-palette-purple-600: var(--cnvs-base-palette-dark-purple-600);
+  --cnvs-base-palette-magenta-600: var(--cnvs-base-palette-dark-magenta-600);
+  --cnvs-base-palette-green-600: var(--cnvs-base-palette-dark-green-600);
+}

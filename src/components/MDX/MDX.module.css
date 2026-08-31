@@ -1,0 +1,238 @@
+@layer components {
+  .Article {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-inline-size: 0;
+    max-inline-size: var(--cnvs-sys-measure-prose);
+    inline-size: 100%;
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+    text-align: start;
+
+    &::selection,
+    *::selection {
+      background: var(--cnvs-sys-color-brand-surface-selected);
+      color: var(--cnvs-sys-color-brand-fg-selected);
+    }
+  }
+
+  .Title {
+    margin: 0;
+    color: var(--cnvs-sys-color-fg-strong);
+    font: var(--cnvs-sys-type-heading-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-md);
+    text-wrap: balance;
+    text-box: trim-start cap;
+  }
+
+  .Lead {
+    margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-xl);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-body-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-md);
+    text-wrap: pretty;
+  }
+
+  .Highlight {
+    inline-size: 100%;
+    margin-block: 0 var(--cnvs-sys-gap-lg);
+
+    :is(p, ul, ol) {
+      margin: 0;
+    }
+
+    li + li {
+      margin-block-start: var(--cnvs-sys-gap-xs);
+    }
+  }
+
+  .Body {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    overflow-wrap: break-word;
+
+    > :first-child {
+      margin-block-start: 0;
+    }
+
+    > :last-child {
+      margin-block-end: 0;
+    }
+
+    [data-size='stage'] {
+      min-block-size: 8rem;
+    }
+
+    [data-size='compact'] {
+      min-block-size: 0;
+    }
+
+    h2 {
+      margin-block: var(--cnvs-sys-gap-xl) var(--cnvs-sys-gap-md);
+      color: var(--cnvs-sys-color-fg-strong);
+      font: var(--cnvs-sys-type-heading-sm);
+      letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
+      text-wrap: balance;
+      text-box: trim-start cap;
+    }
+
+    h3 {
+      margin-block: var(--cnvs-sys-gap-lg) var(--cnvs-sys-gap-md);
+      color: var(--cnvs-sys-color-fg-strong);
+      font: var(--cnvs-sys-type-body-lg);
+      letter-spacing: var(--cnvs-sys-letter-spacing-body-lg);
+      font-weight: var(--cnvs-sys-font-weight-medium);
+      text-wrap: balance;
+      text-box: trim-start cap;
+    }
+
+    h4 {
+      margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-sm);
+      color: var(--cnvs-sys-color-fg-strong);
+      font: var(--cnvs-sys-type-body-md);
+      letter-spacing: var(--cnvs-sys-letter-spacing-body-md);
+      font-weight: var(--cnvs-sys-font-weight-medium);
+      text-wrap: balance;
+    }
+
+    :is(p, ul, ol, pre, table, img, [data-finding]) {
+      margin-block: 0 var(--cnvs-sys-gap-md);
+    }
+
+    img {
+      display: block;
+      inline-size: 100%;
+      max-inline-size: 100%;
+      block-size: auto;
+      border: 1px solid var(--cnvs-sys-color-border-default);
+      border-radius: var(--cnvs-sys-shape-md);
+    }
+
+    :is(strong, b) {
+      font-weight: var(--cnvs-sys-font-weight-semibold);
+    }
+
+    abbr {
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: from-font;
+      text-underline-position: from-font;
+      text-underline-offset: 0.2em;
+    }
+
+    table {
+      inline-size: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font: var(--cnvs-sys-type-subtext-md);
+      letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    }
+
+    :is(th, td) {
+      padding-block: var(--cnvs-sys-padding-xs);
+      padding-inline: 0 var(--cnvs-sys-padding-xs);
+      text-align: start;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+      border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+    }
+
+    :is(th, td):last-child {
+      padding-inline-end: 0;
+    }
+
+    thead th {
+      color: var(--cnvs-sys-color-fg-strong);
+      font: var(--cnvs-sys-type-subtext-lg);
+      letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+      font-family: var(--cnvs-sys-font-family-default);
+      font-weight: var(--cnvs-sys-font-weight-semibold);
+      text-wrap: pretty;
+    }
+
+    th {
+      font-weight: var(--cnvs-sys-font-weight-medium);
+      color: var(--cnvs-sys-color-fg-strong);
+    }
+
+    [data-finding] {
+      margin-block-start: var(--cnvs-sys-gap-md);
+      color: var(--cnvs-sys-color-fg-strong);
+    }
+
+    :is(ul, ol) {
+      padding-inline-start: var(--cnvs-sys-padding-lg);
+    }
+
+    li + li {
+      margin-block-start: var(--cnvs-sys-gap-xs);
+    }
+
+    nav :is(ul, ol) {
+      padding-inline-start: 0;
+    }
+
+    nav li + li {
+      margin-block-start: 0;
+    }
+
+    pre {
+      padding: var(--cnvs-sys-padding-sm);
+      border-radius: var(--cnvs-sys-shape-lg);
+      background: var(--cnvs-sys-color-surface-alt-default);
+      overflow-x: auto;
+    }
+
+    :is(pre code, :not(pre) > code) {
+      font-family: var(--cnvs-sys-font-family-mono);
+    }
+
+    :not(pre) > code {
+      font: var(--cnvs-sys-type-subtext-lg);
+      font-family: var(--cnvs-sys-font-family-mono);
+      letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+      padding-inline: var(--cnvs-sys-padding-xxs);
+      border-radius: var(--cnvs-sys-shape-xs);
+      background: var(--cnvs-sys-color-surface-alt-default);
+    }
+
+    a {
+      color: var(--cnvs-sys-color-fg-link-default);
+      text-decoration-line: underline;
+      text-decoration-thickness: from-font;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: auto;
+      text-underline-offset: 0.2em;
+
+      @media (--mouse) {
+        &:hover {
+          color: var(--cnvs-sys-color-fg-link-hover);
+        }
+      }
+    }
+
+    hr {
+      display: block;
+      inline-size: 100%;
+      margin-block: var(--cnvs-sys-gap-xl) 0;
+      border: 0;
+      block-size: 1px;
+      background: var(--cnvs-sys-color-border-default);
+    }
+
+    [data-chip] {
+      inline-size: var(--cnvs-sys-size-xl);
+      block-size: var(--cnvs-sys-size-xl);
+      border-radius: var(--cnvs-sys-shape-full);
+      background: var(--cnvs-sys-color-accent-info);
+    }
+
+    [data-contrast] {
+      font: var(--cnvs-sys-type-subtext-lg);
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}

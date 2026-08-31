@@ -1,0 +1,106 @@
+@layer components {
+  .Attachment {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-inline-size: 0;
+    padding: var(--cnvs-sys-padding-xs);
+    border-radius: var(--cnvs-sys-shape-xxl);
+
+    @media (--mouse) {
+      &:hover {
+        background: var(--cnvs-sys-color-surface-overlay-hover-default);
+      }
+    }
+
+    &:is([data-preview='image'], [data-preview='video']) {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      overflow: hidden;
+
+      .Preview {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: var(--cnvs-sys-color-surface-alt-default);
+      }
+
+      .Body {
+        padding: var(--cnvs-sys-padding-xs);
+      }
+
+      .Remove {
+        position: absolute;
+        inset-block-start: var(--cnvs-sys-padding-xxs);
+        inset-inline-end: var(--cnvs-sys-padding-xxs);
+        border-radius: var(--cnvs-sys-shape-full);
+        background: var(--cnvs-sys-color-surface-popover);
+        box-shadow: var(--cnvs-sys-depth-1);
+      }
+    }
+
+    &[data-preview='file'] .Remove {
+      margin-inline-start: auto;
+    }
+  }
+
+  .Preview {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Media {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+    outline: 1px solid light-dark(oklch(0 0 0 / 0.1), oklch(1 0 0 / 0.1));
+    outline-offset: -1px;
+  }
+
+  .FileIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--cnvs-base-size-125);
+    border-radius: var(--cnvs-sys-shape-lg);
+    background: var(--cnvs-sys-color-surface-alt-default);
+  }
+
+  .Body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xs);
+    min-inline-size: 0;
+  }
+
+  .Name,
+  .Meta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Name {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    color: var(--cnvs-sys-color-fg-default);
+  }
+
+  .Meta {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .Remove {
+    flex-shrink: 0;
+  }
+}

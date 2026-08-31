@@ -13,19 +13,19 @@
   --cnvs-base-palette-azure-950: oklch(0.2496 0.0529 234.92);
   --cnvs-base-palette-azure-975: oklch(0.2138 0.0455 235.24);
 
-  --cnvs-base-palette-dark-azure-25: oklch(0.2051 0.021 241.05);
-  --cnvs-base-palette-dark-azure-50: oklch(0.238 0.0269 241.38);
-  --cnvs-base-palette-dark-azure-100: oklch(0.2741 0.0364 241.89);
-  --cnvs-base-palette-dark-azure-200: oklch(0.3545 0.0584 242.31);
-  --cnvs-base-palette-dark-azure-300: oklch(0.4821 0.0924 243.69);
-  --cnvs-base-palette-dark-azure-400: oklch(0.5496 0.114 244.19);
-  --cnvs-base-palette-dark-azure-500: oklch(0.6541 0.1395 244.47);
-  --cnvs-base-palette-dark-azure-600: oklch(0.7414 0.1191 244.29);
-  --cnvs-base-palette-dark-azure-700: oklch(0.8135 0.0751 244.12);
-  --cnvs-base-palette-dark-azure-800: oklch(0.8706 0.0414 243.36);
-  --cnvs-base-palette-dark-azure-900: oklch(0.9319 0.0143 243.19);
-  --cnvs-base-palette-dark-azure-950: oklch(0.9535 0.0068 243.04);
-  --cnvs-base-palette-dark-azure-975: oklch(0.9659 0.0038 243.09);
+  --cnvs-base-palette-dark-azure-25: oklch(0.15 0.0154 241.05);
+  --cnvs-base-palette-dark-azure-50: oklch(0.18 0.0204 241.38);
+  --cnvs-base-palette-dark-azure-100: oklch(0.22 0.0292 241.89);
+  --cnvs-base-palette-dark-azure-200: oklch(0.3 0.0494 242.31);
+  --cnvs-base-palette-dark-azure-300: oklch(0.4135 0.0793 243.69);
+  --cnvs-base-palette-dark-azure-400: oklch(0.4804 0.0997 244.19);
+  --cnvs-base-palette-dark-azure-500: oklch(0.5915 0.1261 244.47);
+  --cnvs-base-palette-dark-azure-600: oklch(0.6902 0.1236 244.29);
+  --cnvs-base-palette-dark-azure-700: oklch(0.7753 0.0799 244.12);
+  --cnvs-base-palette-dark-azure-800: oklch(0.8448 0.0502 243.36);
+  --cnvs-base-palette-dark-azure-900: oklch(0.9213 0.0212 243.19);
+  --cnvs-base-palette-dark-azure-950: oklch(0.9488 0.0137 243.04);
+  --cnvs-base-palette-dark-azure-975: oklch(0.9647 0.0094 243.09);
 
   --cnvs-base-palette-azure-A25: oklch(0.7465 0.1556 233.69 / 0.0591);
   --cnvs-base-palette-azure-A50: oklch(0.7347 0.1588 236.34 / 0.1374);
@@ -33,9 +33,9 @@
   --cnvs-base-palette-azure-A200: oklch(0.7108 0.1666 241.32 / 0.4196);
   --cnvs-base-palette-azure-A300: oklch(0.6543 0.1794 248.76 / 0.5255);
 
-  --cnvs-base-palette-dark-azure-A25: oklch(0.3338 0.09 248.09 / 0.1799);
-  --cnvs-base-palette-dark-azure-A50: oklch(0.6864 0.174 247.7 / 0.105);
-  --cnvs-base-palette-dark-azure-A100: oklch(0.7058 0.1637 246.16 / 0.1611);
-  --cnvs-base-palette-dark-azure-A200: oklch(0.7183 0.1574 244.93 / 0.2952);
-  --cnvs-base-palette-dark-azure-A300: oklch(0.7216 0.1554 244.91 / 0.5254);
+  --cnvs-base-palette-dark-azure-A25: oklch(0.1328 0.0274 232.86 / 0.6675);
+  --cnvs-base-palette-dark-azure-A50: oklch(0.1832 0.0424 240.65 / 0.4727);
+  --cnvs-base-palette-dark-azure-A100: oklch(0.375 0.1032 248.89 / 0.2171);
+  --cnvs-base-palette-dark-azure-A200: oklch(0.6921 0.1712 246.91 / 0.2147);
+  --cnvs-base-palette-dark-azure-A300: oklch(0.7086 0.1624 245.75 / 0.4106);
 }

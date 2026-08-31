@@ -1,0 +1,127 @@
+@layer components {
+  .Root {
+    container: --dash / inline-size;
+    position: relative;
+    box-sizing: border-box;
+    block-size: calc(100% + 2 * var(--cnvs-sys-padding-xl));
+    margin: calc(-1 * var(--cnvs-sys-padding-xl));
+  }
+
+  .Layout {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    block-size: 100%;
+    min-block-size: 0;
+  }
+
+  .Nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: var(--cnvs-sys-padding-sm);
+    padding-inline: var(--cnvs-sys-padding-xs);
+    border-inline-end: 1px solid var(--cnvs-sys-color-border-default);
+    background: var(--cnvs-sys-color-surface-navigation);
+  }
+
+  .NavList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .Nav :is(button[aria-current='page']) {
+    background: var(--cnvs-sys-color-surface-selected);
+  }
+
+  .Main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, minmax(3.5rem, 1fr));
+    gap: var(--cnvs-sys-gap-md);
+    min-inline-size: 0;
+    min-block-size: 0;
+    padding: var(--cnvs-sys-padding-md);
+    background: var(--cnvs-sys-color-bg-alt-default);
+  }
+
+  .Main > * {
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+
+  .Toast {
+    position: absolute;
+    z-index: 1;
+    inset-inline: 0;
+    inset-block-end: var(--cnvs-sys-padding-md);
+    display: flex;
+    justify-content: center;
+    padding-inline: var(--cnvs-sys-padding-md);
+    pointer-events: none;
+  }
+
+  .Toast > * {
+    max-inline-size: min(18rem, 100%);
+    pointer-events: auto;
+  }
+
+  @container --dash (width >= 28rem) {
+    .Main {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-rows: minmax(4.5rem, 0.7fr) minmax(0, 1.5fr) minmax(
+          4rem,
+          0.9fr
+        );
+    }
+
+    .Kpi {
+      grid-column: span 2;
+    }
+
+    .Chart {
+      grid-column: span 4;
+    }
+
+    .Feed {
+      grid-column: span 2;
+    }
+
+    .Table {
+      grid-column: span 6;
+    }
+  }
+
+  @container --dash (width < 28rem) {
+    .Layout {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    .Nav {
+      flex-direction: row;
+      justify-content: center;
+      border-inline-end: 0;
+      border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+    }
+
+    .NavList {
+      flex-direction: row;
+    }
+  }
+
+  @media (--forcedColors) {
+    .Nav {
+      border-color: CanvasText;
+      background: Canvas;
+    }
+
+    .Nav :is(button[aria-current='page']) {
+      background: Highlight;
+    }
+  }
+}

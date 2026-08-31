@@ -1,0 +1,34 @@
+@layer components {
+  .Stage {
+    min-inline-size: 0;
+  }
+
+  .Stage:has(+ hr) > :first-child {
+    margin-block-end: 0;
+  }
+
+  .Sample {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  .Group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cnvs-sys-gap-xl);
+    inline-size: 100%;
+  }
+
+  .Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 0;
+  }
+}

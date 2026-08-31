@@ -194,71 +194,316 @@
   );
 }
 
-[data-brand]:not([data-brand='default']) {
-  --cnvs-brand-neutral-25: var(--cnvs-base-palette-slate-25);
-  --cnvs-brand-neutral-50: var(--cnvs-base-palette-slate-50);
-  --cnvs-brand-neutral-100: var(--cnvs-base-palette-slate-100);
-  --cnvs-brand-neutral-150: var(--cnvs-base-palette-slate-150);
-  --cnvs-brand-neutral-200: var(--cnvs-base-palette-slate-200);
-  --cnvs-brand-neutral-300: var(--cnvs-base-palette-slate-300);
-  --cnvs-brand-neutral-400: var(--cnvs-base-palette-slate-400);
-  --cnvs-brand-neutral-500: var(--cnvs-base-palette-slate-500);
-  --cnvs-brand-neutral-600: var(--cnvs-base-palette-slate-600);
-  --cnvs-brand-neutral-700: var(--cnvs-base-palette-slate-700);
-  --cnvs-brand-neutral-800: var(--cnvs-base-palette-slate-800);
-  --cnvs-brand-neutral-850: var(--cnvs-base-palette-slate-850);
-  --cnvs-brand-neutral-900: var(--cnvs-base-palette-slate-900);
-  --cnvs-brand-neutral-950: var(--cnvs-base-palette-slate-950);
-  --cnvs-brand-neutral-975: var(--cnvs-base-palette-slate-975);
+[data-brand='airbnb'],
+[data-brand='spotify'],
+[data-brand='discord'] {
+  /* Grey ladder, a whisper of brand hue. Chroma is absolute so they still read as grey. */
+  --cnvs-brand-neutral-25: oklch(
+    from var(--cnvs-base-palette-neutral-25) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-50: oklch(
+    from var(--cnvs-base-palette-neutral-50) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-100: oklch(
+    from var(--cnvs-base-palette-neutral-100) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-150: oklch(
+    from var(--cnvs-base-palette-neutral-150) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-200: oklch(
+    from var(--cnvs-base-palette-neutral-200) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-300: oklch(
+    from var(--cnvs-base-palette-neutral-300) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-400: oklch(
+    from var(--cnvs-base-palette-neutral-400) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-500: oklch(
+    from var(--cnvs-base-palette-neutral-500) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-600: oklch(
+    from var(--cnvs-base-palette-neutral-600) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-700: oklch(
+    from var(--cnvs-base-palette-neutral-700) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-800: oklch(
+    from var(--cnvs-base-palette-neutral-800) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-850: oklch(
+    from var(--cnvs-base-palette-neutral-850) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-900: oklch(
+    from var(--cnvs-base-palette-neutral-900) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-950: oklch(
+    from var(--cnvs-base-palette-neutral-950) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-975: oklch(
+    from var(--cnvs-base-palette-neutral-975) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
 
-  --cnvs-brand-neutral-A25: var(--cnvs-base-palette-slate-A25);
-  --cnvs-brand-neutral-A50: var(--cnvs-base-palette-slate-A50);
-  --cnvs-brand-neutral-A100: var(--cnvs-base-palette-slate-A100);
-  --cnvs-brand-neutral-A150: var(--cnvs-base-palette-slate-A150);
-  --cnvs-brand-neutral-A200: var(--cnvs-base-palette-slate-A200);
-  --cnvs-brand-neutral-A300: var(--cnvs-base-palette-slate-A300);
-  --cnvs-brand-neutral-A400: var(--cnvs-base-palette-slate-A400);
-  --cnvs-brand-neutral-A500: var(--cnvs-base-palette-slate-A500);
-  --cnvs-brand-neutral-A600: var(--cnvs-base-palette-slate-A600);
-  --cnvs-brand-neutral-A700: var(--cnvs-base-palette-slate-A700);
-  --cnvs-brand-neutral-A800: var(--cnvs-base-palette-slate-A800);
-  --cnvs-brand-neutral-A850: var(--cnvs-base-palette-slate-A850);
-  --cnvs-brand-neutral-A900: var(--cnvs-base-palette-slate-A900);
-  --cnvs-brand-neutral-A950: var(--cnvs-base-palette-slate-A950);
-  --cnvs-brand-neutral-A975: var(--cnvs-base-palette-slate-A975);
+  --cnvs-brand-neutral-A25: oklch(
+    from var(--cnvs-base-palette-neutral-A25) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A50: oklch(
+    from var(--cnvs-base-palette-neutral-A50) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A100: oklch(
+    from var(--cnvs-base-palette-neutral-A100) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A150: oklch(
+    from var(--cnvs-base-palette-neutral-A150) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A200: oklch(
+    from var(--cnvs-base-palette-neutral-A200) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A300: oklch(
+    from var(--cnvs-base-palette-neutral-A300) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A400: oklch(
+    from var(--cnvs-base-palette-neutral-A400) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A500: oklch(
+    from var(--cnvs-base-palette-neutral-A500) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A600: oklch(
+    from var(--cnvs-base-palette-neutral-A600) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A700: oklch(
+    from var(--cnvs-base-palette-neutral-A700) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A800: oklch(
+    from var(--cnvs-base-palette-neutral-A800) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A850: oklch(
+    from var(--cnvs-base-palette-neutral-A850) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A900: oklch(
+    from var(--cnvs-base-palette-neutral-A900) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A950: oklch(
+    from var(--cnvs-base-palette-neutral-A950) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-neutral-A975: oklch(
+    from var(--cnvs-base-palette-neutral-A975) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
 
-  --cnvs-brand-dark-neutral-25: var(--cnvs-base-palette-dark-slate-25);
-  --cnvs-brand-dark-neutral-50: var(--cnvs-base-palette-dark-slate-50);
-  --cnvs-brand-dark-neutral-100: var(--cnvs-base-palette-dark-slate-100);
-  --cnvs-brand-dark-neutral-150: var(--cnvs-base-palette-dark-slate-150);
-  --cnvs-brand-dark-neutral-200: var(--cnvs-base-palette-dark-slate-200);
-  --cnvs-brand-dark-neutral-300: var(--cnvs-base-palette-dark-slate-300);
-  --cnvs-brand-dark-neutral-400: var(--cnvs-base-palette-dark-slate-400);
-  --cnvs-brand-dark-neutral-500: var(--cnvs-base-palette-dark-slate-500);
-  --cnvs-brand-dark-neutral-600: var(--cnvs-base-palette-dark-slate-600);
-  --cnvs-brand-dark-neutral-700: var(--cnvs-base-palette-dark-slate-700);
-  --cnvs-brand-dark-neutral-800: var(--cnvs-base-palette-dark-slate-800);
-  --cnvs-brand-dark-neutral-850: var(--cnvs-base-palette-dark-slate-850);
-  --cnvs-brand-dark-neutral-900: var(--cnvs-base-palette-dark-slate-900);
-  --cnvs-brand-dark-neutral-950: var(--cnvs-base-palette-dark-slate-950);
-  --cnvs-brand-dark-neutral-975: var(--cnvs-base-palette-dark-slate-975);
+  --cnvs-brand-dark-neutral-25: oklch(
+    from var(--cnvs-base-palette-dark-neutral-25) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-50: oklch(
+    from var(--cnvs-base-palette-dark-neutral-50) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-100: oklch(
+    from var(--cnvs-base-palette-dark-neutral-100) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-150: oklch(
+    from var(--cnvs-base-palette-dark-neutral-150) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-200: oklch(
+    from var(--cnvs-base-palette-dark-neutral-200) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-300: oklch(
+    from var(--cnvs-base-palette-dark-neutral-300) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-400: oklch(
+    from var(--cnvs-base-palette-dark-neutral-400) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-500: oklch(
+    from var(--cnvs-base-palette-dark-neutral-500) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-600: oklch(
+    from var(--cnvs-base-palette-dark-neutral-600) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-700: oklch(
+    from var(--cnvs-base-palette-dark-neutral-700) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-800: oklch(
+    from var(--cnvs-base-palette-dark-neutral-800) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-850: oklch(
+    from var(--cnvs-base-palette-dark-neutral-850) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-900: oklch(
+    from var(--cnvs-base-palette-dark-neutral-900) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-950: oklch(
+    from var(--cnvs-base-palette-dark-neutral-950) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-975: oklch(
+    from var(--cnvs-base-palette-dark-neutral-975) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
 
-  --cnvs-brand-dark-neutral-A25: var(--cnvs-base-palette-dark-slate-A25);
-  --cnvs-brand-dark-neutral-A50: var(--cnvs-base-palette-dark-slate-A50);
-  --cnvs-brand-dark-neutral-A100: var(--cnvs-base-palette-dark-slate-A100);
-  --cnvs-brand-dark-neutral-A150: var(--cnvs-base-palette-dark-slate-A150);
-  --cnvs-brand-dark-neutral-A200: var(--cnvs-base-palette-dark-slate-A200);
-  --cnvs-brand-dark-neutral-A300: var(--cnvs-base-palette-dark-slate-A300);
-  --cnvs-brand-dark-neutral-A400: var(--cnvs-base-palette-dark-slate-A400);
-  --cnvs-brand-dark-neutral-A500: var(--cnvs-base-palette-dark-slate-A500);
-  --cnvs-brand-dark-neutral-A600: var(--cnvs-base-palette-dark-slate-A600);
-  --cnvs-brand-dark-neutral-A700: var(--cnvs-base-palette-dark-slate-A700);
-  --cnvs-brand-dark-neutral-A800: var(--cnvs-base-palette-dark-slate-A800);
-  --cnvs-brand-dark-neutral-A850: var(--cnvs-base-palette-dark-slate-A850);
-  --cnvs-brand-dark-neutral-A900: var(--cnvs-base-palette-dark-slate-A900);
-  --cnvs-brand-dark-neutral-A950: var(--cnvs-base-palette-dark-slate-A950);
-  --cnvs-brand-dark-neutral-A975: var(--cnvs-base-palette-dark-slate-A975);
+  --cnvs-brand-dark-neutral-A25: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A25) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A50: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A50) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A100: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A100) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A150: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A150) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A200: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A200) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A300: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A300) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A400: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A400) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A500: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A500) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A600: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A600) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A700: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A700) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A800: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A800) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A850: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A850) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A900: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A900) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A950: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A950) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+  --cnvs-brand-dark-neutral-A975: oklch(
+    from var(--cnvs-base-palette-dark-neutral-A975) l
+      var(--cnvs-brand-neutral-chroma)
+      var(--cnvs-brand-neutral-hue)
+  );
+}
 
+[data-brand]:not([data-brand='default']):not([data-brand='airbnb']) {
   --cnvs-brand-light-action-base: var(--cnvs-brand-primary-600);
   --cnvs-brand-light-action-dark: var(--cnvs-brand-primary-700);
   --cnvs-brand-light-action-darker: var(--cnvs-brand-primary-800);

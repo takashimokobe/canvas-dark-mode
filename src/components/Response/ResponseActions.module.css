@@ -1,0 +1,15 @@
+@layer components {
+  .Actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    padding-block-start: var(--cnvs-sys-gap-sm);
+  }
+
+  .Group {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-xs);
+  }
+}

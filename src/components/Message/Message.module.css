@@ -1,0 +1,54 @@
+@layer components {
+  .Row {
+    display: flex;
+
+    @media (--motionOK) {
+      animation: rise var(--cnvs-base-duration-200)
+        var(--cnvs-sys-motion-easing-quick-deceleration);
+    }
+  }
+
+  .RowUser {
+    justify-content: flex-end;
+  }
+
+  .RowAssistant {
+    justify-content: flex-start;
+  }
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+  }
+
+  .MessageUser {
+    align-items: flex-end;
+    max-inline-size: min(100%, var(--cnvs-sys-measure-bubble));
+  }
+
+  .MessageAssistant {
+    align-items: stretch;
+    inline-size: 100%;
+  }
+
+  .Actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--cnvs-sys-gap-xs);
+    padding-block-start: var(--cnvs-sys-gap-sm);
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 var(--cnvs-base-size-150);
+    }
+
+    to {
+      opacity: 1;
+      translate: 0;
+    }
+  }
+}

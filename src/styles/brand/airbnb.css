@@ -1,4 +1,7 @@
 [data-brand='airbnb'] {
+  --cnvs-brand-neutral-hue: 17.7;
+  --cnvs-brand-neutral-chroma: 0.005;
+
   --cnvs-brand-primary-25: var(--airbnb-25);
   --cnvs-brand-primary-50: var(--airbnb-50);
   --cnvs-brand-primary-100: var(--airbnb-100);
@@ -38,4 +41,62 @@
   --cnvs-brand-dark-primary-A100: var(--dark-airbnb-A100);
   --cnvs-brand-dark-primary-A200: var(--dark-airbnb-A200);
   --cnvs-brand-dark-primary-A300: var(--dark-airbnb-A300);
+
+  --cnvs-brand-critical-25: var(--cnvs-brand-primary-25);
+  --cnvs-brand-critical-50: var(--cnvs-brand-primary-50);
+  --cnvs-brand-critical-100: var(--cnvs-brand-primary-100);
+  --cnvs-brand-critical-200: var(--cnvs-brand-primary-200);
+  --cnvs-brand-critical-300: var(--cnvs-brand-primary-300);
+  --cnvs-brand-critical-400: var(--cnvs-brand-primary-400);
+  --cnvs-brand-critical-500: var(--cnvs-brand-primary-500);
+  --cnvs-brand-critical-600: var(--cnvs-brand-primary-600);
+  --cnvs-brand-critical-700: var(--cnvs-brand-primary-700);
+  --cnvs-brand-critical-800: var(--cnvs-brand-primary-800);
+  --cnvs-brand-critical-900: var(--cnvs-brand-primary-900);
+  --cnvs-brand-critical-950: var(--cnvs-brand-primary-950);
+  --cnvs-brand-critical-975: var(--cnvs-brand-primary-975);
+
+  --cnvs-brand-critical-A25: var(--cnvs-brand-primary-A25);
+  --cnvs-brand-critical-A50: var(--cnvs-brand-primary-A50);
+  --cnvs-brand-critical-A100: var(--cnvs-brand-primary-A100);
+  --cnvs-brand-critical-A200: var(--cnvs-brand-primary-A200);
+  --cnvs-brand-critical-A300: var(--cnvs-brand-primary-A300);
+
+  --cnvs-brand-dark-critical-25: var(--cnvs-brand-dark-primary-25);
+  --cnvs-brand-dark-critical-50: var(--cnvs-brand-dark-primary-50);
+  --cnvs-brand-dark-critical-100: var(--cnvs-brand-dark-primary-100);
+  --cnvs-brand-dark-critical-200: var(--cnvs-brand-dark-primary-200);
+  --cnvs-brand-dark-critical-300: var(--cnvs-brand-dark-primary-300);
+  --cnvs-brand-dark-critical-400: var(--cnvs-brand-dark-primary-400);
+  --cnvs-brand-dark-critical-500: var(--cnvs-brand-dark-primary-500);
+  --cnvs-brand-dark-critical-600: var(--cnvs-brand-dark-primary-600);
+  --cnvs-brand-dark-critical-700: var(--cnvs-brand-dark-primary-700);
+  --cnvs-brand-dark-critical-800: var(--cnvs-brand-dark-primary-800);
+  --cnvs-brand-dark-critical-900: var(--cnvs-brand-dark-primary-900);
+  --cnvs-brand-dark-critical-950: var(--cnvs-brand-dark-primary-950);
+  --cnvs-brand-dark-critical-975: var(--cnvs-brand-dark-primary-975);
+
+  --cnvs-brand-dark-critical-A25: var(--cnvs-brand-dark-primary-A25);
+  --cnvs-brand-dark-critical-A50: var(--cnvs-brand-dark-primary-A50);
+  --cnvs-brand-dark-critical-A100: var(--cnvs-brand-dark-primary-A100);
+  --cnvs-brand-dark-critical-A200: var(--cnvs-brand-dark-primary-A200);
+  --cnvs-brand-dark-critical-A300: var(--cnvs-brand-dark-primary-A300);
+
+  --cnvs-brand-light-action-base: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-dark: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-darker: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-darkest: var(--cnvs-brand-neutral-975);
+  --cnvs-brand-light-action-light: var(--cnvs-brand-neutral-200);
+  --cnvs-brand-light-action-lighter: var(--cnvs-brand-neutral-50);
+  --cnvs-brand-light-action-lightest: var(--cnvs-brand-neutral-25);
+  --cnvs-brand-light-action-accent: var(--cnvs-base-palette-white);
+
+  --cnvs-brand-dark-action-base: var(--cnvs-brand-dark-neutral-975);
+  --cnvs-brand-dark-action-dark: var(--cnvs-brand-dark-neutral-950);
+  --cnvs-brand-dark-action-darker: var(--cnvs-brand-dark-neutral-900);
+  --cnvs-brand-dark-action-darkest: var(--cnvs-brand-dark-neutral-850);
+  --cnvs-brand-dark-action-light: var(--cnvs-brand-dark-neutral-200);
+  --cnvs-brand-dark-action-lighter: var(--cnvs-brand-dark-neutral-50);
+  --cnvs-brand-dark-action-lightest: var(--cnvs-brand-dark-neutral-25);
+  --cnvs-brand-dark-action-accent: var(--cnvs-base-palette-black);
 }

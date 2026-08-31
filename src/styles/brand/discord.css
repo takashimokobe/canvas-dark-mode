@@ -1,4 +1,7 @@
 [data-brand='discord'] {
+  --cnvs-brand-neutral-hue: 274;
+  --cnvs-brand-neutral-chroma: 0.009;
+
   --cnvs-brand-primary-25: var(--discord-25);
   --cnvs-brand-primary-50: var(--discord-50);
   --cnvs-brand-primary-100: var(--discord-100);

@@ -1,0 +1,100 @@
+@layer components {
+  .Wrap {
+    min-inline-size: 0;
+    overflow-x: auto;
+  }
+
+  .Table {
+    inline-size: 100%;
+    border-collapse: collapse;
+  }
+
+  .Wrap .Table {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+  }
+
+  .Caption {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .Wrap .Table :is(th, td) {
+    padding-block: var(--cnvs-sys-padding-sm);
+    padding-inline: 0 var(--cnvs-sys-padding-xs);
+    text-align: start;
+    vertical-align: middle;
+    border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+  }
+
+  .Wrap .Table :is(th, td):last-child {
+    padding-inline-end: 0;
+  }
+
+  .Wrap .Table thead th {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-family: var(--cnvs-sys-font-family-default);
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+    color: var(--cnvs-sys-color-fg-strong);
+    white-space: nowrap;
+  }
+
+  .Wrap .Table tbody th {
+    font-weight: inherit;
+  }
+
+  .Wrap .Table tbody tr:last-child :is(th, td) {
+    border-block-end: 0;
+  }
+
+  .Wrap .Table :is(.PairHead, .PairCell) {
+    inline-size: var(--cnvs-base-size-1600);
+    padding-inline-end: var(--cnvs-sys-padding-md);
+  }
+
+  .Pair {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: var(--cnvs-sys-size-md);
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xs);
+    background: var(--pair-bg);
+    color: var(--pair-fg);
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+
+    @media (--forcedColors) {
+      border-color: CanvasText;
+    }
+  }
+
+  .NumHead,
+  .NumCell {
+    white-space: nowrap;
+  }
+
+  .StepCell,
+  .NumCell {
+    font-family: var(--cnvs-sys-font-family-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .NumCell {
+    white-space: nowrap;
+  }
+
+  .LevelCell {
+    overflow-wrap: anywhere;
+  }
+}

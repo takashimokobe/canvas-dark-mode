@@ -1,11 +1,7 @@
-import type { ChangeEvent } from 'react'
-import { useState, useSyncExternalStore } from 'react'
-import { AIIngressButton } from '@workday/canvas-kit-labs-react/ai-ingress-button'
-import { KBD } from '@workday/canvas-kit-labs-react/kbd'
-import { ColorPicker } from '@workday/canvas-kit-preview-react/color-picker'
+import type { ChangeEvent, ReactNode } from 'react'
+import { useId, useState, useSyncExternalStore } from 'react'
 import { Divider } from '@workday/canvas-kit-preview-react/divider'
 import { LoadingSparkles } from '@workday/canvas-kit-preview-react/loading-sparkles'
-import { MultiSelect } from '@workday/canvas-kit-preview-react/multi-select'
 import { RadioGroup } from '@workday/canvas-kit-preview-react/radio'
 import { StatusIndicator } from '@workday/canvas-kit-preview-react/status-indicator'
 import { Switch } from '@workday/canvas-kit-preview-react/switch'
@@ -17,49 +13,42 @@ import { Banner } from '@workday/canvas-kit-react/banner'
 import { Breadcrumbs } from '@workday/canvas-kit-react/breadcrumbs'
 import {
   DeleteButton,
-  ExternalHyperlink,
-  Hyperlink,
   PrimaryButton,
   SecondaryButton,
   TertiaryButton,
 } from '@workday/canvas-kit-react/button'
 import { Card } from '@workday/canvas-kit-react/card'
 import { Checkbox } from '@workday/canvas-kit-react/checkbox'
-import { Combobox } from '@workday/canvas-kit-react/combobox'
-import { Dialog } from '@workday/canvas-kit-react/dialog'
 import { Expandable } from '@workday/canvas-kit-react/expandable'
-import { FormField } from '@workday/canvas-kit-react/form-field'
+import { FormField, FormFieldGroup } from '@workday/canvas-kit-react/form-field'
 import { InformationHighlight } from '@workday/canvas-kit-react/information-highlight'
-import { Box, Flex, Grid } from '@workday/canvas-kit-react/layout'
+import { Box, Flex } from '@workday/canvas-kit-react/layout'
 import { LoadingDots } from '@workday/canvas-kit-react/loading-dots'
-import { Menu } from '@workday/canvas-kit-react/menu'
-import { Modal } from '@workday/canvas-kit-react/modal'
-import { Pagination } from '@workday/canvas-kit-react/pagination'
-import type { PaginationModel } from '@workday/canvas-kit-react/pagination'
 import { Pill } from '@workday/canvas-kit-react/pill'
-import { Popup } from '@workday/canvas-kit-react/popup'
 import { SegmentedControl } from '@workday/canvas-kit-react/segmented-control'
-import { Select } from '@workday/canvas-kit-react/select'
-import {
-  SidePanel,
-  useSidePanelModel,
-} from '@workday/canvas-kit-react/side-panel'
+import { SidePanel } from '@workday/canvas-kit-react/side-panel'
 import { Skeleton } from '@workday/canvas-kit-react/skeleton'
 import { Table } from '@workday/canvas-kit-react/table'
 import { Text } from '@workday/canvas-kit-react/text'
-import { TextArea } from '@workday/canvas-kit-react/text-area'
 import { TextInput } from '@workday/canvas-kit-react/text-input'
 import { Toast } from '@workday/canvas-kit-react/toast'
 import { Tooltip } from '@workday/canvas-kit-react/tooltip'
 import {
   checkIcon,
   exclamationCircleIcon,
-  infoIcon,
+  gridIcon,
+  listViewIcon,
+  pieChartIcon,
+  plusIcon,
+  trashIcon,
+  xIcon,
 } from '@workday/canvas-system-icons-web'
+import { BarChart } from '@/components/Chart'
 import type {
   CanvasKitEntry,
   CanvasKitSlug,
   CanvasKitSpecimen,
+  CanvasKitSpecimenProps,
 } from '@/registry/types'
 
 import styles from './specimens.module.css'
@@ -77,53 +66,52 @@ function useHydrated() {
   )
 }
 
-const TEAMS = ['Design systems', 'Platform', 'Accessibility']
-const REVIEWERS = ['Taka Shimokobe', 'Nor Savangovay', 'Rick Schaffer']
-const ACCENT_SWATCHES = [
-  '#0875E1',
-  '#1A818C',
-  '#217A37',
-  '#C06C00',
-  '#A31B12',
-  '#7C3882',
-  '#333333',
-  '#FFFFFF',
-]
-const TOKEN_ROWS = [
-  { token: 'surface-default', light: 'white', dark: 'dark-neutral-100' },
-  { token: 'surface-popover', light: 'white', dark: 'dark-neutral-150' },
-  { token: 'surface-modal', light: 'white', dark: 'dark-neutral-200' },
+const THEME_ROWS = [
+  { theme: 'Sana Canvas', owner: 'Jordan Lee', status: 'Published' },
+  { theme: 'Workday', owner: 'Sam Rivera', status: 'In review' },
+  { theme: 'Spotify', owner: 'Riley Chen', status: 'Draft' },
 ] as const
 
-function Stage({ children }: { children: React.ReactNode }) {
-  return (
-    <Flex
-      cs={{
-        gap: 'var(--cnvs-base-size-200)',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        inlineSize: '100%',
-      }}
-    >
-      {children}
-    </Flex>
-  )
+type TabItem = {
+  id: string
+  text: string
+  contents: string
 }
 
-function Stack({ children }: { children: React.ReactNode }) {
-  return (
-    <Flex
-      cs={{
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: 'var(--cnvs-base-size-200)',
-        inlineSize: '100%',
-      }}
-    >
-      {children}
-    </Flex>
-  )
+const TAB_ITEMS: TabItem[] = [
+  {
+    id: 'overview',
+    text: 'Overview',
+    contents: 'What’s new in 1.4.',
+  },
+  {
+    id: 'themes',
+    text: 'Themes',
+    contents: 'Active tenants and owners.',
+  },
+  {
+    id: 'pages',
+    text: 'Pages',
+    contents: 'Cards, publish bar, and preview.',
+  },
+  {
+    id: 'activity',
+    text: 'Activity',
+    contents: 'Recent publishes and reviews.',
+  },
+  {
+    id: 'settings',
+    text: 'Settings',
+    contents: 'Who can publish.',
+  },
+]
+
+function Stage({ children }: { children: ReactNode }) {
+  return <div className={styles.Stage}>{children}</div>
+}
+
+function Stack({ children }: { children: ReactNode }) {
+  return <div className={styles.Stack}>{children}</div>
 }
 
 function ActionBarSpecimen() {
@@ -138,24 +126,32 @@ function ActionBarSpecimen() {
           alignSelf: 'stretch',
         }}
       >
-        <ActionBar.Item as={PrimaryButton}>Publish</ActionBar.Item>
+        <ActionBar.Item as={PrimaryButton} icon={plusIcon}>
+          Publish theme
+        </ActionBar.Item>
         <ActionBar.Item as={SecondaryButton}>Save draft</ActionBar.Item>
+        <ActionBar.Item as={TertiaryButton}>Preview</ActionBar.Item>
       </ActionBar.List>
     </ActionBar>
   )
 }
 
-function AiIngressButtonSpecimen() {
-  return <AIIngressButton>Ask AI</AIIngressButton>
-}
-
 function AvatarSpecimen() {
   return (
-    <Stage>
-      <Avatar name="Jordan Lee" size="extraSmall" />
-      <Avatar name="Sam Rivera" />
-      <Avatar name="Riley Chen" size="large" />
-    </Stage>
+    <Stack>
+      <Stage>
+        <Avatar name="Jordan Lee" size="extraSmall" />
+        <Avatar name="Sam Rivera" size="small" />
+        <Avatar name="Riley Chen" />
+        <Avatar name="Alex Kim" size="large" />
+      </Stage>
+      <Stage>
+        <Avatar name="Jordan Lee" variant="blue" />
+        <Avatar name="Sam Rivera" variant="amber" />
+        <Avatar name="Riley Chen" variant="teal" />
+        <Avatar name="Alex Kim" variant="purple" />
+      </Stage>
+    </Stack>
   )
 }
 
@@ -163,6 +159,7 @@ function BadgeSpecimen() {
   return (
     <Stage>
       <CountBadge count={3} />
+      <CountBadge count={427} emphasis="low" />
       <CountBadge count={128} limit={99} />
     </Stage>
   )
@@ -173,36 +170,38 @@ function BannerSpecimen() {
     <Flex cs={{ flexDirection: 'column', gap: 'var(--cnvs-base-size-200)' }}>
       <Banner>
         <Banner.Icon />
-        <Banner.Label>3 Alerts</Banner.Label>
-        <Banner.ActionText>View more</Banner.ActionText>
+        <Banner.Label>3 drafts need review</Banner.Label>
+        <Banner.ActionText>Open list</Banner.ActionText>
       </Banner>
       <Banner hasError>
         <Banner.Icon />
-        <Banner.Label>2 Errors</Banner.Label>
-        <Banner.ActionText>View more</Banner.ActionText>
+        <Banner.Label>Two themes share a name</Banner.Label>
+        <Banner.ActionText>Fix names</Banner.ActionText>
       </Banner>
     </Flex>
   )
 }
 
-function BoxSpecimen() {
-  return (
-    <Box
-      cs={{
-        padding: 'var(--cnvs-base-size-300)',
-        backgroundColor: 'var(--cnvs-sys-color-surface-alt-default)',
-        borderRadius: 'var(--cnvs-sys-shape-card)',
-      }}
-    >
-      Box container
-    </Box>
-  )
-}
-
 function BreadcrumbsSpecimen() {
   return (
-    <Breadcrumbs aria-label="Breadcrumbs">
-      <Breadcrumbs.List>
+    <Breadcrumbs
+      aria-label="Breadcrumbs"
+      cs={{
+        display: 'flex',
+        justifyContent: 'center',
+        inlineSize: '100%',
+      }}
+    >
+      <Breadcrumbs.List
+        cs={{
+          alignItems: 'center',
+          display: 'flex',
+          flexWrap: 'nowrap',
+          justifyContent: 'center',
+          whiteSpace: 'nowrap',
+          width: '100%',
+        }}
+      >
         <Breadcrumbs.Item>
           <Breadcrumbs.Link href="#themes">Themes</Breadcrumbs.Link>
         </Breadcrumbs.Item>
@@ -215,39 +214,72 @@ function BreadcrumbsSpecimen() {
   )
 }
 
+function ButtonRow() {
+  return (
+    <Stage>
+      <PrimaryButton icon={plusIcon} iconPosition="start">
+        Publish
+      </PrimaryButton>
+      <SecondaryButton>Save draft</SecondaryButton>
+      <TertiaryButton>Preview</TertiaryButton>
+      <DeleteButton icon={trashIcon} iconPosition="start">
+        Delete
+      </DeleteButton>
+    </Stage>
+  )
+}
+
 function ButtonSpecimen() {
   return (
     <Stack>
-      <Stage>
-        <PrimaryButton>Primary</PrimaryButton>
-        <SecondaryButton>Secondary</SecondaryButton>
-        <TertiaryButton>Tertiary</TertiaryButton>
-        <DeleteButton>Delete</DeleteButton>
-      </Stage>
-      <Stage>
-        <PrimaryButton size="small">Small</PrimaryButton>
-        <SecondaryButton size="small">Small</SecondaryButton>
-        <PrimaryButton disabled>Disabled</PrimaryButton>
-        <SecondaryButton disabled>Disabled</SecondaryButton>
-      </Stage>
-      <Stage>
-        <Hyperlink href="#button">Inline link</Hyperlink>
-        <ExternalHyperlink href="https://workday.github.io/canvas-kit/">
-          Canvas Kit docs
-        </ExternalHyperlink>
-      </Stage>
+      <div>
+        <p className="visually-hidden">Default theme</p>
+        <ButtonRow />
+      </div>
+      <div data-brand="spotify">
+        <p className="visually-hidden">Spotify</p>
+        <ButtonRow />
+      </div>
     </Stack>
   )
 }
 
 function CardSpecimen() {
   return (
-    <Card cs={{ maxWidth: '20rem' }}>
-      <Card.Heading>Canvas Supreme</Card.Heading>
-      <Card.Body>
-        Pepperoni, sausage, bell peppers, mushrooms, onions, and oregano.
-      </Card.Body>
-    </Card>
+    <Stack>
+      <Card cs={{ maxWidth: '32rem', inlineSize: '100%' }}>
+        <Card.Heading>Visits</Card.Heading>
+        <Card.Body>
+          <BarChart defaultIndex={1} />
+        </Card.Body>
+      </Card>
+      <Card
+        cs={{
+          maxWidth: '32rem',
+          inlineSize: '100%',
+          background: 'var(--cnvs-sys-color-surface-alt-default)',
+        }}
+        variant="tonal"
+      >
+        <Card.Heading>Open roles</Card.Heading>
+        <Card.Body>
+          <BarChart defaultIndex={1} />
+        </Card.Body>
+      </Card>
+      <Card
+        cs={{
+          maxWidth: '32rem',
+          inlineSize: '100%',
+          boxShadow: 'var(--cnvs-sys-depth-1)',
+        }}
+        variant="alt"
+      >
+        <Card.Heading>This week</Card.Heading>
+        <Card.Body>
+          <BarChart defaultIndex={1} />
+        </Card.Body>
+      </Card>
+    </Stack>
   )
 }
 
@@ -273,54 +305,6 @@ function CheckboxSpecimen() {
   )
 }
 
-function ColorPickerSpecimen() {
-  const [accent, setAccent] = useState('#0875E1')
-
-  return (
-    <ColorPicker
-      value={accent}
-      colorSet={ACCENT_SWATCHES}
-      showCustomHexInput
-      onColorChange={setAccent}
-    />
-  )
-}
-
-function ComboboxSpecimen() {
-  return (
-    <Combobox items={REVIEWERS}>
-      <FormField grow cs={{ maxWidth: '20rem' }}>
-        <FormField.Label>Search reviewer</FormField.Label>
-        <FormField.Input as={Combobox.Input} />
-        <Combobox.Menu.Popper>
-          <Combobox.Menu.Card>
-            <Combobox.Menu.List>
-              {(item: string) => (
-                <Combobox.Menu.Item>{item}</Combobox.Menu.Item>
-              )}
-            </Combobox.Menu.List>
-          </Combobox.Menu.Card>
-        </Combobox.Menu.Popper>
-      </FormField>
-    </Combobox>
-  )
-}
-
-function DialogSpecimen() {
-  return (
-    <Dialog>
-      <Dialog.Target as={SecondaryButton}>Confirm</Dialog.Target>
-      <Dialog.Popper>
-        <Dialog.Card>
-          <Dialog.Heading>Publish 1.4?</Dialog.Heading>
-          <Dialog.Body>Draft tokens become the live theme.</Dialog.Body>
-          <Dialog.CloseButton>Not yet</Dialog.CloseButton>
-        </Dialog.Card>
-      </Dialog.Popper>
-    </Dialog>
-  )
-}
-
 function DividerSpecimen() {
   return (
     <Flex
@@ -332,55 +316,61 @@ function DividerSpecimen() {
       }}
     >
       <Text as="p" typeLevel="body.small">
-        Above the divider
+        Sana Canvas 1.4 is ready to publish.
       </Text>
-      <Divider />
+      <Divider space="var(--cnvs-sys-gap-xs)" />
       <Text as="p" typeLevel="body.small">
-        Below the divider
+        Review the changelog before you ship.
       </Text>
     </Flex>
   )
+}
+
+const accordionItemCs = { inlineSize: '100%', minInlineSize: 0 }
+const accordionContentCs = {
+  paddingInline: 'calc(var(--cnvs-sys-padding-xs) * 2)',
 }
 
 function ExpandableSpecimen() {
   return (
-    <Expandable cs={{ maxWidth: '24rem' }}>
-      <Expandable.Target headingLevel="h3">
-        <Expandable.Title>What shipped</Expandable.Title>
-        <Expandable.Icon iconPosition="end" />
-      </Expandable.Target>
-      <Expandable.Content>
-        Elevated cards, quieter dark surfaces, and remapped bg-default.
-      </Expandable.Content>
-    </Expandable>
-  )
-}
-
-function FlexSpecimen() {
-  return (
-    <Flex cs={{ gap: 'var(--cnvs-base-size-150)' }}>
-      <Box
-        cs={{
-          padding: 'var(--cnvs-base-size-150)',
-          backgroundColor: 'var(--cnvs-sys-color-surface-alt-default)',
-        }}
+    <div className={styles.Accordion}>
+      <Expandable className={styles.AccordionItem} cs={accordionItemCs}>
+        <Expandable.Target headingLevel="h4">
+          <Expandable.Title>What shipped</Expandable.Title>
+          <Expandable.Icon iconPosition="end" />
+        </Expandable.Target>
+        <Expandable.Content cs={accordionContentCs}>
+          Quiet chrome, a new publish bar, and a dark preview.
+        </Expandable.Content>
+      </Expandable>
+      <Expandable
+        className={styles.AccordionItem}
+        cs={accordionItemCs}
+        initialVisibility="visible"
       >
-        One
-      </Box>
-      <Box
-        cs={{
-          padding: 'var(--cnvs-base-size-150)',
-          backgroundColor: 'var(--cnvs-sys-color-surface-alt-default)',
-        }}
-      >
-        Two
-      </Box>
-    </Flex>
+        <Expandable.Target headingLevel="h4">
+          <Expandable.Title>Who can publish</Expandable.Title>
+          <Expandable.Icon iconPosition="end" />
+        </Expandable.Target>
+        <Expandable.Content cs={accordionContentCs}>
+          Owners and admins can publish. Reviewers leave comments.
+        </Expandable.Content>
+      </Expandable>
+      <Expandable className={styles.AccordionItem} cs={accordionItemCs}>
+        <Expandable.Target headingLevel="h4">
+          <Expandable.Title>When it ships</Expandable.Title>
+          <Expandable.Icon iconPosition="end" />
+        </Expandable.Target>
+        <Expandable.Content cs={accordionContentCs}>
+          1.4 goes out Friday. Preview stays open until then.
+        </Expandable.Content>
+      </Expandable>
+    </div>
   )
 }
 
 function FormFieldSpecimen() {
-  const [value, setValue] = useState('Color foundations')
+  const [value, setValue] = useState('Sana Canvas')
 
   return (
     <Flex
@@ -392,200 +382,106 @@ function FormFieldSpecimen() {
       }}
     >
       <FormField grow>
-        <FormField.Label>Course title</FormField.Label>
-        <FormField.Input
-          as={TextInput}
-          value={value}
-          onChange={(event: ChangeEvent<HTMLInputElement>) =>
-            setValue(event.target.value)
-          }
-        />
-        <FormField.Hint>Shown on the course card.</FormField.Hint>
+        <FormField.Label>Theme name</FormField.Label>
+        <FormField.Field>
+          <FormField.Input
+            as={TextInput}
+            value={value}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setValue(event.target.value)
+            }
+          />
+          <FormField.Hint>Shown on the theme card.</FormField.Hint>
+        </FormField.Field>
+      </FormField>
+      <FormField grow error="caution">
+        <FormField.Label>Publish window</FormField.Label>
+        <FormField.Field>
+          <FormField.Input
+            as={TextInput}
+            value="Yesterday"
+            onChange={() => {}}
+          />
+          <FormField.Hint>This date is in the past.</FormField.Hint>
+        </FormField.Field>
       </FormField>
       <FormField grow error="error">
         <FormField.Label>Slug</FormField.Label>
-        <FormField.Input
-          as={TextInput}
-          value="color foundations!"
-          onChange={() => {}}
-        />
-        <FormField.Hint>Lowercase letters and dashes only.</FormField.Hint>
+        <FormField.Field>
+          <FormField.Input
+            as={TextInput}
+            value="sana canvas!"
+            onChange={() => {}}
+          />
+          <FormField.Hint>Lowercase letters and dashes only.</FormField.Hint>
+        </FormField.Field>
       </FormField>
     </Flex>
   )
 }
 
-function GridSpecimen() {
-  return (
-    <Grid
-      cs={{
-        gap: 'var(--cnvs-base-size-150)',
-        gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-        inlineSize: '100%',
-        maxWidth: '20rem',
-      }}
-    >
-      {[1, 2, 3, 4, 5, 6].map((item) => (
-        <Box
-          key={item}
-          cs={{
-            padding: 'var(--cnvs-base-size-150)',
-            backgroundColor: 'var(--cnvs-sys-color-surface-alt-default)',
-            textAlign: 'center',
-          }}
-        >
-          {item}
-        </Box>
-      ))}
-    </Grid>
-  )
-}
-
 function InformationHighlightSpecimen() {
   return (
-    <InformationHighlight
-      variant="informational"
-      emphasis="high"
-      cs={{ maxWidth: '28rem' }}
+    <Flex
+      cs={{
+        flexDirection: 'column',
+        gap: 'var(--cnvs-sys-gap-sm)',
+        maxWidth: '28rem',
+      }}
     >
-      <InformationHighlight.Icon
-        icon={infoIcon}
-        color="var(--cnvs-sys-color-fg-info-default)"
-      />
-      <InformationHighlight.Heading>Theme synced</InformationHighlight.Heading>
-      <InformationHighlight.Body>
-        Dark elevation uses surface-default, surface-popover, and surface-modal.
-      </InformationHighlight.Body>
-      <InformationHighlight.Link href="#dark-mode">
-        View elevation tokens
-      </InformationHighlight.Link>
-    </InformationHighlight>
-  )
-}
-
-function KbdSpecimen() {
-  return (
-    <Stack>
-      <Stage>
-        <KBD>
-          <KBD.Item>⌘</KBD.Item>
-          <KBD.Item>K</KBD.Item>
-        </KBD>
-        <KBD>
-          <KBD.Item>Ctrl</KBD.Item>
-          <KBD.Item>Shift</KBD.Item>
-          <KBD.Item>P</KBD.Item>
-        </KBD>
-        <KBD variant="plain">
-          <KBD.Item>⌘</KBD.Item>
-          <KBD.Item>C</KBD.Item>
-        </KBD>
-      </Stage>
-      <Stage>
-        <KBD size="small">
-          <KBD.Item>⌘</KBD.Item>
-          <KBD.Item>S</KBD.Item>
-        </KBD>
-        <KBD size="medium">
-          <KBD.Item>⌘</KBD.Item>
-          <KBD.Item>S</KBD.Item>
-        </KBD>
-        <KBD size="large">
-          <KBD.Item>⌘</KBD.Item>
-          <KBD.Item>S</KBD.Item>
-        </KBD>
-      </Stage>
-    </Stack>
+      <InformationHighlight variant="informational" emphasis="high">
+        <InformationHighlight.Icon />
+        <InformationHighlight.Heading>
+          Theme synced
+        </InformationHighlight.Heading>
+        <InformationHighlight.Body>
+          Sana Canvas 1.4 matches the live preview.
+        </InformationHighlight.Body>
+        <InformationHighlight.Link href="#surfaces">
+          Open preview
+        </InformationHighlight.Link>
+      </InformationHighlight>
+      <InformationHighlight variant="caution" emphasis="high">
+        <InformationHighlight.Icon />
+        <InformationHighlight.Heading>
+          Unsaved changes
+        </InformationHighlight.Heading>
+        <InformationHighlight.Body>
+          This theme has 12 unpublished edits. Review them before publishing.
+        </InformationHighlight.Body>
+        <InformationHighlight.Link href="#caution">
+          Review edits
+        </InformationHighlight.Link>
+      </InformationHighlight>
+      <InformationHighlight variant="critical" emphasis="high">
+        <InformationHighlight.Icon />
+        <InformationHighlight.Heading>
+          Publish blocked
+        </InformationHighlight.Heading>
+        <InformationHighlight.Body>
+          Two themes share a name. Publishing will fail until they are unique.
+        </InformationHighlight.Body>
+        <InformationHighlight.Link href="#critical">
+          Fix names
+        </InformationHighlight.Link>
+      </InformationHighlight>
+    </Flex>
   )
 }
 
 function LoadingDotsSpecimen() {
-  return <LoadingDots />
+  return <LoadingDots role="img" aria-label="Please wait" />
 }
 
 function LoadingSparklesSpecimen() {
   return <LoadingSparkles aria-label="Generating" />
 }
 
-function MenuSpecimen() {
-  return (
-    <Menu>
-      <Menu.Target as={SecondaryButton}>More</Menu.Target>
-      <Menu.Popper>
-        <Menu.Card>
-          <Menu.List>
-            <Menu.Item>Duplicate release</Menu.Item>
-            <Menu.Item>Export CSS</Menu.Item>
-            <Menu.Item>Archive</Menu.Item>
-          </Menu.List>
-        </Menu.Card>
-      </Menu.Popper>
-    </Menu>
-  )
-}
-
-function ModalSpecimen() {
-  return (
-    <Modal>
-      <Modal.Target as={SecondaryButton}>Review</Modal.Target>
-      <Modal.Overlay>
-        <Modal.Card>
-          <Modal.Heading>Review changes</Modal.Heading>
-          <Modal.Body>
-            Three tokens differ from the last published theme.
-          </Modal.Body>
-          <Modal.CloseButton>Close</Modal.CloseButton>
-        </Modal.Card>
-      </Modal.Overlay>
-    </Modal>
-  )
-}
-
-function MultiSelectSpecimen() {
-  return (
-    <MultiSelect items={REVIEWERS}>
-      <FormField grow cs={{ maxWidth: '20rem' }}>
-        <FormField.Label>Approvers</FormField.Label>
-        <FormField.Input as={MultiSelect.Input} />
-        <MultiSelect.Popper>
-          <MultiSelect.Card>
-            <MultiSelect.List>
-              {(item: string) => <MultiSelect.Item>{item}</MultiSelect.Item>}
-            </MultiSelect.List>
-          </MultiSelect.Card>
-        </MultiSelect.Popper>
-      </FormField>
-    </MultiSelect>
-  )
-}
-
-function PaginationSpecimen() {
-  return (
-    <Pagination aria-label="Token pages" lastPage={3} initialCurrentPage={1}>
-      <Pagination.Controls>
-        <Pagination.StepToPreviousButton aria-label="Previous" />
-        <Pagination.PageList>
-          {({ state }: PaginationModel) =>
-            state.range.map((pageNumber) => (
-              <Pagination.PageListItem key={pageNumber}>
-                <Pagination.PageButton
-                  aria-label={`Page ${pageNumber}`}
-                  pageNumber={pageNumber}
-                />
-              </Pagination.PageListItem>
-            ))
-          }
-        </Pagination.PageList>
-        <Pagination.StepToNextButton aria-label="Next" />
-      </Pagination.Controls>
-    </Pagination>
-  )
-}
-
 function PillSpecimen() {
   return (
     <Stage>
-      <Pill onClick={() => {}}>
+      <Pill onClick={() => {}} type="button">
+        <Pill.Icon icon={plusIcon} aria-hidden />
         <Pill.Label>Design tokens</Pill.Label>
         <Pill.Count>12</Pill.Count>
       </Pill>
@@ -593,116 +489,101 @@ function PillSpecimen() {
         <Pill.Label>Canvas Kit</Pill.Label>
         <Pill.IconButton aria-label="Remove Canvas Kit" onClick={() => {}} />
       </Pill>
-      <Pill variant="readOnly">Read only</Pill>
+      <Pill variant="readOnly">1.4</Pill>
+      <Pill onClick={() => {}} disabled type="button">
+        <Pill.Label>Beta</Pill.Label>
+      </Pill>
     </Stage>
   )
 }
 
-function PopupSpecimen() {
-  return (
-    <Popup>
-      <Popup.Target as={SecondaryButton}>Share</Popup.Target>
-      <Popup.Popper>
-        <Popup.Card>
-          <Popup.Heading>Share 1.4</Popup.Heading>
-          <Popup.Body>Anyone with the link can preview this theme.</Popup.Body>
-          <Popup.CloseButton>Copy link</Popup.CloseButton>
-        </Popup.Card>
-      </Popup.Popper>
-    </Popup>
-  )
-}
-
 function RadioSpecimen() {
-  const [channel, setChannel] = useState('email')
+  const name = useId()
+  const [appearance, setAppearance] = useState('dark')
 
   return (
-    <FormField>
-      <FormField.Label>Channel</FormField.Label>
-      <RadioGroup
-        name="channel"
-        value={channel}
-        onChange={(value) => setChannel(String(value))}
-      >
-        <RadioGroup.RadioButton value="email">Email</RadioGroup.RadioButton>
-        <RadioGroup.RadioButton value="slack">Slack</RadioGroup.RadioButton>
-        <RadioGroup.RadioButton value="sms" disabled>
-          SMS
-        </RadioGroup.RadioButton>
-      </RadioGroup>
-    </FormField>
+    <FormFieldGroup>
+      <FormFieldGroup.Label>Appearance</FormFieldGroup.Label>
+      <FormFieldGroup.Field>
+        <FormFieldGroup.List
+          as={RadioGroup}
+          name={name}
+          value={appearance}
+          onChange={(value) => setAppearance(String(value))}
+        >
+          <FormFieldGroup.Input as={RadioGroup.RadioButton} value="light">
+            Light
+          </FormFieldGroup.Input>
+          <FormFieldGroup.Input as={RadioGroup.RadioButton} value="dark">
+            Dark
+          </FormFieldGroup.Input>
+          <FormFieldGroup.Input
+            as={RadioGroup.RadioButton}
+            value="system"
+            disabled
+          >
+            System
+          </FormFieldGroup.Input>
+        </FormFieldGroup.List>
+      </FormFieldGroup.Field>
+    </FormFieldGroup>
   )
 }
 
 function SegmentedControlSpecimen() {
+  const [digest, setDigest] = useState(true)
+
   return (
     <Stack>
       <SegmentedControl>
-        <SegmentedControl.List aria-label="Activity range">
-          <SegmentedControl.Item data-id="day">Day</SegmentedControl.Item>
-          <SegmentedControl.Item data-id="week">Week</SegmentedControl.Item>
-          <SegmentedControl.Item data-id="month">Month</SegmentedControl.Item>
-        </SegmentedControl.List>
-      </SegmentedControl>
-      <SegmentedControl size="small">
-        <SegmentedControl.List aria-label="Density">
-          <SegmentedControl.Item data-id="cozy">Cozy</SegmentedControl.Item>
-          <SegmentedControl.Item data-id="compact">
-            Compact
+        <SegmentedControl.List aria-label="View type">
+          <SegmentedControl.Item data-id="table" icon={gridIcon}>
+            Table
+          </SegmentedControl.Item>
+          <SegmentedControl.Item data-id="list" icon={listViewIcon}>
+            List
+          </SegmentedControl.Item>
+          <SegmentedControl.Item data-id="diagram" icon={pieChartIcon}>
+            Diagram
           </SegmentedControl.Item>
         </SegmentedControl.List>
       </SegmentedControl>
+      <FormField orientation="horizontalStart">
+        <FormField.Label>Weekly digest</FormField.Label>
+        <FormField.Field>
+          <FormField.Input
+            as={Switch}
+            checked={digest}
+            onChange={() => setDigest(!digest)}
+          />
+        </FormField.Field>
+      </FormField>
     </Stack>
   )
 }
 
-function SelectSpecimen() {
-  return (
-    <Select items={TEAMS}>
-      <FormField grow cs={{ maxWidth: '20rem' }}>
-        <FormField.Label>Owning team</FormField.Label>
-        <FormField.Input as={Select.Input} />
-        <Select.Popper>
-          <Select.Card>
-            <Select.List>
-              {(item: string) => <Select.Item>{item}</Select.Item>}
-            </Select.List>
-          </Select.Card>
-        </Select.Popper>
-      </FormField>
-    </Select>
-  )
-}
-
 function SidePanelSpecimen() {
-  const model = useSidePanelModel()
+  const hydrated = useHydrated()
+  if (!hydrated) {
+    return <div className={styles.Pending} aria-hidden />
+  }
 
   return (
-    <Flex
-      cs={{
-        blockSize: '14rem',
-        inlineSize: '100%',
-        border: '1px solid var(--cnvs-sys-color-border-default)',
-        borderRadius: 'var(--cnvs-sys-shape-card)',
-        overflow: 'hidden',
-        backgroundColor: 'var(--cnvs-sys-color-bg-alt-default)',
-      }}
-    >
+    <div className={styles.Viewport}>
       <SidePanel
-        model={model}
         variant="alternative"
         expandedWidth={200}
-        collapsedWidth={64}
+        cs={{ flexShrink: 0 }}
       >
-        <SidePanel.ToggleButton aria-label="Collapse view" />
-        <SidePanel.Heading size="small">Navigation</SidePanel.Heading>
+        <SidePanel.ToggleButton aria-label="Collapse themes panel" />
+        <SidePanel.Heading size={'small'}>Themes</SidePanel.Heading>
       </SidePanel>
-      <Box cs={{ padding: 'var(--cnvs-base-size-300)', flex: 1 }}>
+      <div className={styles.ViewportMain}>
         <Text as="p" typeLevel="body.small">
-          Main content sits beside the panel.
+          Sana Canvas stays in view while the panel collapses.
         </Text>
-      </Box>
-    </Flex>
+      </div>
+    </div>
   )
 }
 
@@ -711,7 +592,13 @@ function SkeletonSpecimen() {
     <Box cs={{ inlineSize: '100%', maxWidth: '20rem' }}>
       <Skeleton>
         <Flex cs={{ gap: 'var(--cnvs-base-size-200)' }}>
-          <Skeleton.Shape width="2.5rem" height="2.5rem" borderRadius="50%" />
+          <Skeleton.Shape
+            cs={{
+              width: 'var(--cnvs-sys-size-md)',
+              height: 'var(--cnvs-sys-size-md)',
+              borderRadius: 'var(--cnvs-sys-shape-full)',
+            }}
+          />
           <Box cs={{ flex: 1 }}>
             <Skeleton.Header />
             <Skeleton.Text lineCount={2} />
@@ -724,42 +611,25 @@ function SkeletonSpecimen() {
 
 function StatusIndicatorSpecimen() {
   return (
-    <Stack>
-      <Stage>
-        <StatusIndicator emphasis="low" variant="neutral">
-          <StatusIndicator.Label>Draft</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="low" variant="info">
-          <StatusIndicator.Label>In review</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="low" variant="positive">
-          <StatusIndicator.Label>Published</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="low" variant="caution">
-          <StatusIndicator.Label>Expiring</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="low" variant="critical">
-          <StatusIndicator.Label>Blocked</StatusIndicator.Label>
-        </StatusIndicator>
-      </Stage>
-      <Stage>
-        <StatusIndicator emphasis="high" variant="neutral">
-          <StatusIndicator.Label>Draft</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="high" variant="info">
-          <StatusIndicator.Label>In review</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="high" variant="positive">
-          <StatusIndicator.Label>Published</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="high" variant="caution">
-          <StatusIndicator.Label>Expiring</StatusIndicator.Label>
-        </StatusIndicator>
-        <StatusIndicator emphasis="high" variant="critical">
-          <StatusIndicator.Label>Blocked</StatusIndicator.Label>
-        </StatusIndicator>
-      </Stage>
-    </Stack>
+    <Stage>
+      <StatusIndicator emphasis="high" variant="neutral">
+        <StatusIndicator.Label>Draft</StatusIndicator.Label>
+      </StatusIndicator>
+      <StatusIndicator emphasis="high" variant="info">
+        <StatusIndicator.Label>In review</StatusIndicator.Label>
+      </StatusIndicator>
+      <StatusIndicator emphasis="high" variant="positive">
+        <StatusIndicator.Icon icon={checkIcon} />
+        <StatusIndicator.Label>Published</StatusIndicator.Label>
+      </StatusIndicator>
+      <StatusIndicator emphasis="high" variant="caution">
+        <StatusIndicator.Label>Expiring</StatusIndicator.Label>
+      </StatusIndicator>
+      <StatusIndicator emphasis="high" variant="critical">
+        <StatusIndicator.Icon icon={exclamationCircleIcon} />
+        <StatusIndicator.Label>Blocked</StatusIndicator.Label>
+      </StatusIndicator>
+    </Stage>
   )
 }
 
@@ -771,28 +641,34 @@ function SwitchSpecimen() {
     <Flex cs={{ flexDirection: 'column', gap: 'var(--cnvs-base-size-100)' }}>
       <FormField orientation="horizontalStart">
         <FormField.Label>Notifications</FormField.Label>
-        <FormField.Input
-          as={Switch}
-          checked={notifications}
-          onChange={() => setNotifications(!notifications)}
-        />
+        <FormField.Field>
+          <FormField.Input
+            as={Switch}
+            checked={notifications}
+            onChange={() => setNotifications(!notifications)}
+          />
+        </FormField.Field>
       </FormField>
       <FormField orientation="horizontalStart">
         <FormField.Label>Auto-publish</FormField.Label>
-        <FormField.Input
-          as={Switch}
-          checked={autoPublish}
-          onChange={() => setAutoPublish(!autoPublish)}
-        />
+        <FormField.Field>
+          <FormField.Input
+            as={Switch}
+            checked={autoPublish}
+            onChange={() => setAutoPublish(!autoPublish)}
+          />
+        </FormField.Field>
       </FormField>
       <FormField orientation="horizontalStart">
         <FormField.Label>Legacy mode</FormField.Label>
-        <FormField.Input
-          as={Switch}
-          disabled
-          checked={false}
-          onChange={() => {}}
-        />
+        <FormField.Field>
+          <FormField.Input
+            as={Switch}
+            disabled
+            checked={false}
+            onChange={() => {}}
+          />
+        </FormField.Field>
       </FormField>
     </Flex>
   )
@@ -801,19 +677,20 @@ function SwitchSpecimen() {
 function TableSpecimen() {
   return (
     <Table>
+      <Table.Caption>Themes in this workspace</Table.Caption>
       <Table.Head>
         <Table.Row>
-          <Table.Header>Token</Table.Header>
-          <Table.Header>Light</Table.Header>
-          <Table.Header>Dark</Table.Header>
+          <Table.Header scope="col">Theme</Table.Header>
+          <Table.Header scope="col">Owner</Table.Header>
+          <Table.Header scope="col">Status</Table.Header>
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {TOKEN_ROWS.map((row) => (
-          <Table.Row key={row.token}>
-            <Table.Cell>{row.token}</Table.Cell>
-            <Table.Cell>{row.light}</Table.Cell>
-            <Table.Cell>{row.dark}</Table.Cell>
+        {THEME_ROWS.map((row) => (
+          <Table.Row key={row.theme}>
+            <Table.Cell>{row.theme}</Table.Cell>
+            <Table.Cell>{row.owner}</Table.Cell>
+            <Table.Cell>{row.status}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
@@ -828,100 +705,31 @@ function TabsSpecimen() {
   }
 
   return (
-    <Tabs>
-      <Tabs.List>
-        <Tabs.Item data-id="overview">Overview</Tabs.Item>
-        <Tabs.Item data-id="tokens">Tokens</Tabs.Item>
-        <Tabs.Item data-id="components">Components</Tabs.Item>
-        <Tabs.Item data-id="activity">Activity</Tabs.Item>
-        <Tabs.Item data-id="settings">Settings</Tabs.Item>
-      </Tabs.List>
-      <Tabs.Panel data-id="overview">
-        <Text as="p" typeLevel="body.small">
-          Release notes and token diffs.
-        </Text>
-      </Tabs.Panel>
-      <Tabs.Panel data-id="tokens">
-        <Text as="p" typeLevel="body.small">
-          Color, type, and depth token tables.
-        </Text>
-      </Tabs.Panel>
-      <Tabs.Panel data-id="components">
-        <Text as="p" typeLevel="body.small">
-          Component coverage and overrides.
-        </Text>
-      </Tabs.Panel>
-      <Tabs.Panel data-id="activity">
-        <Text as="p" typeLevel="body.small">
-          Recent publishes and reviews.
-        </Text>
-      </Tabs.Panel>
-      <Tabs.Panel data-id="settings">
-        <Text as="p" typeLevel="body.small">
-          Theme scope and publish targets.
-        </Text>
-      </Tabs.Panel>
-    </Tabs>
-  )
-}
-
-function TextSpecimen() {
-  return (
-    <Flex cs={{ flexDirection: 'column', gap: 'var(--cnvs-base-size-100)' }}>
-      <Text as="p" typeLevel="heading.medium">
-        Heading medium
-      </Text>
-      <Text as="p" typeLevel="body.medium">
-        Body medium — default reading size.
-      </Text>
-      <Text as="p" typeLevel="subtext.large">
-        Subtext large
-      </Text>
-    </Flex>
-  )
-}
-
-function TextAreaSpecimen() {
-  const [value, setValue] = useState('Multi-line text area content.')
-
-  return (
-    <TextArea
-      value={value}
-      onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-        setValue(event.target.value)
-      }
-      style={{ minWidth: '20rem' }}
-    />
-  )
-}
-
-function TextInputSpecimen() {
-  const [value, setValue] = useState('Canvas Kit')
-
-  return (
-    <Flex
-      cs={{
-        flexDirection: 'column',
-        gap: 'var(--cnvs-base-size-150)',
-        inlineSize: '100%',
-        maxWidth: '20rem',
-      }}
-    >
-      <TextInput
-        aria-label="Theme name"
-        value={value}
-        onChange={(event: ChangeEvent<HTMLInputElement>) =>
-          setValue(event.target.value)
-        }
-      />
-      <TextInput aria-label="Search tokens" placeholder="Search tokens" />
-      <TextInput
-        aria-label="Locked value"
-        value="neutral-600"
-        disabled
-        onChange={() => {}}
-      />
-    </Flex>
+    <Box cs={{ inlineSize: '100%', maxInlineSize: '28rem' }}>
+      <Tabs items={TAB_ITEMS}>
+        <Tabs.List
+          overflowButton={<Tabs.OverflowButton>More</Tabs.OverflowButton>}
+        >
+          {(item: TabItem) => <Tabs.Item>{item.text}</Tabs.Item>}
+        </Tabs.List>
+        <Tabs.Menu.Popper>
+          <Tabs.Menu.Card maxWidth={300} maxHeight={200}>
+            <Tabs.Menu.List>
+              {(item: TabItem) => <Tabs.Menu.Item>{item.text}</Tabs.Menu.Item>}
+            </Tabs.Menu.List>
+          </Tabs.Menu.Card>
+        </Tabs.Menu.Popper>
+        <Tabs.Panels>
+          {(item: TabItem) => (
+            <Tabs.Panel cs={{ marginBlockStart: 'var(--cnvs-sys-gap-lg)' }}>
+              <Text as="p" typeLevel="body.small">
+                {item.contents}
+              </Text>
+            </Tabs.Panel>
+          )}
+        </Tabs.Panels>
+      </Tabs>
+    </Box>
   )
 }
 
@@ -931,7 +739,7 @@ function ToastSpecimen() {
       <Toast mode="status">
         <Toast.Icon
           icon={checkIcon}
-          color="var(--cnvs-sys-color-fg-success-default)"
+          color="var(--cnvs-sys-color-brand-fg-positive-default)"
         />
         <Toast.Body>
           <Toast.Message>Sana Canvas 1.4 is ready to publish.</Toast.Message>
@@ -940,11 +748,11 @@ function ToastSpecimen() {
       <Toast mode="alert">
         <Toast.Icon
           icon={exclamationCircleIcon}
-          color="var(--cnvs-sys-color-fg-danger-default)"
+          color="var(--cnvs-sys-color-brand-fg-critical-default)"
         />
         <Toast.Body>
           <Toast.Message>
-            Publish failed. Two token names collide.
+            Publish failed. Two themes share a name.
           </Toast.Message>
           <Toast.Link href="#toast">Review names</Toast.Link>
         </Toast.Body>
@@ -953,60 +761,63 @@ function ToastSpecimen() {
   )
 }
 
-function TooltipSpecimen() {
+function TooltipSpecimen({ scheme }: CanvasKitSpecimenProps) {
   return (
-    <Tooltip title="Save changes">
-      <PrimaryButton>Hover me</PrimaryButton>
-    </Tooltip>
+    <Stage>
+      <Tooltip
+        title="Close"
+        data-scheme={scheme}
+        style={{ colorScheme: scheme }}
+      >
+        <TertiaryButton icon={xIcon} aria-label="Close" />
+      </Tooltip>
+      <Tooltip
+        type="description"
+        title="Opens the changelog for this theme."
+        data-scheme={scheme}
+        style={{ colorScheme: scheme }}
+      >
+        <SecondaryButton>Review names</SecondaryButton>
+      </Tooltip>
+    </Stage>
   )
 }
 
 const specimenBySlug: Record<CanvasKitSlug, CanvasKitSpecimen> = {
   'action-bar': ActionBarSpecimen,
-  'ai-ingress-button': AiIngressButtonSpecimen,
   avatar: AvatarSpecimen,
   badge: BadgeSpecimen,
   banner: BannerSpecimen,
-  box: BoxSpecimen,
   breadcrumbs: BreadcrumbsSpecimen,
   button: ButtonSpecimen,
   card: CardSpecimen,
   checkbox: CheckboxSpecimen,
-  'color-picker': ColorPickerSpecimen,
-  combobox: ComboboxSpecimen,
-  dialog: DialogSpecimen,
   divider: DividerSpecimen,
   expandable: ExpandableSpecimen,
-  flex: FlexSpecimen,
   'form-field': FormFieldSpecimen,
-  grid: GridSpecimen,
   'information-highlight': InformationHighlightSpecimen,
-  kbd: KbdSpecimen,
   'loading-dots': LoadingDotsSpecimen,
   'loading-sparkles': LoadingSparklesSpecimen,
-  menu: MenuSpecimen,
-  modal: ModalSpecimen,
-  'multi-select': MultiSelectSpecimen,
-  pagination: PaginationSpecimen,
   pill: PillSpecimen,
-  popup: PopupSpecimen,
   radio: RadioSpecimen,
   'segmented-control': SegmentedControlSpecimen,
-  select: SelectSpecimen,
   'side-panel': SidePanelSpecimen,
   skeleton: SkeletonSpecimen,
   'status-indicator': StatusIndicatorSpecimen,
   switch: SwitchSpecimen,
   table: TableSpecimen,
   tabs: TabsSpecimen,
-  text: TextSpecimen,
-  'text-area': TextAreaSpecimen,
-  'text-input': TextInputSpecimen,
   toast: ToastSpecimen,
   tooltip: TooltipSpecimen,
 }
 
-export function CanvasKitSpecimenView({ entry }: { entry: CanvasKitEntry }) {
+export function CanvasKitSpecimenView({
+  entry,
+  scheme,
+}: {
+  entry: CanvasKitEntry
+  scheme: CanvasKitSpecimenProps['scheme']
+}) {
   const Specimen = specimenBySlug[entry.slug]
-  return <Specimen entry={entry} />
+  return <Specimen entry={entry} scheme={scheme} />
 }

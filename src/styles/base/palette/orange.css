@@ -13,19 +13,19 @@
   --cnvs-base-palette-orange-950: oklch(0.2421 0.082 36.46);
   --cnvs-base-palette-orange-975: oklch(0.2121 0.0706 37.19);
 
-  --cnvs-base-palette-dark-orange-25: oklch(0.2051 0.0257 48.32);
-  --cnvs-base-palette-dark-orange-50: oklch(0.238 0.0323 49.08);
-  --cnvs-base-palette-dark-orange-100: oklch(0.2741 0.0437 48.38);
-  --cnvs-base-palette-dark-orange-200: oklch(0.3545 0.07 47.99);
-  --cnvs-base-palette-dark-orange-300: oklch(0.4821 0.1084 47.73);
-  --cnvs-base-palette-dark-orange-400: oklch(0.5496 0.1358 46.08);
-  --cnvs-base-palette-dark-orange-500: oklch(0.6541 0.1684 44.93);
-  --cnvs-base-palette-dark-orange-600: oklch(0.7414 0.1447 44.27);
-  --cnvs-base-palette-dark-orange-700: oklch(0.8135 0.0874 44.27);
-  --cnvs-base-palette-dark-orange-800: oklch(0.8706 0.0464 43.88);
-  --cnvs-base-palette-dark-orange-900: oklch(0.9319 0.0155 43.75);
-  --cnvs-base-palette-dark-orange-950: oklch(0.9535 0.0073 43.66);
-  --cnvs-base-palette-dark-orange-975: oklch(0.9659 0.004 43.77);
+  --cnvs-base-palette-dark-orange-25: oklch(0.15 0.0188 48.32);
+  --cnvs-base-palette-dark-orange-50: oklch(0.18 0.0245 49.08);
+  --cnvs-base-palette-dark-orange-100: oklch(0.22 0.0351 48.38);
+  --cnvs-base-palette-dark-orange-200: oklch(0.3 0.0592 47.99);
+  --cnvs-base-palette-dark-orange-300: oklch(0.4135 0.0929 47.73);
+  --cnvs-base-palette-dark-orange-400: oklch(0.4804 0.1187 46.08);
+  --cnvs-base-palette-dark-orange-500: oklch(0.5915 0.1523 44.93);
+  --cnvs-base-palette-dark-orange-600: oklch(0.6902 0.1492 44.27);
+  --cnvs-base-palette-dark-orange-700: oklch(0.7753 0.0799 44.27);
+  --cnvs-base-palette-dark-orange-800: oklch(0.8448 0.057 43.88);
+  --cnvs-base-palette-dark-orange-900: oklch(0.9213 0.0231 43.75);
+  --cnvs-base-palette-dark-orange-950: oklch(0.9488 0.0147 43.66);
+  --cnvs-base-palette-dark-orange-975: oklch(0.9647 0.01 43.77);
 
   --cnvs-base-palette-orange-A25: oklch(0.7089 0.1802 52.86 / 0.098);
   --cnvs-base-palette-orange-A50: oklch(0.7496 0.1792 58.11 / 0.1644);
@@ -33,9 +33,9 @@
   --cnvs-base-palette-orange-A200: oklch(0.7294 0.1868 52.32 / 0.4587);
   --cnvs-base-palette-orange-A300: oklch(0.7425 0.1817 55.99 / 0.7993);
 
-  --cnvs-base-palette-dark-orange-A25: oklch(0.2855 0.0818 44.89 / 0.2748);
-  --cnvs-base-palette-dark-orange-A50: oklch(0.6892 0.2077 41.29 / 0.1085);
-  --cnvs-base-palette-dark-orange-A100: oklch(0.7049 0.1961 43.39 / 0.1653);
-  --cnvs-base-palette-dark-orange-A200: oklch(0.7162 0.1881 44.88 / 0.2999);
-  --cnvs-base-palette-dark-orange-A300: oklch(0.7242 0.1828 46.16 / 0.5248);
+  --cnvs-base-palette-dark-orange-A25: oklch(0.1363 0.0324 58.74 / 0.7126);
+  --cnvs-base-palette-dark-orange-A50: oklch(0.1843 0.0461 54.16 / 0.5517);
+  --cnvs-base-palette-dark-orange-A100: oklch(0.308 0.0888 44.5 / 0.3431);
+  --cnvs-base-palette-dark-orange-A200: oklch(0.694 0.2042 42.14 / 0.2185);
+  --cnvs-base-palette-dark-orange-A300: oklch(0.7128 0.1911 44.99 / 0.4101);
 }

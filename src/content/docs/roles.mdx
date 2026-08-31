@@ -1,0 +1,130 @@
+---
+title: Color roles
+description: Color roles assign meaning to colors by specifying what role the color plays in the interface.
+---
+
+Colors are organized into functional groups based on _what_ those colors are applied to. `bg`, `surface`, `accent`, `fg`, `border`, `focus`, `shadow`.
+
+## Background
+
+`bg` tokens are used for the page background. Use once per page.
+
+<BrowserMockupRow>
+  <BrowserMockup
+    url="https://canvas.workday.com"
+    page="default"
+    cs={{ backgroundColor: 'var(--cnvs-sys-color-bg-default)' }}
+  >
+    Default
+  </BrowserMockup>
+  <BrowserMockup
+    url="https://canvas.workday.com"
+    page="alt"
+    cs={{ backgroundColor: 'var(--cnvs-sys-color-bg-alt-default)' }}
+  >
+    Alt
+  </BrowserMockup>
+</BrowserMockupRow>
+
+Use `bg` when primary content sits on the page. Use `bg-alt` when primary content lives in containers on top of the page.
+
+<TokenTable group="bg" />
+
+## Surface
+
+Use `surface` tokens for containers that sit on top of the page. In dark mode, surfaces get brighter the more important they are, while in light mode, the shadow increases to indicate elevation.
+
+<BrowserMockup
+  url="https://canvas.workday.com"
+  page="alt"
+  cs={{ backgroundColor: 'var(--cnvs-sys-color-bg-alt-default)' }}
+>
+  <CardGrid />
+</BrowserMockup>
+
+When pairing `bg` and `surface` colors with foreground colors, try to match the modifier. For example, text used on top of `bg-default` and `surface-default` should use `fg-default`. Text used on top of `surface-critical-strong` should use `fg-critical-strong`.
+
+<TokenTable group="surface" />
+
+## Accent
+
+Use `accent` colors sparingly. They are high emphasis color used to draw attention to important actions or statuses.
+
+<BrowserMockup url="https://canvas.workday.com/color-roles" page="alt">
+  <AccentRoles />
+</BrowserMockup>
+
+All `accent` colors should be paired with `fg-inverse`, with the exception of yellow colors.
+
+In the case of `accent-caution` and `accent-warning`, use `fg-contrast` instead of `fg-inverse` to ensure text is readable on saturated yellows.
+
+<TokenTable group="accent" />
+
+---
+
+## Foreground
+
+Use `fg` colors on foregrounds like text and icons. Strength steps (`default`, `strong`, `muted`) imply how they should be used within the interface. Status and link roles may share the accent families.
+
+<Container>
+  <RoleForeground />
+</Container>
+
+
+<TokenTable group="fg" />
+
+---
+
+## Border
+
+Use `border` colors to define the edges of containers and controls.
+
+<Container>
+  <RoleBorder />
+</Container>
+
+<TokenTable group="border" />
+
+---
+
+## Focus
+
+<Container>
+  <RoleFocus />
+</Container>
+
+Use `focus` colors for focus states. Normally this shows up as a ring around interactive elements when they are tab or mouse focused.
+
+<TokenTable group="focus" />
+
+---
+
+## Switch
+
+The track is a wash; the thumb is `surface-thumb`. In dark the thumb lifts with a raised fill instead of a shadow.
+
+<RoleSwitch />
+
+<TokenTable group="switch" />
+
+---
+
+## Shadow
+
+<Container>
+  <RoleShadow />
+</Container>
+
+Shadow tokens are the ink inside `--cnvs-sys-depth-*`. Light uses black alpha; dark uses a page-relative dark and a stronger opacity because shadows fade.
+
+<TokenTable group="shadow" />
+
+---
+
+## State overlays
+
+State overlays are alpha washes for hover and press (`surface-overlay`, `accent-overlay`). They invert in dark — a light wash instead of a darken — so the control lifts instead of receding. The modal scrim is a black alpha, not a white wash.
+
+<TokenTable group="overlay" />
+
+---

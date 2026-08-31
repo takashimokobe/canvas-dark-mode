@@ -2,6 +2,8 @@
 
 > Work in progress — token names and file layout may change.
 
+Why surfaces and alphas work the way they do is in [Dark mode](../content/docs/dark.mdx). Token names live in [Color roles](../content/docs/roles.mdx).
+
 Layers load in order via `index.css`: **reset** → **base** → **brand** → **theme** → **deprecated** → **components** → **layouts**.
 
 | Folder        | Contents                                                                                          |
@@ -15,7 +17,7 @@ Layers load in order via `index.css`: **reset** → **base** → **brand** → *
 ## Brands
 
 - `shared.css` holds everything common: status ramps, neutrals, action, and focus tokens. Per-brand files map only `--cnvs-brand-primary-*`.
-- The default brand uses gray neutrals; tenant brands swap to slate.
+- Brand neutrals follow the tenant: `default` maps to Neutral, `workday` maps to Slate, and Airbnb, Spotify, and Discord tint Neutral with `--cnvs-brand-neutral-hue` and a small `--cnvs-brand-neutral-chroma` so chrome stays grey next to the primary.
 - Brand tokens are plain solids (`-*` light, `dark-*` dark); `theme/color.css` picks between them with `light-dark()`.
 
 ## Runtime theming

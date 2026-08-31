@@ -1,0 +1,204 @@
+@layer components {
+  .Form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xs);
+    container: --composer / inline-size;
+  }
+
+  .Composer {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'add input send';
+    align-items: center;
+    box-sizing: border-box;
+    padding: var(--cnvs-sys-padding-xs);
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xxxl);
+    background: var(--cnvs-sys-color-surface-default);
+    box-shadow: none;
+
+    @media (--motionOK) {
+      transition-property: box-shadow;
+      transition-duration: var(--cnvs-base-duration-150);
+      transition-timing-function: var(--cnvs-sys-motion-easing-quick-standard);
+    }
+
+    &:focus-within {
+      box-shadow: var(--cnvs-sys-depth-3);
+    }
+
+    &[data-expanded] {
+      grid-template-areas:
+        'input input input'
+        'add . send';
+
+      .Input {
+        padding-inline: var(--cnvs-sys-padding-sm);
+      }
+
+      &:has(.Extras) {
+        grid-template-areas:
+          'extras extras extras'
+          'input input input'
+          'add . send';
+      }
+    }
+  }
+
+  @container --composer (width < 36rem) {
+    .Composer {
+      grid-template-areas:
+        'input input input'
+        'add . send';
+
+      .Input {
+        padding-inline: var(--cnvs-sys-padding-sm);
+      }
+
+      &:has(.Extras) {
+        grid-template-areas:
+          'extras extras extras'
+          'input input input'
+          'add . send';
+      }
+    }
+  }
+
+  .Extras {
+    grid-area: extras;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--cnvs-sys-gap-sm);
+  }
+
+  .Attachments,
+  .Tools,
+  .Contexts {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Attachments {
+    gap: var(--cnvs-sys-gap-xs);
+
+    > li {
+      flex: 1 1 11.25rem;
+      min-inline-size: 0;
+      max-inline-size: 11.25rem;
+    }
+  }
+
+  .Tools,
+  .Contexts {
+    gap: var(--cnvs-sys-gap-xs);
+    padding: var(--cnvs-sys-padding-xs);
+  }
+
+  .Tool,
+  .Context {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: var(--cnvs-sys-padding-xs) var(--cnvs-sys-padding-sm);
+    border: 0;
+    border-radius: var(--cnvs-sys-shape-full);
+    background-color: var(--cnvs-sys-color-surface-alt-default);
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    cursor: pointer;
+
+    @media (--mouse) {
+      &:hover:not(:active) {
+        background-image: linear-gradient(
+          var(--cnvs-sys-color-surface-overlay-hover-default),
+          var(--cnvs-sys-color-surface-overlay-hover-default)
+        );
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      background-image: linear-gradient(
+        var(--cnvs-sys-color-surface-overlay-pressed-default),
+        var(--cnvs-sys-color-surface-overlay-pressed-default)
+      );
+    }
+
+    @media (--motionOK) {
+      transition-property: background-color, background-image, scale;
+      transition-duration: var(--cnvs-base-duration-150);
+      transition-timing-function: var(--cnvs-sys-motion-easing-quick-standard);
+
+      &:active {
+        scale: 0.96;
+      }
+    }
+  }
+
+  .Context {
+    display: block;
+    max-inline-size: 11.25rem;
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Add {
+    grid-area: add;
+  }
+
+  .Send {
+    grid-area: send;
+    justify-self: end;
+  }
+
+  .Input {
+    grid-area: input;
+    min-inline-size: 0;
+    max-block-size: 8lh;
+    margin: 0;
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--cnvs-sys-padding-xs);
+    border: 0;
+    background: transparent;
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+    resize: none;
+    field-sizing: content;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+
+    &::placeholder {
+      color: var(--cnvs-sys-color-fg-muted-default);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .Error {
+    margin: 0;
+    padding-inline: var(--cnvs-sys-padding-md);
+    color: var(--cnvs-sys-color-fg-danger-default);
+    font: var(--cnvs-sys-type-subtext-sm);
+  }
+}

@@ -11,16 +11,46 @@
 
 @import './deprecated/index.css' layer(deprecated);
 
+@import './components/button.css' layer(components);
 @import './components/segmented-control.css' layer(components);
+@import './components/avatar.css' layer(components);
+@import './components/breadcrumbs.css' layer(components);
+
+html {
+  --cnvs-page-bg: var(--cnvs-sys-color-bg-alt-default);
+  --cnvs-page-gutter-block-start: max(
+    var(--cnvs-sys-padding-xxl),
+    env(safe-area-inset-top)
+  );
+  /* Trailing block gutter clears the fixed command button: inset + control + gap. */
+  --cnvs-page-gutter-block-end: max(
+    calc(
+      var(--cnvs-sys-padding-xxl) + var(--cnvs-sys-size-xl) +
+        var(--cnvs-sys-padding-sm)
+    ),
+    env(safe-area-inset-bottom)
+  );
+  --cnvs-page-gutter-start: max(
+    var(--cnvs-sys-padding-xxl),
+    env(safe-area-inset-left)
+  );
+  --cnvs-page-gutter-end: max(
+    var(--cnvs-sys-padding-xxl),
+    env(safe-area-inset-right)
+  );
+}
+
+html[data-page-bg='default'] {
+  --cnvs-page-bg: var(--cnvs-sys-color-bg-default);
+}
 
 body {
   overflow: visible;
   color: var(--cnvs-sys-color-fg-default);
-  background-color: var(--cnvs-sys-color-bg-alt-default);
-  padding-block: max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-top))
-    max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-bottom));
-  padding-inline: max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-left))
-    max(var(--cnvs-sys-padding-xxl), env(safe-area-inset-right));
+  background-color: var(--cnvs-page-bg);
+  padding-block: var(--cnvs-page-gutter-block-start)
+    var(--cnvs-page-gutter-block-end);
+  padding-inline: var(--cnvs-page-gutter-start) var(--cnvs-page-gutter-end);
   font: var(--cnvs-sys-type-body-sm);
   font-variant-numeric: tabular-nums;
 }
@@ -30,4 +60,8 @@ body {
    unlayered so it wins over every layered `font:` declaration. */
 * {
   font-variant-numeric: tabular-nums;
+}
+
+:where(code, kbd, pre, samp, .font-mono) {
+  font-variant-numeric: tabular-nums slashed-zero;
 }

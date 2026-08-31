@@ -1,5 +1,56 @@
-@layer components.root {
+@layer components {
   .Pending {
     min-block-size: var(--cnvs-sys-size-md);
+  }
+
+  .Stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--cnvs-base-size-200);
+    max-inline-size: 100%;
+  }
+
+  .Stage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cnvs-base-size-200);
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  .Accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .AccordionItem {
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .AccordionItem + .AccordionItem {
+    border-block-start: 1px solid var(--cnvs-sys-color-border-default);
+  }
+
+  .Viewport {
+    display: flex;
+    overflow: clip;
+    inline-size: 100%;
+    block-size: 20rem;
+  }
+
+  .ViewportMain {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 0;
+    padding: var(--cnvs-sys-padding-lg);
   }
 }

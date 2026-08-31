@@ -19,4 +19,6 @@
 
 :where(code, kbd, pre, samp, .font-mono) {
   letter-spacing: 0;
+  /* IBM Plex Mono: keep lining tabular figures and enable slashed zeros. */
+  font-feature-settings: 'calt', 'ccmp', 'locl', 'kern', 'tnum', 'zero';
 }

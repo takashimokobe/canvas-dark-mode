@@ -1,0 +1,23 @@
+:where(nav[role='navigation'] ul[role='list']) {
+  column-gap: var(--cnvs-sys-gap-xs);
+}
+
+:where(nav[role='navigation'] li:has(svg.wd-icon)) {
+  gap: var(--cnvs-sys-gap-xs);
+}
+
+:where(
+  [data-part='breadcrumbs-item-chevron-right-icon'],
+  nav[role='navigation'] li > span:has(svg.wd-icon)
+) {
+  --cnvs-sys-size-sm: var(--cnvs-sys-size-xxxs);
+  overflow: hidden;
+  inline-size: var(--cnvs-sys-size-xxxs);
+  block-size: var(--cnvs-sys-size-xxxs);
+}
+
+nav[role='navigation'] [data-part='breadcrumbs-item-chevron-right-icon'] > svg.wd-icon,
+nav[role='navigation'] li > span:has(svg.wd-icon) > svg.wd-icon {
+  width: var(--cnvs-sys-size-xxxs);
+  height: var(--cnvs-sys-size-xxxs);
+}

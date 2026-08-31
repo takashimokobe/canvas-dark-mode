@@ -1,4 +1,7 @@
 [data-brand='spotify'] {
+  --cnvs-brand-neutral-hue: 150;
+  --cnvs-brand-neutral-chroma: 0.007;
+
   --cnvs-brand-primary-25: var(--spotify-25);
   --cnvs-brand-primary-50: var(--spotify-50);
   --cnvs-brand-primary-100: var(--spotify-100);

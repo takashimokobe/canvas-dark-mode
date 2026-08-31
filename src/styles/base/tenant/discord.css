@@ -13,19 +13,19 @@
   --discord-950: oklch(0.22 0.14 276);
   --discord-975: oklch(0.2 0.13 275);
 
-  --dark-discord-25: oklch(0.2051 0.0545 274.15);
-  --dark-discord-50: oklch(0.238 0.0697 273.55);
-  --dark-discord-100: oklch(0.2741 0.0933 273.7);
-  --dark-discord-200: oklch(0.3545 0.1424 274);
-  --dark-discord-300: oklch(0.4821 0.1453 273.85);
-  --dark-discord-400: oklch(0.5496 0.1482 273.85);
-  --dark-discord-500: oklch(0.6541 0.1513 274);
-  --dark-discord-600: oklch(0.7414 0.1056 274);
-  --dark-discord-700: oklch(0.8135 0.0664 274);
-  --dark-discord-800: oklch(0.8706 0.0364 274.15);
-  --dark-discord-900: oklch(0.9319 0.0125 274.15);
-  --dark-discord-950: oklch(0.9535 0.0059 274.3);
-  --dark-discord-975: oklch(0.9659 0.0033 274.15);
+  --dark-discord-25: oklch(0.15 0.0399 274.15);
+  --dark-discord-50: oklch(0.18 0.0528 273.55);
+  --dark-discord-100: oklch(0.22 0.0749 273.7);
+  --dark-discord-200: oklch(0.3 0.1254 274);
+  --dark-discord-300: oklch(0.4135 0.1758 273.85);
+  --dark-discord-400: oklch(0.4804 0.1794 273.85);
+  --dark-discord-500: oklch(0.5915 0.183 274);
+  --dark-discord-600: oklch(0.6902 0.1291 274);
+  --dark-discord-700: oklch(0.7753 0.0799 274);
+  --dark-discord-800: oklch(0.8448 0.0441 274.15);
+  --dark-discord-900: oklch(0.9213 0.0186 274.15);
+  --dark-discord-950: oklch(0.9488 0.012 274.3);
+  --dark-discord-975: oklch(0.9647 0.0082 274.15);
 
   --discord-A25: oklch(0.4879 0.289 264.11 / 0.0345);
   --discord-A50: oklch(0.5059 0.2772 263.7 / 0.0723);
@@ -33,9 +33,9 @@
   --discord-A200: oklch(0.4849 0.291 264.12 / 0.2913);
   --discord-A300: oklch(0.4737 0.2885 264.16 / 0.4356);
 
-  --dark-discord-A25: oklch(0.4723 0.2991 264.52 / 0.1269);
-  --dark-discord-A50: oklch(0.5071 0.276 266.7 / 0.1922);
-  --dark-discord-A100: oklch(0.5208 0.2672 268.54 / 0.2803);
-  --dark-discord-A200: oklch(0.5351 0.2584 271.28 / 0.4822);
-  --dark-discord-A300: oklch(0.6206 0.2048 273.1 / 0.6616);
+  --dark-discord-A25: oklch(0.1309 0.0674 263.21 / 0.6202);
+  --dark-discord-A50: oklch(0.2051 0.1192 264.01 / 0.3916);
+  --dark-discord-A100: oklch(0.4733 0.2985 265.03 / 0.1812);
+  --dark-discord-A200: oklch(0.5065 0.2767 269.42 / 0.3763);
+  --dark-discord-A300: oklch(0.5415 0.2548 272.28 / 0.6339);
 }

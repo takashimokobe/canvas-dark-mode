@@ -13,19 +13,19 @@
   --spotify-950: oklch(0.22 0.06 151);
   --spotify-975: oklch(0.2 0.06 150);
 
-  --dark-spotify-25: oklch(0.2051 0.0265 148.85);
-  --dark-spotify-50: oklch(0.238 0.0337 148.85);
-  --dark-spotify-100: oklch(0.2741 0.0452 148.85);
-  --dark-spotify-200: oklch(0.3545 0.0719 148.85);
-  --dark-spotify-300: oklch(0.4821 0.1105 149);
-  --dark-spotify-400: oklch(0.5496 0.1349 149);
-  --dark-spotify-500: oklch(0.6541 0.1641 149);
-  --dark-spotify-600: oklch(0.7414 0.1608 149.15);
-  --dark-spotify-700: oklch(0.8135 0.1576 149.15);
-  --dark-spotify-800: oklch(0.8706 0.1525 149.15);
-  --dark-spotify-900: oklch(0.9319 0.049 149.3);
-  --dark-spotify-950: oklch(0.9535 0.0226 149.3);
-  --dark-spotify-975: oklch(0.9659 0.0124 149.15);
+  --dark-spotify-25: oklch(0.15 0.0194 148.85);
+  --dark-spotify-50: oklch(0.18 0.0255 148.85);
+  --dark-spotify-100: oklch(0.22 0.0363 148.85);
+  --dark-spotify-200: oklch(0.3 0.0609 148.85);
+  --dark-spotify-300: oklch(0.4135 0.0948 149);
+  --dark-spotify-400: oklch(0.4804 0.1179 149);
+  --dark-spotify-500: oklch(0.5915 0.1484 149);
+  --dark-spotify-600: oklch(0.6902 0.1454 149.15);
+  --dark-spotify-700: oklch(0.7753 0.0799 149.15);
+  --dark-spotify-800: oklch(0.8448 0.0639 149.15);
+  --dark-spotify-900: oklch(0.9213 0.0462 149.3);
+  --dark-spotify-950: oklch(0.9488 0.0399 149.3);
+  --dark-spotify-975: oklch(0.9647 0.0309 149.15);
 
   --spotify-A25: oklch(0.8668 0.2917 142.83 / 0.0461);
   --spotify-A50: oklch(0.8669 0.2914 142.86 / 0.1238);
@@ -33,9 +33,9 @@
   --spotify-A200: oklch(0.7964 0.259 143.9 / 0.6001);
   --spotify-A300: oklch(0.7501 0.2239 146.84 / 0.875);
 
-  --dark-spotify-A25: oklch(0.3395 0.1078 144.69 / 0.1759);
-  --dark-spotify-A50: oklch(0.8708 0.2688 144.58 / 0.0747);
-  --dark-spotify-A100: oklch(0.876 0.2512 145.64 / 0.118);
-  --dark-spotify-A200: oklch(0.8792 0.2395 146.69 / 0.2203);
-  --dark-spotify-A300: oklch(0.8809 0.2313 147.75 / 0.393);
+  --dark-spotify-A25: oklch(0.1321 0.0384 147.86 / 0.6655);
+  --dark-spotify-A50: oklch(0.1836 0.0534 147.8 / 0.4702);
+  --dark-spotify-A100: oklch(0.3767 0.1194 144.74 / 0.2173);
+  --dark-spotify-A200: oklch(0.8721 0.2623 145.44 / 0.1539);
+  --dark-spotify-A300: oklch(0.8772 0.2431 147.11 / 0.3012);
 }

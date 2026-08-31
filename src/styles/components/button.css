@@ -1,0 +1,134 @@
+:where(
+  [data-uxi-canvas-kit-component-type='secondary-button'],
+  [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='delete-button-outline']
+) {
+  --cnvs-sys-color-border-default: var(--cnvs-sys-color-border-strong);
+}
+
+/* Keep the rest fill. Canvas Kit would otherwise step Primary to
+   action.dark / action.darkest and Delete to critical 700 / 800. */
+:where(
+  [data-uxi-canvas-kit-component-type='primary-button'],
+  [data-uxi-canvas-kit-component-type='primary-button-inverse']
+) {
+  --cnvs-brand-action-dark: var(--cnvs-brand-action-base);
+  --cnvs-brand-action-darker: var(--cnvs-brand-action-base);
+  --cnvs-brand-action-darkest: var(--cnvs-brand-action-base);
+  --cnvs-brand-action-lighter: var(--cnvs-brand-action-lightest);
+  --cnvs-brand-action-light: var(--cnvs-brand-action-lightest);
+}
+
+:where([data-uxi-canvas-kit-component-type='delete-button']) {
+  --cnvs-brand-critical-700: var(--cnvs-sys-color-brand-accent-critical);
+  --cnvs-brand-critical-800: var(--cnvs-sys-color-brand-accent-critical);
+}
+
+:where(
+  [data-uxi-canvas-kit-component-type='primary-button'],
+  [data-uxi-canvas-kit-component-type='primary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='secondary-button'],
+  [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='tertiary-button'],
+  [data-uxi-canvas-kit-component-type='tertiary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='delete-button'],
+  [data-uxi-canvas-kit-component-type='delete-button-outline']
+) {
+  --cnvs-button-overlay-hover: var(
+    --cnvs-sys-color-surface-overlay-hover-default
+  );
+  --cnvs-button-overlay-pressed: var(
+    --cnvs-sys-color-surface-overlay-pressed-default
+  );
+}
+
+:where(
+  [data-uxi-canvas-kit-component-type='primary-button'],
+  [data-uxi-canvas-kit-component-type='delete-button']
+) {
+  --cnvs-button-overlay-hover: var(--cnvs-sys-color-accent-overlay-hover);
+  --cnvs-button-overlay-pressed: var(--cnvs-sys-color-accent-overlay-pressed);
+}
+
+:where(
+  [data-uxi-canvas-kit-component-type='primary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='tertiary-button-inverse']
+) {
+  --cnvs-button-overlay-hover: var(
+    --cnvs-sys-color-surface-overlay-hover-inverse
+  );
+  --cnvs-button-overlay-pressed: var(
+    --cnvs-sys-color-surface-overlay-pressed-inverse
+  );
+}
+
+/* Wash the fill, not the label. Tertiary already paints overlay tokens
+   as its hover/press background. */
+:where(
+  [data-uxi-canvas-kit-component-type='primary-button'],
+  [data-uxi-canvas-kit-component-type='primary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='secondary-button'],
+  [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+  [data-uxi-canvas-kit-component-type='delete-button'],
+  [data-uxi-canvas-kit-component-type='delete-button-outline']
+) {
+  isolation: isolate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background-color: transparent;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:is(:hover, .hover):not(:disabled, .disabled, :active, .active)::after {
+    background-color: var(--cnvs-button-overlay-hover);
+  }
+
+  &:is(:active, .active):not(:disabled, .disabled)::after {
+    background-color: var(--cnvs-button-overlay-pressed);
+  }
+}
+
+@media (--motionOK) {
+  :where(
+    [data-uxi-canvas-kit-component-type='primary-button'],
+    [data-uxi-canvas-kit-component-type='primary-button-inverse'],
+    [data-uxi-canvas-kit-component-type='secondary-button'],
+    [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+    [data-uxi-canvas-kit-component-type='delete-button'],
+    [data-uxi-canvas-kit-component-type='delete-button-outline']
+  ) {
+    &::after {
+      transition-property: background-color;
+      transition-duration: var(--cnvs-base-duration-100);
+      transition-timing-function: linear;
+    }
+
+    &:is(:active, .active)::after {
+      transition-duration: var(--cnvs-base-duration-50);
+    }
+  }
+}
+
+@media (--forcedColors) {
+  :where(
+    [data-uxi-canvas-kit-component-type='primary-button'],
+    [data-uxi-canvas-kit-component-type='primary-button-inverse'],
+    [data-uxi-canvas-kit-component-type='secondary-button'],
+    [data-uxi-canvas-kit-component-type='secondary-button-inverse'],
+    [data-uxi-canvas-kit-component-type='delete-button'],
+    [data-uxi-canvas-kit-component-type='delete-button-outline']
+  )::after {
+    content: none;
+  }
+}

@@ -1,0 +1,28 @@
+@layer layouts {
+  .Page {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    margin-block: calc(-1 * var(--cnvs-page-gutter-block-start))
+      calc(-1 * var(--cnvs-page-gutter-block-end));
+    margin-inline: calc(-1 * var(--cnvs-page-gutter-start))
+      calc(-1 * var(--cnvs-page-gutter-end));
+    block-size: 100svh;
+    max-block-size: 100svh;
+    overflow: hidden;
+  }
+
+  .Page > * {
+    min-block-size: 0;
+    block-size: 100%;
+    overflow: hidden;
+  }
+}
+
+:global(html):has(.Page) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+
+:global(body):has(.Page) {
+  overflow: hidden;
+}

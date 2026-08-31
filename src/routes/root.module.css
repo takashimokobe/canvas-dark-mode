@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: start;
     gap: var(--cnvs-sys-gap-md);
-    max-inline-size: 40rem;
+    max-inline-size: var(--cnvs-sys-measure-app);
   }
 
   .Title {
@@ -20,15 +20,22 @@
     color: var(--cnvs-sys-color-fg-muted-default);
   }
 
-  .HomeLink {
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+  .Home {
     color: var(--cnvs-sys-color-fg-link-default);
-    transition: color var(--cnvs-base-duration-100)
-      var(--cnvs-sys-motion-easing-quick-standard);
+    font: var(--cnvs-sys-type-body-sm);
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.2em;
 
-    &:hover {
-      color: var(--cnvs-sys-color-fg-link-hover);
+    @media (--mouse) {
+      &:hover {
+        color: var(--cnvs-sys-color-fg-link-hover);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
     }
   }
 }

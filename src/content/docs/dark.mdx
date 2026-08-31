@@ -1,0 +1,112 @@
+---
+title: Dark mode
+description: How this dark mode was built
+---
+
+Dark mode is an appearance mode where backgrounds are dark and text is light.
+
+Many operating systems and browsers allow you to set your apppearance to light, dark, or system default. The OS or browser chrome will then adopt that appearance mode, along with any apps that have a dark mode defined.
+
+If the app does not define a dark mode, sometimes users are able to force a dark mode onto the app to make it fit their preference. The result is rarely an ideal experience, with muddy surfaces and poor contrast. Instead, it's better to define a dark theme tailored for your app.
+
+---
+
+## Why dark mode?
+
+Dark mode has seen a resurgence in popularity since the release macOS Mojave in 2018, when Apple decided to support dark mode natively with system-wide support.
+
+### Users expect apps to respect system preferences
+
+When you switch your system preferences to dark, you naturally expect your apps to follow. If one stays bright, it feels out of touch with modern software design. 
+
+### Easier on the eyes
+
+Dark mode reduces screen glare and eye-strain, particularly in low-light conditions or long sessions. We don't want to flash bang users with a bright white screen in the middle of the night unexpectedly.
+
+### Reduces battery consumption
+
+Unlike LCD screens, where pixels are lit up constantly via a backlight, OLED pixels light themselves. Black pixels use no current - the darker the color, the less energy is used. While most desktop monitors still use LCD, OLED is showing up in more laptops and pro displays every year. 
+
+About 40 percent of phones use OLED now. That covers Android flagships and every iPhone since X. On these screens, dark mode can save 3 to 9 percent of your battery indoors, and up to 47 percent outside with the brightness up.
+
+### Dark mode looks good
+
+People like dark mode because it looks good. It feels modern. For our designers, it makes colors 'pop' more. Some applications only ever offer a dark mode, like Spotify and Netflix.
+
+![Spotify dark mode](./images/spotify-dark-mode.png)
+
+---
+
+## Dark mode considerations
+
+Dark mode is not an inverted light mode. A few things to keep in mind:
+
+### Color is contextual
+
+Color is perceived in context. A dull grey on white can stand out on black. 
+
+<Container align="wide">
+  <GreyOnWhite />
+</Container>
+
+Saturated colors that work in light mode might bleed in dark. Two colors with the same HSL lightness can still look different. The main takeaway here is to always test your colors on the surfaces and backgrounds they will appear on.
+
+<Container align="wide">
+  <GlowCompare />
+</Container>
+
+### Avoid pure black and white
+
+It's a best practice to avoid pure black and white combinations. This pairing will give you a 21:1 contrast ratio, which definitly meets WCAG AA compliance. However this amount of contrast is harsh on the eyes, and starts to create an effect called "irradiation", where the edges the white start blurring into the dark background. This is especially for users with astigmatism.
+
+<Container align="wide">
+  <HalationCompare />
+</Container>
+
+Instead, we should use neutrals that are slightly off white and off black. This will make it easier for users to read while also maintaining a high contrast ratio.
+
+### Use color to create depth
+
+In light mode, Canvas uses box shadows to create a sense of depth between surfaces. The stronger the shadow, the closer the surface feels to the user. We use this to our advantage by having the most critical surfaces have the strongest shadows.
+
+In dark mode, any shadows that are defined should get darker and more pronounced. We don't want to invert the colors (meaning we don't want to use 'light' shadows). If we used the same shadows we use in dark mode, those would be barely visible.
+
+<Container align="wide">
+  <ShadowCompare />
+</Container>
+
+In addition to darker shadows, dark mode surfaces use color to create a sense of depth. In the physical world, objects that are closer to us appear brighter, while objects that are further away feel more muted. The more critical the surface, the brighter the color becomes in dark mode.
+
+<Container align="wide">
+  <DepthCompare />
+</Container>
+
+### Invert the light palette first
+
+In light mode, step numbers are the contrast math. The ramps share the same lightness at each step, so a bigger gap means higher contrast. 500 on the page is 3:1. 600 is 4.5:1. 800 is body text.
+
+That is why inverting the light palette is a good start for dark. Flip the ramp and the gaps come with it. Light 800 on white becomes dark 800 on the dark page. Same job.
+
+It is only a start. The dark canvas is step 50, not white. Some pairings that passed in light will fail. If a pair doesn’t work, move one color a step instead of redesigning the component.
+
+- Inverse type only sits on fills at 600 or above.
+- Caution and warning use step 400, so they get fg-contrast, not fg-inverse. Amber doesn’t work with white text.
+- Border-input needs 3:1, not counting placeholder text. Dark 400 against the page only hits about 2.9:1, so the 400-step rule doesn’t work here.
+
+fg-default on bg-default is 4.5:1 in both modes.
+
+<Container align="wide">
+  <ContrastCompare />
+</Container>
+
+<Container align="wide">
+  <CautionInk />
+</Container>
+
+## Solution
+
+1. Invert the light palette first
+2. Reduce chroma of saturated ramps by 90%
+3. Choose a default page background color - an off black
+4. Shift lightnesss ramps using the default page background color as an anchor
+5. Map system tokens to the dark palette

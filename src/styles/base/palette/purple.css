@@ -1,31 +1,31 @@
 :where(html) {
   --cnvs-base-palette-purple-25: oklch(0.9776 0.0147 312);
   --cnvs-base-palette-purple-50: oklch(0.9507 0.0323 311.64);
-  --cnvs-base-palette-purple-100: oklch(0.909 0.0637 314.44);
+  --cnvs-base-palette-purple-100: oklch(0.925 0.0637 314.44);
   --cnvs-base-palette-purple-200: oklch(0.8701 0.0965 316.6);
   --cnvs-base-palette-purple-300: oklch(0.8108 0.1412 315.48);
   --cnvs-base-palette-purple-400: oklch(0.7338 0.1623 315.92);
   --cnvs-base-palette-purple-500: oklch(0.6279 0.1685 312.7);
   --cnvs-base-palette-purple-600: oklch(0.5181 0.1617 313.88);
   --cnvs-base-palette-purple-700: oklch(0.4759 0.1567 313.59);
-  --cnvs-base-palette-purple-800: oklch(0.4218 0.1364 315.46);
+  --cnvs-base-palette-purple-800: oklch(0.41 0.1364 315.46);
   --cnvs-base-palette-purple-900: oklch(0.3143 0.0996 313.76);
   --cnvs-base-palette-purple-950: oklch(0.2351 0.0734 313.34);
   --cnvs-base-palette-purple-975: oklch(0.1937 0.062 312.82);
 
-  --cnvs-base-palette-dark-purple-25: oklch(0.2051 0.0279 312.6);
-  --cnvs-base-palette-dark-purple-50: oklch(0.238 0.0355 312.54);
-  --cnvs-base-palette-dark-purple-100: oklch(0.2741 0.0475 312.96);
-  --cnvs-base-palette-dark-purple-200: oklch(0.3545 0.0754 313.29);
-  --cnvs-base-palette-dark-purple-300: oklch(0.4821 0.1164 313.12);
-  --cnvs-base-palette-dark-purple-400: oklch(0.5496 0.1366 313.18);
-  --cnvs-base-palette-dark-purple-500: oklch(0.6541 0.1394 312.7);
-  --cnvs-base-palette-dark-purple-600: oklch(0.7414 0.0973 312.88);
-  --cnvs-base-palette-dark-purple-700: oklch(0.8135 0.0609 312.83);
-  --cnvs-base-palette-dark-purple-800: oklch(0.8706 0.0335 313.11);
-  --cnvs-base-palette-dark-purple-900: oklch(0.9319 0.0114 312.86);
-  --cnvs-base-palette-dark-purple-950: oklch(0.9535 0.0054 312.8);
-  --cnvs-base-palette-dark-purple-975: oklch(0.9659 0.003 312.72);
+  --cnvs-base-palette-dark-purple-25: oklch(0.15 0.0204 312.6);
+  --cnvs-base-palette-dark-purple-50: oklch(0.18 0.0269 312.54);
+  --cnvs-base-palette-dark-purple-100: oklch(0.22 0.0381 312.96);
+  --cnvs-base-palette-dark-purple-200: oklch(0.3 0.0638 313.29);
+  --cnvs-base-palette-dark-purple-300: oklch(0.4135 0.0999 313.12);
+  --cnvs-base-palette-dark-purple-400: oklch(0.4804 0.1242 313.18);
+  --cnvs-base-palette-dark-purple-500: oklch(0.5915 0.1567 312.7);
+  --cnvs-base-palette-dark-purple-600: oklch(0.6902 0.1192 312.88);
+  --cnvs-base-palette-dark-purple-700: oklch(0.7753 0.0746 312.83);
+  --cnvs-base-palette-dark-purple-800: oklch(0.8448 0.0406 313.11);
+  --cnvs-base-palette-dark-purple-900: oklch(0.9213 0.017 312.86);
+  --cnvs-base-palette-dark-purple-950: oklch(0.9488 0.0109 312.8);
+  --cnvs-base-palette-dark-purple-975: oklch(0.9647 0.0075 312.72);
 
   --cnvs-base-palette-purple-A25: oklch(0.5592 0.2955 301.76 / 0.0393);
   --cnvs-base-palette-purple-A50: oklch(0.5563 0.2952 301.05 / 0.0863);
@@ -33,9 +33,9 @@
   --cnvs-base-palette-purple-A200: oklch(0.6011 0.3019 311.29 / 0.2432);
   --cnvs-base-palette-purple-A300: oklch(0.5936 0.3006 309.72 / 0.3569);
 
-  --cnvs-base-palette-dark-purple-A25: oklch(0.6092 0.2798 308.25 / 0.0626);
-  --cnvs-base-palette-dark-purple-A50: oklch(0.6746 0.2359 310.62 / 0.1068);
-  --cnvs-base-palette-dark-purple-A100: oklch(0.6998 0.2193 311.77 / 0.162);
-  --cnvs-base-palette-dark-purple-A200: oklch(0.7174 0.2082 312.66 / 0.2943);
-  --cnvs-base-palette-dark-purple-A300: oklch(0.728 0.2003 312.84 / 0.5171);
+  --cnvs-base-palette-dark-purple-A25: oklch(0.1109 0.0545 315.28 / 0.507);
+  --cnvs-base-palette-dark-purple-A50: oklch(0.2101 0.1072 308.27 / 0.2003);
+  --cnvs-base-palette-dark-purple-A100: oklch(0.6237 0.2744 309.66 / 0.0912);
+  --cnvs-base-palette-dark-purple-A200: oklch(0.69 0.2294 312.23 / 0.2139);
+  --cnvs-base-palette-dark-purple-A300: oklch(0.7145 0.2107 312.66 / 0.4037);
 }

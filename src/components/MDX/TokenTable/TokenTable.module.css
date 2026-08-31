@@ -1,0 +1,243 @@
+@layer components {
+  .Wrap {
+    min-inline-size: 0;
+    overflow-x: auto;
+  }
+
+  .Table {
+    inline-size: 100%;
+    border-collapse: collapse;
+  }
+
+  .Wrap .Table {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-family: var(--cnvs-sys-font-family-mono);
+  }
+
+  .Caption {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .Wrap .Table :is(th, td) {
+    padding-block: 0;
+    padding-inline: 0 var(--cnvs-sys-padding-sm);
+    vertical-align: middle;
+    border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+  }
+
+  .Wrap .Table thead th {
+    block-size: var(--cnvs-sys-size-md);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-family: var(--cnvs-sys-font-family-default);
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+  }
+
+  .Wrap .Table tbody :is(th, td) {
+    padding-block: var(--cnvs-sys-padding-sm);
+  }
+
+  .Wrap .Table th {
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+    color: inherit;
+  }
+
+  .Wrap .Table tbody th {
+    font-weight: inherit;
+  }
+
+  .Wrap .Table tbody tr:last-child :is(th, td) {
+    border-block-end: 0;
+  }
+
+  .SwatchHead,
+  .SwatchCell {
+    inline-size: var(--cnvs-base-size-1100);
+    padding-inline-end: var(--cnvs-sys-padding-sm);
+  }
+
+  .NameHead,
+  .NameCell,
+  .AliasHead,
+  .AliasCell {
+    white-space: nowrap;
+  }
+
+  .Wrap .Table .UiCell {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-family: var(--cnvs-sys-font-family-default);
+  }
+
+  .Swatch {
+    display: block;
+    box-sizing: border-box;
+    inline-size: calc(var(--cnvs-sys-size-lg) + var(--cnvs-base-size-75));
+    block-size: var(--cnvs-sys-size-sm);
+    border: var(--cnvs-base-size-px) solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xs);
+    background: var(--swatch);
+  }
+
+  .AliasDark {
+    display: none;
+  }
+
+  :global(html.dark) .AliasLight {
+    display: none;
+  }
+
+  :global(html.dark) .AliasDark {
+    display: inline;
+  }
+
+  :global([data-scheme='light']) .AliasLight {
+    display: inline;
+  }
+
+  :global([data-scheme='light']) .AliasDark {
+    display: none;
+  }
+
+  :global([data-scheme='dark']) .AliasLight {
+    display: none;
+  }
+
+  :global([data-scheme='dark']) .AliasDark {
+    display: inline;
+  }
+
+  .Name {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-xs);
+    min-inline-size: 0;
+  }
+
+  .Copy {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--cnvs-sys-shape-sm);
+    background: transparent;
+    color: var(--cnvs-sys-color-fg-muted-default);
+    cursor: pointer;
+    opacity: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 50%;
+      inline-size: 24px;
+      block-size: 24px;
+      translate: -50% -50%;
+    }
+
+    &:hover {
+      color: var(--cnvs-sys-color-fg-strong);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      opacity: 1;
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
+    }
+
+    @media (--mouse) {
+      .Name:hover &,
+      tr:hover & {
+        opacity: 1;
+      }
+    }
+
+    @media not (--mouse) {
+      opacity: 1;
+    }
+  }
+
+  .Icons {
+    position: relative;
+    display: block;
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+
+  .Icon {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .Icon[data-state='copy'] {
+    opacity: 1;
+  }
+
+  .Icon[data-state='check'] {
+    opacity: 0;
+  }
+
+  .Icons[data-copied] .Icon[data-state='copy'] {
+    opacity: 0;
+  }
+
+  .Icons[data-copied] .Icon[data-state='check'] {
+    opacity: 1;
+  }
+
+  @media (--motionOK) {
+    .Copy {
+      transition-property: color, opacity, scale;
+      transition-duration: var(--cnvs-base-duration-150);
+      transition-timing-function: var(--cnvs-sys-motion-easing-quick-standard);
+
+      &:active {
+        scale: 0.96;
+      }
+    }
+
+    .Icon {
+      transition-property: opacity, scale, filter;
+      transition-duration: var(--cnvs-base-duration-150);
+      transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .Icon[data-state='check'] {
+      scale: 0.25;
+      filter: blur(4px);
+    }
+
+    .Icons[data-copied] .Icon[data-state='copy'] {
+      scale: 0.25;
+      filter: blur(4px);
+    }
+
+    .Icons[data-copied] .Icon[data-state='check'] {
+      scale: 1;
+      filter: blur(0);
+    }
+  }
+
+  @media (--forcedColors) {
+    .Swatch {
+      border-color: CanvasText;
+    }
+  }
+}

@@ -1,0 +1,218 @@
+@layer components {
+  .Accent {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    gap: var(--cnvs-sys-gap-sm);
+    margin-block-start: auto;
+    margin-inline: calc(-1 * var(--cnvs-sys-padding-xl));
+    margin-block-end: calc(-1 * var(--cnvs-sys-padding-xl));
+    padding: var(--cnvs-sys-padding-md) var(--cnvs-sys-padding-xl);
+    background: var(--cnvs-sys-color-surface-default);
+    border-block-start: 1px solid var(--cnvs-sys-color-border-default);
+  }
+
+  .Caution {
+    display: inline-grid;
+    place-items: center;
+    min-inline-size: 6.5rem;
+    min-block-size: var(--cnvs-sys-size-xl);
+    padding-inline: var(--cnvs-sys-padding-md);
+    border-radius: var(--cnvs-sys-shape-md);
+    background: var(--cnvs-sys-color-brand-accent-caution);
+    color: var(--cnvs-sys-color-fg-contrast-default);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+  }
+
+  .FocusRing {
+    outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+    outline-offset: 2px;
+  }
+
+  .Type,
+  .Row,
+  .Field,
+  .Tile {
+    display: flex;
+  }
+
+  .Type {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--cnvs-sys-gap-sm);
+    text-align: start;
+  }
+
+  .Heading,
+  .Body,
+  .Muted,
+  .Link,
+  .Field span,
+  .Tile figcaption {
+    margin: 0;
+  }
+
+  .Heading {
+    font: var(--cnvs-sys-type-heading-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  .Body {
+    font: var(--cnvs-sys-type-body-sm);
+    color: var(--cnvs-sys-color-fg-default);
+  }
+
+  .Muted {
+    font: var(--cnvs-sys-type-body-sm);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .Link {
+    color: var(--cnvs-sys-color-fg-link-default);
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.2em;
+
+    @media (--mouse) {
+      &:hover {
+        color: var(--cnvs-sys-color-fg-link-hover);
+      }
+    }
+  }
+
+  .Row {
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    gap: var(--cnvs-sys-gap-xl);
+  }
+
+  .Field {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--cnvs-sys-gap-xs);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  .Input,
+  .Control {
+    box-sizing: border-box;
+    margin: 0;
+    font: var(--cnvs-sys-type-body-sm);
+    color: var(--cnvs-sys-color-fg-default);
+    background: var(--cnvs-sys-color-surface-default);
+    border-radius: var(--cnvs-sys-shape-md);
+  }
+
+  .Input {
+    inline-size: 12rem;
+    min-block-size: var(--cnvs-sys-size-xl);
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--cnvs-sys-padding-sm);
+    border: 2px solid var(--cnvs-sys-color-border-input-default);
+  }
+
+  .Input:focus-visible,
+  .Control:focus-visible,
+  .Control[data-focused] {
+    outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+    outline-offset: 2px;
+  }
+
+  .Control {
+    min-inline-size: 6.5rem;
+    min-block-size: var(--cnvs-sys-size-xl);
+    padding-inline: var(--cnvs-sys-padding-md);
+    border: 2px solid var(--cnvs-sys-color-border-strong);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+
+    @media (--mouse) {
+      &:hover:not(:active) {
+        background-image: linear-gradient(
+          var(--cnvs-sys-color-surface-overlay-hover-default),
+          var(--cnvs-sys-color-surface-overlay-hover-default)
+        );
+      }
+    }
+
+    &:active {
+      background-image: linear-gradient(
+        var(--cnvs-sys-color-surface-overlay-pressed-default),
+        var(--cnvs-sys-color-surface-overlay-pressed-default)
+      );
+    }
+  }
+
+  .Well {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--cnvs-sys-padding-lg);
+    background: var(--cnvs-sys-color-bg-alt-default);
+    border-radius: calc(
+      var(--cnvs-sys-shape-lg) + var(--cnvs-sys-padding-lg)
+    );
+  }
+
+  .Tile {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    margin: 0;
+  }
+
+  .Tile figcaption {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .Elevated,
+  .Lift {
+    box-sizing: border-box;
+    inline-size: 7rem;
+    block-size: 4.5rem;
+    border-radius: var(--cnvs-sys-shape-lg);
+    background: var(--cnvs-sys-color-surface-default);
+  }
+
+  .Elevated {
+    background: var(--cnvs-sys-color-surface-elevated);
+    border: 2px solid var(--cnvs-sys-color-border-elevated);
+  }
+
+  .Lift[data-depth='1'] {
+    box-shadow: var(--cnvs-sys-depth-1);
+  }
+
+  .Lift[data-depth='3'] {
+    box-shadow: var(--cnvs-sys-depth-3);
+  }
+
+  @media (--highContrast) {
+    .Input,
+    .Control,
+    .Elevated {
+      border-width: 2px;
+    }
+  }
+
+  @media (--forcedColors) {
+    .Input,
+    .Control,
+    .Elevated {
+      border-color: CanvasText;
+    }
+
+    .Lift {
+      outline: 1px solid CanvasText;
+    }
+  }
+}

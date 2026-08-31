@@ -7,4 +7,8 @@
   --cnvs-sys-size-lg: var(--cnvs-base-size-600);
   --cnvs-sys-size-xl: var(--cnvs-base-size-700);
   --cnvs-sys-size-xxl: var(--cnvs-base-size-800);
+
+  --cnvs-sys-measure-prose: 65ch;
+  --cnvs-sys-measure-app: 40rem;
+  --cnvs-sys-measure-bubble: 28rem;
 }

@@ -1,0 +1,316 @@
+@layer components {
+  .Root {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--cnvs-sys-gap-xxl);
+    min-inline-size: 0;
+    inline-size: 100%;
+    max-inline-size: var(--cnvs-sys-measure-prose);
+    font: var(--cnvs-sys-type-body-sm);
+    text-align: start;
+  }
+
+  .Header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-inline-size: 0;
+  }
+
+  .Title {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-md);
+    color: var(--cnvs-sys-color-fg-strong);
+    text-wrap: balance;
+  }
+
+  .Lead {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-xl);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-body-sm);
+    text-transform: capitalize;
+    text-wrap: pretty;
+  }
+
+  .BrandIcon {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .Toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--cnvs-sys-gap-md);
+  }
+
+  .Alpha {
+    margin: 0;
+    flex: none;
+  }
+
+  .Brands {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .BrandList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cnvs-sys-gap-xs);
+  }
+
+  .Brand {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    position: relative;
+    min-block-size: var(--cnvs-sys-gap-xl);
+    padding: var(--cnvs-sys-gap-xs) var(--cnvs-sys-padding-sm);
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-full);
+    background-color: var(--cnvs-sys-color-surface-default);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    cursor: pointer;
+    transition-property: background-color, background-image, color, border-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  .BrandInput {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border: 0;
+    border-radius: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .Brand[data-selected] {
+    border-color: var(--cnvs-sys-color-border-strong);
+    background-color: var(--cnvs-sys-color-surface-alt-strong);
+    color: var(--cnvs-sys-color-fg-strong);
+  }
+
+  @media (--mouse) {
+    .Brand:hover:not(:active) {
+      color: var(--cnvs-sys-color-fg-default);
+      background-image: linear-gradient(
+        var(--cnvs-sys-color-surface-overlay-hover-default),
+        var(--cnvs-sys-color-surface-overlay-hover-default)
+      );
+    }
+  }
+
+  .Brand:active {
+    background-image: linear-gradient(
+      var(--cnvs-sys-color-surface-overlay-pressed-default),
+      var(--cnvs-sys-color-surface-overlay-pressed-default)
+    );
+  }
+
+  @media (--motionOK) {
+    .Brand:active {
+      scale: 0.96;
+    }
+  }
+
+  .Brand:has(:focus-visible) {
+    outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+    outline-offset: 2px;
+  }
+
+  @media (--forcedColors) {
+    .Brand {
+      border: 1px solid ButtonText;
+    }
+
+    .Brand[data-selected] {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+    }
+  }
+
+  .Live {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .Groups {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xxl);
+    min-inline-size: 0;
+  }
+
+  .Group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xl);
+    min-inline-size: 0;
+  }
+
+  .GroupTitle {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
+    color: var(--cnvs-sys-color-fg-strong);
+    text-wrap: balance;
+  }
+
+  .Scales {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xl);
+    min-inline-size: 0;
+  }
+
+  .Family {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xl);
+    min-inline-size: 0;
+  }
+
+  .Row {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    column-gap: var(--cnvs-sys-gap-md);
+    align-items: start;
+    min-inline-size: 0;
+  }
+
+  .FamilyName {
+    margin: 0;
+    padding-block-start: var(--cnvs-sys-padding-xxs);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+    color: var(--cnvs-sys-color-fg-default);
+    white-space: nowrap;
+  }
+
+  .Cells {
+    display: grid;
+    grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+    gap: var(--cnvs-sys-gap-xs);
+    min-inline-size: 0;
+  }
+
+  .Cells[data-alpha] {
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+  }
+
+  .Cell {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--cnvs-sys-gap-sm);
+    min-inline-size: 0;
+  }
+
+  .Swatch {
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    inline-size: 100%;
+    aspect-ratio: 0.8 / 1;
+    border-radius: var(--cnvs-sys-shape-xs);
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .Fill {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px
+      color-mix(in srgb, var(--cnvs-sys-color-fg-default) 10%, transparent);
+  }
+
+  .Cells[data-alpha] .Swatch {
+    background-image: repeating-conic-gradient(
+      var(--cnvs-sys-color-surface-alt-strong) 0% 25%,
+      transparent 0% 50%
+    );
+    background-size: var(--cnvs-sys-size-xxxs) var(--cnvs-sys-size-xxxs);
+  }
+
+  .Swatch::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  @media (--mouse) {
+    .Swatch:hover:not(:active)::after {
+      background-color: var(--cnvs-sys-color-surface-overlay-hover-default);
+    }
+  }
+
+  .Swatch:active::after {
+    background-color: var(--cnvs-sys-color-surface-overlay-pressed-default);
+  }
+
+  .Swatch:focus {
+    outline: none;
+  }
+
+  .Swatch:focus-visible {
+    outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+    outline-offset: 2px;
+    z-index: 1;
+  }
+
+  @media (--forcedColors) {
+    .Swatch {
+      forced-color-adjust: none;
+      outline: 1px solid CanvasText;
+    }
+  }
+
+  .Step {
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-subtext-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-sm);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+    font-variant-numeric: tabular-nums;
+    text-align: start;
+  }
+
+  @media (--md-n-below) {
+    .Row {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: var(--cnvs-sys-gap-sm);
+    }
+
+    .FamilyName {
+      padding-block-start: 0;
+    }
+  }
+}

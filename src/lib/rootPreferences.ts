@@ -12,8 +12,13 @@ export const BRANDS = [
 
 export type Brand = (typeof BRANDS)[number]
 
+export const PAGE_BACKGROUNDS = ['default', 'alt'] as const
+
+export type PageBackground = (typeof PAGE_BACKGROUNDS)[number]
+
 const LEGACY_MODE_STORAGE_KEY = 'theme'
 export const BRAND_STORAGE_KEY = 'brand'
+export const PAGE_BG_STORAGE_KEY = 'page-bg'
 
 const listeners = new Set<() => void>()
 let mediaQuery: MediaQueryList | null = null
@@ -23,6 +28,10 @@ let sessionModeOverride: Mode | null = null
 
 export function isBrand(value: string): value is Brand {
   return (BRANDS as readonly string[]).includes(value)
+}
+
+export function isPageBackground(value: string): value is PageBackground {
+  return (PAGE_BACKGROUNDS as readonly string[]).includes(value)
 }
 
 function getSystemMode(): Mode {
@@ -40,12 +49,21 @@ function getPreferredBrand(): Brand {
   return stored !== null && isBrand(stored) ? stored : 'default'
 }
 
+function getPreferredPageBackground(): PageBackground {
+  const stored = localStorage.getItem(PAGE_BG_STORAGE_KEY)
+  return stored !== null && isPageBackground(stored) ? stored : 'alt'
+}
+
 export function applyRootMode(mode: Mode) {
   const root = document.documentElement
   root.classList.toggle('light', mode === 'light')
   root.classList.toggle('dark', mode === 'dark')
   root.classList.remove('ui-light', 'ui-dark')
   root.style.colorScheme = mode
+}
+
+export function applyRootPageBackground(background: PageBackground) {
+  document.documentElement.setAttribute('data-page-bg', background)
 }
 
 /** Disable transitions while new colors commit so the theme switch does not smear. */
@@ -55,6 +73,7 @@ function suppressTransitionsDuringThemeSwap() {
     document.createTextNode('*,*::before,*::after{transition:none !important}'),
   )
   document.head.appendChild(style)
+  void document.body.offsetHeight
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => style.remove())
@@ -166,6 +185,22 @@ export function useBrand() {
   return { brand, setBrand }
 }
 
+export function usePageBackground() {
+  const background = useSyncExternalStore<PageBackground>(
+    subscribeToRootPreferences,
+    getPreferredPageBackground,
+    () => 'alt',
+  )
+
+  const setBackground = useCallback((next: PageBackground) => {
+    localStorage.setItem(PAGE_BG_STORAGE_KEY, next)
+    suppressTransitionsDuringThemeSwap()
+    notifyRootPreferenceListeners()
+  }, [])
+
+  return { background, setBackground }
+}
+
 export function formatBrandLabel(brand: Brand) {
   switch (brand) {
     case 'default':
@@ -186,5 +221,5 @@ export function formatBrandLabel(brand: Brand) {
 }
 
 export function buildRootInitScript() {
-  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');var r=document.documentElement;var mode=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.classList.remove('ui-dark','ui-light','light','dark');r.classList.add(mode);r.style.colorScheme=mode;var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';r.setAttribute('data-brand',brand);}catch(e){}})();`
+  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');var r=document.documentElement;var mode=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.classList.remove('ui-dark','ui-light','light','dark');r.classList.add(mode);r.style.colorScheme=mode;var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';r.setAttribute('data-brand',brand);var bg=localStorage.getItem('${PAGE_BG_STORAGE_KEY}');r.setAttribute('data-page-bg',bg==='default'?'default':'alt');}catch(e){}})();`
 }

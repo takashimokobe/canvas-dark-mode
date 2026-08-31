@@ -1,0 +1,224 @@
+@layer components {
+  .Root {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    gap: var(--cnvs-sys-gap-md);
+  }
+
+  .Wrap {
+    min-inline-size: 0;
+    overflow-x: auto;
+  }
+
+  .Table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .StepTable {
+    table-layout: auto;
+  }
+
+  .Root .Table {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+  }
+
+  .Caption {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .Root .Table :is(th, td) {
+    padding-block: var(--cnvs-sys-padding-sm);
+    padding-inline: 0 var(--cnvs-sys-padding-xs);
+    text-align: start;
+    vertical-align: middle;
+    border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+  }
+
+  .Root .Table :is(th, td):last-child {
+    padding-inline-end: 0;
+  }
+
+  .Root .Table thead th {
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-family: var(--cnvs-sys-font-family-default);
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+    color: var(--cnvs-sys-color-fg-strong);
+    text-wrap: pretty;
+  }
+
+  .Root .Table tbody th {
+    font-weight: inherit;
+  }
+
+  .Root .Table tbody:last-child tr:last-child :is(th, td) {
+    border-block-end: 0;
+  }
+
+  .Root .Table :is(tr, td)[data-fail] {
+    background: color-mix(
+      in oklab,
+      var(--cnvs-sys-color-surface-danger-default) 70%,
+      transparent
+    );
+  }
+
+  .Root .Table :is(.PairHead, .PairCell) {
+    inline-size: var(--cnvs-base-size-1600);
+    padding-inline-end: var(--cnvs-sys-padding-md);
+  }
+
+  .SwatchStage {
+    display: grid;
+    inline-size: 100%;
+    background: var(--cnvs-sys-color-bg-default);
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xs);
+  }
+
+  .Swatch,
+  .BorderSwatch {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: var(--cnvs-sys-size-md);
+    border-radius: inherit;
+  }
+
+  .Swatch {
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-weight: var(--cnvs-sys-font-weight-medium);
+  }
+
+  .BorderSwatch {
+    border: 2px solid currentColor;
+  }
+
+  .TokenCell {
+    font-family: var(--cnvs-sys-font-family-mono);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  .Root .Table .GroupHead {
+    padding-block-start: var(--cnvs-sys-padding-lg);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+    font-family: var(--cnvs-sys-font-family-default);
+    font-weight: var(--cnvs-sys-font-weight-semibold);
+    color: var(--cnvs-sys-color-fg-strong);
+    background: transparent;
+  }
+
+  .Root .Table tbody:first-of-type .GroupHead {
+    padding-block-start: var(--cnvs-sys-padding-xs);
+  }
+
+  .Meta {
+    display: block;
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-subtext-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    font-family: var(--cnvs-sys-font-family-default);
+  }
+
+  .NumHead,
+  .NumCell {
+    inline-size: 4.5rem;
+  }
+
+  .NumCell {
+    font-family: var(--cnvs-sys-font-family-mono);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .NameCell {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .ResultCell {
+    inline-size: 5.5rem;
+  }
+
+  .StepTable .NameCell {
+    inline-size: auto;
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+
+  .StepHead {
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+
+  .StepHead .Meta {
+    font-family: var(--cnvs-sys-font-family-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .StepCell {
+    min-inline-size: 0;
+  }
+
+  .StepPair {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-xs);
+  }
+
+  .SwatchStage[data-compact] {
+    flex: none;
+    inline-size: max-content;
+  }
+
+  .SwatchStage[data-compact] .Swatch,
+  .SwatchStage[data-compact] .BorderSwatch {
+    inline-size: var(--cnvs-sys-size-xs);
+    block-size: var(--cnvs-sys-size-xs);
+  }
+
+  .SwatchStage[data-compact] .Swatch {
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+
+  .StepRatio {
+    font-family: var(--cnvs-sys-font-family-mono);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .StepResult {
+    font-family: var(--cnvs-sys-font-family-default);
+    white-space: nowrap;
+  }
+
+  .StepResult[data-pass] {
+    color: var(--cnvs-sys-color-fg-success-default);
+  }
+
+  .StepResult[data-fail] {
+    color: var(--cnvs-sys-color-fg-danger-default);
+  }
+
+  @media (--forcedColors) {
+    .SwatchStage {
+      border-color: CanvasText;
+    }
+  }
+}

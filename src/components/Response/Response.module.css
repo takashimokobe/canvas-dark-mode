@@ -1,0 +1,86 @@
+@layer components {
+  .Response {
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+    overflow-wrap: anywhere;
+
+    > :first-child {
+      margin-block-start: 0;
+    }
+
+    > :last-child {
+      margin-block-end: 0;
+    }
+
+    :is(h2, h3, h4) {
+      margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-sm);
+      font: var(--cnvs-sys-type-heading-sm);
+      letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
+      text-wrap: balance;
+      text-box: trim-both cap alphabetic;
+    }
+
+    :is(p, ul, ol, pre, blockquote) {
+      margin-block: 0 var(--cnvs-sys-gap-sm);
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    :is(ul, ol) {
+      padding-inline-start: var(--cnvs-sys-padding-lg);
+    }
+
+    li + li {
+      margin-block-start: var(--cnvs-sys-gap-xs);
+    }
+
+    blockquote {
+      padding-inline-start: var(--cnvs-sys-padding-sm);
+      color: var(--cnvs-sys-color-fg-muted-default);
+    }
+
+    pre {
+      padding: var(--cnvs-sys-padding-sm);
+      border-radius: var(--cnvs-sys-shape-lg);
+      background: var(--cnvs-sys-color-surface-alt-default);
+      overflow-x: auto;
+      font-size: var(--cnvs-sys-type-subtext-lg);
+    }
+
+    :is(pre code, :not(pre) > code) {
+      font-family: var(--cnvs-sys-font-family-mono);
+      font-size: var(--cnvs-sys-font-size-subtext-lg);
+    }
+
+    :not(pre) > code {
+      padding-inline: var(--cnvs-sys-padding-xxs);
+      border-radius: var(--cnvs-sys-shape-xs);
+      background: var(--cnvs-sys-color-surface-alt-strong);
+    }
+
+    a {
+      color: var(--cnvs-sys-color-fg-link-default);
+      text-decoration-line: underline;
+      text-decoration-thickness: from-font;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: auto;
+      text-underline-offset: 0.2em;
+
+      @media (--mouse) {
+        &:hover {
+          color: var(--cnvs-sys-color-fg-link-hover);
+        }
+      }
+    }
+
+    hr {
+      margin-block: var(--cnvs-sys-gap-md);
+      border: 0;
+      block-size: 1px;
+      background: var(--cnvs-sys-color-border-default);
+    }
+  }
+}

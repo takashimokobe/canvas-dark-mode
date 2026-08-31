@@ -29,7 +29,7 @@
   --dark-max-l: 0.97;
   --l-light-min: 0.19;
   --l-light-max: 0.99;
-  --dark-l-exponent: 0.85;
+  --dark-l-exponent: 1.1;
   --dark-chroma-taper: 0.75;
   --dark-bg-alt-gap: 0.03;
   --dark-bg-target-l: 0.18;

@@ -13,19 +13,19 @@
   --airbnb-950: oklch(0.22 0.09 19.2);
   --airbnb-975: oklch(0.2 0.08 18.7);
 
-  --dark-airbnb-25: oklch(0.2051 0.0369 16.68);
-  --dark-airbnb-50: oklch(0.238 0.047 17.51);
-  --dark-airbnb-100: oklch(0.2741 0.0629 17.33);
-  --dark-airbnb-200: oklch(0.3545 0.1002 17.32);
-  --dark-airbnb-300: oklch(0.4821 0.1545 17.37);
-  --dark-airbnb-400: oklch(0.5496 0.1886 17.44);
-  --dark-airbnb-500: oklch(0.6541 0.2052 17.5);
-  --dark-airbnb-600: oklch(0.7414 0.1341 17.53);
-  --dark-airbnb-700: oklch(0.8135 0.0803 17.59);
-  --dark-airbnb-800: oklch(0.8706 0.0426 17.61);
-  --dark-airbnb-900: oklch(0.9319 0.0142 17.68);
-  --dark-airbnb-950: oklch(0.9535 0.0066 17.75);
-  --dark-airbnb-975: oklch(0.9659 0.0037 17.68);
+  --dark-airbnb-25: oklch(0.15 0.027 16.68);
+  --dark-airbnb-50: oklch(0.18 0.0356 17.51);
+  --dark-airbnb-100: oklch(0.22 0.0505 17.33);
+  --dark-airbnb-200: oklch(0.3 0.0848 17.32);
+  --dark-airbnb-300: oklch(0.4135 0.1325 17.37);
+  --dark-airbnb-400: oklch(0.4804 0.1649 17.44);
+  --dark-airbnb-500: oklch(0.5915 0.2075 17.5);
+  --dark-airbnb-600: oklch(0.6902 0.1703 17.53);
+  --dark-airbnb-700: oklch(0.7753 0.0799 17.59);
+  --dark-airbnb-800: oklch(0.8448 0.0523 17.61);
+  --dark-airbnb-900: oklch(0.9213 0.0211 17.68);
+  --dark-airbnb-950: oklch(0.9488 0.0134 17.75);
+  --dark-airbnb-975: oklch(0.9647 0.0091 17.68);
 
   --airbnb-A25: oklch(0.5015 0.2047 27.64 / 0.0491);
   --airbnb-A50: oklch(0.5562 0.2281 29.24 / 0.0846);
@@ -33,9 +33,9 @@
   --airbnb-A200: oklch(0.6236 0.2553 28.54 / 0.3351);
   --airbnb-A300: oklch(0.6286 0.2568 27.84 / 0.5148);
 
-  --dark-airbnb-A25: oklch(0.545 0.2228 28.03 / 0.1039);
-  --dark-airbnb-A50: oklch(0.6428 0.2424 25.29 / 0.1354);
-  --dark-airbnb-A100: oklch(0.6522 0.2338 23.15 / 0.2002);
-  --dark-airbnb-A200: oklch(0.6575 0.2294 20.83 / 0.3552);
-  --dark-airbnb-A300: oklch(0.6604 0.2276 18.86 / 0.6128);
+  --dark-airbnb-A25: oklch(0.129 0.052 21.84 / 0.6286);
+  --dark-airbnb-A50: oklch(0.2014 0.0815 24.35 / 0.4046);
+  --dark-airbnb-A100: oklch(0.6171 0.2522 27.93 / 0.1234);
+  --dark-airbnb-A200: oklch(0.6436 0.2422 22.95 / 0.2633);
+  --dark-airbnb-A300: oklch(0.6525 0.2346 19.96 / 0.4827);
 }

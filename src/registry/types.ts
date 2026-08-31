@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react'
+import type { ContainerScheme } from '@/components/Container'
 
 export const CANVAS_KIT_PACKAGES = ['react', 'preview', 'labs'] as const
 
@@ -10,7 +11,6 @@ export const CANVAS_KIT_CATEGORIES = [
   'containers',
   'navigation',
   'popups',
-  'text',
   'layout',
   'feedback',
   'data',
@@ -21,45 +21,28 @@ export type CanvasKitCategory = (typeof CANVAS_KIT_CATEGORIES)[number]
 
 export const CANVAS_KIT_SLUGS = [
   'action-bar',
-  'ai-ingress-button',
   'avatar',
   'badge',
   'banner',
-  'box',
   'breadcrumbs',
   'button',
   'card',
   'checkbox',
-  'color-picker',
-  'combobox',
-  'dialog',
   'divider',
   'expandable',
-  'flex',
   'form-field',
-  'grid',
   'information-highlight',
-  'kbd',
   'loading-dots',
   'loading-sparkles',
-  'menu',
-  'modal',
-  'multi-select',
-  'pagination',
   'pill',
-  'popup',
   'radio',
   'segmented-control',
-  'select',
   'side-panel',
   'skeleton',
   'status-indicator',
   'switch',
   'table',
   'tabs',
-  'text',
-  'text-area',
-  'text-input',
   'toast',
   'tooltip',
 ] as const
@@ -78,6 +61,7 @@ export type CanvasKitEntry = {
 
 export type CanvasKitSpecimenProps = {
   entry: CanvasKitEntry
+  scheme: ContainerScheme
 }
 
 export type CanvasKitSpecimen = ComponentType<CanvasKitSpecimenProps>

@@ -1,0 +1,42 @@
+@layer components {
+  .Nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--cnvs-sys-gap-md);
+    inline-size: 100%;
+    max-inline-size: var(--cnvs-sys-measure-prose);
+    margin-block-start: var(--cnvs-sys-gap-xxl);
+  }
+
+  .Link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-xs);
+    min-block-size: var(--cnvs-sys-size-xl);
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-body-sm);
+    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
+    text-decoration: none;
+
+    &[data-direction='next'] {
+      margin-inline-start: auto;
+    }
+
+    @media (--mouse) {
+      &:hover:not(:active) {
+        color: var(--cnvs-sys-color-fg-strong);
+      }
+    }
+
+    &:active {
+      color: var(--cnvs-sys-color-fg-strong);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
+    }
+  }
+}

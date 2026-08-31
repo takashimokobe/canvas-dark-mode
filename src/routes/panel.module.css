@@ -1,0 +1,106 @@
+@layer layouts {
+  .Shell {
+    display: flex;
+    min-inline-size: 0;
+    margin-block: calc(-1 * var(--cnvs-page-gutter-block-start))
+      calc(-1 * var(--cnvs-page-gutter-block-end));
+    margin-inline: calc(-1 * var(--cnvs-page-gutter-start))
+      calc(-1 * var(--cnvs-page-gutter-end));
+    block-size: 100svh;
+    max-block-size: 100svh;
+    overflow: hidden;
+  }
+
+  .Panel {
+    flex: none;
+    min-block-size: 0;
+  }
+
+  .Nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-xs);
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--cnvs-sys-padding-sm);
+  }
+
+  .NavLink {
+    display: flex;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    min-block-size: var(--cnvs-sys-size-lg);
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--cnvs-sys-padding-sm);
+    border-radius: var(--cnvs-sys-shape-sm);
+    color: var(--cnvs-sys-color-fg-default);
+    font: var(--cnvs-sys-type-subtext-lg);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
+
+    &:hover {
+      background-color: var(--cnvs-sys-color-surface-overlay-hover-default);
+    }
+
+    &:active {
+      background-color: var(--cnvs-sys-color-surface-overlay-pressed-default);
+    }
+
+    &[aria-current='page'] {
+      background: var(--cnvs-sys-color-brand-surface-selected);
+      color: var(--cnvs-sys-color-brand-fg-selected);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .Main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--cnvs-sys-gap-md);
+    min-inline-size: 0;
+    overflow: auto;
+    padding-block: var(--cnvs-sys-padding-xl);
+    padding-block-end: max(
+      var(--cnvs-sys-padding-xl),
+      calc(var(--cnvs-sys-size-xl) + var(--cnvs-sys-padding-xxl))
+    );
+    padding-inline: var(--cnvs-sys-padding-xl);
+    padding-inline-end: max(
+      var(--cnvs-sys-padding-xl),
+      calc(var(--cnvs-sys-size-xl) + var(--cnvs-sys-padding-xxl))
+    );
+  }
+
+  .Title {
+    margin: 0;
+    font: var(--cnvs-sys-type-heading-md);
+    letter-spacing: var(--cnvs-sys-letter-spacing-heading-md);
+    color: var(--cnvs-sys-color-fg-strong);
+    text-wrap: balance;
+  }
+
+  .Lead {
+    margin: 0;
+    max-inline-size: var(--cnvs-sys-measure-prose);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    font: var(--cnvs-sys-type-body-sm);
+    text-wrap: pretty;
+  }
+
+  .Chart {
+    inline-size: 100%;
+    max-inline-size: var(--cnvs-sys-measure-app);
+  }
+}
+
+:global(html):has(.Shell) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+
+:global(body):has(.Shell) {
+  overflow: hidden;
+}

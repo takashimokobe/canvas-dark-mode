@@ -1,5 +1,7 @@
 node_modules
+.content-collections
 .DS_Store
+**/* 2.*
 dist
 dist-ssr
 *.local

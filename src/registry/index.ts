@@ -1,11 +1,10 @@
-import {
-  CANVAS_KIT_SLUGS
-  
-  
-  
-  
+import { CANVAS_KIT_SLUGS } from './types'
+import type {
+  CanvasKitCategory,
+  CanvasKitEntry,
+  CanvasKitPackage,
+  CanvasKitSlug,
 } from './types'
-import type {CanvasKitCategory, CanvasKitEntry, CanvasKitPackage, CanvasKitSlug} from './types';
 
 const STORYBOOK_BASE = 'https://workday.github.io/canvas-kit/?path=/docs'
 
@@ -26,6 +25,10 @@ function importPath(pkg: CanvasKitPackage, module: string) {
       return `@workday/canvas-kit-preview-react/${module}`
     case 'labs':
       return `@workday/canvas-kit-labs-react/${module}`
+    default: {
+      const _exhaustive: never = pkg
+      return _exhaustive
+    }
   }
 }
 
@@ -51,14 +54,6 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'components-action-bar',
   },
   {
-    slug: 'ai-ingress-button',
-    name: 'AI Ingress Button',
-    package: 'labs',
-    module: 'ai-ingress-button',
-    category: 'ai',
-    storybookPath: 'labs-ai-ingress-button-(ai)',
-  },
-  {
     slug: 'avatar',
     name: 'Avatar',
     package: 'react',
@@ -81,14 +76,6 @@ const registrySeeds: RegistrySeed[] = [
     module: 'banner',
     category: 'feedback',
     storybookPath: 'components-banner',
-  },
-  {
-    slug: 'box',
-    name: 'Box',
-    package: 'react',
-    module: 'layout',
-    category: 'layout',
-    storybookPath: 'components-box',
   },
   {
     slug: 'breadcrumbs',
@@ -123,30 +110,6 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'components-checkbox',
   },
   {
-    slug: 'color-picker',
-    name: 'Color Picker',
-    package: 'preview',
-    module: 'color-picker',
-    category: 'inputs',
-    storybookPath: 'preview-inputs-color-input',
-  },
-  {
-    slug: 'combobox',
-    name: 'Combobox',
-    package: 'react',
-    module: 'combobox',
-    category: 'inputs',
-    storybookPath: 'components-select',
-  },
-  {
-    slug: 'dialog',
-    name: 'Dialog',
-    package: 'react',
-    module: 'dialog',
-    category: 'popups',
-    storybookPath: 'components-dialog',
-  },
-  {
     slug: 'divider',
     name: 'Divider',
     package: 'preview',
@@ -163,14 +126,6 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'components-expandable',
   },
   {
-    slug: 'flex',
-    name: 'Flex',
-    package: 'react',
-    module: 'layout',
-    category: 'layout',
-    storybookPath: 'components-flex',
-  },
-  {
     slug: 'form-field',
     name: 'Form Field',
     package: 'react',
@@ -179,28 +134,12 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'components-form-field',
   },
   {
-    slug: 'grid',
-    name: 'Grid',
-    package: 'react',
-    module: 'layout',
-    category: 'layout',
-    storybookPath: 'components-grid',
-  },
-  {
     slug: 'information-highlight',
     name: 'Information Highlight',
     package: 'react',
     module: 'information-highlight',
     category: 'feedback',
     storybookPath: 'components-information-highlight',
-  },
-  {
-    slug: 'kbd',
-    name: 'Kbd',
-    package: 'labs',
-    module: 'kbd',
-    category: 'text',
-    storybookPath: 'labs-kbd',
   },
   {
     slug: 'loading-dots',
@@ -219,52 +158,12 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'preview-ai-loading-sparkles-(ai)',
   },
   {
-    slug: 'menu',
-    name: 'Menu',
-    package: 'react',
-    module: 'menu',
-    category: 'popups',
-    storybookPath: 'components-menu',
-  },
-  {
-    slug: 'modal',
-    name: 'Modal',
-    package: 'react',
-    module: 'modal',
-    category: 'popups',
-    storybookPath: 'components-modal',
-  },
-  {
-    slug: 'multi-select',
-    name: 'Multi Select',
-    package: 'preview',
-    module: 'multi-select',
-    category: 'inputs',
-    storybookPath: 'preview-inputs-multiselect',
-  },
-  {
-    slug: 'pagination',
-    name: 'Pagination',
-    package: 'react',
-    module: 'pagination',
-    category: 'navigation',
-    storybookPath: 'components-pagination',
-  },
-  {
     slug: 'pill',
     name: 'Pill',
     package: 'react',
     module: 'pill',
     category: 'containers',
     storybookPath: 'components-pill',
-  },
-  {
-    slug: 'popup',
-    name: 'Popup',
-    package: 'react',
-    module: 'popup',
-    category: 'popups',
-    storybookPath: 'components-popup',
   },
   {
     slug: 'radio',
@@ -283,20 +182,12 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'components-segmented-control',
   },
   {
-    slug: 'select',
-    name: 'Select',
-    package: 'react',
-    module: 'select',
-    category: 'inputs',
-    storybookPath: 'components-select',
-  },
-  {
     slug: 'side-panel',
     name: 'Side Panel',
-    package: 'preview',
+    package: 'react',
     module: 'side-panel',
     category: 'containers',
-    storybookPath: 'preview-containers-side-panel-(new)',
+    storybookPath: 'components-containers-side-panel',
   },
   {
     slug: 'skeleton',
@@ -339,30 +230,6 @@ const registrySeeds: RegistrySeed[] = [
     storybookPath: 'preview-navigation-tabs',
   },
   {
-    slug: 'text',
-    name: 'Text',
-    package: 'react',
-    module: 'text',
-    category: 'text',
-    storybookPath: 'components-body-text',
-  },
-  {
-    slug: 'text-area',
-    name: 'Text Area',
-    package: 'react',
-    module: 'text-area',
-    category: 'inputs',
-    storybookPath: 'components-textarea',
-  },
-  {
-    slug: 'text-input',
-    name: 'Text Input',
-    package: 'react',
-    module: 'text-input',
-    category: 'inputs',
-    storybookPath: 'components-text-input',
-  },
-  {
     slug: 'toast',
     name: 'Toast',
     package: 'react',
@@ -386,19 +253,10 @@ if (canvasKitRegistry.length !== CANVAS_KIT_SLUGS.length) {
   throw new Error('Canvas Kit registry is out of sync with CANVAS_KIT_SLUGS')
 }
 
-export function getCanvasKitByCategory(category: CanvasKitCategory) {
-  return canvasKitRegistry.filter((item) => item.category === category)
-}
-
-export const CATEGORY_LABELS: Record<CanvasKitCategory, string> = {
-  actions: 'Actions',
-  inputs: 'Inputs',
-  containers: 'Containers',
-  navigation: 'Navigation',
-  popups: 'Popups',
-  text: 'Text',
-  layout: 'Layout',
-  feedback: 'Feedback',
-  data: 'Data',
-  ai: 'AI',
+export function getCanvasKit(slug: CanvasKitSlug) {
+  const match = canvasKitRegistry.find((item) => item.slug === slug)
+  if (!match) {
+    throw new Error(`Unknown Canvas Kit slug: ${slug}`)
+  }
+  return match
 }

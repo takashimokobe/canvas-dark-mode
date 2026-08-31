@@ -1,4 +1,68 @@
 [data-brand='workday'] {
+  --cnvs-brand-neutral-25: var(--cnvs-base-palette-slate-25);
+  --cnvs-brand-neutral-50: var(--cnvs-base-palette-slate-50);
+  --cnvs-brand-neutral-100: var(--cnvs-base-palette-slate-100);
+  --cnvs-brand-neutral-150: var(--cnvs-base-palette-slate-150);
+  --cnvs-brand-neutral-200: var(--cnvs-base-palette-slate-200);
+  --cnvs-brand-neutral-300: var(--cnvs-base-palette-slate-300);
+  --cnvs-brand-neutral-400: var(--cnvs-base-palette-slate-400);
+  --cnvs-brand-neutral-500: var(--cnvs-base-palette-slate-500);
+  --cnvs-brand-neutral-600: var(--cnvs-base-palette-slate-600);
+  --cnvs-brand-neutral-700: var(--cnvs-base-palette-slate-700);
+  --cnvs-brand-neutral-800: var(--cnvs-base-palette-slate-800);
+  --cnvs-brand-neutral-850: var(--cnvs-base-palette-slate-850);
+  --cnvs-brand-neutral-900: var(--cnvs-base-palette-slate-900);
+  --cnvs-brand-neutral-950: var(--cnvs-base-palette-slate-950);
+  --cnvs-brand-neutral-975: var(--cnvs-base-palette-slate-975);
+
+  --cnvs-brand-neutral-A25: var(--cnvs-base-palette-slate-A25);
+  --cnvs-brand-neutral-A50: var(--cnvs-base-palette-slate-A50);
+  --cnvs-brand-neutral-A100: var(--cnvs-base-palette-slate-A100);
+  --cnvs-brand-neutral-A150: var(--cnvs-base-palette-slate-A150);
+  --cnvs-brand-neutral-A200: var(--cnvs-base-palette-slate-A200);
+  --cnvs-brand-neutral-A300: var(--cnvs-base-palette-slate-A300);
+  --cnvs-brand-neutral-A400: var(--cnvs-base-palette-slate-A400);
+  --cnvs-brand-neutral-A500: var(--cnvs-base-palette-slate-A500);
+  --cnvs-brand-neutral-A600: var(--cnvs-base-palette-slate-A600);
+  --cnvs-brand-neutral-A700: var(--cnvs-base-palette-slate-A700);
+  --cnvs-brand-neutral-A800: var(--cnvs-base-palette-slate-A800);
+  --cnvs-brand-neutral-A850: var(--cnvs-base-palette-slate-A850);
+  --cnvs-brand-neutral-A900: var(--cnvs-base-palette-slate-A900);
+  --cnvs-brand-neutral-A950: var(--cnvs-base-palette-slate-A950);
+  --cnvs-brand-neutral-A975: var(--cnvs-base-palette-slate-A975);
+
+  --cnvs-brand-dark-neutral-25: var(--cnvs-base-palette-dark-slate-25);
+  --cnvs-brand-dark-neutral-50: var(--cnvs-base-palette-dark-slate-50);
+  --cnvs-brand-dark-neutral-100: var(--cnvs-base-palette-dark-slate-100);
+  --cnvs-brand-dark-neutral-150: var(--cnvs-base-palette-dark-slate-150);
+  --cnvs-brand-dark-neutral-200: var(--cnvs-base-palette-dark-slate-200);
+  --cnvs-brand-dark-neutral-300: var(--cnvs-base-palette-dark-slate-300);
+  --cnvs-brand-dark-neutral-400: var(--cnvs-base-palette-dark-slate-400);
+  --cnvs-brand-dark-neutral-500: var(--cnvs-base-palette-dark-slate-500);
+  --cnvs-brand-dark-neutral-600: var(--cnvs-base-palette-dark-slate-600);
+  --cnvs-brand-dark-neutral-700: var(--cnvs-base-palette-dark-slate-700);
+  --cnvs-brand-dark-neutral-800: var(--cnvs-base-palette-dark-slate-800);
+  --cnvs-brand-dark-neutral-850: var(--cnvs-base-palette-dark-slate-850);
+  --cnvs-brand-dark-neutral-900: var(--cnvs-base-palette-dark-slate-900);
+  --cnvs-brand-dark-neutral-950: var(--cnvs-base-palette-dark-slate-950);
+  --cnvs-brand-dark-neutral-975: var(--cnvs-base-palette-dark-slate-975);
+
+  --cnvs-brand-dark-neutral-A25: var(--cnvs-base-palette-dark-slate-A25);
+  --cnvs-brand-dark-neutral-A50: var(--cnvs-base-palette-dark-slate-A50);
+  --cnvs-brand-dark-neutral-A100: var(--cnvs-base-palette-dark-slate-A100);
+  --cnvs-brand-dark-neutral-A150: var(--cnvs-base-palette-dark-slate-A150);
+  --cnvs-brand-dark-neutral-A200: var(--cnvs-base-palette-dark-slate-A200);
+  --cnvs-brand-dark-neutral-A300: var(--cnvs-base-palette-dark-slate-A300);
+  --cnvs-brand-dark-neutral-A400: var(--cnvs-base-palette-dark-slate-A400);
+  --cnvs-brand-dark-neutral-A500: var(--cnvs-base-palette-dark-slate-A500);
+  --cnvs-brand-dark-neutral-A600: var(--cnvs-base-palette-dark-slate-A600);
+  --cnvs-brand-dark-neutral-A700: var(--cnvs-base-palette-dark-slate-A700);
+  --cnvs-brand-dark-neutral-A800: var(--cnvs-base-palette-dark-slate-A800);
+  --cnvs-brand-dark-neutral-A850: var(--cnvs-base-palette-dark-slate-A850);
+  --cnvs-brand-dark-neutral-A900: var(--cnvs-base-palette-dark-slate-A900);
+  --cnvs-brand-dark-neutral-A950: var(--cnvs-base-palette-dark-slate-A950);
+  --cnvs-brand-dark-neutral-A975: var(--cnvs-base-palette-dark-slate-A975);
+
   --cnvs-brand-primary-25: var(--cnvs-base-palette-blue-25);
   --cnvs-brand-primary-50: var(--cnvs-base-palette-blue-50);
   --cnvs-brand-primary-100: var(--cnvs-base-palette-blue-100);

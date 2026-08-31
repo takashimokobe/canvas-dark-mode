@@ -1,4 +1,4 @@
-:where(html) {
+:where(html, [data-scheme]) {
   --cnvs-sys-depth-1:
     0 var(--cnvs-base-shadow-1-key-y) var(--cnvs-base-shadow-1-key-blur)
       var(--cnvs-base-shadow-1-key-spread) var(--cnvs-sys-color-shadow-1-key),

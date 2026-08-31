@@ -1,4 +1,4 @@
-:where(html) {
+:where(html, [data-scheme]) {
   --cnvs-sys-color-bg-primary-default: var(
     --cnvs-sys-color-brand-accent-primary
   );

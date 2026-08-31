@@ -1,0 +1,219 @@
+@layer components {
+  .Window {
+    --_inner-radius: calc(var(--cnvs-sys-shape-xl) - 1px);
+
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    inline-size: min(100%, var(--cnvs-sys-measure-app));
+    min-inline-size: 0;
+    margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-xl);
+    border: 1px solid var(--cnvs-sys-color-border-default);
+    border-radius: var(--cnvs-sys-shape-xl);
+    background: var(--cnvs-sys-color-surface-default);
+    color: var(--cnvs-sys-color-fg-default);
+    box-shadow: var(--cnvs-sys-depth-3);
+    isolation: isolate;
+  }
+
+  .ThemeLight {
+    color-scheme: light;
+  }
+
+  .ThemeDark {
+    color-scheme: dark;
+  }
+
+  .ThemeTransparent {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .Toolbar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--cnvs-sys-gap-sm);
+    padding-block: var(--cnvs-sys-padding-xs);
+    padding-inline: var(--cnvs-sys-padding-sm);
+    border-block-end: 1px solid var(--cnvs-sys-color-border-default);
+    border-start-start-radius: var(--_inner-radius);
+    border-start-end-radius: var(--_inner-radius);
+    background: var(--cnvs-sys-color-surface-alt-default);
+    user-select: none;
+  }
+
+  .ThemeTransparent .Toolbar {
+    background: var(--cnvs-sys-color-surface-overlay-raised);
+    backdrop-filter: blur(var(--cnvs-base-size-100));
+  }
+
+  .Lights {
+    display: flex;
+    grid-column: 1;
+    flex: none;
+    gap: var(--cnvs-sys-gap-xs);
+  }
+
+  .LightsBalance {
+    grid-column: 3;
+    inline-size: calc(
+      3 * var(--cnvs-base-size-150) + 2 * var(--cnvs-sys-gap-xs)
+    );
+  }
+
+  .LightCritical,
+  .LightCaution,
+  .LightPositive {
+    inline-size: var(--cnvs-base-size-150);
+    block-size: var(--cnvs-base-size-150);
+    border-radius: var(--cnvs-sys-shape-full);
+    box-shadow: inset 0 0 0 1px
+      light-dark(oklch(0 0 0 / 0.12), oklch(1 0 0 / 0.18));
+  }
+
+  .LightCritical {
+    background: var(--cnvs-sys-color-brand-accent-critical);
+  }
+
+  .LightCaution {
+    background: var(--cnvs-sys-color-brand-accent-caution);
+  }
+
+  .LightPositive {
+    background: var(--cnvs-sys-color-brand-accent-positive);
+  }
+
+  .Address {
+    display: flex;
+    grid-column: 2;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cnvs-sys-gap-xs);
+    justify-self: center;
+    min-inline-size: 0;
+    inline-size: min(100%, 28rem);
+    min-block-size: var(--cnvs-sys-size-xxs);
+    padding-inline: var(--cnvs-sys-padding-sm);
+    border-radius: var(--cnvs-sys-shape-full);
+    background: var(--cnvs-sys-color-surface-default);
+  }
+
+  .ThemeTransparent .Address {
+    background: var(--cnvs-sys-color-surface-overlay-hover-default);
+  }
+
+  .Lock {
+    flex: none;
+    inline-size: var(--cnvs-base-size-150);
+    block-size: var(--cnvs-base-size-150);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  .Url {
+    overflow: hidden;
+    font: var(--cnvs-sys-type-subtext-sm);
+    font-family: var(--cnvs-sys-font-family-mono);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-sm);
+    color: var(--cnvs-sys-color-fg-muted-default);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--cnvs-sys-gap-md);
+    inline-size: 100%;
+    margin-block: var(--cnvs-sys-gap-md) var(--cnvs-sys-gap-xl);
+  }
+
+  .Row .Window {
+    inline-size: 100%;
+    margin-block: 0;
+  }
+
+  .Row .Page {
+    block-size: 12rem;
+  }
+
+  .Row .PageFill {
+    display: grid;
+    place-items: center;
+    font: var(--cnvs-sys-type-subtext-md);
+    font-family: var(--cnvs-sys-font-family-mono);
+    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
+    color: var(--cnvs-sys-color-fg-muted-default);
+  }
+
+  @media (--md-n-above) {
+    .Row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      inline-size: calc(100% + 2 * var(--cnvs-sys-gap-xl));
+      margin-inline: calc(-1 * var(--cnvs-sys-gap-xl));
+    }
+  }
+
+  .Page {
+    position: relative;
+    block-size: 24rem;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: var(--cnvs-sys-color-bg-default);
+    scrollbar-width: thin;
+    scrollbar-color: var(--cnvs-sys-color-border-default) transparent;
+  }
+
+  .PageAlt {
+    background: var(--cnvs-sys-color-bg-alt-default);
+  }
+
+  .PageFill {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 100%;
+    padding: var(--cnvs-sys-padding-xl);
+  }
+
+  .ThemeTransparent .Page {
+    background: transparent;
+  }
+
+  @media (--highContrast) {
+    .Window {
+      border-width: 2px;
+    }
+  }
+
+  @media (--forcedColors) {
+    .Window {
+      border-color: CanvasText;
+      background: Canvas;
+      color: CanvasText;
+      box-shadow: none;
+    }
+
+    .Toolbar,
+    .Address,
+    .Page {
+      background: Canvas;
+      border-color: CanvasText;
+    }
+
+    .LightCritical,
+    .LightCaution,
+    .LightPositive {
+      background: CanvasText;
+      box-shadow: none;
+    }
+
+    .Lock,
+    .Url {
+      color: GrayText;
+    }
+  }
+}
