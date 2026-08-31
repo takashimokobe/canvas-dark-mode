@@ -63,7 +63,7 @@ const STEP_PAIRS: StepPair[] = [
   { bg: 'default', fg: 600, target: 4.5, kind: 'text' },
   { bg: 100, fg: 600, target: 4.5, kind: 'text' },
   { bg: 200, fg: 600, target: 3, kind: 'nontext' },
-  { bg: 100, fg: 700, target: 7, kind: 'text' },
+  { bg: 100, fg: 800, target: 7, kind: 'text' },
 ]
 
 function roleToken(name: string, variable: string): Token {

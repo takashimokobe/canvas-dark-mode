@@ -9,6 +9,7 @@ import type { ReactNode } from 'react'
 import { CommandPalette } from '@/components/CommandPalette'
 import { PageShell } from '@/components/PageChrome'
 import {
+  applyRootBrand,
   applyRootMode,
   applyRootPageBackground,
   buildRootInitScript,
@@ -52,12 +53,14 @@ export const Route = createRootRoute({
 
 function NotFound() {
   return (
-    <PageShell className={styles.NotFound}>
-      <h1 className={styles.Title}>Page not found</h1>
-      <p className={styles.Body}>That URL is not a page here.</p>
-      <Link to="/" className={styles.Home}>
-        Go to the home page
-      </Link>
+    <PageShell variant="doc">
+      <div className={styles.NotFound}>
+        <h1 className={styles.Title}>Page not found</h1>
+        <p className={styles.Body}>That URL is not a page here.</p>
+        <Link to="/" className={styles.Home}>
+          Go to the home page
+        </Link>
+      </div>
     </PageShell>
   )
 }
@@ -69,7 +72,7 @@ function RootThemeSync() {
   useModeKeyboardShortcut()
 
   useLayoutEffect(() => {
-    document.documentElement.setAttribute('data-brand', brand)
+    applyRootBrand(brand)
     applyRootMode(mode)
     applyRootPageBackground(background)
   }, [background, brand, mode])

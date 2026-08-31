@@ -1,13 +1,5 @@
-import { useId, useState } from 'react'
+import { useState } from 'react'
 import type { ReactNode } from 'react'
-import {
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
-} from '@workday/canvas-kit-react/button'
-
-import { BarChart } from '@/components/Chart'
-import type { Brand } from '@/lib/rootPreferences'
 
 import styles from './DarkModeExamples.module.css'
 
@@ -91,7 +83,12 @@ export function GlowCompare() {
   const [refined, setRefined] = useState(false)
 
   return (
-    <div className={styles.TaskStage} data-fill-container data-ground="black">
+    <div
+      className={styles.TaskStage}
+      data-fill-container
+      data-ground="black"
+      data-scheme="dark"
+    >
       <p className="visually-hidden">
         {refined ? 'Dark red 500 on black' : 'Red 500 on black'}
       </p>
@@ -115,7 +112,7 @@ function ShadowCard({
   ink,
   tone,
 }: {
-  ink: 'light' | 'dark' | 'glow'
+  ink: 'light' | 'dark'
   tone?: 'light'
 }) {
   return (
@@ -192,34 +189,6 @@ export function DepthCompare() {
   )
 }
 
-export function RoleModes() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined ? 'accent-action Publish button' : 'Raw hex Publish button'
-      }
-    >
-      <div className={styles.RoleCard}>
-        <p>Ready to publish</p>
-        {refined ? (
-          <PrimaryButton size="medium">Publish</PrimaryButton>
-        ) : (
-          <button type="button" className={styles.HexFill}>
-            Publish
-          </button>
-        )}
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
 const HALATION_HEAD = 'Reading'
 const HALATION_BODY =
   'White on black blooms at the edges. Soften the page and the ink.'
@@ -246,127 +215,6 @@ export function HalationCompare() {
   )
 }
 
-export function SurfaceStack() {
-  return <DepthCompare />
-}
-
-export function ThumbRing() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'White-A200 thumb with a hairline ring'
-          : 'Solid white thumb on a dark track'
-      }
-    >
-      <div className={styles.Setting}>
-        <span>Airplane Mode</span>
-        <div className={styles.Track} data-ink={refined ? 'dark' : 'light'}>
-          <span className={styles.Thumb} />
-        </div>
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function ChartColors() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Chart series use categorical fills'
-          : 'Chart series use accent-action'
-      }
-    >
-      <div className={styles.Widget} data-series={refined ? 'chart' : 'action'}>
-        <p className={styles.WidgetTitle}>Visits</p>
-        <BarChart className={styles.Chart} defaultIndex={1} />
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function QuietChrome() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Quiet chrome: tertiary, secondary, and one primary'
-          : 'Every action uses the primary fill'
-      }
-    >
-      <div className={styles.Editor}>
-        <p className={styles.EditorTitle}>Shift notes</p>
-        <div className={styles.Toolbar} aria-label="Page actions">
-          {refined ? (
-            <>
-              <TertiaryButton size="medium">Preview</TertiaryButton>
-              <SecondaryButton size="medium">Save draft</SecondaryButton>
-              <PrimaryButton size="medium">Publish</PrimaryButton>
-            </>
-          ) : (
-            <>
-              <PrimaryButton size="medium">Preview</PrimaryButton>
-              <PrimaryButton size="medium">Save draft</PrimaryButton>
-              <PrimaryButton size="medium">Publish</PrimaryButton>
-            </>
-          )}
-        </div>
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function StepJobs() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Input at 25 and 500, accent at 600, body at 800'
-          : 'Four jobs painted with blue 500'
-      }
-    >
-      <div
-        className={styles.JobRow}
-        data-jobs={refined ? 'on' : 'off'}
-        aria-hidden
-      >
-        <span className={styles.JobField}>Name</span>
-        <span className={styles.JobAccent}>Save</span>
-        <span className={styles.JobCopy}>Keep the chrome quiet</span>
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
 export function ContrastCompare() {
   const [refined, setRefined] = useState(false)
 
@@ -386,50 +234,6 @@ export function ContrastCompare() {
         checked={refined}
         onChange={() => setRefined(!refined)}
       />
-    </Stage>
-  )
-}
-
-export function ChromaPeak() {
-  return (
-    <Stage hidden="Dark blue 500 peaks in chroma; 800 is quieter">
-      <div className={styles.ChromaRow} aria-hidden>
-        <figure className={styles.ChromaTile}>
-          <p className={styles.ChromaWord} data-step="500">
-            Blue
-          </p>
-          <figcaption>500</figcaption>
-        </figure>
-        <figure className={styles.ChromaTile}>
-          <p className={styles.ChromaWord} data-step="800">
-            Blue
-          </p>
-          <figcaption>800</figcaption>
-        </figure>
-      </div>
-    </Stage>
-  )
-}
-
-export function SpinePair() {
-  return (
-    <Stage hidden="Neutral 100 and Blue 100, same lightness">
-      <div className={styles.Spine} aria-hidden>
-        <figure className={styles.SpineTile}>
-          <div
-            className={styles.SpineCard}
-            style={{ background: 'var(--cnvs-base-palette-dark-neutral-100)' }}
-          />
-          <figcaption>Neutral 100</figcaption>
-        </figure>
-        <figure className={styles.SpineTile}>
-          <div
-            className={styles.SpineCard}
-            style={{ background: 'var(--cnvs-base-palette-dark-blue-100)' }}
-          />
-          <figcaption>Blue 100</figcaption>
-        </figure>
-      </div>
     </Stage>
   )
 }
@@ -455,263 +259,5 @@ export function CautionInk() {
         onChange={() => setRefined(!refined)}
       />
     </Stage>
-  )
-}
-
-export function WhiteInk() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'White-A900, A800, and A600 on dark-neutral-50'
-          : 'Pure white type on dark-neutral-50'
-      }
-    >
-      <div className={styles.TypeStack} data-ink={refined ? 'soft' : 'hot'}>
-        <p data-role="heading">The marks are light</p>
-        <p data-role="body">Body text for a long shift at the desk.</p>
-        <p data-role="muted">Muted helper</p>
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function InputContrast() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Input border at white-A300'
-          : 'Input border at dark-neutral-400'
-      }
-    >
-      <label className={styles.Field}>
-        Workspace
-        <input
-          className={styles.Input}
-          data-fail={refined ? undefined : ''}
-          type="text"
-          name="workspace"
-          placeholder="Acme"
-          autoComplete="off"
-          spellCheck={false}
-        />
-      </label>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function FocusStay() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Selected follows primary; focus stays blue 500'
-          : 'Focus follows the brand fill'
-      }
-    >
-      <ul
-        className={styles.Select}
-        data-brand="spotify"
-        data-focus={refined ? 'blue' : 'brand'}
-      >
-        <li>Draft</li>
-        <li data-selected data-focused>
-          Ready
-        </li>
-        <li>Published</li>
-      </ul>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function ShadowInk() {
-  const [refined, setRefined] = useState(false)
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Depth 1 in dark-neutral-25'
-          : 'White glow standing in for a shadow'
-      }
-    >
-      <ShadowCard ink={refined ? 'dark' : 'glow'} />
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-export function TenantChrome() {
-  const [refined, setRefined] = useState(false)
-  const brand: Brand = refined ? 'spotify' : 'default'
-
-  return (
-    <Stage
-      hidden={
-        refined
-          ? 'Spotify accent-action on tinted chrome'
-          : 'Default Neutral 975 action on Neutral chrome'
-      }
-    >
-      <div className={styles.Chrome} data-brand={brand}>
-        <span>Inbox</span>
-        <PrimaryButton size="medium">Publish</PrimaryButton>
-      </div>
-      <DemoToggle
-        label="Refined"
-        checked={refined}
-        onChange={() => setRefined(!refined)}
-      />
-    </Stage>
-  )
-}
-
-const CHROME_STEPS = [
-  25, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950, 975,
-] as const
-
-const CHROMATIC_STEPS = [
-  25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 975,
-] as const
-
-const CHROMATIC_FAMILIES = [
-  'amber',
-  'azure',
-  'blue',
-  'coral',
-  'green',
-  'indigo',
-  'magenta',
-  'orange',
-  'purple',
-  'red',
-  'teal',
-] as const
-
-type ChromeFamily = 'neutral' | 'slate' | 'white'
-
-const CHROME_RAMPS: Record<
-  ChromeFamily,
-  { alpha: boolean; label: string }
-> = {
-  neutral: { alpha: false, label: 'Neutral' },
-  slate: { alpha: false, label: 'Slate' },
-  white: { alpha: true, label: 'White' },
-}
-
-function paletteFill(family: string, step: number, alpha: boolean) {
-  const key = alpha ? `A${step}` : String(step)
-
-  if (family === 'white') {
-    return `var(--cnvs-base-palette-white-${key})`
-  }
-
-  return `light-dark(var(--cnvs-base-palette-${family}-${key}), var(--cnvs-base-palette-dark-${family}-${key}))`
-}
-
-function familyLabel(family: string) {
-  return family.slice(0, 1).toUpperCase() + family.slice(1)
-}
-
-function PaletteRamp({
-  family,
-  steps,
-  alpha,
-  label,
-}: {
-  family: string
-  steps: readonly number[]
-  alpha: boolean
-  label: string
-}) {
-  const nameId = useId()
-
-  return (
-    <div className={styles.RampRow}>
-      <p id={nameId} className={styles.RampName}>
-        {label}
-      </p>
-      <ol
-        className={styles.RampCells}
-        data-count={steps.length}
-        aria-labelledby={nameId}
-      >
-        {steps.map((step) => (
-          <li key={step} className={styles.RampCell}>
-            <span
-              className={styles.RampSwatch}
-              style={{ background: paletteFill(family, step, alpha) }}
-              aria-hidden
-            />
-            <span className={styles.RampStep}>
-              <span className="visually-hidden">{label} </span>
-              {alpha ? `A${step}` : step}
-            </span>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
-}
-
-export function NeutralRamps() {
-  return (
-    <div className={styles.RampBoard}>
-      {(Object.keys(CHROME_RAMPS) as ChromeFamily[]).map((family) => {
-        const ramp = CHROME_RAMPS[family]
-
-        return (
-          <PaletteRamp
-            key={family}
-            family={family}
-            steps={CHROME_STEPS}
-            alpha={ramp.alpha}
-            label={ramp.label}
-          />
-        )
-      })}
-    </div>
-  )
-}
-
-export function SaturatedRamps() {
-  return (
-    <div className={styles.RampBoard}>
-      {CHROMATIC_FAMILIES.map((family) => (
-        <PaletteRamp
-          key={family}
-          family={family}
-          steps={CHROMATIC_STEPS}
-          alpha={false}
-          label={familyLabel(family)}
-        />
-      ))}
-    </div>
   )
 }

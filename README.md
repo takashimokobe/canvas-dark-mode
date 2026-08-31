@@ -21,7 +21,7 @@ pnpm install
 pnpm dev
 ```
 
-The app is at [http://127.0.0.1:3000/canvas-dark-mode/](http://127.0.0.1:3000/canvas-dark-mode/). Theme follows `prefers-color-scheme` until you override it. Brand is stored in `localStorage`.
+The app is at [http://127.0.0.1:3000/canvas-dark-mode/](http://127.0.0.1:3000/canvas-dark-mode/). Light, dark, brand, and page background are stored in `localStorage`. Until you pick Light or Dark, appearance follows `prefers-color-scheme`.
 
 Pushes to `main` publish a static build to [GitHub Pages](https://takashimokobe.github.io/canvas-dark-mode/).
 
