@@ -63,15 +63,7 @@
     min-inline-size: 0;
     overflow: auto;
     padding-block: var(--cnvs-sys-padding-xl);
-    padding-block-end: max(
-      var(--cnvs-sys-padding-xl),
-      calc(var(--cnvs-sys-size-xl) + var(--cnvs-sys-padding-xxl))
-    );
     padding-inline: var(--cnvs-sys-padding-xl);
-    padding-inline-end: max(
-      var(--cnvs-sys-padding-xl),
-      calc(var(--cnvs-sys-size-xl) + var(--cnvs-sys-padding-xxl))
-    );
   }
 
   .Title {

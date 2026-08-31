@@ -22,12 +22,8 @@ html {
     var(--cnvs-sys-padding-xxl),
     env(safe-area-inset-top)
   );
-  /* Trailing block gutter clears the fixed command button: inset + control + gap. */
   --cnvs-page-gutter-block-end: max(
-    calc(
-      var(--cnvs-sys-padding-xxl) + var(--cnvs-sys-size-xl) +
-        var(--cnvs-sys-padding-sm)
-    ),
+    var(--cnvs-sys-padding-xxl),
     env(safe-area-inset-bottom)
   );
   --cnvs-page-gutter-start: max(

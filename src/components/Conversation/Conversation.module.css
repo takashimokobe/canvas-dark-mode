@@ -110,7 +110,7 @@
       env(safe-area-inset-left)
     );
     inset-inline-end: max(
-      calc(var(--cnvs-sys-size-xl) + var(--cnvs-sys-padding-xxl)),
+      var(--cnvs-sys-padding-md),
       env(safe-area-inset-right)
     );
     margin-inline: auto;
