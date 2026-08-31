@@ -4,7 +4,6 @@ import { SecondaryButton } from '@workday/canvas-kit-react/button'
 
 import { ChatInput } from '@/components/ChatInput'
 import { Message } from '@/components/Message'
-import { RoutePager } from '@/components/RoutePager'
 import { getMessageText } from '@/lib/chat/messageText'
 import { COMPOSER_PROMPTS } from '@/lib/chat/prompts'
 import { composeSendContent, flagsFromTools } from '@/lib/chat/send'
@@ -72,7 +71,7 @@ function ConversationLayout({
 export function ConversationFallback() {
   return (
     <ConversationLayout
-      messages={<RoutePager />}
+      messages={null}
       composer={<ChatInput disabled onSend={() => undefined} />}
     />
   )
@@ -172,27 +171,24 @@ export function Conversation() {
             }
           />
         ) : (
-          <>
-            {messages.map((message) => (
-              <Message
-                key={message.id}
-                message={message}
-                inContext={contexts.some((item) => item.id === message.id)}
-                streaming={
-                  isLoading &&
-                  message.role === 'assistant' &&
-                  message.id === lastAssistantId
-                }
-                onToggleContext={toggleContext}
-                onRegenerate={
-                  !isLoading && message.id === lastAssistantId
-                    ? regenerate
-                    : undefined
-                }
-              />
-            ))}
-            <RoutePager />
-          </>
+          messages.map((message) => (
+            <Message
+              key={message.id}
+              message={message}
+              inContext={contexts.some((item) => item.id === message.id)}
+              streaming={
+                isLoading &&
+                message.role === 'assistant' &&
+                message.id === lastAssistantId
+              }
+              onToggleContext={toggleContext}
+              onRegenerate={
+                !isLoading && message.id === lastAssistantId
+                  ? regenerate
+                  : undefined
+              }
+            />
+          ))
         )
       }
       composer={
@@ -229,7 +225,6 @@ function EmptyState({ onPrompt }: { onPrompt: (text: string) => void }) {
           </SecondaryButton>
         ))}
       </div>
-      <RoutePager />
     </div>
   )
 }
