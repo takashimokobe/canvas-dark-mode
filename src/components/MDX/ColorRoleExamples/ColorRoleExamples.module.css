@@ -13,20 +13,6 @@
     border-block-start: 1px solid var(--cnvs-sys-color-border-default);
   }
 
-  .Caution {
-    display: inline-grid;
-    place-items: center;
-    min-inline-size: 6.5rem;
-    min-block-size: var(--cnvs-sys-size-xl);
-    padding-inline: var(--cnvs-sys-padding-md);
-    border-radius: var(--cnvs-sys-shape-md);
-    background: var(--cnvs-sys-color-brand-accent-caution);
-    color: var(--cnvs-sys-color-fg-contrast-default);
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-  }
-
   .FocusRing {
     outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
     outline-offset: 2px;
@@ -101,53 +87,23 @@
     color: var(--cnvs-sys-color-fg-strong);
   }
 
-  .Input,
-  .Control {
-    box-sizing: border-box;
-    margin: 0;
-    font: var(--cnvs-sys-type-body-sm);
-    color: var(--cnvs-sys-color-fg-default);
-    background: var(--cnvs-sys-color-surface-default);
-    border-radius: var(--cnvs-sys-shape-md);
-  }
-
   .Input {
+    box-sizing: border-box;
     inline-size: 12rem;
     min-block-size: var(--cnvs-sys-size-xl);
+    margin: 0;
     padding-block: var(--cnvs-sys-padding-xs);
     padding-inline: var(--cnvs-sys-padding-sm);
     border: 2px solid var(--cnvs-sys-color-border-input-default);
+    border-radius: var(--cnvs-sys-shape-md);
+    font: var(--cnvs-sys-type-body-sm);
+    color: var(--cnvs-sys-color-fg-default);
+    background: var(--cnvs-sys-color-surface-default);
   }
 
-  .Input:focus-visible,
-  .Control:focus-visible,
-  .Control[data-focused] {
+  .Input:focus-visible {
     outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
     outline-offset: 2px;
-  }
-
-  .Control {
-    min-inline-size: 6.5rem;
-    min-block-size: var(--cnvs-sys-size-xl);
-    padding-inline: var(--cnvs-sys-padding-md);
-    border: 2px solid var(--cnvs-sys-color-border-strong);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-
-    @media (--mouse) {
-      &:hover:not(:active) {
-        background-image: linear-gradient(
-          var(--cnvs-sys-color-surface-overlay-hover-default),
-          var(--cnvs-sys-color-surface-overlay-hover-default)
-        );
-      }
-    }
-
-    &:active {
-      background-image: linear-gradient(
-        var(--cnvs-sys-color-surface-overlay-pressed-default),
-        var(--cnvs-sys-color-surface-overlay-pressed-default)
-      );
-    }
   }
 
   .Well {
@@ -198,7 +154,6 @@
 
   @media (--highContrast) {
     .Input,
-    .Control,
     .Elevated {
       border-width: 2px;
     }
@@ -206,7 +161,6 @@
 
   @media (--forcedColors) {
     .Input,
-    .Control,
     .Elevated {
       border-color: CanvasText;
     }

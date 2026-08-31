@@ -17,14 +17,13 @@ export const PAGE_BACKGROUNDS = ['default', 'alt'] as const
 export type PageBackground = (typeof PAGE_BACKGROUNDS)[number]
 
 const LEGACY_MODE_STORAGE_KEY = 'theme'
+const MODE_STORAGE_KEY = 'mode'
 export const BRAND_STORAGE_KEY = 'brand'
 export const PAGE_BG_STORAGE_KEY = 'page-bg'
 
 const listeners = new Set<() => void>()
 let mediaQuery: MediaQueryList | null = null
 let onSystemThemeChange: (() => void) | null = null
-
-let sessionModeOverride: Mode | null = null
 
 export function isBrand(value: string): value is Brand {
   return (BRANDS as readonly string[]).includes(value)
@@ -34,14 +33,23 @@ export function isPageBackground(value: string): value is PageBackground {
   return (PAGE_BACKGROUNDS as readonly string[]).includes(value)
 }
 
+function isMode(value: string): value is Mode {
+  return value === 'light' || value === 'dark'
+}
+
 function getSystemMode(): Mode {
   return window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light'
 }
 
+function getStoredMode(): Mode | null {
+  const stored = localStorage.getItem(MODE_STORAGE_KEY)
+  return stored !== null && isMode(stored) ? stored : null
+}
+
 function getPreferredMode(): Mode {
-  return sessionModeOverride ?? getSystemMode()
+  return getStoredMode() ?? getSystemMode()
 }
 
 function getPreferredBrand(): Brand {
@@ -60,6 +68,10 @@ export function applyRootMode(mode: Mode) {
   root.classList.toggle('dark', mode === 'dark')
   root.classList.remove('ui-light', 'ui-dark')
   root.style.colorScheme = mode
+}
+
+export function applyRootBrand(brand: Brand) {
+  document.documentElement.setAttribute('data-brand', brand)
 }
 
 export function applyRootPageBackground(background: PageBackground) {
@@ -85,9 +97,9 @@ function ensureSystemThemeListener() {
 
   mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
   onSystemThemeChange = () => {
-    sessionModeOverride = null
+    if (getStoredMode() != null) return
     suppressTransitionsDuringThemeSwap()
-    applyRootMode(getPreferredMode())
+    applyRootMode(getSystemMode())
     notifyRootPreferenceListeners()
   }
   mediaQuery.addEventListener('change', onSystemThemeChange)
@@ -125,8 +137,8 @@ export function useMode() {
   )
 
   const setMode = useCallback((next: Mode) => {
-    sessionModeOverride = next
     localStorage.removeItem(LEGACY_MODE_STORAGE_KEY)
+    localStorage.setItem(MODE_STORAGE_KEY, next)
     suppressTransitionsDuringThemeSwap()
     applyRootMode(next)
     notifyRootPreferenceListeners()
@@ -179,6 +191,7 @@ export function useBrand() {
   const setBrand = useCallback((next: Brand) => {
     localStorage.setItem(BRAND_STORAGE_KEY, next)
     suppressTransitionsDuringThemeSwap()
+    applyRootBrand(next)
     notifyRootPreferenceListeners()
   }, [])
 
@@ -195,6 +208,7 @@ export function usePageBackground() {
   const setBackground = useCallback((next: PageBackground) => {
     localStorage.setItem(PAGE_BG_STORAGE_KEY, next)
     suppressTransitionsDuringThemeSwap()
+    applyRootPageBackground(next)
     notifyRootPreferenceListeners()
   }, [])
 
@@ -221,5 +235,5 @@ export function formatBrandLabel(brand: Brand) {
 }
 
 export function buildRootInitScript() {
-  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');var r=document.documentElement;var mode=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.classList.remove('ui-dark','ui-light','light','dark');r.classList.add(mode);r.style.colorScheme=mode;var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';r.setAttribute('data-brand',brand);var bg=localStorage.getItem('${PAGE_BG_STORAGE_KEY}');r.setAttribute('data-page-bg',bg==='default'?'default':'alt');}catch(e){}})();`
+  return `(function(){try{localStorage.removeItem('${LEGACY_MODE_STORAGE_KEY}');var r=document.documentElement;var stored=localStorage.getItem('${MODE_STORAGE_KEY}');var mode=stored==='light'||stored==='dark'?stored:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.classList.remove('ui-dark','ui-light','light','dark');r.classList.add(mode);r.style.colorScheme=mode;var b=localStorage.getItem('${BRAND_STORAGE_KEY}');var brands=${JSON.stringify(BRANDS)};var brand=brands.indexOf(b)>-1?b:'default';r.setAttribute('data-brand',brand);var bg=localStorage.getItem('${PAGE_BG_STORAGE_KEY}');r.setAttribute('data-page-bg',bg==='default'?'default':'alt');}catch(e){}})();`
 }

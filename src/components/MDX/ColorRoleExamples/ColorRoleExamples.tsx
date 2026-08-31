@@ -15,7 +15,6 @@ export function AccentRoles() {
       <PrimaryButton size="medium">Publish</PrimaryButton>
       <SecondaryButton size="medium">Save draft</SecondaryButton>
       <TertiaryButton size="medium">Preview</TertiaryButton>
-      <span className={styles.Caution}>Caution</span>
     </div>
   )
 }

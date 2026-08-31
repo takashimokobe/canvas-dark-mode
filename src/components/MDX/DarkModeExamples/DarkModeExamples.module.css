@@ -144,12 +144,6 @@
         );
   }
 
-  .ShadowCard[data-ink='glow'] {
-    box-shadow:
-      0 0 0.85rem oklch(from var(--cnvs-base-palette-white) l c h / 42%),
-      0 0.4rem 1.4rem oklch(from var(--cnvs-base-palette-white) l c h / 22%);
-  }
-
   .DepthStack {
     position: relative;
     margin: 0;
@@ -284,22 +278,12 @@
     }
 
     .DepthLayer,
-    .JobField,
-    .JobAccent,
-    .JobCopy,
     .Link,
-    .Caution,
-    .TypeStack p {
+    .Caution {
       transition:
         background-color var(--cnvs-base-duration-200) linear,
         color var(--cnvs-base-duration-200) linear,
         border-color var(--cnvs-base-duration-200) linear;
-    }
-
-    .Track .Thumb {
-      transition:
-        background-color var(--cnvs-base-duration-200) linear,
-        box-shadow var(--cnvs-base-duration-200) linear;
     }
   }
 
@@ -360,192 +344,6 @@
     color: var(--cnvs-base-palette-white-A900);
   }
 
-  .RoleCard,
-  .Setting,
-  .Editor,
-  .Widget,
-  .Chrome {
-    box-sizing: border-box;
-    background: var(--cnvs-base-palette-dark-neutral-100);
-    border-radius: var(--cnvs-sys-shape-lg);
-    color: var(--cnvs-base-palette-white-A800);
-  }
-
-  .RoleCard {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: var(--cnvs-sys-gap-md);
-    inline-size: 14rem;
-    padding: var(--cnvs-sys-padding-lg);
-  }
-
-  .RoleCard p {
-    margin: 0;
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-  }
-
-  .HexFill {
-    min-inline-size: 6.5rem;
-    min-block-size: var(--cnvs-sys-size-xl);
-    padding-inline: var(--cnvs-sys-padding-md);
-    border: 0;
-    border-radius: var(--cnvs-sys-shape-md);
-    background: #2563eb;
-    color: #fff;
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-  }
-
-  .Setting {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--cnvs-sys-gap-xl);
-    inline-size: 16rem;
-    padding: var(--cnvs-sys-padding-md);
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-  }
-
-  .Track {
-    display: flex;
-    align-items: center;
-    inline-size: 2.75rem;
-    block-size: 1.5rem;
-    padding-inline: 0.15rem;
-    background: var(--cnvs-base-palette-dark-neutral-200);
-    border-radius: var(--cnvs-sys-shape-full);
-  }
-
-  .Thumb {
-    inline-size: 1.2rem;
-    block-size: 1.2rem;
-    border-radius: var(--cnvs-sys-shape-full);
-  }
-
-  .Track[data-ink='light'] .Thumb {
-    background: #fff;
-    box-shadow:
-      0 var(--cnvs-base-shadow-2-key-y) var(--cnvs-base-shadow-2-key-blur)
-        var(--cnvs-base-shadow-2-key-spread)
-        oklch(from var(--cnvs-base-palette-black) l c h / 5%),
-      0 var(--cnvs-base-shadow-2-ambient-y)
-        var(--cnvs-base-shadow-2-ambient-blur) 0
-        oklch(from var(--cnvs-base-palette-black) l c h / 3%);
-  }
-
-  .Track[data-ink='dark'] .Thumb {
-    background: var(--cnvs-base-palette-white-A200);
-    box-shadow: inset 0 0 0 1px var(--cnvs-base-palette-white-A400);
-  }
-
-  .Widget {
-    display: flex;
-    flex-direction: column;
-    gap: var(--cnvs-sys-gap-sm);
-    inline-size: min(100%, 24rem);
-    padding: var(--cnvs-sys-padding-md);
-  }
-
-  .WidgetTitle,
-  .EditorTitle {
-    margin: 0;
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-    color: var(--cnvs-base-palette-white-A800);
-  }
-
-  .Chart {
-    aspect-ratio: 16 / 10;
-    inline-size: min(100%, 22rem);
-    min-block-size: 10rem;
-  }
-
-  [data-series='action'] {
-    --cnvs-sys-color-chart-categorical-1: var(
-      --cnvs-sys-color-brand-accent-action
-    );
-    --cnvs-sys-color-chart-categorical-2: var(
-      --cnvs-sys-color-brand-accent-action
-    );
-  }
-
-  .Editor {
-    display: flex;
-    flex-direction: column;
-    gap: var(--cnvs-sys-gap-md);
-    inline-size: min(100%, 22rem);
-    padding: var(--cnvs-sys-padding-lg);
-  }
-
-  .Toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: start;
-    gap: var(--cnvs-sys-gap-sm);
-  }
-
-  .JobRow {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: var(--cnvs-sys-gap-md);
-  }
-
-  .JobField,
-  .JobAccent {
-    display: grid;
-    place-items: center;
-    box-sizing: border-box;
-    min-block-size: var(--cnvs-sys-size-xl);
-    padding-inline: var(--cnvs-sys-padding-sm);
-    border-radius: var(--cnvs-sys-shape-md);
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-  }
-
-  .JobField {
-    inline-size: 7.5rem;
-    justify-items: start;
-    background: var(--cnvs-base-palette-dark-blue-500);
-    color: var(--cnvs-base-palette-white);
-    border: 1px solid var(--cnvs-base-palette-dark-blue-500);
-  }
-
-  .JobAccent {
-    min-inline-size: 4.5rem;
-    background: var(--cnvs-base-palette-dark-blue-500);
-    color: var(--cnvs-base-palette-white);
-  }
-
-  .JobCopy {
-    font: var(--cnvs-sys-type-body-sm);
-    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
-    color: var(--cnvs-base-palette-dark-blue-500);
-  }
-
-  .JobRow[data-jobs='on'] .JobField {
-    background: var(--cnvs-base-palette-dark-blue-25);
-    color: var(--cnvs-base-palette-white-A800);
-    border-color: var(--cnvs-base-palette-dark-blue-500);
-  }
-
-  .JobRow[data-jobs='on'] .JobAccent {
-    background: var(--cnvs-base-palette-dark-blue-600);
-  }
-
-  .JobRow[data-jobs='on'] .JobCopy {
-    color: var(--cnvs-base-palette-dark-blue-800);
-  }
-
   .Link {
     margin: 0;
     font: var(--cnvs-sys-type-body-md);
@@ -560,51 +358,6 @@
 
   .Link[data-ink='pass'] {
     color: var(--cnvs-base-palette-dark-blue-800);
-  }
-
-  .ChromaRow,
-  .Spine {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    gap: var(--cnvs-sys-gap-xl);
-  }
-
-  .ChromaTile,
-  .SpineTile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--cnvs-sys-gap-sm);
-    margin: 0;
-  }
-
-  .ChromaTile figcaption,
-  .SpineTile figcaption {
-    margin: 0;
-    font: var(--cnvs-sys-type-subtext-md);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
-    color: var(--cnvs-base-palette-white-A600);
-  }
-
-  .ChromaWord {
-    margin: 0;
-    font: var(--cnvs-sys-type-heading-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-heading-lg);
-  }
-
-  .ChromaWord[data-step='500'] {
-    color: var(--cnvs-base-palette-dark-blue-500);
-  }
-
-  .ChromaWord[data-step='800'] {
-    color: var(--cnvs-base-palette-dark-blue-800);
-  }
-
-  .SpineCard {
-    inline-size: 6.5rem;
-    block-size: 4.25rem;
-    border-radius: var(--cnvs-sys-shape-lg);
   }
 
   .Caution {
@@ -629,240 +382,18 @@
     color: var(--cnvs-base-palette-neutral-975);
   }
 
-  .TypeStack {
-    display: flex;
-    flex-direction: column;
-    gap: var(--cnvs-sys-gap-xs);
-    max-inline-size: 16rem;
-  }
-
-  .TypeStack p {
-    margin: 0;
-  }
-
-  .TypeStack [data-role='heading'] {
-    font: var(--cnvs-sys-type-heading-sm);
-    letter-spacing: var(--cnvs-sys-letter-spacing-heading-sm);
-  }
-
-  .TypeStack [data-role='body'] {
-    font: var(--cnvs-sys-type-body-sm);
-    letter-spacing: var(--cnvs-sys-letter-spacing-body-sm);
-  }
-
-  .TypeStack [data-role='muted'] {
-    font: var(--cnvs-sys-type-subtext-md);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
-  }
-
-  .TypeStack[data-ink='hot'] p {
-    color: #fff;
-  }
-
-  .TypeStack[data-ink='soft'] [data-role='heading'] {
-    color: var(--cnvs-base-palette-white-A900);
-  }
-
-  .TypeStack[data-ink='soft'] [data-role='body'] {
-    color: var(--cnvs-base-palette-white-A800);
-  }
-
-  .TypeStack[data-ink='soft'] [data-role='muted'] {
-    color: var(--cnvs-base-palette-white-A600);
-  }
-
-  .Field {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: var(--cnvs-sys-gap-xs);
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-    color: var(--cnvs-base-palette-white-A800);
-  }
-
-  .Input {
-    box-sizing: border-box;
-    margin: 0;
-    inline-size: 12rem;
-    min-block-size: var(--cnvs-sys-size-xl);
-    padding-block: var(--cnvs-sys-padding-xs);
-    padding-inline: var(--cnvs-sys-padding-sm);
-    font: var(--cnvs-sys-type-body-sm);
-    color: var(--cnvs-base-palette-white-A800);
-    background: var(--cnvs-base-palette-dark-neutral-100);
-    border: 2px solid var(--cnvs-base-palette-white-A300);
-    border-radius: var(--cnvs-sys-shape-md);
-  }
-
-  .Input::placeholder {
-    color: var(--cnvs-base-palette-white-A600);
-  }
-
-  .Input[data-fail] {
-    border-color: var(--cnvs-base-palette-dark-neutral-400);
-  }
-
-  .Input:focus-visible {
-    outline: 2px solid var(--cnvs-sys-color-brand-focus-primary);
-    outline-offset: 2px;
-  }
-
-  .Select {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    inline-size: 10.5rem;
-    overflow: clip;
-    background: var(--cnvs-base-palette-dark-neutral-100);
-    border: 2px solid var(--cnvs-base-palette-dark-neutral-200);
-    border-radius: var(--cnvs-sys-shape-md);
-  }
-
-  .Select li {
-    padding: var(--cnvs-sys-padding-xs) var(--cnvs-sys-padding-sm);
-    font: var(--cnvs-sys-type-body-sm);
-    color: var(--cnvs-base-palette-white-A800);
-  }
-
-  .Select li[data-selected] {
-    color: var(--cnvs-sys-color-brand-fg-selected);
-    background: var(--cnvs-sys-color-brand-surface-selected);
-  }
-
-  .Select li[data-focused] {
-    outline: 2px solid var(--cnvs-brand-dark-primary-500);
-    outline-offset: -2px;
-  }
-
-  .Select[data-focus='blue'] li[data-focused] {
-    outline-color: var(--cnvs-base-palette-dark-blue-500);
-  }
-
-  .Chrome {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--cnvs-sys-gap-md);
-    inline-size: min(100%, 18rem);
-    padding: var(--cnvs-sys-padding-sm) var(--cnvs-sys-padding-md);
-    background: var(--cnvs-sys-color-surface-default);
-    color: var(--cnvs-sys-color-fg-default);
-    font: var(--cnvs-sys-type-subtext-lg);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-lg);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-  }
-
-  .RampBoard {
-    display: flex;
-    flex-direction: column;
-    gap: var(--cnvs-sys-gap-md);
-    margin: 0;
-    inline-size: 100%;
-  }
-
-  .RampRow {
-    display: grid;
-    grid-template-columns: 4.75rem minmax(0, 1fr);
-    align-items: start;
-    column-gap: var(--cnvs-sys-gap-sm);
-    margin: 0;
-    inline-size: 100%;
-  }
-
-  .RampName {
-    margin: 0;
-    padding-block-start: var(--cnvs-sys-padding-xxs);
-    font: var(--cnvs-sys-type-subtext-md);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-md);
-    font-weight: var(--cnvs-sys-font-weight-semibold);
-    color: var(--cnvs-sys-color-fg-default);
-  }
-
-  .RampCells {
-    display: grid;
-    grid-template-columns: repeat(15, minmax(0, 1fr));
-    gap: var(--cnvs-sys-gap-xs);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .RampCells[data-count='13'] {
-    grid-template-columns: repeat(13, minmax(0, 1fr));
-  }
-
-  .RampCell {
-    display: flex;
-    flex-direction: column;
-    gap: var(--cnvs-sys-gap-xs);
-    min-inline-size: 0;
-  }
-
-  .RampSwatch {
-    display: block;
-    block-size: 2.25rem;
-    border-radius: var(--cnvs-sys-shape-xs);
-    box-shadow: inset 0 0 0 1px
-      color-mix(in srgb, var(--cnvs-sys-color-fg-default) 10%, transparent);
-  }
-
-  .RampStep {
-    font: var(--cnvs-sys-type-subtext-sm);
-    letter-spacing: var(--cnvs-sys-letter-spacing-subtext-sm);
-    font-weight: var(--cnvs-sys-font-weight-medium);
-    font-variant-numeric: tabular-nums;
-    color: var(--cnvs-sys-color-fg-muted-default);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  @media (--md-n-below) {
-    .RampRow {
-      grid-template-columns: minmax(0, 1fr);
-      row-gap: var(--cnvs-sys-gap-xs);
-    }
-
-    .RampName {
-      padding-block-start: 0;
-    }
-  }
-
-  @media (--highContrast) {
-    .JobField,
-    .Input,
-    .Select {
-      border-width: 2px;
-    }
-  }
-
   @media (--forcedColors) {
     .Patch,
     .ShadowCard,
     .DepthLayer,
     .HalationCopy,
-    .RoleCard,
-    .Setting,
-    .Editor,
-    .Widget,
-    .JobField,
-    .JobAccent,
     .Caution,
-    .Input,
-    .Select,
-    .SpineCard,
-    .Chrome,
-    .RampSwatch,
-    .Thumb,
     .SplitHalf,
     .DemoTrack {
       border: 1px solid CanvasText;
     }
 
     .GlowWord,
-    .ChromaWord,
     .Link {
       forced-color-adjust: none;
       outline: 1px solid CanvasText;
